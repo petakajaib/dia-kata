@@ -134,6 +134,7 @@ def vectorize_target(entry):
     return target_vector.reshape(target_vector.shape[0], 1)
 
 
+
 labelled_data = json.load(open(PREPROCESSED_PATH))
 
 feature_vectors = []
