@@ -131,7 +131,7 @@ def vectorize_target(entry):
 
     target_vector = np.array(target_vector)
 
-    return target_vector.reshape(target_vector.shape[0], 1)
+    return target_vector
 
 
 
