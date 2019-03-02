@@ -58,3 +58,6 @@ def modelling(vectorized_path):
         print("truth\t", y_test_reshaped)
         print("prediction\t", y_prediction)
         print("predict_proba\t",y_prediction_proba)
+
+if __name__ == '__main__':
+    modelling(VECTORIZED_PATH)

@@ -112,7 +112,7 @@ def get_entity_position_vector(entry):
 
     for entity in entry["talker"]:
 
-        parsed_entity = parse_text(entity)
+        parsed_entity = parse_text(entity["entity"])
         position = get_text_position(parsed_content, parsed_entity)
 
         vec.append(position)
