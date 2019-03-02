@@ -20,9 +20,10 @@ clf.fit(x_train_stacked, y_reshaped)
 
 for x_test_section, y_test_section in zip(x_test, y_test):
 
-    y_prediction = clf.predict_proba(x_test_section)
-
+    y_prediction_proba = clf.predict_proba(x_test_section)
+    y_prediction = clf.predict(x_test_section)
     y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
 
-    print("predict\t",y_prediction)
     print("truth\t", y_test_reshaped)
+    print("prediction\t", y_prediction)
+    print("predict_proba\t",y_prediction_proba)
