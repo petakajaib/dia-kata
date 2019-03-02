@@ -30,7 +30,7 @@ def get_entity_to_quote_distance(entity, quote_position, lowered_parsed_content)
     parsed_lowered_entity = parse_text(lowered_entity)
 
     entity_position = get_text_position(lowered_parsed_content, parsed_lowered_entity)
-    entity_to_quote_distance = abs(quote_position-position)
+    entity_to_quote_distance = abs(quote_position-entity_position)
 
     return entity_to_quote_distance
 
