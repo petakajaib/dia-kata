@@ -22,6 +22,7 @@ for x_test_section, y_test_section in zip(x_test, y_test):
 
     y_prediction = clf.predict(x_test_section)
 
+    y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
+
     print("predict\t",y_prediction)
     print("truth\t", y_test_reshaped)
-    y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
