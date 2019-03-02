@@ -104,11 +104,27 @@ def get_frequency_of_entity_vector(entry):
     vec = np.array(vec)
     return vec
 
+def get_entity_position_vector(entry):
+    lowered_cleaned_content = entry["cleaned_content"].lower()
+
+    parsed_content = parse_text(lowered_cleaned_content)
+    vec = []
+
+    for entity in entry["talker"]:
+
+        parsed_entity = parse_text(entity)
+        position = get_text_position(parsed_content, parsed_entity)
+
+        vec.append(position)
+
+    return np.array(vec)
+
 def vectorize_feature(entry):
 
     vecs = [
         get_distance_of_entity_to_quote_vector(entry),
-        get_frequency_of_entity_vector(entry)
+        get_frequency_of_entity_vector(entry),
+        get_entity_position_vector(entry)
     ]
 
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
@@ -133,32 +149,33 @@ def vectorize_target(entry):
 
     return target_vector.reshape(target_vector.shape[0], 1)
 
+def vectorize_data(preprocessed_path, vectorized_path):
+
+    labelled_data = json.load(open(preprocessed_path))
+
+    feature_vectors = []
+    target_vectors = []
+
+    total_entry = len(labelled_data)
+
+    for idx, entry in enumerate(labelled_data):
+
+        print("{} of {}        ".format(idx, total_entry))
+
+        feature_vector = vectorize_feature(entry)
+        target_vector = vectorize_target(entry)
+
+        if not len(target_vector):
+            continue
+        feature_vectors.append(feature_vector)
+        target_vectors.append(target_vector)
 
 
-labelled_data = json.load(open(PREPROCESSED_PATH))
-
-feature_vectors = []
-target_vectors = []
-
-total_entry = len(labelled_data)
-
-for idx, entry in enumerate(labelled_data):
-
-    print("{} of {}        ".format(idx, total_entry))
-
-    feature_vector = vectorize_feature(entry)
-    target_vector = vectorize_target(entry)
-
-    if not len(target_vector):
-        continue
-    feature_vectors.append(feature_vector)
-    target_vectors.append(target_vector)
+    vectorized = {
+        "feature_vectors" : feature_vectors,
+        "target_vectors": target_vectors
+    }
 
 
-vectorized = {
-    "feature_vectors" : feature_vectors,
-    "target_vectors": target_vectors
-}
-
-
-pickle.dump(vectorized, open(VECTORIZED_PATH, "wb"))
+    pickle.dump(vectorized, open(vectorized_path, "wb"))
+    return vectorized
