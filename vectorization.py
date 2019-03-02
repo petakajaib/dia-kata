@@ -143,8 +143,8 @@ total_entry = len(labelled_data)
 
 for idx, entry in enumerate(labelled_data):
 
-    print("{} of {}        ".format(idx, total_entry), end="\r")
-    
+    print("{} of {}        ".format(idx, total_entry))
+
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
