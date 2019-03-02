@@ -11,7 +11,7 @@ vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
 x_train, x_test, y_train, y_test = train_test_split(vectorized_data["feature_vectors"], vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
 
 
-clf = xgb.XGBClassifier(max_depth=8, n_jobs=6, objective="reg:logistic", random_state=1337)
+clf = xgb.XGBClassifier(max_depth=8, n_jobs=6, objective="binary:logistic", random_state=1337)
 
 x_train_stacked = np.vstack(x_train)
 y_train_stacked = np.vstack(y_train)
@@ -28,4 +28,4 @@ for x_test_section, y_test_section in zip(x_test, y_test):
 
     print("truth\t", y_test_reshaped)
     print("prediction\t", y_prediction)
-    # print("predict_proba\t",y_prediction_proba)
+    print("predict_proba\t",y_prediction_proba)
