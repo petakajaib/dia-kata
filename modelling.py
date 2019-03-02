@@ -8,7 +8,24 @@ from settings import *
 
 vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
 
-x_train, x_test, y_train, y_test = train_test_split(vectorized_data["feature_vectors"], vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
+
+feature_vectors = vectorized_data["feature_vectors"]
+
+feature_vectors_stacked = np.vstack(feature_vectors)
+
+feature_vectors_stacked_normalized = []
+
+for i in range(feature_vectors_stacked.shape[1]):
+
+    col = feature_vectors_stacked[:,i]
+    max_val = np.max(col)
+
+    col_normalized = col/max_val
+    feature_vectors_stacked_normalized.append(col_normalized.reshaped(col_normalized.shape[0],1))
+
+feature_vectors_stacked_normalized = np.hstack(feature_vectors_stacked_normalized)
+
+x_train, x_test, y_train, y_test = train_test_split(feature_vectors_stacked_normalized, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
 
 
 clf = xgb.XGBClassifier(max_depth=8, n_jobs=6, objective="binary:logistic", random_state=1337)
