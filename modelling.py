@@ -24,3 +24,4 @@ for x_test_section, y_test_section in zip(x_test, y_test):
 
     print(y_prediction)
     y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
+    print(y_test_reshaped)
