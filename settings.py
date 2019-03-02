@@ -35,3 +35,5 @@ ENTITY_EXTRACTION_COLLECTION = "entity_extraction"
 
 SELECTED_TALKED_ABOUT_JSON = "data/selected_talked_about.json"
 SELECTED_TALKER_JSON = "data/selected_talker.json"
+PREPROCESSED_PATH = "data/labelled_data_with_content.json"
+LABELED_DATA_PATH = "data/labelling.json"
