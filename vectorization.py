@@ -11,6 +11,12 @@ def parse_text(text):
 
 def get_text_position(parsed_content, parsed_text):
 
+    print("get_text_position")
+
+    print("parsed_content", parsed_content)
+    print("parsed_text", parsed_text)
+
+
     len_parsed_text = len(parsed_text)
 
     for idx, _ in enumerate(parsed_content):
