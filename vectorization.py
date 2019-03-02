@@ -91,7 +91,8 @@ def get_frequency_of_entity_vector(entry):
     for talker in entry["talker"]:
         parsed_entities = Text(talker["entity"].lower())
 
-
+        counts = {}
+        
         for token in parsed_entities.tokens:
             counts[token] = get_token_count(cleaned_content, token)
 
