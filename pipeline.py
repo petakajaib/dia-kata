@@ -8,6 +8,6 @@ collection = db[MONGO_COLLECTION]
 
 print("preprocessing")
 
-add_content_to_label(LABELED_DATA_PATH, PREPROCESSED_PATH, collection)
+# add_content_to_label(LABELED_DATA_PATH, PREPROCESSED_PATH, collection)
 
 print("vectorization")

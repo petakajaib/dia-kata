@@ -15,7 +15,7 @@ def get_text_position(parsed_content, parsed_text):
 
     for idx, _ in enumerate(parsed_content):
 
-        section = parsed_content[i:i+len_parsed_text]
+        section = parsed_content[idx:idx+len_parsed_text]
 
         if section == len_parsed_text:
             return idx
@@ -54,7 +54,7 @@ def vectorize_feature(entry):
     vec_1 = distance_of_entity_to_quote(entry)
 
     vec = np.array(vec_1)
-    
+
     return vec
 
 def vectorize_target(entry):
