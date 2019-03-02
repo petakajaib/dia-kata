@@ -127,7 +127,10 @@ def vectorize_target(entry):
         else:
             target_vector.append(0)
 
-    return np.array(target_vector)
+
+    target_vector = np.array(target_vector)
+
+    return target_vector.reshape(target_vector.shape[0], 1)
 
 
 labelled_data = json.load(open(PREPROCESSED_PATH))
