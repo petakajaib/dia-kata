@@ -41,7 +41,7 @@ def distance_of_entity_to_quote(entry):
     parsed_quote = parse_text(quote.lower())
 
     quote_position = get_text_position(lowered_content, parsed_quote)
-
+    print("quote_position", quote_position)
     vector = []
 
     for talker in entry["talker"]:
@@ -50,6 +50,7 @@ def distance_of_entity_to_quote(entry):
         parsed_lowered_entity = parse_text(lowered_entity)
 
         position = get_text_position(lowered_parsed_content, parsed_lowered_entity)
+        print("entity position", position)
         entity_position = abs(quote_position-position)
         vector.append(entity_position)
 
@@ -82,8 +83,6 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 for entry in labelled_data:
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
-    print("entry", entry)
-    print("feature_vector", feature_vector)
-    print("target_vector", target_vector)
+
 
     break
