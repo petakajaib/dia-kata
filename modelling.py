@@ -13,22 +13,30 @@ feature_vectors = vectorized_data["feature_vectors"]
 
 feature_vectors_stacked = np.vstack(feature_vectors)
 
-print(feature_vectors_stacked.shape)
-
-feature_vectors_stacked_normalized = []
+max_vals = []
 
 for i in range(feature_vectors_stacked.shape[1]):
 
     col = feature_vectors_stacked[:,i]
     max_val = np.max(col)
 
-    col_normalized = col/max_val
-    feature_vectors_stacked_normalized.append(col_normalized.reshape(col_normalized.shape[0],1))
+    max_vals.append(max_val)
 
-feature_vectors_stacked_normalized = np.hstack(feature_vectors_stacked_normalized)
-print(feature_vectors_stacked_normalized.shape)
+normalized_feature_vectors = []
 
-x_train, x_test, y_train, y_test = train_test_split(feature_vectors_stacked_normalized, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
+for feature_vector in feature_vectors:
+
+    normalized_feature_vector = []
+
+    for i in range(feature_vector.shape[1]):
+
+        normalized_row = feature_vector[:,i]/max_vals[i]
+
+        normalized_feature_vector.append(normalized_row.reshape(normalized_row.shape[0],1))
+
+    normalized_feature_vectors.append(np.hstack(normalized_feature_vector))
+
+x_train, x_test, y_train, y_test = train_test_split(normalized_feature_vectors, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
 
 
 clf = xgb.XGBClassifier(max_depth=8, n_jobs=6, objective="binary:logistic", random_state=1337)
