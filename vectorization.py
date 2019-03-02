@@ -139,7 +139,12 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 feature_vectors = []
 target_vectors = []
 
-for entry in labelled_data:
+total_entry = len(labelled_data)
+
+for idx, entry in enumerate(labelled_data):
+
+    print("{} of {}        ".format(idx, total_entry), end="\r")
+    
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
@@ -148,8 +153,6 @@ for entry in labelled_data:
     feature_vectors.append(feature_vector)
     target_vectors.append(target_vector)
 
-
-    print("===")
 
 vectorized = {
     "feature_vectors" : feature_vectors,
