@@ -23,7 +23,7 @@ def get_text_position(parsed_content, parsed_text):
 
         section = parsed_content[idx:idx+len_parsed_text]
 
-        if section == len_parsed_text:
+        if section == parsed_text:
             return idx
 
         if len(section) != len_parsed_text:
