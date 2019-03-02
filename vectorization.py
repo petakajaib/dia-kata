@@ -1,4 +1,5 @@
 import json
+import pickle
 from polyglot.text import Text
 import numpy as np
 from settings import *
@@ -135,11 +136,19 @@ def vectorize_target(entry):
 
 labelled_data = json.load(open(PREPROCESSED_PATH))
 
+feature_vectors = []
+target_vectors = []
+
 for entry in labelled_data:
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
     print("feature_vector\n", feature_vector)
     print("target_vector\n", target_vector)
+
+    feature_vectors.append(feature_vector)
+    target_vectors.append(target_vector)
+
+
     print("===")
-    break
+    
