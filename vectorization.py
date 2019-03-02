@@ -24,8 +24,18 @@ def get_text_position(parsed_content, parsed_text):
             break
 
 
-def distance_of_entity_to_quote(entry):
+def get_entity_to_quote_distance(entity, quote_position):
 
+    lowered_entity = entity.lower()
+    parsed_lowered_entity = parse_text(lowered_entity)
+
+    entity_position = get_text_position(lowered_parsed_content, parsed_lowered_entity)
+    entity_to_quote_distance = abs(quote_position-position)
+
+    return entity_to_quote_distance
+
+
+def get_quote_position(entry):
     content = entry["cleaned_content"]
     lowered_content = content.lower()
     quote = entry["quote"]
@@ -36,22 +46,24 @@ def distance_of_entity_to_quote(entry):
 
     quote_position = get_text_position(lowered_parsed_content, parsed_quote)
 
+    return quote_position
+
+def get_distance_of_entity_to_quote_vector(entry):
+
+    quote_position = get_quote_position(entry)
+
     vector = []
 
     for talker in entry["talker"]:
-        entity = talker["entity"]
-        lowered_entity = entity.lower()
-        parsed_lowered_entity = parse_text(lowered_entity)
-
-        position = get_text_position(lowered_parsed_content, parsed_lowered_entity)
-        entity_position = abs(quote_position-position)
-        vector.append(entity_position)
+        distance_of_entity_to_quote = get_entity_to_quote_distance(talker["entity"], quote_position)
+        vector.append(distance_of_entity_to_quote)
 
     return vector
 
+
 def vectorize_feature(entry):
 
-    vec_1 = distance_of_entity_to_quote(entry)
+    vec_1 = get_distance_of_entity_to_quote_vector(entry)
 
     vec = np.array(vec_1)
 
