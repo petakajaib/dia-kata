@@ -143,12 +143,18 @@ for entry in labelled_data:
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
-    print("feature_vector\n", feature_vector)
-    print("target_vector\n", target_vector)
-
+    if not target_vector:
+        continue
     feature_vectors.append(feature_vector)
     target_vectors.append(target_vector)
 
 
     print("===")
-    
+
+vectorized = {
+    "feature_vectors" : feature_vectors,
+    "target_vectors": target_vectors
+}
+
+
+pickle.dump(vectorized, open(VECTORIZED_PATH, "wb"))
