@@ -11,12 +11,6 @@ def parse_text(text):
 
 def get_text_position(parsed_content, parsed_text):
 
-    print("get_text_position")
-
-    print("parsed_content", parsed_content)
-    print("parsed_text", parsed_text)
-
-
     len_parsed_text = len(parsed_text)
 
     for idx, _ in enumerate(parsed_content):
@@ -41,7 +35,7 @@ def distance_of_entity_to_quote(entry):
     parsed_quote = parse_text(quote.lower())
 
     quote_position = get_text_position(lowered_parsed_content, parsed_quote)
-    print("quote_position", quote_position)
+
     vector = []
 
     for talker in entry["talker"]:
@@ -50,7 +44,6 @@ def distance_of_entity_to_quote(entry):
         parsed_lowered_entity = parse_text(lowered_entity)
 
         position = get_text_position(lowered_parsed_content, parsed_lowered_entity)
-        print("entity position", position)
         entity_position = abs(quote_position-position)
         vector.append(entity_position)
 
@@ -84,5 +77,7 @@ for entry in labelled_data:
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
-
+    print("feature_vector\n", feature_vector)
+    print("target_vector\n", target_vector)
+    print("===")
     break
