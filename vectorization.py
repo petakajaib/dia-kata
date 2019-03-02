@@ -143,7 +143,7 @@ for entry in labelled_data:
     feature_vector = vectorize_feature(entry)
     target_vector = vectorize_target(entry)
 
-    if not target_vector:
+    if not len(target_vector):
         continue
     feature_vectors.append(feature_vector)
     target_vectors.append(target_vector)
