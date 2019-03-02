@@ -61,7 +61,7 @@ def get_distance_of_entity_to_quote_vector(entry):
         distance_of_entity_to_quote = get_entity_to_quote_distance(talker["entity"], quote_position, lowered_parsed_content)
         vector.append(distance_of_entity_to_quote)
 
-    return vector
+    return np.array(vector)
 
 def get_token_count(cleaned_content, token):
 
@@ -92,7 +92,7 @@ def get_frequency_of_entity_vector(entry):
         parsed_entities = Text(talker["entity"].lower())
 
         counts = {}
-        
+
         for token in parsed_entities.tokens:
             counts[token] = get_token_count(cleaned_content, token)
 
@@ -105,11 +105,14 @@ def get_frequency_of_entity_vector(entry):
 
 def vectorize_feature(entry):
 
-    vec_1 = get_distance_of_entity_to_quote_vector(entry)
-    vec_2 = get_frequency_of_entity_vector(entry)
+    vecs = [
+        get_distance_of_entity_to_quote_vector(entry),
+        get_frequency_of_entity_vector(entry)
+    ]
 
-    print(vec_2)
-    vec = np.array(vec_1)
+    vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
+
+    vec = np.hstack(vecs_reshaped)
 
     return vec
 
