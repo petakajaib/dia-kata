@@ -46,4 +46,4 @@ for entry in labelled_data:
 
     tokens = parsed.tokens
 
-    tokens_normalized = [str(token) for token in tokens]
+    tokens_str = [str(token) for token in tokens]
