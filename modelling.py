@@ -13,6 +13,8 @@ feature_vectors = vectorized_data["feature_vectors"]
 
 feature_vectors_stacked = np.vstack(feature_vectors)
 
+print(feature_vectors_stacked.shape)
+
 feature_vectors_stacked_normalized = []
 
 for i in range(feature_vectors_stacked.shape[1]):
@@ -24,6 +26,7 @@ for i in range(feature_vectors_stacked.shape[1]):
     feature_vectors_stacked_normalized.append(col_normalized.reshape(col_normalized.shape[0],1))
 
 feature_vectors_stacked_normalized = np.hstack(feature_vectors_stacked_normalized)
+print(feature_vectors_stacked_normalized.shape)
 
 x_train, x_test, y_train, y_test = train_test_split(feature_vectors_stacked_normalized, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
 
