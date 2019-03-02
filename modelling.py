@@ -21,7 +21,7 @@ for i in range(feature_vectors_stacked.shape[1]):
     max_val = np.max(col)
 
     col_normalized = col/max_val
-    feature_vectors_stacked_normalized.append(col_normalized.reshaped(col_normalized.shape[0],1))
+    feature_vectors_stacked_normalized.append(col_normalized.reshape(col_normalized.shape[0],1))
 
 feature_vectors_stacked_normalized = np.hstack(feature_vectors_stacked_normalized)
 
