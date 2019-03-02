@@ -40,7 +40,7 @@ def distance_of_entity_to_quote(entry):
     lowered_parsed_content = parse_text(lowered_content)
     parsed_quote = parse_text(quote.lower())
 
-    quote_position = get_text_position(lowered_content, parsed_quote)
+    quote_position = get_text_position(lowered_parsed_content, parsed_quote)
     print("quote_position", quote_position)
     vector = []
 
