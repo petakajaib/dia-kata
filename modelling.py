@@ -178,6 +178,8 @@ y_train_stacked = np.vstack(y_train)
 
 y_reshaped = column_or_1d(y_train_stacked)
 
+print("x_train_stacked shape", x_train_stacked.shape)
+
 clf.fit(x_train_stacked, y_reshaped)
 
 predictions = []
