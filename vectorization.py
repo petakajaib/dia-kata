@@ -123,7 +123,7 @@ def get_relative_frequency_ranking(entry):
     freq = get_frequency_of_entity_vector(entry)
 
     sorted_map = {}
-    for idx, elem in enumerate(sorted(set(arr))):
+    for idx, elem in enumerate(sorted(set(freq))):
         sorted_map[elem] = idx
 
     arr_relative = []
