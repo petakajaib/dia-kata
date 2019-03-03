@@ -121,15 +121,28 @@ def get_entity_position_vector(entry):
 
 def get_relative_frequency_ranking(entry):
     freq = get_frequency_of_entity_vector(entry)
-    print("freq:", freq)
 
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(arr))):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in arr:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
 
 def vectorize_feature(entry):
 
     vecs = [
         get_distance_of_entity_to_quote_vector(entry),
         get_frequency_of_entity_vector(entry),
-        get_entity_position_vector(entry)
+        get_entity_position_vector(entry),
+        get_relative_frequency_ranking(entry)
     ]
 
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
@@ -187,8 +200,4 @@ def vectorize_data(preprocessed_path, vectorized_path):
 
 if __name__ == '__main__':
 
-    labelled_data = json.load(open(PREPROCESSED_PATH))
-
-    for idx, entry in enumerate(labelled_data):
-        get_relative_frequency_ranking(entry)
-        break
+    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
