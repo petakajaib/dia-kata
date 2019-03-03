@@ -49,7 +49,10 @@ def add_content_to_label(labelling_source, labelling_target, collection, add_cle
 def add_language_to_label(content_added_path, preprocessed_path, collection):
 
     for entry in json.load(open(content_added_path)):
-        print(entry)
+
+        url = entry["source"]
+        article = collection.find_one({"url": url})
+        print(article.keys())
 
 if __name__ == '__main__':
 
