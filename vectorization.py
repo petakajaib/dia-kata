@@ -119,6 +119,11 @@ def get_entity_position_vector(entry):
 
     return np.array(vec)
 
+def get_relative_frequency_ranking(entry):
+    freq = get_frequency_of_entity_vector(entry)
+    print("freq:", freq)
+
+
 def vectorize_feature(entry):
 
     vecs = [
@@ -179,3 +184,10 @@ def vectorize_data(preprocessed_path, vectorized_path):
 
     pickle.dump(vectorized, open(vectorized_path, "wb"))
     return vectorized
+
+if __name__ == '__main__':
+
+    labelled_data = json.load(open(PREPROCESSED_PATH))
+
+    for idx, entry in enumerate(labelled_data):
+        get_relative_frequency_ranking(entry)
