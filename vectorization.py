@@ -5,7 +5,7 @@ import numpy as np
 from gensim.models.fasttext import FastText
 from settings import *
 from preprocessing import get_cleaned_content
-
+from scipy.spatial.distance import cosine
 
 def parse_text(text):
 
@@ -165,10 +165,13 @@ def get_quote_vector(entry, fast_text_models):
 
     for talker in entry["talker"]:
         quote_vector = vectorize_tokens(tokens, fast_text)
+        entity_tokens = [str(token).lower() for token in Text(talker["entity"]).tokens]
+        entity_vector = vectorize_tokens(entity_tokens, fast_text)
+        semantic_distance = cosine(quote_vector, entity_vector)
 
-        quote_vectors.append(quote_vector)
+        quote_vectors.append(semantic_distance)
 
-    return np.array(quote_vectors).transpose()
+    return np.array(quote_vectors)
 
 def vectorize_feature(entry, fast_text_models):
 
