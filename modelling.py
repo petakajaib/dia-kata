@@ -165,7 +165,7 @@ vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
 
 feature_vectors = vectorized_data["feature_vectors"]
 
-normalized_feature_vectors = normalize_feature_vectors(feature_vectors,index=[0,1,2,3])
+normalized_feature_vectors = normalize_feature_vectors(feature_vectors)
 #
 x_train, x_test, y_train, y_test = train_test_split(normalized_feature_vectors, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
 
