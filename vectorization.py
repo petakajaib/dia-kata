@@ -138,75 +138,6 @@ def get_relative_frequency_ranking(entry):
             arr_relative.append(1/relative)
 
     return np.array(arr_relative)
-
-def vectorize_feature(entry, fast_text_models):
-
-    vecs = [
-        get_distance_of_entity_to_quote_vector(entry),
-        get_frequency_of_entity_vector(entry),
-        get_entity_position_vector(entry),
-        get_relative_frequency_ranking(entry)
-    ]
-
-    print(vecs)
-
-    for vec in get_quote_vector(entry, fast_text_models):
-        vecs.append(vec)
-
-    vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
-
-    vec = np.hstack(vecs_reshaped)
-
-    return vec
-
-def vectorize_target(entry):
-
-    target_vector = []
-
-    for talker in entry["talker"]:
-
-        if talker["correct"]:
-            target_vector.append(1)
-        else:
-            target_vector.append(0)
-
-
-    target_vector = np.array(target_vector)
-
-    return target_vector.reshape(target_vector.shape[0], 1)
-
-def vectorize_data(preprocessed_path, vectorized_path):
-
-    labelled_data = json.load(open(preprocessed_path))
-
-    feature_vectors = []
-    target_vectors = []
-
-    total_entry = len(labelled_data)
-
-    for idx, entry in enumerate(labelled_data):
-
-        print("{} of {}        ".format(idx, total_entry))
-
-        feature_vector = vectorize_feature(entry)
-        target_vector = vectorize_target(entry)
-
-        if not len(target_vector):
-            continue
-
-        feature_vectors.append(feature_vector)
-        target_vectors.append(target_vector)
-
-
-    vectorized = {
-        "feature_vectors" : feature_vectors,
-        "target_vectors": target_vectors
-    }
-
-
-    pickle.dump(vectorized, open(vectorized_path, "wb"))
-    return vectorized
-
 def vectorize_tokens(tokens, fasttext_model):
 
     shape = fasttext_model["a"].shape
@@ -237,11 +168,78 @@ def get_quote_vector(entry, fast_text_models):
 
         quote_vectors.append(quote_vector)
 
-    return np.array(quote_vectors)
+    return np.array(quote_vectors).transpose()
+
+def vectorize_feature(entry, fast_text_models):
+
+    vecs = [
+        get_distance_of_entity_to_quote_vector(entry),
+        get_frequency_of_entity_vector(entry),
+        get_entity_position_vector(entry),
+        get_relative_frequency_ranking(entry)
+    ]
+
+    for vec in get_quote_vector(entry, fast_text_models):
+        vecs.append(vec)
+
+    vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
+
+    vec = np.hstack(vecs_reshaped)
+
+    return vec
+
+def vectorize_target(entry):
+
+    target_vector = []
+
+    for talker in entry["talker"]:
+
+        if talker["correct"]:
+            target_vector.append(1)
+        else:
+            target_vector.append(0)
+
+
+    target_vector = np.array(target_vector)
+
+    return target_vector.reshape(target_vector.shape[0], 1)
+
+def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
+
+    labelled_data = json.load(open(preprocessed_path))
+
+    feature_vectors = []
+    target_vectors = []
+
+    total_entry = len(labelled_data)
+
+    for idx, entry in enumerate(labelled_data):
+
+        print("{} of {}        ".format(idx, total_entry))
+
+        feature_vector = vectorize_feature(entry, fast_text_models)
+        target_vector = vectorize_target(entry)
+
+        if not len(target_vector):
+            continue
+
+        feature_vectors.append(feature_vector)
+        target_vectors.append(target_vector)
+
+
+    vectorized = {
+        "feature_vectors" : feature_vectors,
+        "target_vectors": target_vectors
+    }
+
+
+    pickle.dump(vectorized, open(vectorized_path, "wb"))
+    return vectorized
+
+
 
 if __name__ == '__main__':
 
-    # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
 
     print("loading fasttext models")
     print("en")
@@ -255,20 +253,22 @@ if __name__ == '__main__':
         "ms": ms_fasttext
     }
 
-    labelled_data = json.load(open(PREPROCESSED_PATH))
+    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
 
-    feature_vectors = []
-    target_vectors = []
-
-    total_entry = len(labelled_data)
-
-    for idx, entry in enumerate(labelled_data):
-
-        print("{} of {}        ".format(idx, total_entry))
-
-        quote_vector = get_quote_vector(entry, fast_text_models)
-        print("quote_vector", quote_vector.shape)
-        frequency_of_entity_vector = get_frequency_of_entity_vector(entry)
-        print("frequency_of_entity_vector", frequency_of_entity_vector)
-
-        raise ValueError("boom!")
+    # labelled_data = json.load(open(PREPROCESSED_PATH))
+    #
+    # feature_vectors = []
+    # target_vectors = []
+    #
+    # total_entry = len(labelled_data)
+    #
+    # for idx, entry in enumerate(labelled_data):
+    #
+    #     print("{} of {}        ".format(idx, total_entry))
+    #
+    #     quote_vector = get_quote_vector(entry, fast_text_models)
+    #     print("quote_vector", quote_vector.shape)
+    #     frequency_of_entity_vector = get_frequency_of_entity_vector(entry)
+    #     print("frequency_of_entity_vector", frequency_of_entity_vector)
+    #
+    #     raise ValueError("boom!")
