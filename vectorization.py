@@ -217,7 +217,7 @@ def vectorize_data(preprocessed_path, vectorized_path):
 
 def get_quote_vector(entry):
     url = entry["url"]
-
+    print(entry["language"])
 if __name__ == '__main__':
 
     # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
