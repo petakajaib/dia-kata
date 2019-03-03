@@ -230,7 +230,7 @@ def get_quote_vector(entry, fast_text_models):
     quote_vectors = []
 
     for talker in entry["talker"]:
-        quote_vector = vectorize_tokens(tokens, fasttext_model)
+        quote_vector = vectorize_tokens(tokens, fast_text)
 
         quote_vectors.append(quote_vector)
 
