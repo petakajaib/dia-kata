@@ -1,3 +1,4 @@
+from pymongo import MongoClient
 import json
 import re
 
@@ -43,3 +44,19 @@ def add_content_to_label(labelling_source, labelling_target, collection, add_cle
 
     json.dump(added_content, open(labelling_target, "w"))
     return added_content
+
+def add_language_to_label(content_added_path, preprocessed_path, collection):
+
+    for entry in json.load(open(content_added_path)):
+        print(entry)
+
+if __name__ == '__main__':
+
+
+    client = MongoClient()
+    db = client[MONGO_DB]
+    collection = db[MONGO_COLLECTION]
+
+    # add_content_to_label(LABELED_DATA_PATH, CONTENT_ADDED_PATH, collection)
+
+    add_language_to_label(CONTENT_ADDED_PATH, PREPROCESSED_PATH, collection)

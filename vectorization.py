@@ -2,7 +2,21 @@ import json
 import pickle
 from polyglot.text import Text
 import numpy as np
+from gensim.models.fasttext import FastText
 from settings import *
+
+# print("loading fasttext models")
+# print("en")
+# en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+#
+# print("ms")
+# ms_fasttext = FastText.load(FASTTEXT_MALAY)
+#
+# fast_text_models = {
+#     "en": en_fasttext,
+#     "ms": ms_fasttext
+# }
+
 
 def parse_text(text):
 
@@ -202,7 +216,7 @@ def vectorize_data(preprocessed_path, vectorized_path):
     return vectorized
 
 def get_quote_vector(entry):
-    pass
+    url = entry["url"]
 
 if __name__ == '__main__':
 
