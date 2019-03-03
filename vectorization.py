@@ -185,6 +185,8 @@ def vectorize_data(preprocessed_path, vectorized_path):
 
         if not len(target_vector):
             continue
+
+        raise ValueError("boom!")
         feature_vectors.append(feature_vector)
         target_vectors.append(target_vector)
 
