@@ -222,7 +222,7 @@ def get_quote_vector(entry, fast_text_models):
 
     fast_text = fast_text_models[entry["language"]]
 
-    cleaned_quote = get_clean_content(entry["quote"])
+    cleaned_quote = get_cleaned_content(entry["quote"])
     parsed = Text(cleaned_quote)
 
     tokens = [str(token).lower() for token in parsed.tokens]
