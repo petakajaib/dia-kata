@@ -52,7 +52,7 @@ def add_language_to_label(content_added_path, preprocessed_path, collection):
 
         url = entry["source"]
         article = collection.find_one({"url": url})
-        print(article.keys())
+        print(article["detected_language"])
 
 if __name__ == '__main__':
 
