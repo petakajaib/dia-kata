@@ -263,6 +263,9 @@ if __name__ == '__main__':
 
         print("{} of {}        ".format(idx, total_entry))
 
-        vec = get_quote_vector(entry, fast_text_models)
-        print(vec.shape)
+        quote_vector = get_quote_vector(entry, fast_text_models)
+        print("quote_vector", quote_vector.shape)
+        frequency_of_entity_vector = get_frequency_of_entity_vector(entry)
+        print("frequency_of_entity_vector", frequency_of_entity_vector)
+        
         raise ValueError("boom!")
