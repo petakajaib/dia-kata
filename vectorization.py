@@ -179,8 +179,8 @@ def vectorize_feature(entry, fast_text_models):
         get_relative_frequency_ranking(entry)
     ]
 
-    for vec in get_quote_vector(entry, fast_text_models):
-        vecs.append(vec)
+    # for vec in get_quote_vector(entry, fast_text_models):
+    #     vecs.append(vec)
 
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
 
