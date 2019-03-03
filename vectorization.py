@@ -4,7 +4,7 @@ from polyglot.text import Text
 import numpy as np
 from gensim.models.fasttext import FastText
 from settings import *
-
+from preprocessing import get_cleaned_content
 
 
 def parse_text(text):
@@ -204,9 +204,38 @@ def vectorize_data(preprocessed_path, vectorized_path):
     pickle.dump(vectorized, open(vectorized_path, "wb"))
     return vectorized
 
+def vectorize_tokens(tokens, fasttext_model):
+
+    shape = fasttext_model["a"].shape
+
+    vec = np.zeros(shape)
+
+    for t in tokens:
+        try:
+            vec = vec + fasttext_model[t]
+        except KeyError as err:
+            print(err)
+
+    return vec/len(tokens)
+
 def get_quote_vector(entry, fast_text_models):
-    # url = entry["url"]
-    print(entry["language"])
+
+    fast_text = fast_text_models[entry["language"]]
+
+    cleaned_quote = get_clean_content(entry["quote"])
+    parsed = Text(cleaned_quote)
+
+    tokens = [str(token).lower() for token in parsed.tokens]
+
+    quote_vectors = []
+
+    for talker in entry["talker"]:
+        quote_vector = vectorize_tokens(tokens, fasttext_model)
+
+        quote_vectors.append(quote_vector)
+
+    return np.array(quote_vectors)
+
 if __name__ == '__main__':
 
     # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
@@ -234,6 +263,6 @@ if __name__ == '__main__':
 
         print("{} of {}        ".format(idx, total_entry))
 
-        get_quote_vector(entry, fast_text_models)
-
+        vec = get_quote_vector(entry, fast_text_models)
+        print(vec.shape)
         raise ValueError("boom!")
