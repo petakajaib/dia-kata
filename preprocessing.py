@@ -1,6 +1,7 @@
-from pymongo import MongoClient
 import json
 import re
+from pymongo import MongoClient
+from settings import *
 
 def add_content(entry, collection):
 
