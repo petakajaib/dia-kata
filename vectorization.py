@@ -5,17 +5,6 @@ import numpy as np
 from gensim.models.fasttext import FastText
 from settings import *
 
-# print("loading fasttext models")
-# print("en")
-# en_fasttext = FastText.load(FASTTEXT_ENGLISH)
-#
-# print("ms")
-# ms_fasttext = FastText.load(FASTTEXT_MALAY)
-#
-# fast_text_models = {
-#     "en": en_fasttext,
-#     "ms": ms_fasttext
-# }
 
 
 def parse_text(text):
@@ -215,13 +204,24 @@ def vectorize_data(preprocessed_path, vectorized_path):
     pickle.dump(vectorized, open(vectorized_path, "wb"))
     return vectorized
 
-def get_quote_vector(entry):
+def get_quote_vector(entry, fast_text_models):
     # url = entry["url"]
     print(entry["language"])
 if __name__ == '__main__':
 
     # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
 
+    print("loading fasttext models")
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY)
+
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
 
     labelled_data = json.load(open(PREPROCESSED_PATH))
 
@@ -234,6 +234,6 @@ if __name__ == '__main__':
 
         print("{} of {}        ".format(idx, total_entry))
 
-        get_quote_vector(entry)
+        get_quote_vector(entry, fast_text_models)
 
         raise ValueError("boom!")
