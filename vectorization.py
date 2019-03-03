@@ -145,6 +145,8 @@ def vectorize_feature(entry):
         get_relative_frequency_ranking(entry)
     ]
 
+    print(vecs)
+
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
 
     vec = np.hstack(vecs_reshaped)
