@@ -138,6 +138,7 @@ def get_relative_frequency_ranking(entry):
             arr_relative.append(1/relative)
 
     return np.array(arr_relative)
+
 def vectorize_tokens(tokens, fasttext_model):
 
     shape = fasttext_model["a"].shape
@@ -173,6 +174,23 @@ def get_quote_vector(entry, fast_text_models):
 
     return np.array(quote_vectors)
 
+def get_relative_entity_position_vector(entry):
+    entity_position = get_entity_position_vector(entry)
+
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(entity_position))):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in freq:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
+
 def vectorize_feature(entry, fast_text_models):
 
     vecs = [
@@ -180,6 +198,7 @@ def vectorize_feature(entry, fast_text_models):
         get_frequency_of_entity_vector(entry),
         get_entity_position_vector(entry),
         get_relative_frequency_ranking(entry),
+        get_relative_entity_position_vector(entry),
         get_quote_vector(entry, fast_text_models)
     ]
 
@@ -244,36 +263,36 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
 
 if __name__ == '__main__':
 
-    # fast_text_models = {}
+    fast_text_models = {}
 
-    print("loading fasttext models")
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    # print("loading fasttext models")
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    #
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
+    #
+    # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
 
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    labelled_data = json.load(open(PREPROCESSED_PATH))
 
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
+    feature_vectors = []
+    target_vectors = []
 
-    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
+    total_entry = len(labelled_data)
 
-    # labelled_data = json.load(open(PREPROCESSED_PATH))
-    #
-    # feature_vectors = []
-    # target_vectors = []
-    #
-    # total_entry = len(labelled_data)
-    #
-    # for idx, entry in enumerate(labelled_data):
-    #
-    #     print("{} of {}        ".format(idx, total_entry))
-    #
-    #     quote_vector = get_quote_vector(entry, fast_text_models)
-    #     print("quote_vector", quote_vector.shape)
-    #     frequency_of_entity_vector = get_frequency_of_entity_vector(entry)
-    #     print("frequency_of_entity_vector", frequency_of_entity_vector)
-    #
-    #     raise ValueError("boom!")
+    for idx, entry in enumerate(labelled_data):
+
+        print("{} of {}        ".format(idx, total_entry))
+
+        entity_distance = get_entity_to_quote_distance(entry)
+        print("entity_distance", entity_distance.shape)
+        relative_entity_distance = get_relative_entity_position_vector(entry)
+        print("relative_entity_distance", relative_entity_distance)
+
+        raise ValueError("boom!")
