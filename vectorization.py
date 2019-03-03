@@ -188,7 +188,6 @@ def vectorize_data(preprocessed_path, vectorized_path):
         if not len(target_vector):
             continue
 
-        raise ValueError("boom!")
         feature_vectors.append(feature_vector)
         target_vectors.append(target_vector)
 
@@ -202,6 +201,25 @@ def vectorize_data(preprocessed_path, vectorized_path):
     pickle.dump(vectorized, open(vectorized_path, "wb"))
     return vectorized
 
+def get_quote_vector(entry):
+    pass
+
 if __name__ == '__main__':
 
-    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
+    # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH)
+
+
+    labelled_data = json.load(open(PREPROCESSED_PATH))
+
+    feature_vectors = []
+    target_vectors = []
+
+    total_entry = len(labelled_data)
+
+    for idx, entry in enumerate(labelled_data):
+
+        print("{} of {}        ".format(idx, total_entry))
+
+        get_quote_vector(entry)
+
+        raise ValueError("boom!")
