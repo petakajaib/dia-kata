@@ -179,7 +179,8 @@ def vectorize_feature(entry, fast_text_models):
         get_distance_of_entity_to_quote_vector(entry),
         get_frequency_of_entity_vector(entry),
         get_entity_position_vector(entry),
-        get_relative_frequency_ranking(entry)
+        get_relative_frequency_ranking(entry),
+        get_quote_vector(entry, fast_text_models)
     ]
 
     # for vec in get_quote_vector(entry, fast_text_models):
