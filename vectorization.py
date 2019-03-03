@@ -191,3 +191,4 @@ if __name__ == '__main__':
 
     for idx, entry in enumerate(labelled_data):
         get_relative_frequency_ranking(entry)
+        break
