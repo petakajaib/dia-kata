@@ -127,7 +127,7 @@ def get_relative_frequency_ranking(entry):
         sorted_map[elem] = idx
 
     arr_relative = []
-    for elem in arr:
+    for elem in freq:
         relative = sorted_map[elem]
         if relative == 0:
             arr_relative.append(1)
