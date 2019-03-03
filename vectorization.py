@@ -139,7 +139,7 @@ def get_relative_frequency_ranking(entry):
 
     return np.array(arr_relative)
 
-def vectorize_feature(entry):
+def vectorize_feature(entry, fast_text_models):
 
     vecs = [
         get_distance_of_entity_to_quote_vector(entry),
@@ -149,6 +149,9 @@ def vectorize_feature(entry):
     ]
 
     print(vecs)
+
+    for vec in get_quote_vector(entry, fast_text_models):
+        vecs.append(vec)
 
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
 
@@ -267,5 +270,5 @@ if __name__ == '__main__':
         print("quote_vector", quote_vector.shape)
         frequency_of_entity_vector = get_frequency_of_entity_vector(entry)
         print("frequency_of_entity_vector", frequency_of_entity_vector)
-        
+
         raise ValueError("boom!")
