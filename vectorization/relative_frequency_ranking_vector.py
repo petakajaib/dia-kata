@@ -1,8 +1,8 @@
 import numpy as np
 from .frequency_of_entity_vector import get_frequency_of_entity_vector
 
-def get_relative_frequency_ranking_vector(entry):
-    freq = get_frequency_of_entity_vector(entry)
+def get_relative_frequency_ranking_vector(entry, enriched_collection):
+    freq = get_frequency_of_entity_vector(entry, enriched_collection)
 
     sorted_map = {}
     for idx, elem in enumerate(sorted(set(freq))):
