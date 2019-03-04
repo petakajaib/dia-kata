@@ -31,15 +31,12 @@ def get_title_vector(entry, enriched_collection):
 def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
 
     article = enriched_collection.find_one({"url": entry["source"]})
+    title_tokens = article["lowered_title_tokens"]
 
     fast_text = fast_text_models[entry["language"]]
 
-    cleaned_quote = get_cleaned_content(entry["quote"])
-    parsed = Text(cleaned_quote)
 
-    tokens = [str(token).lower() for token in parsed.tokens]
-
-    quote_vectors = []
+    title_sim_vectors = []
 
     for talker in entry["talker"]:
         quote_vector = vectorize_tokens(tokens, fast_text)
@@ -52,4 +49,4 @@ def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
 
         quote_vectors.append(semantic_distance)
 
-    return np.array(quote_vectors)
+    return np.array(title_sim_vectors)
