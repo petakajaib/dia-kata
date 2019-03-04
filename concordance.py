@@ -76,7 +76,7 @@ for entry in label:
                                 list_indices.append(sorted_indices)
 
                         # print("list_indices", list(set([tuple(l)for l in list_indices])))
-                        matched_indices = list_indices
+                        matched_indices = list(set([tuple(l)for l in list_indices]))
 
                     if matched_indices:
 
@@ -93,9 +93,8 @@ for entry in label:
 
                                 concordance = tokens[begin_idx:end_idx]
 
-                            elif type(idx) == list:
+                            elif type(idx) == tuple:
 
-                                print("tuple indices", idx)
                                 begin_idx = idx[0] - 5
                                 if begin_idx < 0:
                                     begin_idx = 0
