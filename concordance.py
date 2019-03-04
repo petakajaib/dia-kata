@@ -1,5 +1,6 @@
 import json
 import re
+from itertools import combinations
 from pymongo import MongoClient
 from nltk import word_tokenize, sent_tokenize
 from settings import *
@@ -44,9 +45,23 @@ for entry in label:
                 if all_in:
                     print("entity_tokens", entity_tokens)
                     print("tokens", tokens)
+
+                    flattened_indices = []
                     for entity_token in entity_tokens:
                         indices = [i for i, x in enumerate(tokens) if x == entity_token]
-                        print("indices", indices)
+
+                        for idx in indices:
+                            flattened_indices.append(idx)
+
+                    for indices in combinations(flattened_indices, 3):
+                        sorted_indices = sorted(indices)
+
+                        diff_1 = abs(sorted_indices[0]-sorted_indices[1])
+                        diff_2 = abs(sorted_indices[1]-sorted_indices[2])
+
+
+                        if diff_1 == 1 and diff_2 == 1:
+                            print("indices", indices)
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
                 #     begin_match, end_match = span
