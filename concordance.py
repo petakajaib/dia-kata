@@ -73,7 +73,7 @@ for entry in label:
                             if all_is_one:
                                 list_indices.append(sorted_indices)
 
-                        print("list_indices", list_indices)
+                        print("list_indices", list(set([tuple(l)for l in list_indices])))
 
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
