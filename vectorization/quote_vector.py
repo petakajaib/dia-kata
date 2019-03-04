@@ -29,3 +29,20 @@ def get_quote_vector(entry, fast_text_models, enriched_collection):
         quote_vectors.append(semantic_distance)
 
     return np.array(quote_vectors)
+
+def get_quote_relative_vector(entry, fast_text_models, enriched_collection):
+    quote_sim = get_quote_vector(entry, fast_text_models, enriched_collection)
+
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(quote_sim), reverse=True)):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in entity_position:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
