@@ -16,6 +16,7 @@ from vectorization import (
     get_is_organization_vector,
     get_title_relative_vector,
     get_title_vector,
+    get_title_similarity_vector,
     get_title_similarity_relative_vector,
     get_distance_of_entity_to_quote_relative_vector
 )
