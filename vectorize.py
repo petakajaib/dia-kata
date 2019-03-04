@@ -9,7 +9,8 @@ from vectorization import (
     get_entity_position_vector,
     get_relative_frequency_ranking_vector,
     get_relative_entity_position_vector,
-    get_quote_vector
+    get_quote_vector,
+    get_is_person_vector
 )
 from settings import *
 
@@ -17,12 +18,13 @@ from settings import *
 def vectorize_feature(entry, fast_text_models, enriched_collection):
 
     vecs = [
-        get_distance_of_entity_to_quote_vector(entry, enriched_collection),
-        get_frequency_of_entity_vector(entry, enriched_collection),
-        get_entity_position_vector(entry, enriched_collection),
-        get_relative_frequency_ranking_vector(entry, enriched_collection),
-        get_relative_entity_position_vector(entry, enriched_collection),
-        get_quote_vector(entry, fast_text_models, enriched_collection)
+        # get_distance_of_entity_to_quote_vector(entry, enriched_collection),
+        # get_frequency_of_entity_vector(entry, enriched_collection),
+        # get_entity_position_vector(entry, enriched_collection),
+        # get_relative_frequency_ranking_vector(entry, enriched_collection),
+        # get_relative_entity_position_vector(entry, enriched_collection),
+        # get_quote_vector(entry, fast_text_models, enriched_collection),
+        get_is_person_vector(entry, enriched_collection)
     ]
 
     # for vec in get_quote_vector(entry, fast_text_models):
@@ -87,19 +89,19 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 if __name__ == '__main__':
 
 
-    print("loading fasttext models")
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    # print("loading fasttext models")
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    #
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
 
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY)
-
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
-
-    # fast_text_models = {}
+    fast_text_models = {}
     client = MongoClient()
     db = client[MONGO_DB]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
