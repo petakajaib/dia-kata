@@ -23,9 +23,7 @@ def get_frequency_of_entity_vector(entry, enriched_collection):
 
     cleaned_content = entry["cleaned_content"]
 
-    cleaned_content_tokens = [t.lower() for t in parse_text(cleaned_content)]
-
-    cleaned_content_tokens_db = [t.lower() for t in article["cleaned_content_tokens"]]
+    cleaned_content_tokens = [t.lower() for t in article["cleaned_content_tokens"]]
 
     cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
     vec = []
@@ -35,16 +33,11 @@ def get_frequency_of_entity_vector(entry, enriched_collection):
         parsed_entities = Text(talker["entity"].lower())
 
         counts = {}
+        entity_key = talker["entity"].lower().replace(".", "DOT")
 
-        for token in parsed_entities.tokens:
+        for token in cleaned_content_entities_parsed[entity_key]:
             counts[token] = get_token_count(cleaned_content_tokens, token)
 
-        entity_key = talker["entity"].lower().replace(".", "DOT")
-        counts_2 = {}
-        for token in cleaned_content_entities_parsed[entity_key]:
-            counts_2[token] = get_token_count(cleaned_content_tokens_db, token)
-
-        assert counts == counts_2
         avg = sum(counts.values())/len(counts.values())
 
         vec.append(avg)

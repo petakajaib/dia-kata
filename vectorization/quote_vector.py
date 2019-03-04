@@ -19,13 +19,9 @@ def get_quote_vector(entry, fast_text_models, enriched_collection):
 
     for talker in entry["talker"]:
         quote_vector = vectorize_tokens(tokens, fast_text)
-        entity_tokens = [str(token).lower() for token in Text(talker["entity"]).tokens]
 
         entity_key = talker["entity"].lower().replace(".", "DOT")
-        db_entity_tokens = [token.lower() for token in article["cleaned_content_entities_parsed"][entity_key]]
-
-
-        assert entity_tokens == db_entity_tokens
+        entity_tokens = [token.lower() for token in article["cleaned_content_entities_parsed"][entity_key]]
 
         entity_vector = vectorize_tokens(entity_tokens, fast_text)
         semantic_distance = cosine(quote_vector, entity_vector)
