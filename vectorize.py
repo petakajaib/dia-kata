@@ -105,10 +105,10 @@ if __name__ == '__main__':
 
     print("loading fasttext models")
     print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
 
     print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
 
     fast_text_models = {
         "en": en_fasttext,
