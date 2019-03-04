@@ -290,9 +290,9 @@ if __name__ == '__main__':
 
         print("{} of {}        ".format(idx, total_entry))
 
-        entity_distance = get_entity_to_quote_distance(entry)
-        print("entity_distance", entity_distance.shape)
-        relative_entity_distance = get_relative_entity_position_vector(entry)
-        print("relative_entity_distance", relative_entity_distance)
+        entity_position = get_entity_position_vector(entry)
+        print("entity_position", entity_position.shape)
+        relative_entity_position = get_relative_entity_position_vector(entry)
+        print("relative_entity_position", relative_entity_position)
 
         raise ValueError("boom!")
