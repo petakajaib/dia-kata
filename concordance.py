@@ -53,15 +53,20 @@ for entry in label:
                         for idx in indices:
                             flattened_indices.append(idx)
 
-                    for indices in combinations(flattened_indices, 3):
-                        sorted_indices = sorted(indices)
+                    if len(entity_tokens) == 1:
+                        print("indices": flattened_indices)
+                    elif len(entity_tokens) > 1:
 
-                        diff_1 = abs(sorted_indices[0]-sorted_indices[1])
-                        diff_2 = abs(sorted_indices[1]-sorted_indices[2])
+                        for indices in combinations(flattened_indices, len(entity_tokens)):
+                            sorted_indices = sorted(indices)
+                            diffs = []
 
+                            for idx in range(0, len(entity_tokens)-1):
+                                diffs.append(abs(sorted_indices[idx]-sorted_indices[idx+1]))
 
-                        if diff_1 == 1 and diff_2 == 1:
-                            print("indices", indices)
+                            if sum(diffs) == len(diffs):
+                                print("indices", indices)
+                                
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
                 #     begin_match, end_match = span
