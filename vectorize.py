@@ -86,18 +86,19 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
 if __name__ == '__main__':
 
 
-    print("loading fasttext models")
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    # print("loading fasttext models")
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    #
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
 
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY)
-
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
-
+    fast_text_models = {}
     vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
 
 
