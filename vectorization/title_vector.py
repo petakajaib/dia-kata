@@ -78,7 +78,7 @@ def get_title_vector(entry, enriched_collection):
 
         entity_tokens = [t.lower() for t in cleaned_content_entities_parsed[entity_key]]
 
-        vec.append(jensenshannon_topic(lda, dictionary, tokens_1, tokens_2))
+        vec.append(jensenshannon_topic(lda, dictionary, title_tokens, entity_tokens))
 
 
     return np.array(vec)
