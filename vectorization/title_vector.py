@@ -1,4 +1,5 @@
 import numpy as np
+from .utils import vectorize_tokens
 
 def set_intersection(list_1, list_2):
 
