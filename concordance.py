@@ -64,7 +64,13 @@ for entry in label:
                             for idx in range(0, len(entity_tokens)-1):
                                 diffs.append(abs(sorted_indices[idx]-sorted_indices[idx+1]))
 
-                            if sum(diffs) == len(diffs):
+                            all_is_one = True
+
+                            for diff in diffs:
+                                if diff != 1:
+                                    all_is_one = False
+
+                            if all_is_one:
                                 list_indices.append(sorted_indices)
 
                         print("list_indices", list_indices)
