@@ -17,8 +17,12 @@ def get_quote_vector(entry, fast_text_models, enriched_collection):
 
     db_tokens = [t.lower() for t in article["cleaned_content_tokens"]]
 
-    assert db_tokens == tokens
-
+    try:
+        assert db_tokens == tokens
+    except AssertionError as err:
+        print(tokens)
+        print(db_tokens)
+        raise err
     quote_vectors = []
 
     for talker in entry["talker"]:
@@ -28,8 +32,12 @@ def get_quote_vector(entry, fast_text_models, enriched_collection):
         entity_key = talker["entity"].lower().replace(".", "DOT")
         db_entity_tokens = [token.lower() for token in article["cleaned_content_entities_parsed"]]
 
-        assert entity_tokens == db_entity_tokens
-
+        try:
+            assert entity_tokens == db_entity_tokens
+        except AssertionError as err:
+            print(entity_tokens)
+            print(db_entity_tokens)
+            raise err
         entity_vector = vectorize_tokens(entity_tokens, fast_text)
         semantic_distance = cosine(quote_vector, entity_vector)
 
