@@ -8,7 +8,7 @@ def get_token_count(cleaned_content_tokens, token):
 
     count = 0
 
-    for content_token in content_tokens:
+    for content_token in cleaned_content_tokens:
 
         if content_token == token:
             count  += 1
