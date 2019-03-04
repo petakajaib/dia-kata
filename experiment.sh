@@ -1,2 +1,2 @@
-python vectorization.py
+python vectorize.py
 python modelling.py
