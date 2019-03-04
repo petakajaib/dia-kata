@@ -1,8 +1,8 @@
 import numpy as np
 from .entity_position_vector import get_entity_position_vector
 
-def get_relative_entity_position_vector(entry):
-    entity_position = get_entity_position_vector(entry)
+def get_relative_entity_position_vector(entry, enriched_collection):
+    entity_position = get_entity_position_vector(entry, enriched_collection)
 
     sorted_map = {}
     for idx, elem in enumerate(sorted(set(entity_position))):
