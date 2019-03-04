@@ -1,11 +1,14 @@
 import numpy as np
 
-def jaccard_divergence(list_1, list_2):
+def set_intersection(list_1, list_2):
 
     set_1 = set(list_1)
     set_2 = set(list_2)
 
-    return len(set_1.intersection(set_2))/len(set_1.union(set_2))
+    if set_1.intersection(set_2):
+        return 1
+    else:
+        return 0
 
 def get_title_vector(entry, enriched_collection):
 
@@ -20,7 +23,33 @@ def get_title_vector(entry, enriched_collection):
 
         entity_tokens = [t.lower() for t in cleaned_content_entities_parsed[entity_key]]
 
-        vec.append(jaccard_divergence(title_tokens, entity_tokens))
+        vec.append(set_intersection(title_tokens, entity_tokens))
 
 
     return np.array(vec)
+
+def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
+
+    article = enriched_collection.find_one({"url": entry["source"]})
+
+    fast_text = fast_text_models[entry["language"]]
+
+    cleaned_quote = get_cleaned_content(entry["quote"])
+    parsed = Text(cleaned_quote)
+
+    tokens = [str(token).lower() for token in parsed.tokens]
+
+    quote_vectors = []
+
+    for talker in entry["talker"]:
+        quote_vector = vectorize_tokens(tokens, fast_text)
+
+        entity_key = talker["entity"].lower().replace(".", "DOT")
+        entity_tokens = [token.lower() for token in article["cleaned_content_entities_parsed"][entity_key]]
+
+        entity_vector = vectorize_tokens(entity_tokens, fast_text)
+        semantic_distance = cosine(quote_vector, entity_vector)
+
+        quote_vectors.append(semantic_distance)
+
+    return np.array(quote_vectors)
