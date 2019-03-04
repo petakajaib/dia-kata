@@ -34,7 +34,7 @@ def get_quote_position(entry, enriched_collection):
     print("db lowered_parsed_content get_quote_position", [t.lower() for t in article["cleaned_content_tokens"]])
     parsed_quote = parse_text(quote.lower())
 
-    quote_position = get_text_position(lowered_parsed_content, parsed_quote, enriched_collection)
+    quote_position = get_text_position(lowered_parsed_content, parsed_quote)
 
     return quote_position
 
