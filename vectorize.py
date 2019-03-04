@@ -27,12 +27,12 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_entity_position_vector(entry, enriched_collection),
         get_relative_frequency_ranking_vector(entry, enriched_collection),
         get_relative_entity_position_vector(entry, enriched_collection),
-        get_quote_vector(entry, fast_text_models, enriched_collection),
+        # get_quote_vector(entry, fast_text_models, enriched_collection),
         get_is_person_vector(entry, enriched_collection),
         get_is_location_vector(entry, enriched_collection),
         get_is_organization_vector(entry, enriched_collection),
-        get_title_relative_vector(entry, enriched_collection),
-        get_title_similarity_relative_vector(entry, fast_text_models, enriched_collection)
+        # get_title_relative_vector(entry, enriched_collection),
+        # get_title_similarity_relative_vector(entry, fast_text_models, enriched_collection)
     ]
 
     # for vec in get_quote_vector(entry, fast_text_models):
