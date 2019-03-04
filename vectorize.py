@@ -99,7 +99,7 @@ if __name__ == '__main__':
     #     "ms": ms_fasttext
     # }
 
-
+    fast_text_models = {}
     client = MongoClient()
     db = client[MONGO_DB]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
