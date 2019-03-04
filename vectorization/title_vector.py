@@ -1,4 +1,5 @@
 import numpy as np
+from polyglot.text import Text
 from scipy.spatial.distance import cosine, jensenshannon
 from gensim.corpora.dictionary import Dictionary
 from gensim.models.ldamodel import LdaModel
@@ -57,6 +58,32 @@ def set_intersection(list_1, list_2):
         return 1
     else:
         return 0
+
+def get_quote_topic_vector(entry, enriched_collection):
+
+    article = enriched_collection.find_one({"url": entry["source"]})
+
+    lda, dictionary = create_topic_model(article["lowered_content"])
+
+    quote_tokens = [str(t).lower() for t in Text(entry["quote"]).tokens]
+
+    vec = []
+
+    cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
+
+    for talker in entry["talker"]:
+        entity_key = talker["entity"].lower().replace(".", "DOT")
+
+        for splitted in entity_key.split("DOT"):
+            if cleaned_content_entities_parsed.get(splitted):
+                entity_key = splitted
+
+        entity_tokens = [t.lower() for t in cleaned_content_entities_parsed[entity_key]]
+
+        vec.append(jensenshannon_topic(lda, dictionary, quote_tokens, entity_tokens))
+
+
+    return np.array(vec)
 
 def get_title_vector(entry, enriched_collection):
 

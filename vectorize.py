@@ -16,6 +16,7 @@ from vectorization import (
     get_is_organization_vector,
     get_title_relative_vector,
     get_title_vector,
+    get_quote_topic_vector,
     get_title_similarity_vector,
     get_title_similarity_relative_vector,
     get_distance_of_entity_to_quote_relative_vector
@@ -35,9 +36,10 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_is_person_vector(entry, enriched_collection),
         get_is_location_vector(entry, enriched_collection),
         get_is_organization_vector(entry, enriched_collection),
-        # get_title_vector(entry, enriched_collection),
+        get_title_vector(entry, enriched_collection),
         # get_title_relative_vector(entry, enriched_collection),
         get_quote_vector(entry, fast_text_models, enriched_collection),
+        get_quote_topic_vector(entry, enriched_collection),
         # get_quote_relative_vector(entry, fast_text_models, enriched_collection),
         get_title_similarity_vector(entry, fast_text_models, enriched_collection)
     ]
