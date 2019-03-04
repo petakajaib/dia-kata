@@ -12,7 +12,7 @@ enriched_collection = db[MONGO_COLLECTION_ENRICHED]
 
 label = json.load(open(LABELED_DATA_PATH))
 
-concordance = {}
+concordance_aggregate = {}
 
 for entry in label:
 
@@ -106,9 +106,9 @@ for entry in label:
                             # print("tokens", tokens)
                             print("concordance:", concordance)
 
-                            concordance[entity["entity"]] = {
+                            concordance_aggregate[entity["entity"]] = {
                                 "entity_tokens": entity_tokens,
                                 "concordance": concordance
                             }
 
-json.dump(concordance, open("data/concordance.json", "w"), indent=4)
+json.dump(concordance_aggregate, open("data/concordance.json", "w"), indent=4)
