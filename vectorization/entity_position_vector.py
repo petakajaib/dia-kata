@@ -9,7 +9,7 @@ def get_entity_position_vector(entry, enriched_collection):
 
     parsed_content = parse_text(lowered_cleaned_content)
 
-    db_parsed_content [t.lower() for t in article["cleaned_content_tokens"]]
+    db_parsed_content = [t.lower() for t in article["cleaned_content_tokens"]]
 
     assert parsed_content == db_parsed_content
 
