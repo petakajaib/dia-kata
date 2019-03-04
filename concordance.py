@@ -1,4 +1,5 @@
 import json
+import re
 from pymongo import MongoClient
 from nltk import word_tokenize, sent_tokenize
 from settings import *
@@ -23,7 +24,23 @@ for entry in label:
 
         entity_key = entity["entity"].lower()
 
+        print("entity_key\n====")
         if entity["correct"]:
 
             for sentence in sentences:
-                if entity_key in sentence:
+
+                for match in re.finditer(entity_key, sentence):
+                    span = match.span()
+                    begin_match, end_match = span
+
+                    len_sentence = len(sentence)
+
+                    begin = abs(begin_match - 20)
+                    end = end_match + 20
+
+                    if end > len_sentence:
+                        end = len_sentence
+
+                    print(sentence[begin:end])
+
+        print("====")
