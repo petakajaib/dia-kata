@@ -87,19 +87,19 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 if __name__ == '__main__':
 
 
-    # print("loading fasttext models")
-    # print("en")
-    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
-    #
-    # print("ms")
-    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
-    #
-    # fast_text_models = {
-    #     "en": en_fasttext,
-    #     "ms": ms_fasttext
-    # }
+    print("loading fasttext models")
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
 
-    fast_text_models = {}
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY)
+
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
+
+    # fast_text_models = {}
     client = MongoClient()
     db = client[MONGO_DB]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
