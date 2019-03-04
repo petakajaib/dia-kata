@@ -50,7 +50,7 @@ def vectorize_target(entry):
 
     return target_vector.reshape(target_vector.shape[0], 1)
 
-def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
+def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriched_collection):
 
     labelled_data = json.load(open(preprocessed_path))
 
@@ -63,7 +63,7 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
 
         print("{} of {}        ".format(idx, total_entry))
 
-        feature_vector = vectorize_feature(entry, fast_text_models)
+        feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
         target_vector = vectorize_target(entry)
 
         if not len(target_vector):
