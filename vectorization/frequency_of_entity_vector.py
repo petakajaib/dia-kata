@@ -1,5 +1,6 @@
 from polyglot.text import Text
 import numpy as np
+from .utils import parse_text
 
 def get_token_count(cleaned_content_tokens, token):
 
