@@ -13,15 +13,15 @@ from vectorization import (
 from settings import *
 
 
-def vectorize_feature(entry, fast_text_models):
+def vectorize_feature(entry, fast_text_models, enriched_collection):
 
     vecs = [
-        get_distance_of_entity_to_quote_vector(entry),
-        get_frequency_of_entity_vector(entry),
-        get_entity_position_vector(entry),
-        get_relative_frequency_ranking_vector(entry),
-        get_relative_entity_position_vector(entry),
-        get_quote_vector(entry, fast_text_models)
+        get_distance_of_entity_to_quote_vector(entry, enriched_collection),
+        # get_frequency_of_entity_vector(entry),
+        # get_entity_position_vector(entry),
+        # get_relative_frequency_ranking_vector(entry),
+        # get_relative_entity_position_vector(entry),
+        # get_quote_vector(entry, fast_text_models)
     ]
 
     # for vec in get_quote_vector(entry, fast_text_models):
@@ -86,19 +86,23 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
 if __name__ == '__main__':
 
 
-    print("loading fasttext models")
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    # print("loading fasttext models")
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    #
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
 
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY)
 
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
-    
-    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
+    client = MongoClient()
+    db = client[MONGO_DB]
+    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models, enriched_collection)
 
 
     # labelled_data = json.load(open(PREPROCESSED_PATH))
