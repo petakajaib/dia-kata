@@ -19,29 +19,45 @@ for entry in label:
     article = enriched_collection.find_one({"url": url})
 
     content = article["cleaned_content"]
-
+    cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
     sentences = sent_tokenize(content)
 
     for entity in entry["talker"]:
 
-        entity_key = entity["entity"].lower()
+        entity_key = entity["entity"].lower().replace(".", "DOT")
 
+        entity_tokens = cleaned_content_entities_parsed[entity_key]
 
         if entity["correct"]:
 
             for sentence in sentences:
 
-                for match in re.finditer(entity_key, sentence):
-                    span = match.span()
-                    begin_match, end_match = span
+                tokens = word_tokenize(sentence.lower())
 
-                    len_sentence = len(sentence)
 
-                    begin = abs(begin_match - 20)
-                    end = end_match + 20
+                all_in = True
 
-                    if end > len_sentence:
-                        end = len_sentence
+                for entity_token in entity_tokens:
+                    if entity_token not in tokens:
+                        all_in = False
 
-                    print(entity_key)
-                    print(sentence[begin:end])
+                if all_in:
+                    print(entity_tokens)
+                    print(token)
+                    for entity_token in entity_tokens:
+                        indices = [i for i, x in enumerate(tokens) if x == entity_token]
+                        print("indices", indices)
+                # for match in re.finditer(entity_key, sentence):
+                #     span = match.span()
+                #     begin_match, end_match = span
+                #
+                #     len_sentence = len(sentence)
+
+                    # begin = abs(begin_match - 20)
+                    # end = end_match + 20
+                    #
+                    # if end > len_sentence:
+                    #     end = len_sentence
+
+                    # print(entity_key)
+                    # print(sentence[begin:end])
