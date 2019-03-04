@@ -56,7 +56,7 @@ for entry in label:
                     if len(entity_tokens) == 1:
                         print("indices:", flattened_indices)
                     elif len(entity_tokens) > 1:
-
+                        list_indices = []
                         for indices in combinations(flattened_indices, len(entity_tokens)):
                             sorted_indices = sorted(indices)
                             diffs = []
@@ -65,7 +65,9 @@ for entry in label:
                                 diffs.append(abs(sorted_indices[idx]-sorted_indices[idx+1]))
 
                             if sum(diffs) == len(diffs):
-                                print("indices", sorted_indices)
+                                list_indices.append(sorted_indices)
+
+                        print("list_indices", list_indices)
 
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
