@@ -43,8 +43,7 @@ for entry in label:
                         all_in = False
 
                 if all_in:
-                    print("entity_tokens", entity_tokens)
-                    print("tokens", tokens)
+
 
                     flattened_indices = []
                     for entity_token in entity_tokens:
@@ -53,8 +52,11 @@ for entry in label:
                         for idx in indices:
                             flattened_indices.append(idx)
 
+                    matched_indices = None
+
                     if len(entity_tokens) == 1:
-                        print("indices:", flattened_indices)
+                        # print("indices:", flattened_indices)
+                        matched_indices = flattened_indices
                     elif len(entity_tokens) > 1:
                         list_indices = []
                         for indices in combinations(flattened_indices, len(entity_tokens)):
@@ -73,7 +75,37 @@ for entry in label:
                             if all_is_one:
                                 list_indices.append(sorted_indices)
 
-                        print("list_indices", list(set([tuple(l)for l in list_indices])))
+                        # print("list_indices", list(set([tuple(l)for l in list_indices])))
+                        matched_indices = list_indices
+
+                    if matched_indices:
+
+                        for idx in matched_indices:
+
+                            if type(idx) == int:
+                                begin_idx = idx - 5
+                                if begin_idx < 0:
+                                    begin_idx = 0
+
+                                end_idx = idx + 5
+                                if end_idx > len(tokens):
+                                    end_idx = len(tokens)
+
+                                concordance = tokens[begin_idx:end_idx]
+
+                            elif type(idx) == tuple:
+                                begin_idx = idx[0] - 5
+                                if begin_idx < 0:
+                                    begin_idx = 0
+
+                                end_idx = idx[-1] + 5
+                                if end_idx > len(tokens):
+                                    end_idx = len(tokens)
+
+                                concordance = tokens[begin_idx:end_idx]
+                            print("entity_tokens", entity_tokens)
+                            # print("tokens", tokens)
+                            print("concordance": concordance)
 
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
