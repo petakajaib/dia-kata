@@ -23,7 +23,7 @@ from settings import *
 def vectorize_feature(entry, fast_text_models, enriched_collection):
 
     vecs = [
-        # get_distance_of_entity_to_quote_vector(entry, enriched_collection),
+        get_distance_of_entity_to_quote_vector(entry, enriched_collection),
         get_distance_of_entity_to_quote_relative_vector(entry, enriched_collection),
         # get_frequency_of_entity_vector(entry, enriched_collection),
         # get_entity_position_vector(entry, enriched_collection),
