@@ -1,6 +1,6 @@
+from itertools import combinations
 import json
 import re
-from itertools import combinations
 from pymongo import MongoClient
 from nltk import word_tokenize, sent_tokenize
 from settings import *
@@ -55,7 +55,6 @@ for entry in label:
                     matched_indices = None
 
                     if len(entity_tokens) == 1:
-                        # print("indices:", flattened_indices)
                         matched_indices = flattened_indices
                     elif len(entity_tokens) > 1:
                         list_indices = []
@@ -75,7 +74,6 @@ for entry in label:
                             if all_is_one:
                                 list_indices.append(sorted_indices)
 
-                        # print("list_indices", list(set([tuple(l)for l in list_indices])))
                         matched_indices = list(set([tuple(l)for l in list_indices]))
 
                     if matched_indices:
@@ -108,17 +106,9 @@ for entry in label:
                             # print("tokens", tokens)
                             print("concordance:", concordance)
 
-                # for match in re.finditer(entity_key, sentence):
-                #     span = match.span()
-                #     begin_match, end_match = span
-                #
-                #     len_sentence = len(sentence)
+                            concordance[entity["entity"]] = {
+                                "entity_tokens": entity_tokens,
+                                "concordance": concordance
+                            }
 
-                    # begin = abs(begin_match - 20)
-                    # end = end_match + 20
-                    #
-                    # if end > len_sentence:
-                    #     end = len_sentence
-
-                    # print(entity_key)
-                    # print(sentence[begin:end])
+json.dump(concordance, open("data/concordance.json", "w"), indent=4)
