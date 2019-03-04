@@ -37,7 +37,7 @@ def jensenshannon_topic(lda, dictionary, tokens_1, tokens_2):
     for idx, prob in lda[bow_2]:
         arr_2[idx] = prob
 
-    return jensenshannon(arr_1, arr_2)
+    return cosine(arr_1, arr_2)
 
 def create_topic_model(content):
     raw_corpus = group_tokens(word_tokenize(content), 5)
