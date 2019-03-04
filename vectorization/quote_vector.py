@@ -38,7 +38,7 @@ def get_quote_relative_vector(entry, fast_text_models, enriched_collection):
         sorted_map[elem] = idx
 
     arr_relative = []
-    for elem in entity_position:
+    for elem in quote_sim:
         relative = sorted_map[elem]
         if relative == 0:
             arr_relative.append(1)
