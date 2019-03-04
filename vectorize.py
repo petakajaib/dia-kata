@@ -12,7 +12,8 @@ from vectorization import (
     get_quote_vector,
     get_is_person_vector,
     get_is_location_vector,
-    get_is_organization_vector
+    get_is_organization_vector,
+    get_title_vector
 )
 from settings import *
 
@@ -28,7 +29,8 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_quote_vector(entry, fast_text_models, enriched_collection),
         get_is_person_vector(entry, enriched_collection),
         get_is_location_vector(entry, enriched_collection),
-        get_is_organization_vector(entry, enriched_collection)
+        get_is_organization_vector(entry, enriched_collection),
+        get_title_vector(entry, enriched_collection)
     ]
 
     # for vec in get_quote_vector(entry, fast_text_models):
