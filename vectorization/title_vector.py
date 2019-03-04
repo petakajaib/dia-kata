@@ -4,10 +4,15 @@ from .utils import vectorize_tokens
 
 def set_intersection(list_1, list_2):
 
-    set_1 = set(list_1)
-    set_2 = set(list_2)
+    # set_1 = set(list_1)
+    # set_2 = set(list_2)
+    #
+    # return len(set_1.intersection(set_2))/len(set_1.union(set_2))
 
-    return len(set_1.intersection(set_2))/len(set_1.union(set_2))
+    if len(set_1.intersection(set_2)) > 0:
+        return 1
+    else:
+        return 0
 
 def get_title_vector(entry, enriched_collection):
 
@@ -20,7 +25,13 @@ def get_title_vector(entry, enriched_collection):
     for talker in entry["talker"]:
         entity_key = talker["entity"].lower().replace(".", "DOT")
 
+        for splitted in entity_key.split("DOT"):
+            if cleaned_content_entities_parsed.get(splitted):
+                entity_key = splitted
+
         entity_tokens = [t.lower() for t in cleaned_content_entities_parsed[entity_key]]
+
+
 
         vec.append(set_intersection(title_tokens, entity_tokens))
 
@@ -32,7 +43,7 @@ def get_title_relative_vector(entry, enriched_collection):
     divergence = get_title_vector(entry, enriched_collection)
 
     sorted_map = {}
-    for idx, elem in enumerate(sorted(set(divergence))):
+    for idx, elem in enumerate(sorted(set(divergence), reverse=True)):
         sorted_map[elem] = idx
 
     arr_relative = []
