@@ -103,9 +103,9 @@ for entry in label:
                                     end_idx = len(tokens)
 
                                 concordance = tokens[begin_idx:end_idx]
-                            print("entity_tokens", entity_tokens)
+                            print("entity_tokens:", entity_tokens)
                             # print("tokens", tokens)
-                            print("concordance": concordance)
+                            print("concordance:", concordance)
 
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
