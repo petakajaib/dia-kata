@@ -44,7 +44,7 @@ def get_distance_of_entity_to_quote_vector(entry, enriched_collection):
 
     article = enriched_collection.find_one({"url": entry["source"]})
 
-    quote_position = get_quote_position(entry)
+    quote_position = get_quote_position(entry, enriched_collection)
     content = entry["cleaned_content"]
     lowered_content = content.lower()
     lowered_parsed_content = parse_text(lowered_content)
@@ -56,7 +56,7 @@ def get_distance_of_entity_to_quote_vector(entry, enriched_collection):
     vector = []
 
     for talker in entry["talker"]:
-        distance_of_entity_to_quote = get_entity_to_quote_distance(talker["entity"], quote_position, lowered_parsed_content)
+        distance_of_entity_to_quote = get_entity_to_quote_distance(talker["entity"], quote_position, lowered_parsed_content, enriched_collection)
         vector.append(distance_of_entity_to_quote)
 
     return np.array(vector)
