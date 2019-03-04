@@ -39,7 +39,7 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_title_vector(entry, enriched_collection),
         # get_title_relative_vector(entry, enriched_collection),
         get_quote_vector(entry, fast_text_models, enriched_collection),
-        get_quote_topic_vector(entry, enriched_collection),
+        # get_quote_topic_vector(entry, enriched_collection),
         # get_quote_relative_vector(entry, fast_text_models, enriched_collection),
         get_title_similarity_vector(entry, fast_text_models, enriched_collection)
     ]
