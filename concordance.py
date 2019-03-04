@@ -65,7 +65,7 @@ for entry in label:
                                 diffs.append(abs(sorted_indices[idx]-sorted_indices[idx+1]))
 
                             if sum(diffs) == len(diffs):
-                                print("indices", indices)
+                                print("indices", sorted_indices)
 
                 # for match in re.finditer(entity_key, sentence):
                 #     span = match.span()
