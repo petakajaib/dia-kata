@@ -35,18 +35,17 @@ def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
 
     fast_text = fast_text_models[entry["language"]]
 
+    title_vector = vectorize_tokens(title_tokens, fast_text)
 
     title_sim_vectors = []
 
     for talker in entry["talker"]:
-        quote_vector = vectorize_tokens(tokens, fast_text)
 
         entity_key = talker["entity"].lower().replace(".", "DOT")
         entity_tokens = [token.lower() for token in article["cleaned_content_entities_parsed"][entity_key]]
-
         entity_vector = vectorize_tokens(entity_tokens, fast_text)
-        semantic_distance = cosine(quote_vector, entity_vector)
+        semantic_distance = cosine(title_vector, entity_vector)
 
-        quote_vectors.append(semantic_distance)
+        title_sim_vectors.append(semantic_distance)
 
     return np.array(title_sim_vectors)
