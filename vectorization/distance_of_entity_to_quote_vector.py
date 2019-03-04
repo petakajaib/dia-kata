@@ -56,7 +56,7 @@ def get_distance_of_entity_to_quote_relative_vector(entry, enriched_collection):
     divergence = get_distance_of_entity_to_quote_vector(entry, enriched_collection)
 
     sorted_map = {}
-    for idx, elem in enumerate(sorted(set(divergence))):
+    for idx, elem in enumerate(sorted(set(divergence), reverse=True)):
         sorted_map[elem] = idx
 
     arr_relative = []
