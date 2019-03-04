@@ -16,8 +16,13 @@ X_EN_TALKER = "../modelling_vectors/talking-bad-and-good/x_en_talker.npy"
 Y_EN_TALKER = "../modelling_vectors/talking-bad-and-good/y_en_talker.npy"
 X_EN_TALKED_ABOUT = "../modelling_vectors/talking-bad-and-good/x_en_talked_about.npy"
 Y_EN_TALKED_ABOUT = "../modelling_vectors/talking-bad-and-good/y_en_talked_about.npy"
-FASTTEXT_ENGLISH = "../fast_text_models/talking-bad-and-good-models/fasttext_english"
-FASTTEXT_MALAY = "../fast_text_models/talking-bad-and-good-models/fasttext_malay"
+
+# FASTTEXT_ENGLISH = "../fast_text_models/talking-bad-and-good-models/fasttext_english"
+# FASTTEXT_MALAY = "../fast_text_models/talking-bad-and-good-models/fasttext_malay"
+
+FASTTEXT_ENGLISH = "../fast_text_models/english_1_wiki_initialized"
+FASTTEXT_MALAY = "../fast_text_models/lowered_stop_words_removed_wiki_initialized"
+
 MALAY_STOPWORD = "malay_stopwords.txt"
 
 SENTIMENT_MODEL_EN = "../xgboost-models/sentiment_en.pickle"
