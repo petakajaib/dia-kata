@@ -1,6 +1,50 @@
 import numpy as np
-from scipy.spatial.distance import cosine
+from scipy.spatial.distance import cosine, jensenshannon
+from gensim.corpora.dictionary import Dictionary
+from gensim.models.ldamodel import LdaModel
+from nltk import sent_tokenize, word_tokenize
 from .utils import vectorize_tokens
+
+def group_tokens(tokens, length):
+    grouped = []
+    subgroup = []
+    for t in tokens:
+        if len(subgroup) < 3:
+            subgroup.append(t)
+        else:
+            grouped.append(subgroup)
+            subgroup = []
+
+    if subgroup:
+        grouped.append(subgroup)
+
+    return grouped
+
+def jensenshannon_topic(lda, dictionary, tokens_1, tokens_2):
+
+    bow_1 = dictionary.doc2bow(tokens_1)
+    bow_2 = dictionary.doc2bow(tokens_2)
+
+    topic_2 = lda[bow_2]
+
+    arr_1 = np.zeros(10)
+    arr_2 = np.zeros(10)
+
+    for idx, prob in lda[bow_1]:
+        arr_1[idx] = prob
+
+    for idx, prob in lda[bow_2]:
+        arr_2[idx] = prob
+
+    return jensenshannon(arr_1, arr_2)
+
+def create_topic_model(content):
+    raw_corpus = group_tokens(word_tokenize(content), 5)
+    dictionary = Dictionary(documents=raw_corpus)
+    corpus = [dictionary.doc2bow(text) for text in raw_corpus]
+    lda = LdaModel(corpus, num_topics=10)
+
+    return lda, dictionary
 
 def set_intersection(list_1, list_2):
 
@@ -17,6 +61,9 @@ def set_intersection(list_1, list_2):
 def get_title_vector(entry, enriched_collection):
 
     article = enriched_collection.find_one({"url": entry["source"]})
+
+    lda, dictionary = create_topic_model(article["lowered_content"])
+
     title_tokens = article["lowered_title_tokens"]
     vec = []
 
@@ -31,9 +78,7 @@ def get_title_vector(entry, enriched_collection):
 
         entity_tokens = [t.lower() for t in cleaned_content_entities_parsed[entity_key]]
 
-
-
-        vec.append(set_intersection(title_tokens, entity_tokens))
+        vec.append(jensenshannon_topic(lda, dictionary, tokens_1, tokens_2))
 
 
     return np.array(vec)

@@ -34,7 +34,7 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_is_person_vector(entry, enriched_collection),
         get_is_location_vector(entry, enriched_collection),
         get_is_organization_vector(entry, enriched_collection),
-        # get_title_vector(entry, enriched_collection),
+        get_title_vector(entry, enriched_collection),
         # get_quote_vector(entry, fast_text_models, enriched_collection),
         # get_quote_relative_vector(entry, fast_text_models, enriched_collection),
         # get_title_relative_vector(entry, enriched_collection),
@@ -103,19 +103,19 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 if __name__ == '__main__':
 
 
-    print("loading fasttext models")
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+    # print("loading fasttext models")
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+    #
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
 
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
-
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
-
-    # fast_text_models = {}
+    fast_text_models = {}
     client = MongoClient()
     db = client[MONGO_DB]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
