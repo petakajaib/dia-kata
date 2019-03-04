@@ -42,8 +42,8 @@ for entry in label:
                         all_in = False
 
                 if all_in:
-                    print(entity_tokens)
-                    print(token)
+                    print("entity_tokens", entity_tokens)
+                    print("tokens", tokens)
                     for entity_token in entity_tokens:
                         indices = [i for i, x in enumerate(tokens) if x == entity_token]
                         print("indices", indices)
