@@ -7,10 +7,7 @@ def set_intersection(list_1, list_2):
     set_1 = set(list_1)
     set_2 = set(list_2)
 
-    if set_1.intersection(set_2):
-        return 1
-    else:
-        return 0
+    return len(set_1.intersection(set_2))/len(set_1.union(set_2))
 
 def get_title_vector(entry, enriched_collection):
 
@@ -29,6 +26,24 @@ def get_title_vector(entry, enriched_collection):
 
 
     return np.array(vec)
+
+
+def get_title_relative_vector(entry, enriched_collection):
+    divergence = get_title_vector(entry, enriched_collection)
+
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(divergence))):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in divergence:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
 
 def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
 
@@ -51,3 +66,20 @@ def get_title_similarity_vector(entry, fast_text_models, enriched_collection):
         title_sim_vectors.append(semantic_distance)
 
     return np.array(title_sim_vectors)
+
+def get_title_similarity_relative_vector(entry, fast_text_models, enriched_collection):
+    divergence = get_title_similarity_vector(entry, fast_text_models, enriched_collection)
+
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(divergence))):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in divergence:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
