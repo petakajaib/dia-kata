@@ -263,36 +263,34 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models):
 
 if __name__ == '__main__':
 
-    fast_text_models = {}
 
-    # print("loading fasttext models")
-    # print("en")
-    # en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+    print("loading fasttext models")
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH)
+
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY)
+
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
+
+    vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
+
+
+    # labelled_data = json.load(open(PREPROCESSED_PATH))
     #
-    # print("ms")
-    # ms_fasttext = FastText.load(FASTTEXT_MALAY)
+    # feature_vectors = []
+    # target_vectors = []
     #
-    # fast_text_models = {
-    #     "en": en_fasttext,
-    #     "ms": ms_fasttext
-    # }
+    # total_entry = len(labelled_data)
     #
-    # vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models)
-
-    labelled_data = json.load(open(PREPROCESSED_PATH))
-
-    feature_vectors = []
-    target_vectors = []
-
-    total_entry = len(labelled_data)
-
-    for idx, entry in enumerate(labelled_data):
-
-        print("{} of {}        ".format(idx, total_entry))
-
-        entity_position = get_entity_position_vector(entry)
-        print("entity_position", entity_position.shape)
-        relative_entity_position = get_relative_entity_position_vector(entry)
-        print("relative_entity_position", relative_entity_position)
-
-        raise ValueError("boom!")
+    # for idx, entry in enumerate(labelled_data):
+    #
+    #     print("{} of {}        ".format(idx, total_entry))
+    #
+    #     entity_position = get_entity_position_vector(entry)
+    #     relative_entity_position = get_relative_entity_position_vector(entry)
+    #
+    #     raise ValueError("boom!")
