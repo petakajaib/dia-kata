@@ -11,6 +11,8 @@ enriched_collection = db[MONGO_COLLECTION_ENRICHED]
 
 label = json.load(open(LABELED_DATA_PATH))
 
+concordance = {}
+
 for entry in label:
 
     url = entry["source"]
@@ -24,7 +26,7 @@ for entry in label:
 
         entity_key = entity["entity"].lower()
 
-        print("entity_key\n====")
+
         if entity["correct"]:
 
             for sentence in sentences:
@@ -41,6 +43,5 @@ for entry in label:
                     if end > len_sentence:
                         end = len_sentence
 
+                    print(entity_key)
                     print(sentence[begin:end])
-
-        print("====")
