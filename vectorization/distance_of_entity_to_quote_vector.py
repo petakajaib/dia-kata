@@ -39,7 +39,7 @@ def get_distance_of_entity_to_quote_vector(entry, enriched_collection):
     article = enriched_collection.find_one({"url": entry["source"]})
     cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
     quote_position = get_quote_position(entry, enriched_collection)
-    
+
     lowered_parsed_content = [t.lower() for t in article["cleaned_content_tokens"]]
 
 
@@ -50,3 +50,21 @@ def get_distance_of_entity_to_quote_vector(entry, enriched_collection):
         vector.append(distance_of_entity_to_quote)
 
     return np.array(vector)
+
+def get_distance_of_entity_to_quote_relative_vector(entry, enriched_collection):
+
+    divergence = get_distance_of_entity_to_quote_vector(entry, enriched_collection)
+
+    sorted_map = {}
+    for idx, elem in enumerate(sorted(set(divergence))):
+        sorted_map[elem] = idx
+
+    arr_relative = []
+    for elem in divergence:
+        relative = sorted_map[elem]
+        if relative == 0:
+            arr_relative.append(1)
+        else:
+            arr_relative.append(1/relative)
+
+    return np.array(arr_relative)
