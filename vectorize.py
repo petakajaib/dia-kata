@@ -61,7 +61,7 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 
     for idx, entry in enumerate(labelled_data):
 
-        print("{} of {}        ".format(idx, total_entry))
+        print("{} of {}        ".format(idx, total_entry), end="\r")
 
         feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
         target_vector = vectorize_target(entry)
