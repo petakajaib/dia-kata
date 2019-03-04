@@ -81,7 +81,7 @@ for entry in label:
                     if matched_indices:
 
                         for idx in matched_indices:
-
+                            print("idx in matched_indices", idx)
                             if type(idx) == int:
                                 begin_idx = idx - 5
                                 if begin_idx < 0:
