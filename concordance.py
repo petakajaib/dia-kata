@@ -94,6 +94,8 @@ for entry in label:
                                 concordance = tokens[begin_idx:end_idx]
 
                             elif type(idx) == tuple:
+
+                                print("tuple indices", idx)
                                 begin_idx = idx[0] - 5
                                 if begin_idx < 0:
                                     begin_idx = 0
