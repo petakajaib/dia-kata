@@ -4,8 +4,8 @@ from .utils import vectorize_tokens
 
 def set_intersection(list_1, list_2):
 
-    # set_1 = set(list_1)
-    # set_2 = set(list_2)
+    set_1 = set(list_1)
+    set_2 = set(list_2)
     #
     # return len(set_1.intersection(set_2))/len(set_1.union(set_2))
 
