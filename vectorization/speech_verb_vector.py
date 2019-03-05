@@ -26,7 +26,7 @@ def get_speech_verb_vector(entry, enriched_collection):
     vec = []
 
     for entity in entry["talker"]:
-        entity_key = entity.lower().replace(".", "DOT")
+        entity_key = entity["entity"].lower().replace(".", "DOT")
 
         entity_tokens = cleaned_content_entities_parsed[entity_key]
         speech_verb = 0
