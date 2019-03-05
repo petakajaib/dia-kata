@@ -1,3 +1,21 @@
+def filter_candidates(x, y, sorting_column=1, n=10):
+
+    index_map = {}
+    for idx, x_row in enumerate(x):
+        index_map[tuple(x_row)] = idx
+
+    sorted_x_vec = []
+    sorted_y_vec = []
+    for key in sorted(index_map.keys(), key=lambda x: x[sorting_column], reverse=True):
+
+        sorted_x_vec.append(x[index_map[key]])
+        sorted_y_vec.append(y[index_map[key]])
+
+    x_arr = np.array(sorted_x_vec[:n])
+    y_arr = np.array(sorted_y_vec[:n])
+
+    return x_arr, y_arr
+
 def get_max_vals(feature_vectors):
     feature_vectors_stacked = np.vstack(feature_vectors)
 

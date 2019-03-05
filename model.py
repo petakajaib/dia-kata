@@ -37,24 +37,6 @@ def evaluate_single_extraction(prediction, truth):
     else:
         return 0
 
-def filter_candidates(x, y, sorting_column=1, n=10):
-
-    index_map = {}
-    for idx, x_row in enumerate(x):
-        index_map[tuple(x_row)] = idx
-
-    sorted_x_vec = []
-    sorted_y_vec = []
-    for key in sorted(index_map.keys(), key=lambda x: x[sorting_column], reverse=True):
-
-        sorted_x_vec.append(x[index_map[key]])
-        sorted_y_vec.append(y[index_map[key]])
-
-    x_arr = np.array(sorted_x_vec[:n])
-    y_arr = np.array(sorted_y_vec[:n])
-
-    return x_arr, y_arr
-
 vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
 
 feature_vectors = vectorized_data["feature_vectors"]
@@ -75,11 +57,6 @@ clf.fit(x_train_stacked, y_reshaped)
 predictions = []
 
 for x_test_section, y_test_section in zip(x_test, y_test):
-
-    # filtered_x_test_section, filtered_y_test_section = filter_candidates(x_test_section, y_test_section)
-    #
-    # y_prediction = clf.predict(filtered_x_test_section)
-    # y_test_reshaped = filtered_y_test_section.reshape(filtered_y_test_section.shape[0])
 
     y_prediction = clf.predict(x_test_section)
     y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
