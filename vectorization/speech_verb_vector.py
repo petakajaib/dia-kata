@@ -17,7 +17,7 @@ def get_speech_verb_vector(entry, enriched_collection):
     grouped_sentences = []
 
     for i in range(len(sentences_str)):
-        grouped_sentences.append(chain(*sentences_str[i:i+8]))
+        grouped_sentences.append(chain(*sentences_str[i:i+6]))
 
     vec = []
 
