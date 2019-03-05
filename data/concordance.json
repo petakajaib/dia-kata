@@ -1,0 +1,9191 @@
+{
+    "Onghansen": {
+        "entity_tokens": [
+            "onghansen"
+        ],
+        "concordance": [
+            "according",
+            "to",
+            "onghansen",
+            ",",
+            "a",
+            "survey",
+            "revealed"
+        ]
+    },
+    "Onghanseng": {
+        "entity_tokens": [
+            "onghanseng"
+        ],
+        "concordance": [
+            "onghanseng",
+            "added",
+            "that",
+            "companies",
+            "could"
+        ]
+    },
+    "Dustin Onghanseng": {
+        "entity_tokens": [
+            "dustin",
+            "onghanseng"
+        ],
+        "concordance": [
+            "uhoo",
+            "co-founder",
+            "and",
+            "ceo",
+            "dustin",
+            "onghanseng",
+            "said",
+            "sick",
+            "building",
+            "syndrome"
+        ]
+    },
+    "Uhoo": {
+        "entity_tokens": [
+            "uhoo"
+        ],
+        "concordance": [
+            "research",
+            "and",
+            "development",
+            "agreement",
+            "with",
+            "uhoo",
+            "international",
+            ",",
+            "which",
+            "will"
+        ]
+    },
+    "Dr Felix Tongkul": {
+        "entity_tokens": [
+            "dr",
+            "felix",
+            "tongkul"
+        ],
+        "concordance": [
+            "universiti",
+            "malaysia",
+            "sabah",
+            "geologist",
+            ",",
+            "dr",
+            "felix",
+            "tongkul",
+            ",",
+            "who",
+            "happened",
+            "to"
+        ]
+    },
+    "Md Derick": {
+        "entity_tokens": [
+            "md",
+            "derick"
+        ],
+        "concordance": [
+            "for",
+            "business",
+            "discussions",
+            ",",
+            "''",
+            "md",
+            "derick",
+            "said",
+            "."
+        ]
+    },
+    "Md Derick Basir": {
+        "entity_tokens": [
+            "md",
+            "derick",
+            "basir"
+        ],
+        "concordance": [
+            "bhd",
+            "(",
+            "satssb",
+            ")",
+            "ceo",
+            "md",
+            "derick",
+            "basir",
+            "said",
+            "the",
+            "growth",
+            "was"
+        ]
+    },
+    "Airport": {
+        "entity_tokens": [
+            "airport"
+        ],
+        "concordance": [
+            "it",
+            "is",
+            "not",
+            "just",
+            "'an",
+            "airport",
+            "'",
+            "for",
+            "travelling",
+            "passengers"
+        ]
+    },
+    "Asia Pacific Regional Airport": {
+        "entity_tokens": [
+            "asia",
+            "pacific",
+            "regional",
+            "airport"
+        ],
+        "concordance": [
+            "international",
+            "airport",
+            "was",
+            "awarded",
+            "``",
+            "asia",
+            "pacific",
+            "regional",
+            "airport",
+            "of",
+            "the",
+            "year",
+            "2018"
+        ]
+    },
+    "Senai International": {
+        "entity_tokens": [
+            "senai",
+            "international"
+        ],
+        "concordance": [
+            "recently",
+            ",",
+            "senai",
+            "international",
+            "airport",
+            "was",
+            "awarded",
+            "``"
+        ]
+    },
+    "Senai": {
+        "entity_tokens": [
+            "senai"
+        ],
+        "concordance": [
+            "recently",
+            ",",
+            "senai",
+            "international",
+            "airport",
+            "was",
+            "awarded"
+        ]
+    },
+    "Datuk Seri Gopal Sri Ram": {
+        "entity_tokens": [
+            "datuk",
+            "seri",
+            "gopal",
+            "sri",
+            "ram"
+        ],
+        "concordance": [
+            "the",
+            "prosecution",
+            ",",
+            "led",
+            "by",
+            "datuk",
+            "seri",
+            "gopal",
+            "sri",
+            "ram",
+            ",",
+            "had",
+            "earlier",
+            "sought"
+        ]
+    },
+    "Maarof": {
+        "entity_tokens": [
+            "maarof"
+        ],
+        "concordance": [
+            "gombak",
+            ",",
+            "asisten",
+            "komisioner",
+            "samsor",
+            "maarof",
+            "berkata",
+            ",",
+            "ujian",
+            "air"
+        ]
+    },
+    "Dr Mahathir": {
+        "entity_tokens": [
+            "dr",
+            "mahathir"
+        ],
+        "concordance": [
+            "sementara",
+            "itu",
+            ",",
+            "dr",
+            "mahathir",
+            "berkata",
+            "sprm",
+            "boleh",
+            "membuka"
+        ]
+    },
+    "Mahathir": {
+        "entity_tokens": [
+            "mahathir"
+        ],
+        "concordance": [
+            "sementara",
+            "itu",
+            ",",
+            "mahathir",
+            "berkata",
+            "sprm",
+            "akan",
+            "menyiasat"
+        ]
+    },
+    "Malaysia": {
+        "entity_tokens": [
+            "malaysia"
+        ],
+        "concordance": [
+            "to",
+            "the",
+            "alphabetical",
+            "proximity",
+            "of",
+            "malaysia",
+            "and",
+            "myanmar",
+            "."
+        ]
+    },
+    "Tun Dr Mahathir Mohamad .": {
+        "entity_tokens": [
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamad",
+            "."
+        ],
+        "concordance": [
+            "depan",
+            ",",
+            "kata",
+            "perdana",
+            "menteri",
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamad",
+            "."
+        ]
+    },
+    "Jaroslaw Gowin": {
+        "entity_tokens": [
+            "jaroslaw",
+            "gowin"
+        ],
+        "concordance": [
+            "kaczynski",
+            "cancelled",
+            "the",
+            "appearance.education",
+            "minister",
+            "jaroslaw",
+            "gowin",
+            "said",
+            "in",
+            "a",
+            "speech"
+        ]
+    },
+    "Rina": {
+        "entity_tokens": [
+            "rina"
+        ],
+        "concordance": [
+            "rina",
+            "diminta",
+            "mengulas",
+            "desakan",
+            "pelbagai"
+        ]
+    },
+    "Nasharudin": {
+        "entity_tokens": [
+            "nasharudin"
+        ],
+        "concordance": [
+            "sementara",
+            "itu",
+            ",",
+            "nasharudin",
+            "berkata",
+            ",",
+            "beliau",
+            "memberi"
+        ]
+    },
+    "Raihan Che Mat": {
+        "entity_tokens": [
+            "raihan",
+            "che",
+            "mat"
+        ],
+        "concordance": [
+            "dan",
+            "penyelamat",
+            "seremban",
+            "2",
+            ",",
+            "raihan",
+            "che",
+            "mat",
+            "berkata",
+            ",",
+            "empat",
+            "mangsa"
+        ]
+    },
+    "Riad Asmat": {
+        "entity_tokens": [
+            "riad",
+            "asmat"
+        ],
+        "concordance": [
+            "mahb",
+            ")",
+            ".airasia",
+            "malaysia",
+            "ceo",
+            "riad",
+            "asmat",
+            "said",
+            "mahb",
+            "had",
+            "argued"
+        ]
+    },
+    "Francisco Tezen": {
+        "entity_tokens": [
+            "francisco",
+            "tezen"
+        ],
+        "concordance": [
+            "families",
+            "into",
+            "poverty",
+            ",",
+            "said",
+            "francisco",
+            "tezen",
+            ",",
+            "head",
+            "of",
+            "development"
+        ]
+    },
+    "Safura": {
+        "entity_tokens": [
+            "safura"
+        ],
+        "concordance": [
+            "yang",
+            "berlangsung",
+            "malam",
+            "tadi",
+            "menyaksikan",
+            "safura",
+            "menjadi",
+            "bintang",
+            "pertama",
+            "yang"
+        ]
+    },
+    "Chan": {
+        "entity_tokens": [
+            "chan"
+        ],
+        "concordance": [
+            "unethical",
+            "profiteering",
+            ",",
+            "he",
+            "said.mr",
+            "chan",
+            "added",
+            "that",
+            "there",
+            "is"
+        ]
+    },
+    "Said.Mr Chan": {
+        "entity_tokens": [
+            "said.mr",
+            "chan"
+        ],
+        "concordance": [
+            "any",
+            "unethical",
+            "profiteering",
+            ",",
+            "he",
+            "said.mr",
+            "chan",
+            "added",
+            "that",
+            "there",
+            "is"
+        ]
+    },
+    "Mr Chan": {
+        "entity_tokens": [
+            "mr",
+            "chan"
+        ],
+        "concordance": [
+            "makes",
+            "economic",
+            "sense",
+            ",",
+            "''",
+            "mr",
+            "chan",
+            "said.singapore",
+            "should",
+            "also",
+            "maintain"
+        ]
+    },
+    "Mr Chan Said.Singapore": {
+        "entity_tokens": [
+            "mr",
+            "chan",
+            "said.singapore"
+        ],
+        "concordance": [
+            "makes",
+            "economic",
+            "sense",
+            ",",
+            "''",
+            "mr",
+            "chan",
+            "said.singapore",
+            "should",
+            "also",
+            "maintain",
+            "a"
+        ]
+    },
+    "Industry Chan Chun Sing.He": {
+        "entity_tokens": [
+            "industry",
+            "chan",
+            "chun",
+            "sing.he"
+        ],
+        "concordance": [
+            "to",
+            "minister",
+            "for",
+            "trade",
+            "and",
+            "industry",
+            "chan",
+            "chun",
+            "sing.he",
+            "revealed",
+            "this",
+            "in",
+            "a"
+        ]
+    },
+    "Wilayah": {
+        "entity_tokens": [
+            "wilayah"
+        ],
+        "concordance": [
+            "``",
+            "saya",
+            "nasihatkan",
+            "menteri",
+            "wilayah",
+            "supaya",
+            "dapatkan",
+            "penasihat",
+            "bertaraf"
+        ]
+    },
+    "Persekutuan": {
+        "entity_tokens": [
+            "persekutuan"
+        ],
+        "concordance": [
+            "dan",
+            "bazirkan",
+            "duit",
+            "yayasan",
+            "wilayah",
+            "persekutuan",
+            "?"
+        ]
+    },
+    "Wilayah Persekutuan": {
+        "entity_tokens": [
+            "wilayah",
+            "persekutuan"
+        ],
+        "concordance": [
+            "kroni",
+            "dan",
+            "bazirkan",
+            "duit",
+            "yayasan",
+            "wilayah",
+            "persekutuan",
+            "?"
+        ]
+    },
+    "Wilayah Persekutuan Kuala Lumpur": {
+        "entity_tokens": [
+            "wilayah",
+            "persekutuan",
+            "kuala",
+            "lumpur"
+        ],
+        "concordance": [
+            "dan",
+            "pejabat",
+            "kerajaan",
+            "di",
+            "sekitar",
+            "wilayah",
+            "persekutuan",
+            "kuala",
+            "lumpur",
+            ",",
+            "putrajaya",
+            "dan",
+            "labuan"
+        ]
+    },
+    "Razlan": {
+        "entity_tokens": [
+            "razlan"
+        ],
+        "concordance": [
+            "razlan",
+            "yang",
+            "juga",
+            "bekas",
+            "ketua"
+        ]
+    },
+    "Mohd Razlan": {
+        "entity_tokens": [
+            "mohd",
+            "razlan"
+        ],
+        "concordance": [
+            "pemimpin",
+            "umno",
+            "tempatan",
+            ",",
+            "datuk",
+            "mohd",
+            "razlan",
+            "rafii",
+            "."
+        ]
+    },
+    "Umno": {
+        "entity_tokens": [
+            "umno"
+        ],
+        "concordance": [
+            "berkenaan",
+            "dan",
+            "itulah",
+            "juga",
+            "pendirian",
+            "umno",
+            "sejak",
+            "penubuhannya",
+            ",",
+            "''"
+        ]
+    },
+    "Bersatu": {
+        "entity_tokens": [
+            "bersatu"
+        ],
+        "concordance": [
+            "presiden",
+            "bersatu",
+            ",",
+            "tan",
+            "sri",
+            "muhyiddin"
+        ]
+    },
+    "Said.Muhyiddin": {
+        "entity_tokens": [
+            "said.muhyiddin"
+        ],
+        "concordance": [
+            "each",
+            "other",
+            ",",
+            "''",
+            "he",
+            "said.muhyiddin",
+            "also",
+            "urged",
+            "bersatu",
+            "'s"
+        ]
+    },
+    "Muhyiddin Yassin": {
+        "entity_tokens": [
+            "muhyiddin",
+            "yassin"
+        ],
+        "concordance": [
+            "dalam",
+            "negeri",
+            ",",
+            "tan",
+            "sri",
+            "muhyiddin",
+            "yassin",
+            ",",
+            "pemansuhan",
+            "akta-akta",
+            "pencegahan"
+        ]
+    },
+    "Muhyiddin": {
+        "entity_tokens": [
+            "muhyiddin"
+        ],
+        "concordance": [
+            "dalam",
+            "pada",
+            "itu",
+            "muhyiddin",
+            "menambah",
+            ",",
+            "rata-rata",
+            "umum"
+        ]
+    },
+    "Emma": {
+        "entity_tokens": [
+            "emma"
+        ],
+        "concordance": [
+            "yang",
+            "mengatakan",
+            "dia",
+            "sama",
+            "seperti",
+            "emma",
+            "berpakaian",
+            "seksi",
+            "ketika",
+            "berada"
+        ]
+    },
+    "Najib": {
+        "entity_tokens": [
+            "najib"
+        ],
+        "concordance": [
+            "another",
+            "political",
+            "retardation",
+            "or",
+            "as",
+            "najib",
+            "trolled",
+            ",",
+            "stupidity",
+            "?"
+        ]
+    },
+    "Najib Trolled": {
+        "entity_tokens": [
+            "najib",
+            "trolled"
+        ],
+        "concordance": [
+            "another",
+            "political",
+            "retardation",
+            "or",
+            "as",
+            "najib",
+            "trolled",
+            ",",
+            "stupidity",
+            "?"
+        ]
+    },
+    "Menteri Hal Ehwal Najib Atau": {
+        "entity_tokens": [
+            "menteri",
+            "hal",
+            "ehwal",
+            "najib",
+            "atau"
+        ],
+        "concordance": [
+            "``",
+            "apa",
+            "komen",
+            "dari",
+            "menteri",
+            "hal",
+            "ehwal",
+            "najib",
+            "atau",
+            "anak",
+            "dia",
+            "?",
+            "''"
+        ]
+    },
+    "Kps": {
+        "entity_tokens": [
+            "kps"
+        ],
+        "concordance": [
+            "does",
+            "not",
+            "require",
+            "approval",
+            "from",
+            "kps",
+            "shareholders",
+            "."
+        ]
+    },
+    "Ahmad Fariz Hassan": {
+        "entity_tokens": [
+            "ahmad",
+            "fariz",
+            "hassan"
+        ],
+        "concordance": [
+            "kps",
+            "ceo",
+            "ahmad",
+            "fariz",
+            "hassan",
+            "(",
+            "picture",
+            ")",
+            "said"
+        ]
+    },
+    "Megat Zaharuddin Megat": {
+        "entity_tokens": [
+            "megat",
+            "zaharuddin",
+            "megat"
+        ],
+        "concordance": [
+            ",",
+            "kata",
+            "pengerusi",
+            "tan",
+            "sri",
+            "megat",
+            "zaharuddin",
+            "megat",
+            "mohd",
+            "nor",
+            "."
+        ]
+    },
+    "Nor .": {
+        "entity_tokens": [
+            "nor",
+            "."
+        ],
+        "concordance": [
+            "sri",
+            "megat",
+            "zaharuddin",
+            "megat",
+            "mohd",
+            "nor",
+            "."
+        ]
+    },
+    "Felda": {
+        "entity_tokens": [
+            "felda"
+        ],
+        "concordance": [
+            "luar",
+            "majlis",
+            "konvokesyen",
+            "kolej",
+            "yayasan",
+            "felda",
+            "di",
+            "sini",
+            "hari",
+            "ini"
+        ]
+    },
+    "Pas Muhammad Khalid Abdul Hadi": {
+        "entity_tokens": [
+            "pas",
+            "muhammad",
+            "khalid",
+            "abdul",
+            "hadi"
+        ],
+        "concordance": [
+            "prk",
+            "cameron",
+            "|",
+            "ketua",
+            "pemuda",
+            "pas",
+            "muhammad",
+            "khalid",
+            "abdul",
+            "hadi",
+            "berkata",
+            "kedua-dua",
+            "partinya",
+            "dan"
+        ]
+    },
+    "Maharaja Akihito": {
+        "entity_tokens": [
+            "maharaja",
+            "akihito"
+        ],
+        "concordance": [
+            "the",
+            "paulownia",
+            "flowers",
+            "''",
+            "daripada",
+            "maharaja",
+            "akihito",
+            "dari",
+            "jepun",
+            "."
+        ]
+    },
+    "Tun Openg": {
+        "entity_tokens": [
+            "tun",
+            "openg"
+        ],
+        "concordance": [
+            "menteri",
+            "datuk",
+            "patinggi",
+            "abang",
+            "johari",
+            "tun",
+            "openg",
+            "berkata",
+            ",",
+            "ia",
+            "kerana"
+        ]
+    },
+    "Johor Southern Tigers": {
+        "entity_tokens": [
+            "johor",
+            "southern",
+            "tigers"
+        ],
+        "concordance": [
+            ",",
+            "''",
+            "katanya",
+            "menerusi",
+            "facebook",
+            "johor",
+            "southern",
+            "tigers",
+            "."
+        ]
+    },
+    "Johor Southern": {
+        "entity_tokens": [
+            "johor",
+            "southern"
+        ],
+        "concordance": [
+            ",",
+            "''",
+            "katanya",
+            "menerusi",
+            "facebook",
+            "johor",
+            "southern",
+            "tigers",
+            "."
+        ]
+    },
+    "Johor Darul Ta'Zim": {
+        "entity_tokens": [
+            "johor",
+            "darul",
+            "ta'zim"
+        ],
+        "concordance": [
+            "\u2013",
+            "juara",
+            "liga",
+            "super",
+            ",",
+            "johor",
+            "darul",
+            "ta'zim",
+            "(",
+            "jdt",
+            ")",
+            "menepis"
+        ]
+    },
+    "Samsung": {
+        "entity_tokens": [
+            "samsung"
+        ],
+        "concordance": [
+            "all",
+            "of",
+            "that",
+            "is",
+            "affecting",
+            "samsung",
+            ",",
+            "''",
+            "said",
+            "eo"
+        ]
+    },
+    "Samsung Electronics": {
+        "entity_tokens": [
+            "samsung",
+            "electronics"
+        ],
+        "concordance": [
+            "08:30am",
+            ")",
+            "bookmark",
+            "seoul",
+            ":",
+            "samsung",
+            "electronics",
+            "co",
+            "ltd",
+            "warned",
+            "of"
+        ]
+    },
+    "Samsung Electronics Co": {
+        "entity_tokens": [
+            "samsung",
+            "electronics",
+            "co"
+        ],
+        "concordance": [
+            "08:30am",
+            ")",
+            "bookmark",
+            "seoul",
+            ":",
+            "samsung",
+            "electronics",
+            "co",
+            "ltd",
+            "warned",
+            "of",
+            "weaker"
+        ]
+    },
+    "Tough.Samsung": {
+        "entity_tokens": [
+            "tough.samsung"
+        ],
+        "concordance": [
+            "makers",
+            "have",
+            "been",
+            "doing",
+            "it",
+            "tough.samsung",
+            "said",
+            "memory",
+            "demand",
+            "was"
+        ]
+    },
+    "Hsbc": {
+        "entity_tokens": [
+            "hsbc"
+        ],
+        "concordance": [
+            "the",
+            "app",
+            "will",
+            "provide",
+            "hsbc",
+            "customers",
+            "with",
+            "a",
+            "real-time"
+        ]
+    },
+    "Bank": {
+        "entity_tokens": [
+            "bank"
+        ],
+        "concordance": [
+            "the",
+            "bank",
+            "said",
+            "transferring",
+            "all",
+            "of"
+        ]
+    },
+    "Ajay": {
+        "entity_tokens": [
+            "ajay"
+        ],
+        "concordance": [
+            "more",
+            "efficiently",
+            "worldwide",
+            ",",
+            "''",
+            "ajay",
+            "added",
+            "."
+        ]
+    },
+    "Hsbc Bank Malaysia Bhd": {
+        "entity_tokens": [
+            "hsbc",
+            "bank",
+            "malaysia",
+            "bhd"
+        ],
+        "concordance": [
+            "pic",
+            "by",
+            "ismail",
+            "che",
+            "rus",
+            "hsbc",
+            "bank",
+            "malaysia",
+            "bhd",
+            "has",
+            "been",
+            "engaging",
+            "with"
+        ]
+    },
+    "Ajay Sharma": {
+        "entity_tokens": [
+            "ajay",
+            "sharma"
+        ],
+        "concordance": [
+            "global",
+            "trade",
+            "and",
+            "receivables",
+            "finance",
+            "ajay",
+            "sharma",
+            "said",
+            "bank",
+            "negara",
+            "malaysia"
+        ]
+    },
+    "Chua": {
+        "entity_tokens": [
+            "chua"
+        ],
+        "concordance": [
+            "chua",
+            "added",
+            ":",
+            "``",
+            "the"
+        ]
+    },
+    "Faizal": {
+        "entity_tokens": [
+            "faizal"
+        ],
+        "concordance": [
+            "faizal",
+            "is",
+            "the",
+            "assemblyman",
+            "for"
+        ]
+    },
+    "Menteri Besar": {
+        "entity_tokens": [
+            "menteri",
+            "besar"
+        ],
+        "concordance": [
+            "the",
+            "menteri",
+            "besar",
+            "said",
+            "a",
+            "workshop",
+            "would"
+        ]
+    },
+    "Ahmad Faizal Azumu": {
+        "entity_tokens": [
+            "ahmad",
+            "faizal",
+            "azumu"
+        ],
+        "concordance": [
+            ")",
+            "\u2013",
+            "perak",
+            "menteri",
+            "besar",
+            "ahmad",
+            "faizal",
+            "azumu",
+            "today",
+            "expressed",
+            "disappointment",
+            "in"
+        ]
+    },
+    "\u2013 Perak Menteri Besar Ahmad Faizal Azumu": {
+        "entity_tokens": [
+            "\u2013",
+            "perak",
+            "menteri",
+            "besar",
+            "ahmad",
+            "faizal",
+            "azumu"
+        ],
+        "concordance": [
+            "(",
+            "fmt",
+            ")",
+            "\u2013",
+            "perak",
+            "menteri",
+            "besar",
+            "ahmad",
+            "faizal",
+            "azumu",
+            "today",
+            "expressed",
+            "disappointment",
+            "in"
+        ]
+    },
+    "\u2013 Perak Menteri Besar": {
+        "entity_tokens": [
+            "\u2013",
+            "perak",
+            "menteri",
+            "besar"
+        ],
+        "concordance": [
+            "(",
+            "fmt",
+            ")",
+            "\u2013",
+            "perak",
+            "menteri",
+            "besar",
+            "ahmad",
+            "faizal",
+            "azumu",
+            "today"
+        ]
+    },
+    "Pdrm": {
+        "entity_tokens": [
+            "pdrm"
+        ],
+        "concordance": [
+            "mesyuarat",
+            "bersama",
+            "agensi",
+            "kerajaan",
+            "dan",
+            "pdrm",
+            ",",
+            "semalam",
+            "."
+        ]
+    },
+    "Diraja Malaysia": {
+        "entity_tokens": [
+            "diraja",
+            "malaysia"
+        ],
+        "concordance": [
+            "kuala",
+            "lumpur",
+            "\u2013",
+            "polis",
+            "diraja",
+            "malaysia",
+            "(",
+            "pdrm",
+            ")",
+            "akan"
+        ]
+    },
+    "Fuzi Harun": {
+        "entity_tokens": [
+            "fuzi",
+            "harun"
+        ],
+        "concordance": [
+            "kpn",
+            ")",
+            ",",
+            "tan",
+            "sri",
+            "fuzi",
+            "harun",
+            "berkata",
+            ",",
+            "seperti",
+            "biasa"
+        ]
+    },
+    "Azihal": {
+        "entity_tokens": [
+            "azihal"
+        ],
+        "concordance": [
+            "hasanah",
+            "atau",
+            "facebook",
+            "pu",
+            "umar",
+            "azihal",
+            "bangsawan",
+            "atau",
+            "menyalurkan",
+            "sumbangan"
+        ]
+    },
+    "Yan": {
+        "entity_tokens": [
+            "yan"
+        ],
+        "concordance": [
+            "yan",
+            "returned",
+            "to",
+            "taiwan",
+            "from"
+        ]
+    },
+    "Aaron Yan": {
+        "entity_tokens": [
+            "aaron",
+            "yan"
+        ],
+        "concordance": [
+            ">",
+            "taiwanese",
+            "artiste",
+            "aaron",
+            "yan",
+            "apologised",
+            "for",
+            "not",
+            "handling"
+        ]
+    },
+    "Madrim": {
+        "entity_tokens": [
+            "madrim"
+        ],
+        "concordance": [
+            "madrim",
+            "berkata",
+            ",",
+            "setakat",
+            "26"
+        ]
+    },
+    "Kastam Diraja Malaysia": {
+        "entity_tokens": [
+            "kastam",
+            "diraja",
+            "malaysia"
+        ],
+        "concordance": [
+            "rm1.4",
+            "juta",
+            "berjaya",
+            "dirampas",
+            "jabatan",
+            "kastam",
+            "diraja",
+            "malaysia",
+            "(",
+            "jkdm",
+            ")",
+            "zon"
+        ]
+    },
+    "Tasan": {
+        "entity_tokens": [
+            "tasan"
+        ],
+        "concordance": [
+            "kastam",
+            "zon",
+            "sabah",
+            "datuk",
+            "madrim",
+            "tasan",
+            "berkata",
+            ",",
+            "serbuan",
+            "sekitar"
+        ]
+    },
+    "Perancis": {
+        "entity_tokens": [
+            "perancis"
+        ],
+        "concordance": [
+            ",",
+            "kepulauan",
+            "british",
+            "berhampiran",
+            "perairan",
+            "perancis",
+            ",",
+            "berkata",
+            "juruterbang",
+            "pesawat"
+        ]
+    },
+    "Phillip Tarr": {
+        "entity_tokens": [
+            "phillip",
+            "tarr"
+        ],
+        "concordance": [
+            "children",
+            ",",
+            "''",
+            "said",
+            "co-author",
+            "phillip",
+            "tarr",
+            ",",
+            "a",
+            "professor",
+            "of"
+        ]
+    },
+    "New England": {
+        "entity_tokens": [
+            "new",
+            "england"
+        ],
+        "concordance": [
+            "-",
+            "were",
+            "published",
+            "in",
+            "the",
+            "new",
+            "england",
+            "journal",
+            "of",
+            "medicine",
+            "."
+        ]
+    },
+    "Rafizi": {
+        "entity_tokens": [
+            "rafizi"
+        ],
+        "concordance": [
+            "rafizi",
+            "also",
+            "reminded",
+            "pkr",
+            "leaders"
+        ]
+    },
+    "Rafizi Ramli": {
+        "entity_tokens": [
+            "rafizi",
+            "ramli"
+        ],
+        "concordance": [
+            "media",
+            "sosial",
+            "''",
+            ".namun",
+            ",",
+            "rafizi",
+            "ramli",
+            "berkata",
+            "bekas",
+            "perdana",
+            "menteri"
+        ]
+    },
+    "Magdalene": {
+        "entity_tokens": [
+            "magdalene"
+        ],
+        "concordance": [
+            "due",
+            "to",
+            "high",
+            "prices.according",
+            "to",
+            "magdalene",
+            ",",
+            "procurement",
+            "regulations",
+            "meant"
+        ]
+    },
+    "Magdalene Said.Some": {
+        "entity_tokens": [
+            "magdalene",
+            "said.some"
+        ],
+        "concordance": [
+            "pills",
+            "from",
+            "the",
+            "fund",
+            ",",
+            "magdalene",
+            "said.some",
+            "patients",
+            ",",
+            "however",
+            ","
+        ]
+    },
+    "Health Ministry Data.Engko Sosialine Magdalene": {
+        "entity_tokens": [
+            "health",
+            "ministry",
+            "data.engko",
+            "sosialine",
+            "magdalene"
+        ],
+        "concordance": [
+            "last",
+            "year",
+            ",",
+            "according",
+            "to",
+            "health",
+            "ministry",
+            "data.engko",
+            "sosialine",
+            "magdalene",
+            ",",
+            "director",
+            "general",
+            "of"
+        ]
+    },
+    "Phee Boon Poh": {
+        "entity_tokens": [
+            "phee",
+            "boon",
+            "poh"
+        ],
+        "concordance": [
+            "when",
+            "state",
+            "environment",
+            "committee",
+            "chairman",
+            "phee",
+            "boon",
+            "poh",
+            "stood",
+            "up",
+            "and",
+            "asked"
+        ]
+    },
+    "Phee": {
+        "entity_tokens": [
+            "phee"
+        ],
+        "concordance": [
+            "be",
+            "quickly",
+            "taken",
+            ",",
+            "''",
+            "phee",
+            "said",
+            "."
+        ]
+    },
+    "Muhamad Yusoff": {
+        "entity_tokens": [
+            "muhamad",
+            "yusoff"
+        ],
+        "concordance": [
+            "muhamad",
+            "yusoff",
+            "took",
+            "the",
+            "floor",
+            "again"
+        ]
+    },
+    "Muhamad Yusoff Mohd Noor": {
+        "entity_tokens": [
+            "muhamad",
+            "yusoff",
+            "mohd",
+            "noor"
+        ],
+        "concordance": [
+            "opposition",
+            "leader",
+            "muhamad",
+            "yusoff",
+            "mohd",
+            "noor",
+            "(",
+            "bn-sungai",
+            "dua",
+            ")"
+        ]
+    },
+    "Miri": {
+        "entity_tokens": [
+            "miri"
+        ],
+        "concordance": [
+            "dibawa",
+            "ke",
+            "balai",
+            "polis",
+            "pusat",
+            "miri",
+            "untuk",
+            "siasatan",
+            "lanjut",
+            "."
+        ]
+    },
+    "Niah": {
+        "entity_tokens": [
+            "niah"
+        ],
+        "concordance": [
+            "polis",
+            "dari",
+            "balai",
+            "polis",
+            "batu",
+            "niah",
+            "kira-kira",
+            "jam",
+            "9",
+            "malam"
+        ]
+    },
+    "Isaac": {
+        "entity_tokens": [
+            "isaac"
+        ],
+        "concordance": [
+            "semoga",
+            "isaac",
+            "terus",
+            "maju",
+            "dan",
+            "mengharumkan"
+        ]
+    },
+    "Amin": {
+        "entity_tokens": [
+            "amin"
+        ],
+        "concordance": [
+            "jefferey",
+            "amin",
+            ",",
+            "petisyen",
+            "mendesak",
+            "presiden"
+        ]
+    },
+    "Hamid": {
+        "entity_tokens": [
+            "hamid"
+        ],
+        "concordance": [
+            "ialah",
+            "datuk",
+            "mohd",
+            "hairul",
+            "abdul",
+            "hamid",
+            "yang",
+            "dilantik",
+            "sebagai",
+            "ketua"
+        ]
+    },
+    "Annuar Musa": {
+        "entity_tokens": [
+            "annuar",
+            "musa"
+        ],
+        "concordance": [
+            "tanah",
+            "rata",
+            "-",
+            "umno",
+            "secretary-general",
+            "annuar",
+            "musa",
+            "questions",
+            "whether",
+            "the",
+            "current"
+        ]
+    },
+    "Annuar": {
+        "entity_tokens": [
+            "annuar"
+        ],
+        "concordance": [
+            "can",
+            "not",
+            "be",
+            "changed",
+            ",",
+            "annuar",
+            "said",
+            ",",
+            "so",
+            "as"
+        ]
+    },
+    "Carole Ghosn": {
+        "entity_tokens": [
+            "carole",
+            "ghosn"
+        ],
+        "concordance": [
+            "that",
+            "could",
+            "last",
+            "months",
+            ",",
+            "carole",
+            "ghosn",
+            "claimed",
+            "in",
+            "the",
+            "letter"
+        ]
+    },
+    "Zahid": {
+        "entity_tokens": [
+            "zahid"
+        ],
+        "concordance": [
+            "meanwhile",
+            ",",
+            "zahid",
+            "said",
+            "that",
+            "it",
+            "is"
+        ]
+    },
+    "Seri Dr Ahmad Zahid Hamidi": {
+        "entity_tokens": [
+            "seri",
+            "dr",
+            "ahmad",
+            "zahid",
+            "hamidi"
+        ],
+        "concordance": [
+            "kuala",
+            "lumpur",
+            ":",
+            "datuk",
+            "seri",
+            "dr",
+            "ahmad",
+            "zahid",
+            "hamidi",
+            "(",
+            "pic",
+            ")",
+            "says"
+        ]
+    },
+    "Pompeo": {
+        "entity_tokens": [
+            "pompeo"
+        ],
+        "concordance": [
+            "mohamed",
+            "al-hakim",
+            ",",
+            "speaking",
+            "after",
+            "pompeo",
+            ",",
+            "called",
+            "on",
+            "countries"
+        ]
+    },
+    "Mike Pompeo": {
+        "entity_tokens": [
+            "mike",
+            "pompeo"
+        ],
+        "concordance": [
+            "us",
+            "secretary",
+            "of",
+            "state",
+            "mike",
+            "pompeo",
+            "on",
+            "wednesday",
+            "reassured",
+            "coalition"
+        ]
+    },
+    "Dr Wan Azizah": {
+        "entity_tokens": [
+            "dr",
+            "wan",
+            "azizah"
+        ],
+        "concordance": [
+            "from",
+            "the",
+            "central",
+            "bank",
+            ",",
+            "dr",
+            "wan",
+            "azizah",
+            "said",
+            "while",
+            "the",
+            "percentage"
+        ]
+    },
+    "Datuk Seri Dr Wan Azizah Wan Ismail": {
+        "entity_tokens": [
+            "datuk",
+            "seri",
+            "dr",
+            "wan",
+            "azizah",
+            "wan",
+            "ismail"
+        ],
+        "concordance": [
+            "prime",
+            "minister",
+            "(",
+            "dpm",
+            ")",
+            "datuk",
+            "seri",
+            "dr",
+            "wan",
+            "azizah",
+            "wan",
+            "ismail",
+            "."
+        ]
+    },
+    "Jasin": {
+        "entity_tokens": [
+            "jasin"
+        ],
+        "concordance": [
+            "kadir",
+            "jasin",
+            "."
+        ]
+    },
+    "Kadir": {
+        "entity_tokens": [
+            "kadir"
+        ],
+        "concordance": [
+            "'",
+            "wish",
+            ",",
+            "''",
+            "said",
+            "kadir",
+            "."
+        ]
+    },
+    "Emery": {
+        "entity_tokens": [
+            "emery"
+        ],
+        "concordance": [
+            "with",
+            "good",
+            "performance",
+            ",",
+            "''",
+            "emery",
+            "said",
+            "."
+        ]
+    },
+    "Unai Emery": {
+        "entity_tokens": [
+            "unai",
+            "emery"
+        ],
+        "concordance": [
+            "afp",
+            "pic",
+            ")",
+            "london",
+            ":",
+            "unai",
+            "emery",
+            "insists",
+            "he",
+            "wo",
+            "n't"
+        ]
+    },
+    "Syahredzan Johan": {
+        "entity_tokens": [
+            "syahredzan",
+            "johan"
+        ],
+        "concordance": [
+            "kit",
+            "siang",
+            "'s",
+            "political",
+            "secretary",
+            "syahredzan",
+            "johan",
+            "has",
+            "urged",
+            "all",
+            "parties"
+        ]
+    },
+    "Syahredzan": {
+        "entity_tokens": [
+            "syahredzan"
+        ],
+        "concordance": [
+            "has",
+            "long",
+            "passed",
+            ",",
+            "''",
+            "syahredzan",
+            "said.yesterday",
+            ",",
+            "lawyer",
+            "haniff"
+        ]
+    },
+    "Yusoff": {
+        "entity_tokens": [
+            "yusoff"
+        ],
+        "concordance": [
+            ")",
+            ",",
+            "mohd",
+            "rofik",
+            "mohd",
+            "yusoff",
+            "bercakap",
+            "pada",
+            "sidang",
+            "media"
+        ]
+    },
+    "Faiz": {
+        "entity_tokens": [
+            "faiz"
+        ],
+        "concordance": [
+            "faiz",
+            "berkata",
+            "golongan",
+            "muda",
+            "tidak"
+        ]
+    },
+    "Faiz Fadzil": {
+        "entity_tokens": [
+            "faiz",
+            "fadzil"
+        ],
+        "concordance": [
+            "(",
+            "lkim",
+            ")",
+            ",",
+            "muhammad",
+            "faiz",
+            "fadzil",
+            "berkata",
+            "keadaan",
+            "itu",
+            "dilihat"
+        ]
+    },
+    "Faridah": {
+        "entity_tokens": [
+            "faridah"
+        ],
+        "concordance": [
+            "joe",
+            "and",
+            "faridah",
+            "are",
+            "still",
+            "at",
+            "it"
+        ]
+    },
+    "Faridah Merican": {
+        "entity_tokens": [
+            "faridah",
+            "merican"
+        ],
+        "concordance": [
+            "merdeka",
+            ",",
+            "''",
+            "recalls",
+            "datuk",
+            "faridah",
+            "merican",
+            ",",
+            "executive",
+            "producer",
+            "and"
+        ]
+    },
+    "Adel": {
+        "entity_tokens": [
+            "adel"
+        ],
+        "concordance": [
+            "adel",
+            "berkata",
+            ",",
+            "beliau",
+            "telah"
+        ]
+    },
+    "Nitikron": {
+        "entity_tokens": [
+            "nitikron"
+        ],
+        "concordance": [
+            "his",
+            "opponent",
+            ",",
+            "nitikron",
+            "sonde",
+            ",",
+            "is",
+            "around"
+        ]
+    },
+    "Lim Guan Eng": {
+        "entity_tokens": [
+            "lim",
+            "guan",
+            "eng"
+        ],
+        "concordance": [
+            "menteri",
+            "kewangan",
+            ",",
+            "lim",
+            "guan",
+            "eng",
+            "berkata",
+            ",",
+            "kerajaan",
+            "terpaksa"
+        ]
+    },
+    "Fuziah": {
+        "entity_tokens": [
+            "fuziah"
+        ],
+        "concordance": [
+            "in",
+            "islam",
+            ",",
+            "''",
+            "added",
+            "fuziah",
+            "."
+        ]
+    },
+    "Fuziah Salleh": {
+        "entity_tokens": [
+            "fuziah",
+            "salleh"
+        ],
+        "concordance": [
+            "the",
+            "prime",
+            "minister",
+            "'s",
+            "department",
+            "fuziah",
+            "salleh",
+            "."
+        ]
+    },
+    "Mahathir Mohamad": {
+        "entity_tokens": [
+            "mahathir",
+            "mohamad"
+        ],
+        "concordance": [
+            "19",
+            ",",
+            "malaysian",
+            "prime",
+            "minister",
+            "mahathir",
+            "mohamad",
+            "said",
+            "that",
+            "his",
+            "country"
+        ]
+    },
+    "Seri Panglima Haji Mohd Shafie Apdal": {
+        "entity_tokens": [
+            "seri",
+            "panglima",
+            "haji",
+            "mohd",
+            "shafie",
+            "apdal"
+        ],
+        "concordance": [
+            "datuk",
+            "seri",
+            "panglima",
+            "haji",
+            "mohd",
+            "shafie",
+            "apdal",
+            "said",
+            "that",
+            "sabah",
+            "is"
+        ]
+    },
+    "Shafie": {
+        "entity_tokens": [
+            "shafie"
+        ],
+        "concordance": [
+            "climate",
+            "change",
+            ",",
+            "and",
+            "previously",
+            "shafie",
+            "had",
+            "said",
+            "that",
+            "the"
+        ]
+    },
+    "Syed": {
+        "entity_tokens": [
+            "syed"
+        ],
+        "concordance": [
+            ",",
+            "syed",
+            "mohd",
+            "johan",
+            "rizal",
+            "syed",
+            "unan",
+            "mashri",
+            "menyifatkan",
+            "cadangan"
+        ]
+    },
+    "Scott Morrison": {
+        "entity_tokens": [
+            "scott",
+            "morrison"
+        ],
+        "concordance": [
+            "itulah",
+            "permintaan",
+            "perdana",
+            "menteri",
+            "australia",
+            "scott",
+            "morrison",
+            "berhubung",
+            "tindakan",
+            "presiden",
+            "indonesia"
+        ]
+    },
+    "Michelle Bachelet": {
+        "entity_tokens": [
+            "michelle",
+            "bachelet"
+        ],
+        "concordance": [
+            "''",
+            "roth",
+            "said.un",
+            "rights",
+            "chief",
+            "michelle",
+            "bachelet",
+            "has",
+            "addressed",
+            "the",
+            "situation"
+        ]
+    },
+    "Hashim": {
+        "entity_tokens": [
+            "hashim"
+        ],
+        "concordance": [
+            "terengganu",
+            "kuala",
+            "terengganu",
+            "ahmad",
+            "amzad",
+            "hashim",
+            "menolak",
+            "amaran",
+            "menteri",
+            "agama"
+        ]
+    },
+    "Kuala Terengganu Kuala Terengganu Ahmad": {
+        "entity_tokens": [
+            "kuala",
+            "terengganu",
+            "kuala",
+            "terengganu",
+            "ahmad"
+        ],
+        "concordance": [
+            "anggota",
+            "parlimen",
+            "kuala",
+            "terengganu",
+            "kuala",
+            "terengganu",
+            "ahmad",
+            "amzad",
+            "hashim",
+            "menolak",
+            "amaran"
+        ]
+    },
+    "Pas": {
+        "entity_tokens": [
+            "pas"
+        ],
+        "concordance": [
+            "presiden",
+            "pas",
+            "menggesa",
+            "kerajaan",
+            "menjadikan",
+            "hukuman"
+        ]
+    },
+    "Tun Dr Mahathir Mohamad": {
+        "entity_tokens": [
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamad"
+        ],
+        "concordance": [
+            "ppbm",
+            "because",
+            "your",
+            "concern",
+            "was",
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamad",
+            ",",
+            "his",
+            "cronies",
+            ","
+        ]
+    },
+    "Novak Djokovic": {
+        "entity_tokens": [
+            "novak",
+            "djokovic"
+        ],
+        "concordance": [
+            "london",
+            "\u2013",
+            "novak",
+            "djokovic",
+            "moved",
+            "a",
+            "step",
+            "closer"
+        ]
+    },
+    "Djokovic": {
+        "entity_tokens": [
+            "djokovic"
+        ],
+        "concordance": [
+            "-dpa",
+            "read",
+            "more",
+            ":",
+            "djokovic",
+            "beats",
+            "anderson",
+            "for",
+            "fourth"
+        ]
+    },
+    "Nik Abduh": {
+        "entity_tokens": [
+            "nik",
+            "abduh"
+        ],
+        "concordance": [
+            "akhirnya",
+            "nik",
+            "abduh",
+            "naik",
+            "nama",
+            "sebagai",
+            "pemakan"
+        ]
+    },
+    "Nik Abduh Bin Nik Abdul Aziz .": {
+        "entity_tokens": [
+            "nik",
+            "abduh",
+            "bin",
+            "nik",
+            "abdul",
+            "aziz",
+            "."
+        ],
+        "concordance": [
+            "rakaman",
+            "yang",
+            "didakwa",
+            "sebagai",
+            "ucapan",
+            "nik",
+            "abduh",
+            "bin",
+            "nik",
+            "abdul",
+            "aziz",
+            "."
+        ]
+    },
+    "Bachok Nik Mohamad Abduh Nik Abdul": {
+        "entity_tokens": [
+            "bachok",
+            "nik",
+            "mohamad",
+            "abduh",
+            "nik",
+            "abdul"
+        ],
+        "concordance": [
+            "itu",
+            "mengandungi",
+            "suara",
+            "anggota",
+            "parlimen",
+            "bachok",
+            "nik",
+            "mohamad",
+            "abduh",
+            "nik",
+            "abdul",
+            "aziz.isu",
+            "rakaman",
+            "audio",
+            "itu"
+        ]
+    },
+    "Beatriz Toribio": {
+        "entity_tokens": [
+            "beatriz",
+            "toribio"
+        ],
+        "concordance": [
+            "by",
+            "necessity",
+            "''",
+            ",",
+            "said",
+            "beatriz",
+            "toribio",
+            ",",
+            "head",
+            "of",
+            "research"
+        ]
+    },
+    "Sunday.Alistair Burt": {
+        "entity_tokens": [
+            "sunday.alistair",
+            "burt"
+        ],
+        "concordance": [
+            "the",
+            "middle",
+            "east",
+            "said",
+            "on",
+            "sunday.alistair",
+            "burt",
+            "visited",
+            "iraq",
+            "after",
+            "a"
+        ]
+    },
+    "Imports.Burt": {
+        "entity_tokens": [
+            "imports.burt"
+        ],
+        "concordance": [
+            "rely",
+            "less",
+            "on",
+            "iranian",
+            "power",
+            "imports.burt",
+            "said",
+            "there",
+            "were",
+            "ideas"
+        ]
+    },
+    "Burt": {
+        "entity_tokens": [
+            "burt"
+        ],
+        "concordance": [
+            "burt",
+            "said",
+            "iraq",
+            "must",
+            "convert"
+        ]
+    },
+    "Salleh": {
+        "entity_tokens": [
+            "salleh"
+        ],
+        "concordance": [
+            "salleh",
+            "berkata",
+            ",",
+            "operasi",
+            "dilakukan"
+        ]
+    },
+    "Imigresen": {
+        "entity_tokens": [
+            "imigresen"
+        ],
+        "concordance": [
+            "imigresen",
+            "dan",
+            "diserahkan",
+            "kepada",
+            "jabatan",
+            "imigresen",
+            "untuk",
+            "tindakan",
+            "lanjut",
+            "."
+        ]
+    },
+    "Khan": {
+        "entity_tokens": [
+            "khan"
+        ],
+        "concordance": [
+            "presidennya",
+            ",",
+            "bibi",
+            "ramjani",
+            "ilias",
+            "khan",
+            "berkata",
+            ",",
+            "keputusan",
+            "tersebut"
+        ]
+    },
+    "Pm Najib": {
+        "entity_tokens": [
+            "pm",
+            "najib"
+        ],
+        "concordance": [
+            "pm",
+            "najib",
+            "juga",
+            "ada",
+            "buat",
+            "kenyataan"
+        ]
+    },
+    "Kamaruzzaman": {
+        "entity_tokens": [
+            "kamaruzzaman"
+        ],
+        "concordance": [
+            "namanya",
+            "yang",
+            "sebenar",
+            "adalah",
+            "sajat",
+            "kamaruzzaman",
+            "."
+        ]
+    },
+    "Seri Najib Razak": {
+        "entity_tokens": [
+            "seri",
+            "najib",
+            "razak"
+        ],
+        "concordance": [
+            "pun",
+            "sedia",
+            "maklum",
+            ",",
+            "datuk",
+            "seri",
+            "najib",
+            "razak",
+            "telah",
+            "dihadapkan",
+            "ke",
+            "mahkamah"
+        ]
+    },
+    "Pekan": {
+        "entity_tokens": [
+            "pekan"
+        ],
+        "concordance": [
+            "najib",
+            "yang",
+            "juga",
+            "anggota",
+            "parlimen",
+            "pekan",
+            "menempelak",
+            "dakwaan",
+            "penasihat",
+            "dap"
+        ]
+    },
+    "Maslinda Mahmud": {
+        "entity_tokens": [
+            "maslinda",
+            "mahmud"
+        ],
+        "concordance": [
+            "'s",
+            "eve",
+            "years",
+            "ago",
+            ",",
+            "maslinda",
+            "mahmud",
+            "had",
+            "envisioned",
+            "the",
+            "perfect"
+        ]
+    },
+    "Kuala Lumpur.Maslinda": {
+        "entity_tokens": [
+            "kuala",
+            "lumpur.maslinda"
+        ],
+        "concordance": [
+            "a",
+            "road",
+            "navigation",
+            "application",
+            "from",
+            "kuala",
+            "lumpur.maslinda",
+            ",",
+            "42",
+            ",",
+            "and"
+        ]
+    },
+    "Ronald Koeman": {
+        "entity_tokens": [
+            "ronald",
+            "koeman"
+        ],
+        "concordance": [
+            ",",
+            "''",
+            "said",
+            "a",
+            "delighted",
+            "ronald",
+            "koeman",
+            "after",
+            "a",
+            "2-0",
+            "win"
+        ]
+    },
+    "Mohamad Hasan": {
+        "entity_tokens": [
+            "mohamad",
+            "hasan"
+        ],
+        "concordance": [
+            "presiden",
+            "umno",
+            ",",
+            "datuk",
+            "seri",
+            "mohamad",
+            "hasan",
+            "berkata",
+            ",",
+            "ia",
+            "juga"
+        ]
+    },
+    "Mic": {
+        "entity_tokens": [
+            "mic"
+        ],
+        "concordance": [
+            "sivarrajh",
+            "yang",
+            "juga",
+            "naib",
+            "presiden",
+            "mic",
+            "itu",
+            "menambah",
+            ",",
+            "gambar"
+        ]
+    },
+    "Khalilzad": {
+        "entity_tokens": [
+            "khalilzad"
+        ],
+        "concordance": [
+            "next",
+            "iteration",
+            "of",
+            "talks",
+            "for",
+            "khalilzad",
+            "are",
+            "reportedly",
+            "set",
+            "for"
+        ]
+    },
+    "Toni Eko Boy Subari": {
+        "entity_tokens": [
+            "toni",
+            "eko",
+            "boy",
+            "subari"
+        ],
+        "concordance": [
+            "largest",
+            "muslim-majority",
+            "country",
+            ",",
+            "said",
+            "toni",
+            "eko",
+            "boy",
+            "subari",
+            ",",
+            "president",
+            "director",
+            "of"
+        ]
+    },
+    "Lim Meng Seah": {
+        "entity_tokens": [
+            "lim",
+            "meng",
+            "seah"
+        ],
+        "concordance": [
+            "ketua",
+            "polis",
+            "daerah",
+            "miri",
+            "acp",
+            "lim",
+            "meng",
+            "seah",
+            "berkata",
+            ",",
+            "suspek",
+            "berusia"
+        ]
+    },
+    "Lim": {
+        "entity_tokens": [
+            "lim"
+        ],
+        "concordance": [
+            "lim",
+            "menjelaskan",
+            ",",
+            "suspek",
+            "ditangkap"
+        ]
+    },
+    "Omar": {
+        "entity_tokens": [
+            "omar"
+        ],
+        "concordance": [
+            "jelas",
+            "omar",
+            ",",
+            "ketika",
+            "rundingan",
+            "dibuat"
+        ]
+    },
+    "Sabah": {
+        "entity_tokens": [
+            "sabah"
+        ],
+        "concordance": [
+            "di",
+            "hospital",
+            "wanita",
+            "dan",
+            "kanak-kanak",
+            "sabah",
+            "(",
+            "hwkks",
+            ")",
+            "di"
+        ]
+    },
+    "Star": {
+        "entity_tokens": [
+            "star"
+        ],
+        "concordance": [
+            "and",
+            "the",
+            "headline",
+            "of",
+            "the",
+            "star",
+            "online",
+            "was",
+            "``",
+            "transgender"
+        ]
+    },
+    "Nina": {
+        "entity_tokens": [
+            "nina"
+        ],
+        "concordance": [
+            "mengenai",
+            "perancangan",
+            "masa",
+            "depannya",
+            ",",
+            "nina",
+            "berkata",
+            "beliau",
+            "akan",
+            "memikirkan"
+        ]
+    },
+    "Bayang": {
+        "entity_tokens": [
+            "bayang"
+        ],
+        "concordance": [
+            "dan",
+            "kecederaan",
+            "parah",
+            "dialami",
+            "nina",
+            "bayang",
+            "selepas",
+            "terlibat",
+            "dalam",
+            "nahas"
+        ]
+    },
+    "Shahrir": {
+        "entity_tokens": [
+            "shahrir"
+        ],
+        "concordance": [
+            "sementara",
+            "itu",
+            ",",
+            "shahrir",
+            "yang",
+            "juga",
+            "bekas",
+            "ahli"
+        ]
+    },
+    "Sri Shahrir Samad": {
+        "entity_tokens": [
+            "sri",
+            "shahrir",
+            "samad"
+        ],
+        "concordance": [
+            "bahagian",
+            "johor",
+            "bahru",
+            ",",
+            "tan",
+            "sri",
+            "shahrir",
+            "samad",
+            "mahu",
+            "parti",
+            "itu",
+            "meneruskan"
+        ]
+    },
+    "Shahrir Samad": {
+        "entity_tokens": [
+            "shahrir",
+            "samad"
+        ],
+        "concordance": [
+            "johor",
+            "bahru",
+            ",",
+            "tan",
+            "sri",
+            "shahrir",
+            "samad",
+            "mahu",
+            "parti",
+            "itu",
+            "meneruskan"
+        ]
+    },
+    "Nik Nazmi": {
+        "entity_tokens": [
+            "nik",
+            "nazmi"
+        ],
+        "concordance": [
+            "in",
+            "a",
+            "statement",
+            "today",
+            ",",
+            "nik",
+            "nazmi",
+            "said",
+            "the",
+            "new",
+            "federal"
+        ]
+    },
+    "Nik Nazmi Nik Ahmad": {
+        "entity_tokens": [
+            "nik",
+            "nazmi",
+            "nik",
+            "ahmad"
+        ],
+        "concordance": [
+            "pkr",
+            "lawmaker",
+            "nik",
+            "nazmi",
+            "nik",
+            "ahmad",
+            "slammed",
+            "fellow",
+            "pakatan",
+            "harapan"
+        ]
+    },
+    "Stephen Innes": {
+        "entity_tokens": [
+            "stephen",
+            "innes"
+        ],
+        "concordance": [
+            "oil",
+            "markets",
+            ",",
+            "''",
+            "said",
+            "stephen",
+            "innes",
+            ",",
+            "head",
+            "of",
+            "trading"
+        ]
+    },
+    "Innes": {
+        "entity_tokens": [
+            "innes"
+        ],
+        "concordance": [
+            "but",
+            "innes",
+            "added",
+            "macroeconomics",
+            "fears",
+            "will"
+        ]
+    },
+    "Suaram": {
+        "entity_tokens": [
+            "suaram"
+        ],
+        "concordance": [
+            "marriage.on",
+            "the",
+            "plus",
+            "side",
+            ",",
+            "suaram",
+            "noted",
+            "a",
+            "``",
+            "remarkable"
+        ]
+    },
+    "Today.Suaram": {
+        "entity_tokens": [
+            "today.suaram"
+        ],
+        "concordance": [
+            "it",
+            "said",
+            "in",
+            "a",
+            "statement",
+            "today.suaram",
+            "said",
+            "that",
+            "the",
+            "failure"
+        ]
+    },
+    "Suaram.It": {
+        "entity_tokens": [
+            "suaram.it"
+        ],
+        "concordance": [
+            "'u-turns",
+            "'",
+            ",",
+            "''",
+            "said",
+            "suaram.it",
+            "added",
+            "that",
+            "the",
+            "new"
+        ]
+    },
+    "Wan Azizah": {
+        "entity_tokens": [
+            "wan",
+            "azizah"
+        ],
+        "concordance": [
+            "he",
+            "said.khairy",
+            "'s",
+            "defence",
+            "of",
+            "wan",
+            "azizah",
+            "also",
+            "won",
+            "him",
+            "accolades"
+        ]
+    },
+    "Dr Wan Azizah Wan Ismail": {
+        "entity_tokens": [
+            "dr",
+            "wan",
+            "azizah",
+            "wan",
+            "ismail"
+        ],
+        "concordance": [
+            "deputy",
+            "prime",
+            "minister",
+            "dr",
+            "wan",
+            "azizah",
+            "wan",
+            "ismail",
+            "has",
+            "expressed",
+            "gratitude",
+            "to"
+        ]
+    },
+    "Aishah": {
+        "entity_tokens": [
+            "aishah"
+        ],
+        "concordance": [
+            "on",
+            "electric",
+            "cars",
+            ",",
+            "aishah",
+            "said",
+            "further",
+            "investments",
+            "and"
+        ]
+    },
+    "Datuk Aishah Ahmad": {
+        "entity_tokens": [
+            "datuk",
+            "aishah",
+            "ahmad"
+        ],
+        "concordance": [
+            "country",
+            ",",
+            "''",
+            "maa",
+            "president",
+            "datuk",
+            "aishah",
+            "ahmad",
+            "said",
+            "to",
+            "reporters",
+            "after"
+        ]
+    },
+    "Malaysian Automotive Association": {
+        "entity_tokens": [
+            "malaysian",
+            "automotive",
+            "association"
+        ],
+        "concordance": [
+            "30",
+            ",",
+            "2018",
+            ":",
+            "the",
+            "malaysian",
+            "automotive",
+            "association",
+            "has",
+            "described",
+            "the",
+            "plan"
+        ]
+    },
+    "Ghani": {
+        "entity_tokens": [
+            "ghani"
+        ],
+        "concordance": [
+            "ini",
+            "kerana",
+            "akan",
+            "mengikuti",
+            "jejak",
+            "ghani",
+            "yang",
+            "akan",
+            "membuat",
+            "pengumuman"
+        ]
+    },
+    "Abdul Ghani": {
+        "entity_tokens": [
+            "abdul",
+            "ghani"
+        ],
+        "concordance": [
+            "umno",
+            "bahagian",
+            "pensiangan",
+            "ikut",
+            "jejak",
+            "abdul",
+            "ghani",
+            "oleh",
+            "alfred",
+            "petrus",
+            "keningau"
+        ]
+    },
+    "Majinji": {
+        "entity_tokens": [
+            "majinji"
+        ],
+        "concordance": [
+            "polis",
+            "kota",
+            "kinabalu",
+            "acp",
+            "habibi",
+            "majinji",
+            "berkata",
+            "sebanyak",
+            "125",
+            "kenderaan"
+        ]
+    },
+    "Hairul": {
+        "entity_tokens": [
+            "hairul"
+        ],
+        "concordance": [
+            "mohd",
+            "hairul",
+            "pula",
+            "bekas",
+            "ketua",
+            "pegawai"
+        ]
+    },
+    "Khairy": {
+        "entity_tokens": [
+            "khairy"
+        ],
+        "concordance": [
+            "and",
+            "community",
+            "development",
+            "minister.earlier",
+            ",",
+            "khairy",
+            "took",
+            "to",
+            "twitter",
+            "to"
+        ]
+    },
+    "Jamaluddin": {
+        "entity_tokens": [
+            "jamaluddin"
+        ],
+        "concordance": [
+            "town",
+            ":",
+            "umno",
+            "'s",
+            "khairy",
+            "jamaluddin",
+            "today",
+            "alleged",
+            "the",
+            "government"
+        ]
+    },
+    "David Lai": {
+        "entity_tokens": [
+            "david",
+            "lai"
+        ],
+        "concordance": [
+            "its",
+            "president",
+            "david",
+            "lai",
+            "(",
+            "pic",
+            ")",
+            "said"
+        ]
+    },
+    "Lai": {
+        "entity_tokens": [
+            "lai"
+        ],
+        "concordance": [
+            "or",
+            "fortifying",
+            "the",
+            "slopes",
+            ",",
+            "lai",
+            "said",
+            ":",
+            "``",
+            "we"
+        ]
+    },
+    "Iem": {
+        "entity_tokens": [
+            "iem"
+        ],
+        "concordance": [
+            "he",
+            "said",
+            "iem",
+            ",",
+            "which",
+            "had",
+            "some"
+        ]
+    },
+    "Lee": {
+        "entity_tokens": [
+            "lee"
+        ],
+        "concordance": [
+            "who",
+            "gave",
+            "his",
+            "name",
+            "as",
+            "lee",
+            ",",
+            "``",
+            "as",
+            "everyone"
+        ]
+    },
+    "Bhd.Gabriel": {
+        "entity_tokens": [
+            "bhd.gabriel"
+        ],
+        "concordance": [
+            "by",
+            "paragon",
+            "city",
+            "development",
+            "sdn",
+            "bhd.gabriel",
+            "noted",
+            "that",
+            "taman",
+            "rimba"
+        ]
+    },
+    "Cynthia Gabriel": {
+        "entity_tokens": [
+            "cynthia",
+            "gabriel"
+        ],
+        "concordance": [
+            "anti-graft",
+            "ngo",
+            "'s",
+            "executive",
+            "director",
+            "cynthia",
+            "gabriel",
+            "said",
+            "it",
+            "had",
+            "analysed"
+        ]
+    },
+    "Said.Gabriel": {
+        "entity_tokens": [
+            "said.gabriel"
+        ],
+        "concordance": [
+            "service",
+            "apartments",
+            ",",
+            "''",
+            "she",
+            "said.gabriel",
+            "said",
+            "there",
+            "are",
+            "questions"
+        ]
+    },
+    "Seri Shahidan Kassim": {
+        "entity_tokens": [
+            "seri",
+            "shahidan",
+            "kassim"
+        ],
+        "concordance": [
+            "ahli",
+            "parlimen",
+            "arau",
+            "datuk",
+            "seri",
+            "shahidan",
+            "kassim",
+            "bercakap",
+            "kepada",
+            "pemberita",
+            "di"
+        ]
+    },
+    "Shahidan": {
+        "entity_tokens": [
+            "shahidan"
+        ],
+        "concordance": [
+            "lagi",
+            ",",
+            "ketika",
+            "kejadian",
+            ",",
+            "shahidan",
+            "mendakwa",
+            "beliau",
+            "mengunjungi",
+            "tempat"
+        ]
+    },
+    "Perlis": {
+        "entity_tokens": [
+            "perlis"
+        ],
+        "concordance": [
+            "sebuah",
+            "kereta",
+            "di",
+            "kangar",
+            ",",
+            "perlis",
+            ",",
+            "pada",
+            "20",
+            "oktober"
+        ]
+    },
+    "Jose": {
+        "entity_tokens": [
+            "jose"
+        ],
+        "concordance": [
+            ":",
+            "pengurus",
+            "manchester",
+            "united",
+            ",",
+            "jose",
+            "mourinho",
+            ",",
+            "menepis",
+            "lebih"
+        ]
+    },
+    "Mourinho": {
+        "entity_tokens": [
+            "mourinho"
+        ],
+        "concordance": [
+            "dari",
+            "pertahanan",
+            ",",
+            "''",
+            "tambah",
+            "mourinho",
+            "."
+        ]
+    },
+    "Jose Mourinho": {
+        "entity_tokens": [
+            "jose",
+            "mourinho"
+        ],
+        "concordance": [
+            ":",
+            "pengurus",
+            "manchester",
+            "united",
+            ",",
+            "jose",
+            "mourinho",
+            ",",
+            "menepis",
+            "lebih",
+            "banyak"
+        ]
+    },
+    "Traffic.Malaysia": {
+        "entity_tokens": [
+            "traffic.malaysia"
+        ],
+        "concordance": [
+            "august",
+            "2017",
+            ",",
+            "according",
+            "to",
+            "traffic.malaysia",
+            "regularly",
+            "foils",
+            "attempts",
+            "to"
+        ]
+    },
+    "Setiu": {
+        "entity_tokens": [
+            "setiu"
+        ],
+        "concordance": [
+            "ahli",
+            "parlimen",
+            "setiu",
+            ",",
+            "shaharizukirnain",
+            "abdul",
+            "kadir"
+        ]
+    },
+    "Guan Eng": {
+        "entity_tokens": [
+            "guan",
+            "eng"
+        ],
+        "concordance": [
+            "menurut",
+            "guan",
+            "eng",
+            ",",
+            "proses",
+            "pemutihan",
+            "untuk"
+        ]
+    },
+    "Pinar Hosafci": {
+        "entity_tokens": [
+            "pinar",
+            "hosafci"
+        ],
+        "concordance": [
+            "preserved",
+            "foods",
+            ",",
+            "''",
+            "said",
+            "pinar",
+            "hosafci",
+            ",",
+            "a",
+            "food",
+            "industry"
+        ]
+    },
+    "Tina Floyd": {
+        "entity_tokens": [
+            "tina",
+            "floyd"
+        ],
+        "concordance": [
+            "value",
+            "for",
+            "it",
+            "''",
+            ",",
+            "tina",
+            "floyd",
+            ",",
+            "senior",
+            "vp",
+            "and"
+        ]
+    },
+    "Pm": {
+        "entity_tokens": [
+            "pm"
+        ],
+        "concordance": [
+            "leaders",
+            "such",
+            "as",
+            "the",
+            "australian",
+            "pm",
+            "bob",
+            "hawke",
+            "and",
+            "west"
+        ]
+    },
+    "Ezam": {
+        "entity_tokens": [
+            "ezam"
+        ],
+        "concordance": [
+            "since",
+            "then",
+            ",",
+            "ezam",
+            "vowed",
+            "to",
+            "defend",
+            "azmin"
+        ]
+    },
+    "Mohamed Azmin Ali.Ezam": {
+        "entity_tokens": [
+            "mohamed",
+            "azmin",
+            "ali.ezam"
+        ],
+        "concordance": [
+            "pkr",
+            "president",
+            "and",
+            "his",
+            "deputy",
+            "mohamed",
+            "azmin",
+            "ali.ezam",
+            "was",
+            "formerly",
+            "an",
+            "opponent"
+        ]
+    },
+    "Mohamad Ezam Mohd Nor": {
+        "entity_tokens": [
+            "mohamad",
+            "ezam",
+            "mohd",
+            "nor"
+        ],
+        "concordance": [
+            "former",
+            "senator",
+            "mohamad",
+            "ezam",
+            "mohd",
+            "nor",
+            "has",
+            "back",
+            "bersatu",
+            "'s"
+        ]
+    },
+    "Said.Ezam": {
+        "entity_tokens": [
+            "said.ezam"
+        ],
+        "concordance": [
+            "track",
+            "record",
+            ",",
+            "''",
+            "he",
+            "said.ezam",
+            "also",
+            "stressed",
+            "that",
+            "mahathir"
+        ]
+    },
+    "Society": {
+        "entity_tokens": [
+            "society"
+        ],
+        "concordance": [
+            "and",
+            "circumstances",
+            "of",
+            "the",
+            "malaysian",
+            "society",
+            "."
+        ]
+    },
+    "Rights": {
+        "entity_tokens": [
+            "rights"
+        ],
+        "concordance": [
+            "assembly",
+            "hall.the",
+            "centre",
+            "for",
+            "human",
+            "rights",
+            "research",
+            "and",
+            "advocacy",
+            "("
+        ]
+    },
+    "Constitution.Hakam": {
+        "entity_tokens": [
+            "constitution.hakam"
+        ],
+        "concordance": [
+            "'s",
+            "commitment",
+            "to",
+            "the",
+            "federal",
+            "constitution.hakam",
+            "said",
+            "the",
+            "precautionary",
+            "stance"
+        ]
+    },
+    "Human Rights Society": {
+        "entity_tokens": [
+            "human",
+            "rights",
+            "society"
+        ],
+        "concordance": [
+            "among",
+            "human",
+            "rights",
+            "organisations.the",
+            "national",
+            "human",
+            "rights",
+            "society",
+            "(",
+            "hakam",
+            ")",
+            "said"
+        ]
+    },
+    "Komas": {
+        "entity_tokens": [
+            "komas"
+        ],
+        "concordance": [
+            "``",
+            "the",
+            "statement",
+            "by",
+            "komas",
+            "was",
+            "endorsed",
+            "by",
+            "18"
+        ]
+    },
+    "Human Rights Research": {
+        "entity_tokens": [
+            "human",
+            "rights",
+            "research"
+        ],
+        "concordance": [
+            "chinese",
+            "assembly",
+            "hall.the",
+            "centre",
+            "for",
+            "human",
+            "rights",
+            "research",
+            "and",
+            "advocacy",
+            "(",
+            "centhra"
+        ]
+    },
+    "Johan Rizal": {
+        "entity_tokens": [
+            "johan",
+            "rizal"
+        ],
+        "concordance": [
+            "ketua",
+            "penerangannya",
+            ",",
+            "syed",
+            "mohd",
+            "johan",
+            "rizal",
+            "syed",
+            "unan",
+            "mashri",
+            "menyifatkan"
+        ]
+    },
+    "The Straits Times": {
+        "entity_tokens": [
+            "the",
+            "straits",
+            "times"
+        ],
+        "concordance": [
+            "article",
+            "was",
+            "first",
+            "published",
+            "in",
+            "the",
+            "straits",
+            "times",
+            "."
+        ]
+    },
+    "Musa": {
+        "entity_tokens": [
+            "musa"
+        ],
+        "concordance": [
+            "advertisement",
+            "during",
+            "his",
+            "speech",
+            ",",
+            "musa",
+            "also",
+            "touched",
+            "on",
+            "the"
+        ]
+    },
+    "Datuk Seri Musa Aman": {
+        "entity_tokens": [
+            "datuk",
+            "seri",
+            "musa",
+            "aman"
+        ],
+        "concordance": [
+            "chief",
+            "minister",
+            "datuk",
+            "seri",
+            "musa",
+            "aman",
+            "(",
+            "pic",
+            ")",
+            "who"
+        ]
+    },
+    "Shell": {
+        "entity_tokens": [
+            "shell"
+        ],
+        "concordance": [
+            "shell",
+            "said",
+            "it",
+            "would",
+            "still"
+        ]
+    },
+    "Ben Van Beurden": {
+        "entity_tokens": [
+            "ben",
+            "van",
+            "beurden"
+        ],
+        "concordance": [
+            ",",
+            "''",
+            "chief",
+            "executive",
+            "officer",
+            "ben",
+            "van",
+            "beurden",
+            "said",
+            "."
+        ]
+    },
+    "Pujara": {
+        "entity_tokens": [
+            "pujara"
+        ],
+        "concordance": [
+            "crawled",
+            "to",
+            "his",
+            "half-century",
+            ",",
+            "pujara",
+            "ramped",
+            "up",
+            "as",
+            "he"
+        ]
+    },
+    "Cheteshwar Pujara": {
+        "entity_tokens": [
+            "cheteshwar",
+            "pujara"
+        ],
+        "concordance": [
+            "afp",
+            "pic",
+            ")",
+            "adelaide",
+            ":",
+            "cheteshwar",
+            "pujara",
+            "struck",
+            "a",
+            "defiant",
+            "century"
+        ]
+    },
+    "Dr Mahahir": {
+        "entity_tokens": [
+            "dr",
+            "mahahir"
+        ],
+        "concordance": [
+            "the",
+            "exact",
+            "opposite",
+            "of",
+            "what",
+            "dr",
+            "mahahir",
+            "says",
+            "."
+        ]
+    },
+    "Parti": {
+        "entity_tokens": [
+            "parti"
+        ],
+        "concordance": [
+            "in",
+            "his",
+            "policy",
+            "speech",
+            "at",
+            "parti",
+            "pribumi",
+            "bersatu",
+            "malaysia",
+            "'s"
+        ]
+    },
+    "Dr Mahathir Mohamad": {
+        "entity_tokens": [
+            "dr",
+            "mahathir",
+            "mohamad"
+        ],
+        "concordance": [
+            "fmt",
+            ")",
+            "\u2013",
+            "prime",
+            "minister",
+            "dr",
+            "mahathir",
+            "mohamad",
+            "today",
+            "said",
+            "he",
+            "was"
+        ]
+    },
+    "Jpn Sabah Datuk Ismail Ahmad": {
+        "entity_tokens": [
+            "jpn",
+            "sabah",
+            "datuk",
+            "ismail",
+            "ahmad"
+        ],
+        "concordance": [
+            "pengarah",
+            "jpn",
+            "sabah",
+            "datuk",
+            "ismail",
+            "ahmad",
+            "berkata",
+            ",",
+            "setakat",
+            "ini"
+        ]
+    },
+    "Ismail": {
+        "entity_tokens": [
+            "ismail"
+        ],
+        "concordance": [
+            "blue",
+            "taxi",
+            "services",
+            "datuk",
+            "shamsubahrin",
+            "ismail",
+            "berkata",
+            "tindakan",
+            "itu",
+            "perlu"
+        ]
+    },
+    "Jpn Sabah": {
+        "entity_tokens": [
+            "jpn",
+            "sabah"
+        ],
+        "concordance": [
+            "pengarah",
+            "jpn",
+            "sabah",
+            "datuk",
+            "ismail",
+            "ahmad",
+            "berkata"
+        ]
+    },
+    "Jpn": {
+        "entity_tokens": [
+            "jpn"
+        ],
+        "concordance": [
+            "tunggu",
+            "mereka",
+            "datang",
+            "ke",
+            "pejabat",
+            "jpn",
+            ",",
+            "itu",
+            "agak",
+            "sukar"
+        ]
+    },
+    "Mohd Jamil Mat Daud": {
+        "entity_tokens": [
+            "mohd",
+            "jamil",
+            "mat",
+            "daud"
+        ],
+        "concordance": [
+            "penyelamat",
+            "(",
+            "bbp",
+            ")",
+            "baling",
+            "mohd",
+            "jamil",
+            "mat",
+            "daud",
+            ",",
+            "setakat",
+            "ini",
+            "pihaknya"
+        ]
+    },
+    "Zhang Qihuai": {
+        "entity_tokens": [
+            "zhang",
+            "qihuai"
+        ],
+        "concordance": [
+            "broke",
+            ",",
+            "sun",
+            "'s",
+            "lawyer",
+            "zhang",
+            "qihuai",
+            "issued",
+            "a",
+            "statement",
+            "saying"
+        ]
+    },
+    "Fina": {
+        "entity_tokens": [
+            "fina"
+        ],
+        "concordance": [
+            "and",
+            "privacy",
+            "''",
+            "because",
+            "the",
+            "fina",
+            "doping",
+            "panel",
+            "had",
+            "stated"
+        ]
+    },
+    "Association": {
+        "entity_tokens": [
+            "association"
+        ],
+        "concordance": [
+            "``",
+            "the",
+            "association",
+            "will",
+            "continue",
+            "to",
+            "strengthen"
+        ]
+    },
+    "Linggi": {
+        "entity_tokens": [
+            "linggi"
+        ],
+        "concordance": [
+            "linggi",
+            "yang",
+            "merupakan",
+            "anak",
+            "sulung"
+        ]
+    },
+    "Leonard Linggi": {
+        "entity_tokens": [
+            "leonard",
+            "linggi"
+        ],
+        "concordance": [
+            "hujung",
+            ",",
+            "kata",
+            "tan",
+            "sri",
+            "leonard",
+            "linggi",
+            "ketika",
+            "menyentuh",
+            "mengenai",
+            "perjanjian"
+        ]
+    },
+    "Education Ministry": {
+        "entity_tokens": [
+            "education",
+            "ministry"
+        ],
+        "concordance": [
+            "the",
+            "education",
+            "ministry",
+            "(",
+            "kpm",
+            ")",
+            "has"
+        ]
+    },
+    "Maszlee Malik": {
+        "entity_tokens": [
+            "maszlee",
+            "malik"
+        ],
+        "concordance": [
+            "the",
+            "image",
+            "and",
+            "reputation",
+            "of",
+            "maszlee",
+            "malik",
+            "as",
+            "education",
+            "minister",
+            ","
+        ]
+    },
+    "Big": {
+        "entity_tokens": [
+            "big"
+        ],
+        "concordance": [
+            "pengasas",
+            "big",
+            "blue",
+            "taxi",
+            "services",
+            "datuk"
+        ]
+    },
+    "Parti Pribumi Bersatu Malaysia": {
+        "entity_tokens": [
+            "parti",
+            "pribumi",
+            "bersatu",
+            "malaysia"
+        ],
+        "concordance": [
+            ",",
+            "muhyiddin",
+            "yang",
+            "juga",
+            "presiden",
+            "parti",
+            "pribumi",
+            "bersatu",
+            "malaysia",
+            "(",
+            "bersatu",
+            ")",
+            "mempengerusikan"
+        ]
+    },
+    "Sri Muhyiddin Yassin": {
+        "entity_tokens": [
+            "sri",
+            "muhyiddin",
+            "yassin"
+        ],
+        "concordance": [
+            "kata",
+            "menteri",
+            "dalam",
+            "negeri",
+            "tan",
+            "sri",
+            "muhyiddin",
+            "yassin",
+            "."
+        ]
+    },
+    "Saiful Wan": {
+        "entity_tokens": [
+            "saiful",
+            "wan"
+        ],
+        "concordance": [
+            "reputasi",
+            "majikan",
+            ",",
+            "''",
+            "katanya.terdahulu",
+            "wan",
+            "saiful",
+            "berkata",
+            ",",
+            "seramai",
+            "225,000"
+        ]
+    },
+    "Saiful": {
+        "entity_tokens": [
+            "saiful"
+        ],
+        "concordance": [
+            "sebelum",
+            "mencecah",
+            "umur",
+            "60",
+            "tahun.wan",
+            "saiful",
+            "turut",
+            "berkata",
+            ",",
+            "pihaknya"
+        ]
+    },
+    "Wan": {
+        "entity_tokens": [
+            "wan"
+        ],
+        "concordance": [
+            "''",
+            "katanya.mengulas",
+            "berhubung",
+            "kenyataan",
+            "chef",
+            "wan",
+            "semalam",
+            ",",
+            "najib",
+            "sekadar"
+        ]
+    },
+    "Larry": {
+        "entity_tokens": [
+            "larry"
+        ],
+        "concordance": [
+            "terdahulu",
+            ",",
+            "larry",
+            "berkata",
+            "kerajaan",
+            "persekutuan",
+            "menerusi"
+        ]
+    },
+    "Lada Malaysia": {
+        "entity_tokens": [
+            "lada",
+            "malaysia"
+        ],
+        "concordance": [
+            "kuching",
+            ":",
+            "pengerusi",
+            "lembaga",
+            "lada",
+            "malaysia",
+            "(",
+            "mpb",
+            ")",
+            ","
+        ]
+    },
+    "Mk Land Holdings": {
+        "entity_tokens": [
+            "mk",
+            "land",
+            "holdings"
+        ],
+        "concordance": [
+            "\u2014",
+            "to",
+            "be",
+            "built",
+            "by",
+            "mk",
+            "land",
+            "holdings",
+            "bhd",
+            "in",
+            "taman",
+            "bunga"
+        ]
+    },
+    "Gm Zulkipli Sidin": {
+        "entity_tokens": [
+            "gm",
+            "zulkipli",
+            "sidin"
+        ],
+        "concordance": [
+            ",",
+            "mk",
+            "land",
+            "group",
+            "senior",
+            "gm",
+            "zulkipli",
+            "sidin",
+            "said",
+            "there",
+            "are",
+            "109"
+        ]
+    },
+    "Gm": {
+        "entity_tokens": [
+            "gm"
+        ],
+        "concordance": [
+            ",",
+            "mk",
+            "land",
+            "group",
+            "senior",
+            "gm",
+            "zulkipli",
+            "sidin",
+            "said",
+            "there"
+        ]
+    },
+    "Mohd Asri": {
+        "entity_tokens": [
+            "mohd",
+            "asri"
+        ],
+        "concordance": [
+            "district",
+            "police",
+            "headquarters",
+            ",",
+            "''",
+            "mohd",
+            "asri",
+            "said",
+            "yesterday",
+            "."
+        ]
+    },
+    "Mohd Asri Abd Wahab": {
+        "entity_tokens": [
+            "mohd",
+            "asri",
+            "abd",
+            "wahab"
+        ],
+        "concordance": [
+            "kuala",
+            "selangor",
+            "district",
+            "police",
+            "chief",
+            "mohd",
+            "asri",
+            "abd",
+            "wahab",
+            "who",
+            "said",
+            "the",
+            "suspects"
+        ]
+    },
+    "Izham Idris": {
+        "entity_tokens": [
+            "izham",
+            "idris"
+        ],
+        "concordance": [
+            "pengarah",
+            "imigresen",
+            "pulau",
+            "pinang",
+            ",",
+            "izham",
+            "idris",
+            "berkata",
+            ",",
+            "serbuan",
+            "dibuat"
+        ]
+    },
+    "Kimly": {
+        "entity_tokens": [
+            "kimly"
+        ],
+        "concordance": [
+            "given",
+            "the",
+            "reversal",
+            "of",
+            "kimly",
+            "'s",
+            "most",
+            "recent",
+            "acquisition"
+        ]
+    },
+    "Zuraida Kamaruddin": {
+        "entity_tokens": [
+            "zuraida",
+            "kamaruddin"
+        ],
+        "concordance": [
+            "perumahan",
+            "dan",
+            "kerajaan",
+            "tempatan",
+            ",",
+            "zuraida",
+            "kamaruddin",
+            "berkata",
+            ",",
+            "kerjasama",
+            "di"
+        ]
+    },
+    "Juanda Jaya Zuraida": {
+        "entity_tokens": [
+            "juanda",
+            "jaya",
+            "zuraida"
+        ],
+        "concordance": [
+            "juanda",
+            "jaya",
+            "zuraida",
+            "said",
+            "that",
+            "under",
+            "the"
+        ]
+    },
+    "Alexander Zakharchenko": {
+        "entity_tokens": [
+            "alexander",
+            "zakharchenko"
+        ],
+        "concordance": [
+            "'s",
+            "republic",
+            "(",
+            "dpr",
+            ")",
+            "alexander",
+            "zakharchenko",
+            "told",
+            "russian",
+            "media",
+            "."
+        ]
+    },
+    "The Times": {
+        "entity_tokens": [
+            "the",
+            "times"
+        ],
+        "concordance": [
+            "the",
+            "times",
+            "noted",
+            "that",
+            "russian",
+            "president"
+        ]
+    },
+    "Jimmy Tan": {
+        "entity_tokens": [
+            "jimmy",
+            "tan"
+        ],
+        "concordance": [
+            "jimmy",
+            "tan",
+            "pada",
+            "majlis",
+            "penuh",
+            "santai"
+        ]
+    },
+    "Jimmy": {
+        "entity_tokens": [
+            "jimmy"
+        ],
+        "concordance": [
+            "jimmy",
+            "tan",
+            "pada",
+            "majlis",
+            "penuh"
+        ]
+    },
+    "Khairy Jamaluddin": {
+        "entity_tokens": [
+            "khairy",
+            "jamaluddin"
+        ],
+        "concordance": [
+            "star",
+            ")",
+            "\u2013",
+            "rembau",
+            "mp",
+            "khairy",
+            "jamaluddin",
+            "says",
+            "he",
+            "fully",
+            "supports"
+        ]
+    },
+    "Hannah Yeoh": {
+        "entity_tokens": [
+            "hannah",
+            "yeoh"
+        ],
+        "concordance": [
+            "him",
+            "accolades",
+            "from",
+            "her",
+            "deputy",
+            "hannah",
+            "yeoh",
+            "."
+        ]
+    },
+    "Mohamad Fuzi Harun": {
+        "entity_tokens": [
+            "mohamad",
+            "fuzi",
+            "harun"
+        ],
+        "concordance": [
+            "countries",
+            ",",
+            "said",
+            "tan",
+            "sri",
+            "mohamad",
+            "fuzi",
+            "harun",
+            "."
+        ]
+    },
+    "Kementerian Kesihatan Malaysia": {
+        "entity_tokens": [
+            "kementerian",
+            "kesihatan",
+            "malaysia"
+        ],
+        "concordance": [
+            "dis",
+            "(",
+            "bernama",
+            ")",
+            "\u2013",
+            "kementerian",
+            "kesihatan",
+            "malaysia",
+            "(",
+            "kkm",
+            ")",
+            "meminta"
+        ]
+    },
+    "Noor Hisham Abdullah": {
+        "entity_tokens": [
+            "noor",
+            "hisham",
+            "abdullah"
+        ],
+        "concordance": [
+            "ketua",
+            "pengarah",
+            "kesihatan",
+            "datuk",
+            "dr",
+            "noor",
+            "hisham",
+            "abdullah",
+            "berkata",
+            ",",
+            "berdasarkan",
+            "peraturan"
+        ]
+    },
+    "Cimb": {
+        "entity_tokens": [
+            "cimb"
+        ],
+        "concordance": [
+            "bank",
+            "negara",
+            ",",
+            "maybank",
+            ",",
+            "cimb",
+            ",",
+            "ambank",
+            ",",
+            "bank"
+        ]
+    },
+    "Sabariah Shaari": {
+        "entity_tokens": [
+            "sabariah",
+            "shaari"
+        ],
+        "concordance": [
+            "ibu",
+            "saudara",
+            "mangsa",
+            ",",
+            "sabariah",
+            "shaari",
+            ",",
+            "46",
+            ",",
+            "berkata"
+        ]
+    },
+    "Darell": {
+        "entity_tokens": [
+            "darell"
+        ],
+        "concordance": [
+            "menteri",
+            "perdagangan",
+            "antarabangsa",
+            "dan",
+            "industri",
+            "darell",
+            "leiking",
+            "berkata",
+            ",",
+            "sektor"
+        ]
+    },
+    "Gaibin Ransoi": {
+        "entity_tokens": [
+            "gaibin",
+            "ransoi"
+        ],
+        "concordance": [
+            "(",
+            "pcs",
+            ")",
+            "division",
+            "head",
+            "gaibin",
+            "ransoi",
+            "said",
+            "kiulu",
+            "still",
+            "seriously"
+        ]
+    },
+    "Kiulu": {
+        "entity_tokens": [
+            "kiulu"
+        ],
+        "concordance": [
+            "this",
+            "change",
+            "will",
+            "leave",
+            "kiulu",
+            "and",
+            "tamparuli",
+            "as",
+            "a"
+        ]
+    },
+    "Parti Cinta Sabah": {
+        "entity_tokens": [
+            "parti",
+            "cinta",
+            "sabah"
+        ],
+        "concordance": [
+            ",",
+            "2017",
+            "tuaran",
+            ":",
+            "kiulu",
+            "parti",
+            "cinta",
+            "sabah",
+            "(",
+            "pcs",
+            ")",
+            "division"
+        ]
+    },
+    "Salam": {
+        "entity_tokens": [
+            "salam"
+        ],
+        "concordance": [
+            "datin",
+            "suliza",
+            "salam",
+            "ibu",
+            "ismail",
+            "izzani",
+            "``"
+        ]
+    },
+    "Zainal Abidin Harun": {
+        "entity_tokens": [
+            "zainal",
+            "abidin",
+            "harun"
+        ],
+        "concordance": [
+            "bagi",
+            "seorang",
+            "pendaki",
+            ",",
+            "zainal",
+            "abidin",
+            "harun",
+            ",",
+            "53",
+            ",",
+            "pula"
+        ]
+    },
+    "Kevin": {
+        "entity_tokens": [
+            "kevin"
+        ],
+        "concordance": [
+            "feb",
+            "ini.dalam",
+            "pada",
+            "itu",
+            ",",
+            "kevin",
+            "menegaskan",
+            "pihaknya",
+            "tidak",
+            "boleh"
+        ]
+    },
+    "Sentul": {
+        "entity_tokens": [
+            "sentul"
+        ],
+        "concordance": [
+            "ketua",
+            "polis",
+            "daerah",
+            "sentul",
+            "asisten",
+            "komisioner",
+            ",",
+            "r"
+        ]
+    },
+    "Pelosi": {
+        "entity_tokens": [
+            "pelosi"
+        ],
+        "concordance": [
+            "the",
+            "trump",
+            "administration",
+            ",",
+            "''",
+            "pelosi",
+            "told",
+            "supporters",
+            "at",
+            "a"
+        ]
+    },
+    "Nancy Pelosi": {
+        "entity_tokens": [
+            "nancy",
+            "pelosi"
+        ],
+        "concordance": [
+            "nancy",
+            "pelosi",
+            ",",
+            "the",
+            "house",
+            "democratic"
+        ]
+    },
+    "Lana": {
+        "entity_tokens": [
+            "lana"
+        ],
+        "concordance": [
+            "lana",
+            "mendirikan",
+            "rumah",
+            "tangga",
+            "bersama"
+        ]
+    },
+    "Hussain": {
+        "entity_tokens": [
+            "hussain"
+        ],
+        "concordance": [
+            "back",
+            "in",
+            "hong",
+            "kong",
+            ",",
+            "hussain",
+            "remarks",
+            "the",
+            "hard",
+            "work"
+        ]
+    },
+    "Asim Hussain": {
+        "entity_tokens": [
+            "asim",
+            "hussain"
+        ],
+        "concordance": [
+            "hong",
+            "kong",
+            "restaurateur",
+            "asim",
+            "hussain",
+            "already",
+            "owned",
+            "some",
+            "twenty"
+        ]
+    },
+    "Tastes.Daisann Mclane": {
+        "entity_tokens": [
+            "tastes.daisann",
+            "mclane"
+        ],
+        "concordance": [
+            "culinary",
+            "standards",
+            ",",
+            "service",
+            "and",
+            "tastes.daisann",
+            "mclane",
+            "is",
+            "one",
+            "of",
+            "those"
+        ]
+    },
+    "Lawas Zaki Husin": {
+        "entity_tokens": [
+            "lawas",
+            "zaki",
+            "husin"
+        ],
+        "concordance": [
+            "ketua",
+            "balai",
+            "bomba",
+            "dan",
+            "penyelamat",
+            "lawas",
+            "zaki",
+            "husin",
+            "berkata",
+            "banjir",
+            "sedalam",
+            "satu"
+        ]
+    },
+    "Lawas": {
+        "entity_tokens": [
+            "lawas"
+        ],
+        "concordance": [
+            "dari",
+            "balai",
+            "bomba",
+            "dan",
+            "penyelamat",
+            "lawas",
+            ",",
+            "sekitar",
+            "6.40",
+            "petang"
+        ]
+    },
+    "Adzharry": {
+        "entity_tokens": [
+            "adzharry"
+        ],
+        "concordance": [
+            "lama",
+            "\u00adme\u00adninggalkan",
+            "dunia",
+            "ketente\u00adraan",
+            ",",
+            "adzharry",
+            "dan",
+            "mohamad",
+            "redza",
+            "tetap"
+        ]
+    },
+    "Jabir": {
+        "entity_tokens": [
+            "jabir"
+        ],
+        "concordance": [
+            "kapten",
+            "(",
+            "b",
+            ")",
+            "adzharry",
+            "jabir",
+            "dan",
+            "mohamad",
+            "redza",
+            "mustaman"
+        ]
+    },
+    "Mark Altosaar": {
+        "entity_tokens": [
+            "mark",
+            "altosaar"
+        ],
+        "concordance": [
+            "mr",
+            "mark",
+            "altosaar",
+            "."
+        ]
+    },
+    "Mr Altosaar": {
+        "entity_tokens": [
+            "mr",
+            "altosaar"
+        ],
+        "concordance": [
+            "a",
+            "doctor",
+            ",",
+            "''",
+            "observes",
+            "mr",
+            "altosaar",
+            "."
+        ]
+    },
+    "George": {
+        "entity_tokens": [
+            "george"
+        ],
+        "concordance": [
+            "menurut",
+            "george",
+            ",",
+            "maklumat",
+            "daripada",
+            "masyarakat"
+        ]
+    },
+    "Alfred Petrus Nurul Izzah": {
+        "entity_tokens": [
+            "alfred",
+            "petrus",
+            "nurul",
+            "izzah"
+        ],
+        "concordance": [
+            "oleh",
+            "alfred",
+            "petrus",
+            "nurul",
+            "izzah",
+            "(",
+            "tengah",
+            ")",
+            "merakamkan"
+        ]
+    },
+    "Nurul Izzah Anwar": {
+        "entity_tokens": [
+            "nurul",
+            "izzah",
+            "anwar"
+        ],
+        "concordance": [
+            "ahli",
+            "parlimen",
+            "permatang",
+            "pauh",
+            "nurul",
+            "izzah",
+            "anwar",
+            "berkata",
+            ",",
+            "pada",
+            "masa"
+        ]
+    },
+    "Mansour": {
+        "entity_tokens": [
+            "mansour"
+        ],
+        "concordance": [
+            "as",
+            "for",
+            "mansour",
+            ",",
+            "a",
+            "victory",
+            "would"
+        ]
+    },
+    "Qubaisi": {
+        "entity_tokens": [
+            "qubaisi"
+        ],
+        "concordance": [
+            "to",
+            "the",
+            "portion",
+            "of",
+            "money",
+            "qubaisi",
+            "owed",
+            "him",
+            "and",
+            "to"
+        ]
+    },
+    "Selangor Roslan Mohd Isa": {
+        "entity_tokens": [
+            "selangor",
+            "roslan",
+            "mohd",
+            "isa"
+        ],
+        "concordance": [
+            "perkhidmatan",
+            "veterinar",
+            "(",
+            "jpv",
+            ")",
+            "selangor",
+            "roslan",
+            "mohd",
+            "isa",
+            "memohon",
+            "hukuman",
+            "berat",
+            "dengan"
+        ]
+    },
+    "Kamarul Bahrin": {
+        "entity_tokens": [
+            "kamarul",
+            "bahrin"
+        ],
+        "concordance": [
+            "menurut",
+            "raja",
+            "kamarul",
+            "bahrin",
+            "lagi",
+            ",",
+            "negara",
+            "yang"
+        ]
+    },
+    "Raja Kamarul Bahrin": {
+        "entity_tokens": [
+            "raja",
+            "kamarul",
+            "bahrin"
+        ],
+        "concordance": [
+            "menurut",
+            "raja",
+            "kamarul",
+            "bahrin",
+            "lagi",
+            ",",
+            "negara",
+            "yang"
+        ]
+    },
+    "Anuar Ngah": {
+        "entity_tokens": [
+            "anuar",
+            "ngah"
+        ],
+        "concordance": [
+            "setiausaha",
+            "plut",
+            ",",
+            "anuar",
+            "ngah",
+            "berkata",
+            ",",
+            "dia",
+            "menemui"
+        ]
+    },
+    "Anuar": {
+        "entity_tokens": [
+            "anuar"
+        ],
+        "concordance": [
+            "risiko",
+            "tambah",
+            "anuar",
+            ",",
+            "peralatan",
+            "luncur",
+            "udara"
+        ]
+    },
+    "Stella Ree": {
+        "entity_tokens": [
+            "stella",
+            "ree"
+        ],
+        "concordance": [
+            "george",
+            "town",
+            ":",
+            "beauty",
+            "consultant",
+            "stella",
+            "ree",
+            "said",
+            "it",
+            "was",
+            "``"
+        ]
+    },
+    "Ree": {
+        "entity_tokens": [
+            "ree"
+        ],
+        "concordance": [
+            "ree",
+            "said",
+            "although",
+            "her",
+            "car"
+        ]
+    },
+    "Osman Muda": {
+        "entity_tokens": [
+            "osman",
+            "muda"
+        ],
+        "concordance": [
+            "yang",
+            "dipertua",
+            "maidam",
+            ",",
+            "datuk",
+            "osman",
+            "muda",
+            "berkata",
+            ",",
+            "pihaknya",
+            "telah"
+        ]
+    },
+    "Australian Department Of Foreign Affairs": {
+        "entity_tokens": [
+            "australian",
+            "department",
+            "of",
+            "foreign",
+            "affairs"
+        ],
+        "concordance": [
+            "yang",
+            "'s",
+            "case",
+            ",",
+            "the",
+            "australian",
+            "department",
+            "of",
+            "foreign",
+            "affairs",
+            "and",
+            "trade",
+            "said",
+            "it"
+        ]
+    },
+    "Hua Chunying": {
+        "entity_tokens": [
+            "hua",
+            "chunying"
+        ],
+        "concordance": [
+            "ministry",
+            "of",
+            "foreign",
+            "affairs",
+            "spokeswoman",
+            "hua",
+            "chunying",
+            "said",
+            "she",
+            "``",
+            "did"
+        ]
+    },
+    "John Garnaut": {
+        "entity_tokens": [
+            "john",
+            "garnaut"
+        ],
+        "concordance": [
+            "steps.yang",
+            "'s",
+            "friend",
+            "and",
+            "journalist",
+            "john",
+            "garnaut",
+            "described",
+            "him",
+            "as",
+            "``"
+        ]
+    },
+    "Salahuddin": {
+        "entity_tokens": [
+            "salahuddin"
+        ],
+        "concordance": [
+            "dalam",
+            "pada",
+            "itu",
+            ",",
+            "salahuddin",
+            "juga",
+            "mendedahkan",
+            "penyiasatan",
+            "dan"
+        ]
+    },
+    "Salahuddin Ayub": {
+        "entity_tokens": [
+            "salahuddin",
+            "ayub"
+        ],
+        "concordance": [
+            "industri",
+            "asas",
+            "tani",
+            ",",
+            "datuk",
+            "salahuddin",
+            "ayub",
+            "mendedahkan",
+            "ada",
+            "kebenaran",
+            "berhubung"
+        ]
+    },
+    "Streram": {
+        "entity_tokens": [
+            "streram"
+        ],
+        "concordance": [
+            "after",
+            "the",
+            "election",
+            "commission",
+            "blocked",
+            "streram",
+            "from",
+            "filing",
+            "his",
+            "nomination"
+        ]
+    },
+    "Streram Sinnasamy": {
+        "entity_tokens": [
+            "streram",
+            "sinnasamy"
+        ],
+        "concordance": [
+            "petaling",
+            "jaya",
+            ":",
+            "dr",
+            "streram",
+            "sinnasamy",
+            "has",
+            "dismissed",
+            "a",
+            "pkr"
+        ]
+    },
+    "Parti Warisan Sabah": {
+        "entity_tokens": [
+            "parti",
+            "warisan",
+            "sabah"
+        ],
+        "concordance": [
+            "untuk",
+            "mencemarkan",
+            "imej",
+            "kerajaan",
+            "pimpinan",
+            "parti",
+            "warisan",
+            "sabah",
+            "(",
+            "warisan",
+            ")",
+            "yang"
+        ]
+    },
+    "Seberang Perai": {
+        "entity_tokens": [
+            "seberang",
+            "perai"
+        ],
+        "concordance": [
+            "ketua",
+            "polis",
+            "daerah",
+            "seberang",
+            "perai",
+            "utara",
+            "(",
+            "spu",
+            ")"
+        ]
+    },
+    "Noor": {
+        "entity_tokens": [
+            "noor"
+        ],
+        "concordance": [
+            "dah",
+            "'",
+            ",",
+            "''",
+            "kata",
+            "noor",
+            "hasyelawati",
+            "."
+        ]
+    },
+    "Utara": {
+        "entity_tokens": [
+            "utara"
+        ],
+        "concordance": [
+            "tengahari",
+            "semalam",
+            "di",
+            "km124.8",
+            "lebuhraya",
+            "utara",
+            "selatan",
+            "apabila",
+            "motosikal",
+            "mangsa"
+        ]
+    },
+    "Rafliza": {
+        "entity_tokens": [
+            "rafliza"
+        ],
+        "concordance": [
+            "menurut",
+            "rafliza",
+            ",",
+            "pihaknya",
+            "sedang",
+            "membuat"
+        ]
+    },
+    "Ramli": {
+        "entity_tokens": [
+            "ramli"
+        ],
+        "concordance": [
+            "pengarahnya",
+            ",",
+            "rafliza",
+            "ramli",
+            "berkata",
+            ",",
+            "survey",
+            "berkenaan"
+        ]
+    },
+    "Pkr": {
+        "entity_tokens": [
+            "pkr"
+        ],
+        "concordance": [
+            "perdana",
+            "menteri",
+            "''",
+            ".naib",
+            "presiden",
+            "pkr",
+            "juga",
+            "percaya",
+            "sambutan",
+            "baik"
+        ]
+    },
+    "Azizan": {
+        "entity_tokens": [
+            "azizan"
+        ],
+        "concordance": [
+            "daerah",
+            "kuala",
+            "langat",
+            ",",
+            "superintendan",
+            "azizan",
+            "tukiman",
+            "berkata",
+            ",",
+            "sebelum"
+        ]
+    },
+    "Mr Tan": {
+        "entity_tokens": [
+            "mr",
+            "tan"
+        ],
+        "concordance": [
+            "when",
+            "tnp",
+            "asked",
+            "mr",
+            "tan",
+            "what",
+            "tgc",
+            "had",
+            "done"
+        ]
+    },
+    "Charles Tan": {
+        "entity_tokens": [
+            "charles",
+            "tan"
+        ],
+        "concordance": [
+            "oct",
+            "9",
+            ",",
+            "tgc",
+            "founder",
+            "charles",
+            "tan",
+            "blamed",
+            "media",
+            "reports",
+            "and"
+        ]
+    },
+    "Tgc": {
+        "entity_tokens": [
+            "tgc"
+        ],
+        "concordance": [
+            "tnp",
+            "asked",
+            "mr",
+            "tan",
+            "what",
+            "tgc",
+            "had",
+            "done",
+            "with",
+            "the"
+        ]
+    },
+    "The Society": {
+        "entity_tokens": [
+            "the",
+            "society"
+        ],
+        "concordance": [
+            "the",
+            "society",
+            "for",
+            "the",
+            "prevention",
+            "of"
+        ]
+    },
+    "Habibi Majinji": {
+        "entity_tokens": [
+            "habibi",
+            "majinji"
+        ],
+        "concordance": [
+            "kota",
+            "kinabalu",
+            "police",
+            "chief",
+            "acp",
+            "habibi",
+            "majinji",
+            "said",
+            "the",
+            "skeleton",
+            "was"
+        ]
+    },
+    "Habibi": {
+        "entity_tokens": [
+            "habibi"
+        ],
+        "concordance": [
+            "habibi",
+            "urged",
+            "anyone",
+            "with",
+            "a"
+        ]
+    },
+    "Khoo": {
+        "entity_tokens": [
+            "khoo"
+        ],
+        "concordance": [
+            "khoo",
+            "said",
+            "ngos",
+            "like",
+            "penang"
+        ]
+    },
+    "Khoo Salma Nasution": {
+        "entity_tokens": [
+            "khoo",
+            "salma",
+            "nasution"
+        ],
+        "concordance": [
+            "penang",
+            "forum",
+            "steering",
+            "committee",
+            "member",
+            "khoo",
+            "salma",
+            "nasution",
+            "also",
+            "urges",
+            "state",
+            "government"
+        ]
+    },
+    "Statistics Department": {
+        "entity_tokens": [
+            "statistics",
+            "department"
+        ],
+        "concordance": [
+            "the",
+            "population",
+            "statistics",
+            "from",
+            "the",
+            "statistics",
+            "department",
+            ",",
+            "``",
+            "whereas",
+            "the"
+        ]
+    },
+    "Edouard Philippe": {
+        "entity_tokens": [
+            "edouard",
+            "philippe"
+        ],
+        "concordance": [
+            "prime",
+            "minister",
+            "edouard",
+            "philippe",
+            "for",
+            "his",
+            "part",
+            "denounced"
+        ]
+    },
+    "Philippe": {
+        "entity_tokens": [
+            "philippe"
+        ],
+        "concordance": [
+            "by",
+            "the",
+            "law",
+            ",",
+            "''",
+            "philippe",
+            "tweeted",
+            "."
+        ]
+    },
+    "Eric Drouet": {
+        "entity_tokens": [
+            "eric",
+            "drouet"
+        ],
+        "concordance": [
+            "leaders",
+            "of",
+            "the",
+            "movement",
+            ",",
+            "eric",
+            "drouet",
+            "."
+        ]
+    },
+    "Dap": {
+        "entity_tokens": [
+            "dap"
+        ],
+        "concordance": [
+            "berhasil.bagi",
+            "menjelaskan",
+            "hujahnya",
+            ",",
+            "ahli",
+            "dap",
+            "itu",
+            "memberikan",
+            "perumpamaan",
+            "berkaitan"
+        ]
+    },
+    "Atong": {
+        "entity_tokens": [
+            "atong"
+        ],
+        "concordance": [
+            "atong",
+            "plans",
+            "to",
+            "create",
+            "a"
+        ]
+    },
+    "Dr Atong Ayuel": {
+        "entity_tokens": [
+            "dr",
+            "atong",
+            "ayuel"
+        ],
+        "concordance": [
+            "dr",
+            "atong",
+            "ayuel",
+            "makes",
+            "sure",
+            "a",
+            "homeless"
+        ]
+    },
+    "Atong Ayuel": {
+        "entity_tokens": [
+            "atong",
+            "ayuel"
+        ],
+        "concordance": [
+            "atong",
+            "ayuel",
+            ",",
+            "psychiatrist",
+            "stigma",
+            "is"
+        ]
+    },
+    "Ramakrishnan": {
+        "entity_tokens": [
+            "ramakrishnan"
+        ],
+        "concordance": [
+            "jazeera",
+            "]",
+            "to",
+            "recover",
+            ",",
+            "ramakrishnan",
+            "says",
+            ",",
+            "patients",
+            "need"
+        ]
+    },
+    "Henry": {
+        "entity_tokens": [
+            "henry"
+        ],
+        "concordance": [
+            "bauomy/al",
+            "jazeera",
+            "]",
+            "paradise",
+            "agaak",
+            "henry",
+            ",",
+            "one",
+            "of",
+            "atong"
+        ]
+    },
+    "Oh": {
+        "entity_tokens": [
+            "oh"
+        ],
+        "concordance": [
+            "berkaitan",
+            "thailand",
+            ",",
+            "oh",
+            "berkata",
+            ",",
+            "negara",
+            "itu"
+        ]
+    },
+    "Sun": {
+        "entity_tokens": [
+            "sun"
+        ],
+        "concordance": [
+            "antarabangsa",
+            "singapura",
+            ",",
+            "oh",
+            "ei",
+            "sun",
+            "berkata",
+            ",",
+            "jurucakap",
+            "itu"
+        ]
+    },
+    "Aniq": {
+        "entity_tokens": [
+            "aniq"
+        ],
+        "concordance": [
+            "dia",
+            "juga",
+            "mengatakan",
+            "sekiranya",
+            "benar",
+            "aniq",
+            "telah",
+            "melakukan",
+            "kesalahan",
+            ","
+        ]
+    },
+    "Asmuni": {
+        "entity_tokens": [
+            "asmuni"
+        ],
+        "concordance": [
+            "asmuni",
+            "said",
+            "this",
+            "after",
+            "launching"
+        ]
+    },
+    "Asmuni Awi": {
+        "entity_tokens": [
+            "asmuni",
+            "awi"
+        ],
+        "concordance": [
+            "perak",
+            "exco",
+            "asmuni",
+            "awi",
+            "said",
+            "under",
+            "the",
+            "existing"
+        ]
+    },
+    "Pickering": {
+        "entity_tokens": [
+            "pickering"
+        ],
+        "concordance": [
+            "the",
+            "right",
+            "direction",
+            ",",
+            "''",
+            "pickering",
+            "said",
+            "."
+        ]
+    },
+    "Callam Pickering": {
+        "entity_tokens": [
+            "callam",
+            "pickering"
+        ],
+        "concordance": [
+            "'s",
+            "report",
+            ",",
+            "''",
+            "said",
+            "callam",
+            "pickering",
+            ",",
+            "economist",
+            "at",
+            "global"
+        ]
+    },
+    "Zulkifli": {
+        "entity_tokens": [
+            "zulkifli"
+        ],
+        "concordance": [
+            "huluan",
+            ",",
+            "petronas",
+            ",",
+            "adif",
+            "zulkifli",
+            "menerima",
+            "anugerah",
+            "itu",
+            "bagi"
+        ]
+    },
+    "Datuk Stephen Wong Tien Fatt": {
+        "entity_tokens": [
+            "datuk",
+            "stephen",
+            "wong",
+            "tien",
+            "fatt"
+        ],
+        "concordance": [
+            ":",
+            "sabah",
+            "dap",
+            "chairman",
+            ",",
+            "datuk",
+            "stephen",
+            "wong",
+            "tien",
+            "fatt",
+            "describes",
+            "chief",
+            "minister",
+            "datuk"
+        ]
+    },
+    "Wong": {
+        "entity_tokens": [
+            "wong"
+        ],
+        "concordance": [
+            "wong",
+            ",",
+            "the",
+            "mp",
+            "for"
+        ]
+    },
+    "Sabah Dap": {
+        "entity_tokens": [
+            "sabah",
+            "dap"
+        ],
+        "concordance": [
+            "``",
+            "sabah",
+            "dap",
+            "is",
+            "happy",
+            "with",
+            "the"
+        ]
+    },
+    "Abdul Hadi Awang": {
+        "entity_tokens": [
+            "abdul",
+            "hadi",
+            "awang"
+        ],
+        "concordance": [
+            "presiden",
+            "pas",
+            ",",
+            "datuk",
+            "seri",
+            "abdul",
+            "hadi",
+            "awang",
+            "berkata",
+            ",",
+            "kekalahan",
+            "itu"
+        ]
+    },
+    "Stanchart": {
+        "entity_tokens": [
+            "stanchart"
+        ],
+        "concordance": [
+            "a",
+            "representative",
+            "for",
+            "stanchart",
+            "said",
+            "the",
+            "company",
+            "has"
+        ]
+    },
+    "Sultan Nazrin Shah": {
+        "entity_tokens": [
+            "sultan",
+            "nazrin",
+            "shah"
+        ],
+        "concordance": [
+            "sultan",
+            "nazrin",
+            "shah",
+            "expressed",
+            "confidence",
+            "that",
+            "dr"
+        ]
+    },
+    "Sultan": {
+        "entity_tokens": [
+            "sultan"
+        ],
+        "concordance": [
+            "sultan",
+            "nazrin",
+            "shah",
+            "expressed",
+            "confidence"
+        ]
+    },
+    "Pboc": {
+        "entity_tokens": [
+            "pboc"
+        ],
+        "concordance": [
+            "the",
+            "pboc",
+            "also",
+            "expanded",
+            "the",
+            "quota"
+        ]
+    },
+    "China": {
+        "entity_tokens": [
+            "china"
+        ],
+        "concordance": [
+            "china",
+            "'s",
+            "large",
+            "commercial",
+            "lenders"
+        ]
+    },
+    "Journalists": {
+        "entity_tokens": [
+            "journalists"
+        ],
+        "concordance": [
+            "according",
+            "to",
+            "rsf",
+            ",",
+            "60",
+            "journalists",
+            "and",
+            "media",
+            "workers",
+            "have"
+        ]
+    },
+    "Afghanistan": {
+        "entity_tokens": [
+            "afghanistan"
+        ],
+        "concordance": [
+            "workers",
+            "have",
+            "been",
+            "killed",
+            "in",
+            "afghanistan",
+            "since",
+            "the",
+            "us-led",
+            "invasion"
+        ]
+    },
+    "Journalists.\u00c2": {
+        "entity_tokens": [
+            "journalists.\u00e2"
+        ],
+        "concordance": [
+            "year",
+            "in",
+            "war-torn",
+            "afghanistan",
+            "targeting",
+            "journalists.\u00e2",
+            "last",
+            "month",
+            ",",
+            "afghan"
+        ]
+    },
+    "Journalists Safety": {
+        "entity_tokens": [
+            "journalists",
+            "safety"
+        ],
+        "concordance": [
+            "afghanistan",
+            "'s",
+            "journalists",
+            "safety",
+            "committee",
+            "called",
+            "on",
+            "the"
+        ]
+    },
+    "Adnan": {
+        "entity_tokens": [
+            "adnan"
+        ],
+        "concordance": [
+            "(",
+            "ikatan",
+            ")",
+            ",",
+            "shahir",
+            "adnan",
+            "berkata",
+            ",",
+            "pihaknya",
+            "bersama"
+        ]
+    },
+    "University Alliance": {
+        "entity_tokens": [
+            "university",
+            "alliance"
+        ],
+        "concordance": [
+            "he",
+            ",",
+            "million",
+            "plus",
+            "and",
+            "university",
+            "alliance",
+            ",",
+            "which",
+            "collectively",
+            "represent"
+        ]
+    },
+    "Donald Trump": {
+        "entity_tokens": [
+            "donald",
+            "trump"
+        ],
+        "concordance": [
+            "for",
+            "a",
+            "revival",
+            "after",
+            "president",
+            "donald",
+            "trump",
+            "imposed",
+            "tariffs",
+            "on",
+            "steel"
+        ]
+    },
+    "Trump": {
+        "entity_tokens": [
+            "trump"
+        ],
+        "concordance": [
+            "pressure",
+            "on",
+            "the",
+            "company",
+            "from",
+            "trump",
+            "."
+        ]
+    },
+    "Sarawak": {
+        "entity_tokens": [
+            "sarawak"
+        ],
+        "concordance": [
+            "needed",
+            "for",
+            "muslim",
+            "converts",
+            "in",
+            "sarawak"
+        ]
+    },
+    "State Assembly": {
+        "entity_tokens": [
+            "state",
+            "assembly"
+        ],
+        "concordance": [
+            "have",
+            "it",
+            "tabled",
+            "at",
+            "the",
+            "state",
+            "assembly",
+            "as",
+            "soon",
+            "as",
+            "possible"
+        ]
+    },
+    "Felix Sanchez": {
+        "entity_tokens": [
+            "felix",
+            "sanchez"
+        ],
+        "concordance": [
+            "the",
+            "asian",
+            "cup",
+            "but",
+            "coach",
+            "felix",
+            "sanchez",
+            "has",
+            "been",
+            "drilling",
+            "it"
+        ]
+    },
+    "Capitaland": {
+        "entity_tokens": [
+            "capitaland"
+        ],
+        "concordance": [
+            "a",
+            "spokesman",
+            "for",
+            "capitaland",
+            "said",
+            "on",
+            "tuesday",
+            "that"
+        ]
+    },
+    "August.Judy Murray": {
+        "entity_tokens": [
+            "august.judy",
+            "murray"
+        ],
+        "concordance": [
+            "at",
+            "the",
+            "asian",
+            "games",
+            "last",
+            "august.judy",
+            "murray",
+            ",",
+            "the",
+            "mother",
+            "of"
+        ]
+    },
+    "Saifuddin Nasution Ismail": {
+        "entity_tokens": [
+            "saifuddin",
+            "nasution",
+            "ismail"
+        ],
+        "concordance": [
+            "setiausaha",
+            "agungnya",
+            ",",
+            "datuk",
+            "saifuddin",
+            "nasution",
+            "ismail",
+            "berkata",
+            ",",
+            "setakat",
+            "hari"
+        ]
+    },
+    "Mr Raab": {
+        "entity_tokens": [
+            "mr",
+            "raab"
+        ],
+        "concordance": [
+            "mr",
+            "raab",
+            "said",
+            "that",
+            "taking",
+            "that"
+        ]
+    },
+    "Dewi": {
+        "entity_tokens": [
+            "dewi"
+        ],
+        "concordance": [
+            "balik",
+            "gelaran",
+            "kerana",
+            "merosakkan",
+            "imej",
+            "dewi",
+            "remaja",
+            "yang",
+            "menjadi",
+            "ikon"
+        ]
+    },
+    "Azhar": {
+        "entity_tokens": [
+            "azhar"
+        ],
+        "concordance": [
+            "akademi",
+            "ini",
+            ",",
+            "''",
+            "jelas",
+            "azhar",
+            "yang",
+            "menjadi",
+            "anggota",
+            "bomba"
+        ]
+    },
+    "Datuk Seri Najib Razak": {
+        "entity_tokens": [
+            "datuk",
+            "seri",
+            "najib",
+            "razak"
+        ],
+        "concordance": [
+            "berselindung",
+            "mengkritik",
+            "pentadbiran",
+            "terdahulu",
+            "pimpinan",
+            "datuk",
+            "seri",
+            "najib",
+            "razak",
+            "mengenai",
+            "rundingan",
+            "dengan",
+            "syarikat"
+        ]
+    },
+    "Puad": {
+        "entity_tokens": [
+            "puad"
+        ],
+        "concordance": [
+            "mohd",
+            "puad",
+            "mendakwa",
+            ",",
+            "malaysia",
+            "bertambah"
+        ]
+    },
+    "Mohd Puad Zakarshi": {
+        "entity_tokens": [
+            "mohd",
+            "puad",
+            "zakarshi"
+        ],
+        "concordance": [
+            "veteran",
+            "umno",
+            ",",
+            "datuk",
+            "dr",
+            "mohd",
+            "puad",
+            "zakarshi",
+            "mempersoalkan",
+            "bagaimana",
+            "seorang",
+            "peguam"
+        ]
+    },
+    "Othman": {
+        "entity_tokens": [
+            "othman"
+        ],
+        "concordance": [
+            "abdul",
+            "syukor",
+            "othman",
+            "beliau",
+            "turut",
+            "menegaskan",
+            "bahawa"
+        ]
+    },
+    "Abdul": {
+        "entity_tokens": [
+            "abdul"
+        ],
+        "concordance": [
+            "abdul",
+            "syukor",
+            "othman",
+            "beliau",
+            "turut"
+        ]
+    },
+    "Nabila Razali": {
+        "entity_tokens": [
+            "nabila",
+            "razali"
+        ],
+        "concordance": [
+            "penyanyi",
+            "kan.",
+            "artikel",
+            "berkaitan",
+            ":",
+            "nabila",
+            "razali",
+            "tak",
+            "sedar",
+            "nyanyian",
+            "sumbang"
+        ]
+    },
+    "Nabila": {
+        "entity_tokens": [
+            "nabila"
+        ],
+        "concordance": [
+            "nabila",
+            "turut",
+            "berterima",
+            "kasih",
+            "kepada"
+        ]
+    },
+    "Mohd Razali": {
+        "entity_tokens": [
+            "mohd",
+            "razali"
+        ],
+        "concordance": [
+            "nabila",
+            "atau",
+            "nur",
+            "nabila",
+            "mohd",
+            "razali",
+            ",",
+            "27",
+            ",",
+            "berkata"
+        ]
+    },
+    "Nur": {
+        "entity_tokens": [
+            "nur"
+        ],
+        "concordance": [
+            "nabila",
+            "atau",
+            "nur",
+            "nabila",
+            "mohd",
+            "razali",
+            ","
+        ]
+    },
+    "Mcgurk": {
+        "entity_tokens": [
+            "mcgurk"
+        ],
+        "concordance": [
+            "by",
+            "us",
+            "officials",
+            ",",
+            "including",
+            "mcgurk",
+            "."
+        ]
+    },
+    "Qunun": {
+        "entity_tokens": [
+            "qunun"
+        ],
+        "concordance": [
+            "families.in",
+            "her",
+            "cbc",
+            "interview",
+            ",",
+            "qunun",
+            "said",
+            ":",
+            "``",
+            "i"
+        ]
+    },
+    "Ramaphosa": {
+        "entity_tokens": [
+            "ramaphosa"
+        ],
+        "concordance": [
+            "``",
+            "ramaphosa",
+            "said",
+            "robots",
+            "had",
+            "cut"
+        ]
+    },
+    "Stefan Lofven": {
+        "entity_tokens": [
+            "stefan",
+            "lofven"
+        ],
+        "concordance": [
+            "ramaphosa",
+            "and",
+            "swedish",
+            "prime",
+            "minister",
+            "stefan",
+            "lofven",
+            ",",
+            "said",
+            "in",
+            "a"
+        ]
+    },
+    "Cyril Ramaphosa": {
+        "entity_tokens": [
+            "cyril",
+            "ramaphosa"
+        ],
+        "concordance": [
+            "co-chaired",
+            "by",
+            "south",
+            "african",
+            "president",
+            "cyril",
+            "ramaphosa",
+            "and",
+            "swedish",
+            "prime",
+            "minister"
+        ]
+    },
+    "Aisha": {
+        "entity_tokens": [
+            "aisha"
+        ],
+        "concordance": [
+            "aisha",
+            "'s",
+            "husband",
+            "is",
+            "supportive"
+        ]
+    },
+    "Aisha Bakari Gombi": {
+        "entity_tokens": [
+            "aisha",
+            "bakari",
+            "gombi"
+        ],
+        "concordance": [
+            "aisha",
+            "bakari",
+            "gombi",
+            ",",
+            "hunter",
+            "as",
+            "a"
+        ]
+    },
+    "Aisha Bakari": {
+        "entity_tokens": [
+            "aisha",
+            "bakari"
+        ],
+        "concordance": [
+            "aisha",
+            "bakari",
+            "gombi",
+            ",",
+            "hunter",
+            "as"
+        ]
+    },
+    "Nadhir": {
+        "entity_tokens": [
+            "nadhir"
+        ],
+        "concordance": [
+            "yang",
+            "baik",
+            ",",
+            "ia",
+            "memudahkan",
+            "nadhir",
+            "ashafiq",
+            "dan",
+            "rakan",
+            "kongsinya"
+        ]
+    },
+    "Maritim Malaysia": {
+        "entity_tokens": [
+            "maritim",
+            "malaysia"
+        ],
+        "concordance": [
+            "``",
+            "maritim",
+            "malaysia",
+            "turut",
+            "merampas",
+            "kapal",
+            "tersebut"
+        ]
+    },
+    "Mohd .": {
+        "entity_tokens": [
+            "mohd",
+            "."
+        ],
+        "concordance": [
+            "jelas",
+            "mohd",
+            "."
+        ]
+    },
+    "Yahya": {
+        "entity_tokens": [
+            "yahya"
+        ],
+        "concordance": [
+            "kata",
+            "menteri",
+            "pelancongannya",
+            ",",
+            "arief",
+            "yahya",
+            "."
+        ]
+    },
+    "Knox": {
+        "entity_tokens": [
+            "knox"
+        ],
+        "concordance": [
+            "brexit",
+            "and",
+            "its",
+            "implications",
+            ",",
+            "knox",
+            "reckons",
+            "he",
+            "simply",
+            "has"
+        ]
+    },
+    "Knox Reckons": {
+        "entity_tokens": [
+            "knox",
+            "reckons"
+        ],
+        "concordance": [
+            "brexit",
+            "and",
+            "its",
+            "implications",
+            ",",
+            "knox",
+            "reckons",
+            "he",
+            "simply",
+            "has",
+            "to"
+        ]
+    },
+    "Ian Knox": {
+        "entity_tokens": [
+            "ian",
+            "knox"
+        ],
+        "concordance": [
+            "by",
+            "shiv",
+            "das",
+            "ian",
+            "knox",
+            "comes",
+            "from",
+            "portrush",
+            ","
+        ]
+    },
+    "Mr Ritwick Dutta": {
+        "entity_tokens": [
+            "mr",
+            "ritwick",
+            "dutta"
+        ],
+        "concordance": [
+            "to",
+            "be",
+            "grim",
+            ",",
+            "''",
+            "mr",
+            "ritwick",
+            "dutta",
+            ",",
+            "an",
+            "environment",
+            "lawyer"
+        ]
+    },
+    "Ng": {
+        "entity_tokens": [
+            "ng"
+        ],
+        "concordance": [
+            "(",
+            "114",
+            ")",
+            ".elaborating",
+            ",",
+            "ng",
+            "said",
+            "the",
+            "state",
+            "government"
+        ]
+    },
+    "Ng Sze Han Said.He": {
+        "entity_tokens": [
+            "ng",
+            "sze",
+            "han",
+            "said.he"
+        ],
+        "concordance": [
+            "new",
+            "village",
+            "development",
+            "committee",
+            "chairperson",
+            "ng",
+            "sze",
+            "han",
+            "said.he",
+            "said",
+            "the",
+            "state",
+            "government"
+        ]
+    },
+    "Seri Abdul Hadi Awang": {
+        "entity_tokens": [
+            "seri",
+            "abdul",
+            "hadi",
+            "awang"
+        ],
+        "concordance": [
+            ",",
+            "kata",
+            "presiden",
+            "pas",
+            "datuk",
+            "seri",
+            "abdul",
+            "hadi",
+            "awang",
+            ",",
+            "beliau",
+            "berkata",
+            ","
+        ]
+    },
+    "Hadi": {
+        "entity_tokens": [
+            "hadi"
+        ],
+        "concordance": [
+            "hadi",
+            "berkempen",
+            "untuk",
+            "calon",
+            "bn"
+        ]
+    },
+    "Dzulkefly Ahmad": {
+        "entity_tokens": [
+            "dzulkefly",
+            "ahmad"
+        ],
+        "concordance": [
+            "health",
+            "minister",
+            "dzulkefly",
+            "ahmad",
+            "has",
+            "expressed",
+            "readiness",
+            "to"
+        ]
+    },
+    "Princess Ubolratana Rajakanya": {
+        "entity_tokens": [
+            "princess",
+            "ubolratana",
+            "rajakanya"
+        ],
+        "concordance": [
+            "princess",
+            "ubolratana",
+            "rajakanya",
+            "sirivadhana",
+            "barnavadi",
+            ",",
+            "67"
+        ]
+    },
+    "Ubolratana Rajakanya": {
+        "entity_tokens": [
+            "ubolratana",
+            "rajakanya"
+        ],
+        "concordance": [
+            "princess",
+            "ubolratana",
+            "rajakanya",
+            "sirivadhana",
+            "barnavadi",
+            ",",
+            "67"
+        ]
+    },
+    "Ubolratana": {
+        "entity_tokens": [
+            "ubolratana"
+        ],
+        "concordance": [
+            "ubolratana",
+            "relinquished",
+            "her",
+            "royal",
+            "titles"
+        ]
+    },
+    "Xi Jinping": {
+        "entity_tokens": [
+            "xi",
+            "jinping"
+        ],
+        "concordance": [
+            "hong",
+            "kong",
+            "\u2022",
+            "chinese",
+            "president",
+            "xi",
+            "jinping",
+            "said",
+            "in",
+            "a",
+            "speech"
+        ]
+    },
+    "Xi": {
+        "entity_tokens": [
+            "xi"
+        ],
+        "concordance": [
+            "while",
+            "xi",
+            "signalled",
+            "that",
+            "china",
+            "'s"
+        ]
+    },
+    "Saadatul": {
+        "entity_tokens": [
+            "saadatul"
+        ],
+        "concordance": [
+            "according",
+            "to",
+            "the",
+            "newspaper",
+            ",",
+            "saadatul",
+            "handed",
+            "this",
+            "report",
+            "over"
+        ]
+    },
+    "Saadatul Nafisah Bashir Ahmad": {
+        "entity_tokens": [
+            "saadatul",
+            "nafisah",
+            "bashir",
+            "ahmad"
+        ],
+        "concordance": [
+            "saadatul",
+            "nafisah",
+            "bashir",
+            "ahmad",
+            "was",
+            "asked",
+            "about",
+            "the"
+        ]
+    },
+    "Kadir Jasin": {
+        "entity_tokens": [
+            "kadir",
+            "jasin"
+        ],
+        "concordance": [
+            "a",
+            "kadir",
+            "jasin",
+            "said",
+            "anwar",
+            "was",
+            "once"
+        ]
+    },
+    "Isham": {
+        "entity_tokens": [
+            "isham"
+        ],
+        "concordance": [
+            "isham",
+            "said",
+            "this",
+            "should",
+            "not"
+        ]
+    },
+    "Isham Jalil": {
+        "entity_tokens": [
+            "isham",
+            "jalil"
+        ],
+        "concordance": [
+            "isham",
+            "jalil",
+            "said",
+            "that",
+            "history",
+            "was"
+        ]
+    },
+    "Hafizal Md Tahir": {
+        "entity_tokens": [
+            "hafizal",
+            "md",
+            "tahir"
+        ],
+        "concordance": [
+            "save",
+            "u",
+            "...",
+            "posted",
+            "by",
+            "md",
+            "hafizal",
+            "md",
+            "tahir",
+            "on",
+            "monday",
+            ","
+        ]
+    },
+    "Mr Hafizal Mohamad Tahir": {
+        "entity_tokens": [
+            "mr",
+            "hafizal",
+            "mohamad",
+            "tahir"
+        ],
+        "concordance": [
+            "october",
+            "2018",
+            "her",
+            "father",
+            ",",
+            "mr",
+            "hafizal",
+            "mohamad",
+            "tahir",
+            ",",
+            "36",
+            ",",
+            "told"
+        ]
+    },
+    "Hafizal": {
+        "entity_tokens": [
+            "hafizal"
+        ],
+        "concordance": [
+            "will",
+            "be",
+            "gathering",
+            "at",
+            "mr",
+            "hafizal",
+            "'s",
+            "brother",
+            "'s",
+            "flat"
+        ]
+    },
+    "Mr Hafizal": {
+        "entity_tokens": [
+            "mr",
+            "hafizal"
+        ],
+        "concordance": [
+            "family",
+            "will",
+            "be",
+            "gathering",
+            "at",
+            "mr",
+            "hafizal",
+            "'s",
+            "brother",
+            "'s",
+            "flat"
+        ]
+    },
+    "Mr Yeo": {
+        "entity_tokens": [
+            "mr",
+            "yeo"
+        ],
+        "concordance": [
+            "but",
+            "mr",
+            "yeo",
+            "was",
+            "relieved",
+            "to",
+            "see"
+        ]
+    },
+    "Walter Theseira": {
+        "entity_tokens": [
+            "walter",
+            "theseira"
+        ],
+        "concordance": [
+            "transport",
+            "economist",
+            "walter",
+            "theseira",
+            "from",
+            "the",
+            "singapore",
+            "university"
+        ]
+    },
+    "Dr Theseira": {
+        "entity_tokens": [
+            "dr",
+            "theseira"
+        ],
+        "concordance": [
+            "dr",
+            "theseira",
+            "said",
+            ":",
+            "``",
+            "although"
+        ]
+    },
+    "Lawrence Loh": {
+        "entity_tokens": [
+            "lawrence",
+            "loh"
+        ],
+        "concordance": [
+            ",",
+            "uncertainty",
+            "increase",
+            "associate",
+            "professor",
+            "lawrence",
+            "loh",
+            ",",
+            "from",
+            "the",
+            "national"
+        ]
+    },
+    "Muhammad Tarmizi": {
+        "entity_tokens": [
+            "muhammad",
+            "tarmizi"
+        ],
+        "concordance": [
+            "adik",
+            "lelaki",
+            "nur",
+            "farhana",
+            "iaitu",
+            "muhammad",
+            "tarmizi",
+            "mengesahkan",
+            "perkara",
+            "itu",
+            "kepada"
+        ]
+    },
+    "Kbs": {
+        "entity_tokens": [
+            "kbs"
+        ],
+        "concordance": [
+            "``",
+            "kbs",
+            "tidak",
+            "akan",
+            "berkompromi",
+            "terhadap"
+        ]
+    },
+    "Belia": {
+        "entity_tokens": [
+            "belia"
+        ],
+        "concordance": [
+            "kementerian",
+            "belia",
+            "dan",
+            "sukan",
+            "dalam",
+            "satu"
+        ]
+    },
+    "Iran": {
+        "entity_tokens": [
+            "iran"
+        ],
+        "concordance": [
+            "iran",
+            "'s",
+            "experience",
+            "with",
+            "the"
+        ]
+    },
+    "Iranian": {
+        "entity_tokens": [
+            "iranian"
+        ],
+        "concordance": [
+            "tehran",
+            ",",
+            "daily",
+            "visits",
+            "to",
+            "iranian",
+            "telegram",
+            "channels",
+            "fell",
+            "from"
+        ]
+    },
+    "Zibakalam": {
+        "entity_tokens": [
+            "zibakalam"
+        ],
+        "concordance": [
+            "at",
+            "the",
+            "ministry",
+            "event",
+            ",",
+            "zibakalam",
+            "was",
+            "candid",
+            "enough",
+            "to"
+        ]
+    },
+    "Sadegh Zibakalam": {
+        "entity_tokens": [
+            "sadegh",
+            "zibakalam"
+        ],
+        "concordance": [
+            "political",
+            "scientist",
+            "sadegh",
+            "zibakalam",
+            ",",
+            "speaking",
+            "at",
+            "an"
+        ]
+    },
+    "Di Giusto": {
+        "entity_tokens": [
+            "di",
+            "giusto"
+        ],
+        "concordance": [
+            "level",
+            "of",
+            "dress",
+            "based",
+            "on",
+            "di",
+            "giusto",
+            "'s",
+            "recommendations",
+            ":",
+            "baseline"
+        ]
+    },
+    "Giusto": {
+        "entity_tokens": [
+            "giusto"
+        ],
+        "concordance": [
+            "of",
+            "dress",
+            "based",
+            "on",
+            "di",
+            "giusto",
+            "'s",
+            "recommendations",
+            ":",
+            "baseline"
+        ]
+    },
+    "Sylvie Di Giusto": {
+        "entity_tokens": [
+            "sylvie",
+            "di",
+            "giusto"
+        ],
+        "concordance": [
+            "sylvie",
+            "di",
+            "giusto",
+            ",",
+            "founder",
+            "of",
+            "executive"
+        ]
+    },
+    "Eugene Tan": {
+        "entity_tokens": [
+            "eugene",
+            "tan"
+        ],
+        "concordance": [
+            "smu",
+            "law",
+            "lecturer",
+            "eugene",
+            "tan",
+            "said",
+            "that",
+            "even",
+            "if"
+        ]
+    },
+    "Tan": {
+        "entity_tokens": [
+            "tan"
+        ],
+        "concordance": [
+            "non-legal",
+            ",",
+            "''",
+            "associate",
+            "prof",
+            "tan",
+            "said",
+            "."
+        ]
+    },
+    "James Bell": {
+        "entity_tokens": [
+            "james",
+            "bell"
+        ],
+        "concordance": [
+            "around",
+            "the",
+            "group",
+            ",",
+            "''",
+            "james",
+            "bell",
+            ",",
+            "an",
+            "analyst",
+            "at"
+        ]
+    },
+    "Dr Ng Said.Prior": {
+        "entity_tokens": [
+            "dr",
+            "ng",
+            "said.prior"
+        ],
+        "concordance": [
+            "related",
+            "to",
+            "gun",
+            "movement",
+            ",",
+            "dr",
+            "ng",
+            "said.prior",
+            "to",
+            "his",
+            "participation",
+            "in"
+        ]
+    },
+    "Sergeant.Dr Ng": {
+        "entity_tokens": [
+            "sergeant.dr",
+            "ng"
+        ],
+        "concordance": [
+            "holding",
+            "the",
+            "rank",
+            "of",
+            "third",
+            "sergeant.dr",
+            "ng",
+            "said",
+            "pang",
+            "was",
+            "part"
+        ]
+    },
+    "Ng Eng Hen": {
+        "entity_tokens": [
+            "ng",
+            "eng",
+            "hen"
+        ],
+        "concordance": [
+            "aloysius",
+            "pang",
+            ",",
+            "defence",
+            "minister",
+            "ng",
+            "eng",
+            "hen",
+            "told",
+            "parliament",
+            "on",
+            "monday"
+        ]
+    },
+    "Germany.Dr Ng": {
+        "entity_tokens": [
+            "germany.dr",
+            "ng"
+        ],
+        "concordance": [
+            "states",
+            ",",
+            "south",
+            "korea",
+            "and",
+            "germany.dr",
+            "ng",
+            "added",
+            "that",
+            "the",
+            "ssph"
+        ]
+    },
+    "Dr Ng Said.Pang": {
+        "entity_tokens": [
+            "dr",
+            "ng",
+            "said.pang"
+        ],
+        "concordance": [
+            "training",
+            "(",
+            "ict",
+            ")",
+            ",",
+            "dr",
+            "ng",
+            "said.pang",
+            "arrived",
+            "in",
+            "new",
+            "zealand"
+        ]
+    },
+    "Dr Ng": {
+        "entity_tokens": [
+            "dr",
+            "ng"
+        ],
+        "concordance": [
+            "singaporeans",
+            "''",
+            "with",
+            "that",
+            ",",
+            "dr",
+            "ng",
+            "requested",
+            "that",
+            "everyone",
+            "reserves"
+        ]
+    },
+    "Dr Ng Added.According": {
+        "entity_tokens": [
+            "dr",
+            "ng",
+            "added.according"
+        ],
+        "concordance": [
+            "tasks",
+            "in",
+            "new",
+            "zealand",
+            ",",
+            "dr",
+            "ng",
+            "added.according",
+            "to",
+            "dr",
+            "ng",
+            ","
+        ]
+    },
+    "Ahmad Shahril": {
+        "entity_tokens": [
+            "ahmad",
+            "shahril"
+        ],
+        "concordance": [
+            "ahmad",
+            "shahril",
+            ",",
+            "who",
+            "was",
+            "driving"
+        ]
+    },
+    "Ahmad Sharil Othman": {
+        "entity_tokens": [
+            "ahmad",
+            "sharil",
+            "othman"
+        ],
+        "concordance": [
+            "shah",
+            "alam",
+            ":",
+            "fireman",
+            "ahmad",
+            "sharil",
+            "othman",
+            "recounted",
+            "the",
+            "terror",
+            "he"
+        ]
+    },
+    "Abdullah": {
+        "entity_tokens": [
+            "abdullah"
+        ],
+        "concordance": [
+            "abdullah",
+            "said",
+            "that",
+            "the",
+            "taliban"
+        ]
+    },
+    "Abdullah Abdullah": {
+        "entity_tokens": [
+            "abdullah",
+            "abdullah"
+        ],
+        "concordance": [
+            "abdullah",
+            "abdullah",
+            ",",
+            "the",
+            "country",
+            "'s"
+        ]
+    },
+    "International Labour Organization": {
+        "entity_tokens": [
+            "international",
+            "labour",
+            "organization"
+        ],
+        "concordance": [
+            "considered",
+            "forced",
+            "labour.according",
+            "to",
+            "the",
+            "international",
+            "labour",
+            "organization",
+            ",",
+            "forced",
+            "labour",
+            "refers"
+        ]
+    },
+    "International Labour Organisation Convention": {
+        "entity_tokens": [
+            "international",
+            "labour",
+            "organisation",
+            "convention"
+        ],
+        "concordance": [
+            "of",
+            "work",
+            "is",
+            "the",
+            "first",
+            "international",
+            "labour",
+            "organisation",
+            "convention",
+            ",",
+            "but",
+            "alas",
+            ","
+        ]
+    },
+    "Asyraf Wajdi Dusuki": {
+        "entity_tokens": [
+            "asyraf",
+            "wajdi",
+            "dusuki"
+        ],
+        "concordance": [
+            "ketua",
+            "pemudanya",
+            "datuk",
+            "dr",
+            "asyraf",
+            "wajdi",
+            "dusuki",
+            "berkata",
+            ",",
+            "namun",
+            "ianya"
+        ]
+    },
+    "Umno Malaysia": {
+        "entity_tokens": [
+            "umno",
+            "malaysia"
+        ],
+        "concordance": [
+            "bagaimanpaun",
+            "katanya",
+            "lagi",
+            "pemuda",
+            "umno",
+            "malaysia",
+            "berpendirian",
+            "tegas",
+            "bahawa",
+            "penubuhan"
+        ]
+    },
+    "Dave Lewis": {
+        "entity_tokens": [
+            "dave",
+            "lewis"
+        ],
+        "concordance": [
+            "new",
+            "ceo",
+            "dave",
+            "lewis",
+            "added",
+            ":",
+            "``",
+            "our"
+        ]
+    },
+    "James Abbott": {
+        "entity_tokens": [
+            "james",
+            "abbott"
+        ],
+        "concordance": [
+            "in",
+            "a",
+            "note",
+            ",",
+            "james",
+            "abbott",
+            "at",
+            "accendo",
+            "markets",
+            "says"
+        ]
+    },
+    "Fahmi Fadzil": {
+        "entity_tokens": [
+            "fahmi",
+            "fadzil"
+        ],
+        "concordance": [
+            ",",
+            "pengarah",
+            "komunikasi",
+            "pkr",
+            ",",
+            "fahmi",
+            "fadzil",
+            "berkata",
+            ",",
+            "tapi",
+            "perkara"
+        ]
+    },
+    "Gary Szatkowski": {
+        "entity_tokens": [
+            "gary",
+            "szatkowski"
+        ],
+        "concordance": [
+            ",",
+            "''",
+            "retired",
+            "nws",
+            "meteorologist",
+            "gary",
+            "szatkowski",
+            ",",
+            "who",
+            "continues",
+            "to"
+        ]
+    },
+    "Bnm": {
+        "entity_tokens": [
+            "bnm"
+        ],
+        "concordance": [
+            "which",
+            "will",
+            "be",
+            "managed",
+            "by",
+            "bnm",
+            "."
+        ]
+    },
+    "Datuk Nor Shamsiah Mohd Yunus": {
+        "entity_tokens": [
+            "datuk",
+            "nor",
+            "shamsiah",
+            "mohd",
+            "yunus"
+        ],
+        "concordance": [
+            "governor",
+            "datuk",
+            "nor",
+            "shamsiah",
+            "mohd",
+            "yunus",
+            "(",
+            "picture",
+            ")",
+            "said"
+        ]
+    },
+    "Shamsiah": {
+        "entity_tokens": [
+            "shamsiah"
+        ],
+        "concordance": [
+            "of",
+            "the",
+            "fund",
+            ",",
+            "nor",
+            "shamsiah",
+            "said",
+            "the",
+            "central",
+            "bank"
+        ]
+    },
+    "Bank Negara Malaysia": {
+        "entity_tokens": [
+            "bank",
+            "negara",
+            "malaysia"
+        ],
+        "concordance": [
+            "``",
+            "bank",
+            "negara",
+            "malaysia",
+            "dan",
+            "institusi",
+            "kewangan",
+            "terus"
+        ]
+    },
+    "Uda": {
+        "entity_tokens": [
+            "uda"
+        ],
+        "concordance": [
+            "(",
+            "dun",
+            ")",
+            "petagas",
+            ",",
+            "uda",
+            "sulai",
+            "(",
+            "tengah",
+            ")"
+        ]
+    },
+    "Firdaus Francis": {
+        "entity_tokens": [
+            "firdaus",
+            "francis"
+        ],
+        "concordance": [
+            "polis",
+            "daerah",
+            "tenom",
+            "deputi",
+            "superintendan",
+            "firdaus",
+            "francis",
+            "berkata",
+            ",",
+            "mangsa",
+            "samuel"
+        ]
+    },
+    "Wee Ka Siong": {
+        "entity_tokens": [
+            "wee",
+            "ka",
+            "siong"
+        ],
+        "concordance": [
+            "petaling",
+            "jaya",
+            ":",
+            "mca",
+            "president",
+            "wee",
+            "ka",
+            "siong",
+            "has",
+            "hit",
+            "back",
+            "at"
+        ]
+    },
+    "Siong": {
+        "entity_tokens": [
+            "siong"
+        ],
+        "concordance": [
+            "ka",
+            "siong",
+            "juga",
+            "berkata",
+            ",",
+            "kerajaan"
+        ]
+    },
+    "Tan Sri Muhyiddin Yassin": {
+        "entity_tokens": [
+            "tan",
+            "sri",
+            "muhyiddin",
+            "yassin"
+        ],
+        "concordance": [
+            "sesi",
+            "perbahasan",
+            "ucapan",
+            "dasar",
+            "presiden",
+            "tan",
+            "sri",
+            "muhyiddin",
+            "yassin",
+            ",",
+            "pagi",
+            "tadi",
+            "."
+        ]
+    },
+    "Mohd Ali": {
+        "entity_tokens": [
+            "mohd",
+            "ali"
+        ],
+        "concordance": [
+            "mohd",
+            "ali",
+            "was",
+            "a",
+            "leader",
+            "of"
+        ]
+    },
+    "Ali Tinju": {
+        "entity_tokens": [
+            "ali",
+            "tinju"
+        ],
+        "concordance": [
+            "ali",
+            ",",
+            "also",
+            "known",
+            "as",
+            "ali",
+            "tinju",
+            ",",
+            "had",
+            "applied",
+            "to"
+        ]
+    },
+    "Mohd Ali Baharom": {
+        "entity_tokens": [
+            "mohd",
+            "ali",
+            "baharom"
+        ],
+        "concordance": [
+            "application",
+            "by",
+            "controversial",
+            "umno",
+            "politician",
+            "mohd",
+            "ali",
+            "baharom",
+            ",",
+            "a",
+            "leader",
+            "of"
+        ]
+    },
+    "Lafa": {
+        "entity_tokens": [
+            "lafa"
+        ],
+        "concordance": [
+            "lafa",
+            "chairman",
+            "st",
+            "tan",
+            "said"
+        ]
+    },
+    "Labuan Amateur Football Association": {
+        "entity_tokens": [
+            "labuan",
+            "amateur",
+            "football",
+            "association"
+        ],
+        "concordance": [
+            "19",
+            ",",
+            "2018",
+            "labuan",
+            ":",
+            "labuan",
+            "amateur",
+            "football",
+            "association",
+            "(",
+            "lafa",
+            ")",
+            "has"
+        ]
+    },
+    "Labuan": {
+        "entity_tokens": [
+            "labuan"
+        ],
+        "concordance": [
+            "19",
+            ",",
+            "2018",
+            "labuan",
+            ":",
+            "labuan",
+            "amateur",
+            "football",
+            "association",
+            "("
+        ]
+    },
+    "Sophine Tann": {
+        "entity_tokens": [
+            "sophine",
+            "tann"
+        ],
+        "concordance": [
+            "chinese",
+            "market",
+            ",",
+            "''",
+            "said",
+            "sophine",
+            "tann",
+            ",",
+            "from",
+            "environmental",
+            "protection"
+        ]
+    },
+    "Area.Peka": {
+        "entity_tokens": [
+            "area.peka"
+        ],
+        "concordance": [
+            "loss",
+            "of",
+            "trees",
+            "in",
+            "the",
+            "area.peka",
+            "said",
+            "the",
+            "land",
+            "'s"
+        ]
+    },
+    "Mca": {
+        "entity_tokens": [
+            "mca"
+        ],
+        "concordance": [
+            "said",
+            "even",
+            "though",
+            "the",
+            "69-year-old",
+            "mca",
+            "did",
+            "not",
+            "have",
+            "any"
+        ]
+    },
+    "Wee": {
+        "entity_tokens": [
+            "wee"
+        ],
+        "concordance": [
+            "wee",
+            ",",
+            "the",
+            "sole",
+            "mca"
+        ]
+    },
+    "Azizan Harun": {
+        "entity_tokens": [
+            "azizan",
+            "harun"
+        ],
+        "concordance": [
+            "(",
+            "spr",
+            ")",
+            ",",
+            "azhar",
+            "azizan",
+            "harun",
+            "berkata",
+            "kumpulan",
+            "bekas",
+            "penjawat"
+        ]
+    },
+    "Suruhanjaya Pilihan Raya": {
+        "entity_tokens": [
+            "suruhanjaya",
+            "pilihan",
+            "raya"
+        ],
+        "concordance": [
+            "pengerusi",
+            "suruhanjaya",
+            "pilihan",
+            "raya",
+            "(",
+            "spr",
+            ")",
+            ","
+        ]
+    },
+    "Spr": {
+        "entity_tokens": [
+            "spr"
+        ],
+        "concordance": [
+            "melibatkan",
+            "struktur",
+            "dan",
+            "dasar",
+            "manakala",
+            "spr",
+            "hanya",
+            "melibatkan",
+            "diri",
+            "dalam"
+        ]
+    },
+    "Teo": {
+        "entity_tokens": [
+            "teo"
+        ],
+        "concordance": [
+            "uitm",
+            "kepada",
+            "bukan",
+            "melayu",
+            ",",
+            "teo",
+            "berkata",
+            ",",
+            "isu",
+            "tersebut"
+        ]
+    },
+    "Teo Kok Seong .": {
+        "entity_tokens": [
+            "teo",
+            "kok",
+            "seong",
+            "."
+        ],
+        "concordance": [
+            "ukm",
+            ")",
+            ",",
+            "datuk",
+            "dr",
+            "teo",
+            "kok",
+            "seong",
+            "."
+        ]
+    },
+    "National Independent Electoral": {
+        "entity_tokens": [
+            "national",
+            "independent",
+            "electoral"
+        ],
+        "concordance": [
+            "nangaa",
+            ",",
+            "president",
+            "of",
+            "the",
+            "national",
+            "independent",
+            "electoral",
+            "commission",
+            "."
+        ]
+    },
+    "Nangaa": {
+        "entity_tokens": [
+            "nangaa"
+        ],
+        "concordance": [
+            "denying",
+            "this",
+            ",",
+            "nangaa",
+            "told",
+            "reuters",
+            "that",
+            "no"
+        ]
+    },
+    "Corneille Nangaa": {
+        "entity_tokens": [
+            "corneille",
+            "nangaa"
+        ],
+        "concordance": [
+            "we",
+            "announced",
+            ",",
+            "''",
+            "said",
+            "corneille",
+            "nangaa",
+            ",",
+            "president",
+            "of",
+            "the"
+        ]
+    },
+    "Muhammad Syaugi": {
+        "entity_tokens": [
+            "muhammad",
+            "syaugi"
+        ],
+        "concordance": [
+            "victims",
+            "'",
+            "bodies",
+            ",",
+            "''",
+            "muhammad",
+            "syaugi",
+            ",",
+            "the",
+            "head",
+            "of"
+        ]
+    },
+    "Madinah Mohamad": {
+        "entity_tokens": [
+            "madinah",
+            "mohamad"
+        ],
+        "concordance": [
+            "audit",
+            "negara",
+            ",",
+            "tan",
+            "sri",
+            "madinah",
+            "mohamad",
+            "dalam",
+            "kenyataan",
+            "pagi",
+            "tadi"
+        ]
+    },
+    "Madinah": {
+        "entity_tokens": [
+            "madinah"
+        ],
+        "concordance": [
+            "madinah",
+            "berkata",
+            ",",
+            "beliau",
+            "telah"
+        ]
+    },
+    "Sami": {
+        "entity_tokens": [
+            "sami"
+        ],
+        "concordance": [
+            "sami",
+            "kuilnya",
+            ",",
+            "jeya",
+            "kumar"
+        ]
+    },
+    "Tun Dr Mahathir Mohamed": {
+        "entity_tokens": [
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamed"
+        ],
+        "concordance": [
+            "kerana",
+            "pelakuan",
+            "jenayah",
+            "putrajaya",
+            "-",
+            "tun",
+            "dr",
+            "mahathir",
+            "mohamed",
+            "berkata",
+            "siasatan",
+            "oleh",
+            "suruhanjaya"
+        ]
+    },
+    "Kenanga Research": {
+        "entity_tokens": [
+            "kenanga",
+            "research"
+        ],
+        "concordance": [
+            "kenanga",
+            "research",
+            "added",
+            "that",
+            "klk",
+            "'s"
+        ]
+    },
+    "Raggie Jessy": {
+        "entity_tokens": [
+            "raggie",
+            "jessy"
+        ],
+        "concordance": [
+            "greatest",
+            "malaysian",
+            "liar",
+            "''",
+            "\u2013",
+            "raggie",
+            "jessy",
+            "prime",
+            "minister",
+            "tun",
+            "dr"
+        ]
+    },
+    "Mohamad": {
+        "entity_tokens": [
+            "mohamad"
+        ],
+        "concordance": [
+            "mohamad",
+            "juga",
+            "merakam",
+            "ucapan",
+            "terima"
+        ]
+    },
+    "Nik Khanna": {
+        "entity_tokens": [
+            "nik",
+            "khanna"
+        ],
+        "concordance": [
+            "the",
+            "tempest",
+            "]",
+            ",",
+            "''",
+            "nik",
+            "khanna",
+            ",",
+            "the",
+            "head",
+            "of"
+        ]
+    },
+    "Itsunori Onodera": {
+        "entity_tokens": [
+            "itsunori",
+            "onodera"
+        ],
+        "concordance": [
+            "previously",
+            ",",
+            "japanese",
+            "defense",
+            "minister",
+            "itsunori",
+            "onodera",
+            "stated",
+            "in",
+            "july",
+            "2018"
+        ]
+    },
+    "Japan": {
+        "entity_tokens": [
+            "japan"
+        ],
+        "concordance": [
+            "``",
+            "japan",
+            "and",
+            "the",
+            "u.k.",
+            "are"
+        ]
+    },
+    "Japanese Defense": {
+        "entity_tokens": [
+            "japanese",
+            "defense"
+        ],
+        "concordance": [
+            "as",
+            "i",
+            "reported",
+            "previously",
+            ",",
+            "japanese",
+            "defense",
+            "minister",
+            "itsunori",
+            "onodera",
+            "stated"
+        ]
+    },
+    "Amrita Sen": {
+        "entity_tokens": [
+            "amrita",
+            "sen"
+        ],
+        "concordance": [
+            "for",
+            "qatar",
+            ",",
+            "''",
+            "said",
+            "amrita",
+            "sen",
+            ",",
+            "chief",
+            "oil",
+            "analyst"
+        ]
+    },
+    "Energy": {
+        "entity_tokens": [
+            "energy"
+        ],
+        "concordance": [
+            "chief",
+            "oil",
+            "analyst",
+            "at",
+            "consultant",
+            "energy",
+            "aspects",
+            "ltd",
+            "in",
+            "london"
+        ]
+    },
+    "Zaid Rued": {
+        "entity_tokens": [
+            "zaid",
+            "rued"
+        ],
+        "concordance": [
+            "the",
+            "pakatan",
+            "harapan",
+            "government",
+            ",",
+            "zaid",
+            "rued",
+            "how",
+            "their",
+            "manifesto",
+            "promises"
+        ]
+    },
+    "Zaid Ibrahim": {
+        "entity_tokens": [
+            "zaid",
+            "ibrahim"
+        ],
+        "concordance": [
+            "dap",
+            "member",
+            "zaid",
+            "ibrahim",
+            "has",
+            "advised",
+            "his",
+            "former"
+        ]
+    },
+    "Zaid": {
+        "entity_tokens": [
+            "zaid"
+        ],
+        "concordance": [
+            "under",
+            "harapan",
+            ",",
+            "zaid",
+            "predicted",
+            "that",
+            "the",
+            "gap"
+        ]
+    },
+    "Steven G Cochrane": {
+        "entity_tokens": [
+            "steven",
+            "g",
+            "cochrane"
+        ],
+        "concordance": [
+            "'s",
+            "analytics",
+            "chief",
+            "asia-pacific",
+            "economist",
+            "steven",
+            "g",
+            "cochrane",
+            "said",
+            "malaysia",
+            "'s",
+            "economic"
+        ]
+    },
+    "Said.Cochrane": {
+        "entity_tokens": [
+            "said.cochrane"
+        ],
+        "concordance": [
+            "and",
+            "2022",
+            ",",
+            "''",
+            "he",
+            "said.cochrane",
+            "said",
+            "the",
+            "us-china",
+            "trade"
+        ]
+    },
+    "Cochrane": {
+        "entity_tokens": [
+            "cochrane"
+        ],
+        "concordance": [
+            "cochrane",
+            "said",
+            "the",
+            "sanctions",
+            "on"
+        ]
+    },
+    "Gandhi": {
+        "entity_tokens": [
+            "gandhi"
+        ],
+        "concordance": [
+            "``",
+            "gandhi",
+            "'s",
+            "comments",
+            "about",
+            "modi"
+        ]
+    },
+    "Rahul Gandhi": {
+        "entity_tokens": [
+            "rahul",
+            "gandhi"
+        ],
+        "concordance": [
+            "the",
+            "british",
+            ",",
+            "opposition",
+            "leader",
+            "rahul",
+            "gandhi",
+            "said",
+            "in",
+            "a",
+            "blistering"
+        ]
+    },
+    "Azmi Osman": {
+        "entity_tokens": [
+            "azmi",
+            "osman"
+        ],
+        "concordance": [
+            "fire",
+            "and",
+            "rescue",
+            "department",
+            "director",
+            "azmi",
+            "osman",
+            "said",
+            "they",
+            "managed",
+            "to"
+        ]
+    },
+    "Pravin Bhatnagar": {
+        "entity_tokens": [
+            "pravin",
+            "bhatnagar"
+        ],
+        "concordance": [
+            "monday",
+            "morning",
+            ",",
+            "''",
+            "mr",
+            "pravin",
+            "bhatnagar",
+            ",",
+            "a",
+            "senior",
+            "manager"
+        ]
+    },
+    "Tabung Kewangan Antarabangsa": {
+        "entity_tokens": [
+            "tabung",
+            "kewangan",
+            "antarabangsa"
+        ],
+        "concordance": [
+            "kesimpulan",
+            "itu",
+            "berdasarkan",
+            "data",
+            "dari",
+            "tabung",
+            "kewangan",
+            "antarabangsa",
+            "dan",
+            "pertubuhan",
+            "bangsa-bangsa",
+            "bersatu"
+        ]
+    },
+    "Harold Hamm": {
+        "entity_tokens": [
+            "harold",
+            "hamm"
+        ],
+        "concordance": [
+            "job",
+            "done",
+            "when",
+            "harold",
+            "hamm",
+            ",",
+            "the",
+            "oil",
+            "and"
+        ]
+    },
+    "Bersih": {
+        "entity_tokens": [
+            "bersih"
+        ],
+        "concordance": [
+            "bersih",
+            "also",
+            "urged",
+            "voters",
+            "of"
+        ]
+    },
+    "Hamzah": {
+        "entity_tokens": [
+            "hamzah"
+        ],
+        "concordance": [
+            "jmm",
+            ")",
+            ",",
+            "datuk",
+            "azwanddin",
+            "hamzah",
+            "direman",
+            "selama",
+            "empat",
+            "hari"
+        ]
+    },
+    "Azwanddin": {
+        "entity_tokens": [
+            "azwanddin"
+        ],
+        "concordance": [
+            "komisioner",
+            "fadzil",
+            "ahmat",
+            "berkata",
+            ",",
+            "azwanddin",
+            "ditahan",
+            "kira-kira",
+            "pukul",
+            "2.40"
+        ]
+    },
+    "Tua": {
+        "entity_tokens": [
+            "tua"
+        ],
+        "concordance": [
+            "the",
+            "sungai",
+            "tua",
+            "assemblyman",
+            "said",
+            "the",
+            "b40"
+        ]
+    },
+    "Amirudin": {
+        "entity_tokens": [
+            "amirudin"
+        ],
+        "concordance": [
+            "amirudin",
+            "has",
+            "since",
+            "rubbished",
+            "this"
+        ]
+    },
+    "Stephen Curry": {
+        "entity_tokens": [
+            "stephen",
+            "curry"
+        ],
+        "concordance": [
+            "pic",
+            ")",
+            "los",
+            "angeles",
+            ":",
+            "stephen",
+            "curry",
+            "made",
+            "a",
+            "timely",
+            "return"
+        ]
+    },
+    "Curry": {
+        "entity_tokens": [
+            "curry"
+        ],
+        "concordance": [
+            "his",
+            "rhythm",
+            ",",
+            "''",
+            "said",
+            "curry",
+            ",",
+            "who",
+            "scored",
+            "30-plus"
+        ]
+    },
+    "Zhang": {
+        "entity_tokens": [
+            "zhang"
+        ],
+        "concordance": [
+            "him",
+            "from",
+            "the",
+            "truth",
+            ",",
+            "zhang",
+            "said",
+            "to",
+            "his",
+            "son"
+        ]
+    },
+    "Mr Hipkins": {
+        "entity_tokens": [
+            "mr",
+            "hipkins"
+        ],
+        "concordance": [
+            "mr",
+            "hipkins",
+            "said",
+            "in",
+            "an",
+            "e-mailed"
+        ]
+    },
+    "Chris Hipkins": {
+        "entity_tokens": [
+            "chris",
+            "hipkins"
+        ],
+        "concordance": [
+            ",",
+            "according",
+            "to",
+            "education",
+            "minister",
+            "chris",
+            "hipkins",
+            "."
+        ]
+    },
+    "Omar Mammah": {
+        "entity_tokens": [
+            "omar",
+            "mammah"
+        ],
+        "concordance": [
+            "pesuruhjaya",
+            "polis",
+            "sabah",
+            ",",
+            "datuk",
+            "omar",
+            "mammah",
+            "(",
+            "kiri",
+            ")",
+            "bersama"
+        ]
+    },
+    "Inland Revenue Board": {
+        "entity_tokens": [
+            "inland",
+            "revenue",
+            "board"
+        ],
+        "concordance": [
+            "told",
+            "to",
+            "report",
+            "to",
+            "the",
+            "inland",
+            "revenue",
+            "board",
+            "(",
+            "irb",
+            ")",
+            "."
+        ]
+    },
+    "Inland Revenue": {
+        "entity_tokens": [
+            "inland",
+            "revenue"
+        ],
+        "concordance": [
+            "told",
+            "to",
+            "report",
+            "to",
+            "the",
+            "inland",
+            "revenue",
+            "board",
+            "(",
+            "irb",
+            ")"
+        ]
+    },
+    "Joseph Mogga": {
+        "entity_tokens": [
+            "joseph",
+            "mogga"
+        ],
+        "concordance": [
+            "of",
+            "2018",
+            ",",
+            "''",
+            "dr",
+            "joseph",
+            "mogga",
+            "of",
+            "the",
+            "who",
+            "told"
+        ]
+    },
+    "Mustafa Kamal Gani Abdullah": {
+        "entity_tokens": [
+            "mustafa",
+            "kamal",
+            "gani",
+            "abdullah"
+        ],
+        "concordance": [
+            "jenayah",
+            "komersil",
+            "sarawak",
+            ",",
+            "superitenden",
+            "mustafa",
+            "kamal",
+            "gani",
+            "abdullah",
+            "berkata",
+            ",",
+            "dalam",
+            "kejadian"
+        ]
+    },
+    "Mustafa": {
+        "entity_tokens": [
+            "mustafa"
+        ],
+        "concordance": [
+            "diberitahu",
+            "telah",
+            "ditipu",
+            ",",
+            "tambah",
+            "mustafa",
+            "."
+        ]
+    },
+    "Kamal Gani Abdullah": {
+        "entity_tokens": [
+            "kamal",
+            "gani",
+            "abdullah"
+        ],
+        "concordance": [
+            "komersil",
+            "sarawak",
+            ",",
+            "superitenden",
+            "mustafa",
+            "kamal",
+            "gani",
+            "abdullah",
+            "berkata",
+            ",",
+            "dalam",
+            "kejadian"
+        ]
+    },
+    "Mustafa Kamal Gani Abdullah Bintulu": {
+        "entity_tokens": [
+            "mustafa",
+            "kamal",
+            "gani",
+            "abdullah",
+            "bintulu"
+        ],
+        "concordance": [
+            "superitenden",
+            "mustafa",
+            "kamal",
+            "gani",
+            "abdullah",
+            "bintulu",
+            ":",
+            "kegiatan",
+            "macau",
+            "scam"
+        ]
+    },
+    "Jelas Omar": {
+        "entity_tokens": [
+            "jelas",
+            "omar"
+        ],
+        "concordance": [
+            "jelas",
+            "omar",
+            ",",
+            "ketika",
+            "rundingan",
+            "dibuat"
+        ]
+    },
+    "Yawar\u00e2": {
+        "entity_tokens": [
+            "yawar\u00e2"
+        ],
+        "concordance": [
+            "yawar\u00e2",
+            "denied",
+            "iraq",
+            "'s",
+            "peshmerga"
+        ]
+    },
+    "General Jabbar Yawar": {
+        "entity_tokens": [
+            "general",
+            "jabbar",
+            "yawar"
+        ],
+        "concordance": [
+            "against",
+            "isil.\u00e2",
+            "us",
+            "withdrawal",
+            "major",
+            "general",
+            "jabbar",
+            "yawar",
+            ",",
+            "secretary-general",
+            "of",
+            "the"
+        ]
+    },
+    "\u00c2 Yawar": {
+        "entity_tokens": [
+            "\u00e2",
+            "yawar"
+        ],
+        "concordance": [
+            "grown",
+            "in",
+            "strength",
+            ",",
+            "''",
+            "\u00e2",
+            "yawar",
+            "said",
+            "."
+        ]
+    },
+    "Zamihan": {
+        "entity_tokens": [
+            "zamihan"
+        ],
+        "concordance": [
+            "ini.berhubung",
+            "isu",
+            "dobi",
+            "muslim",
+            ",",
+            "zamihan",
+            "ketika",
+            "itu",
+            "berkata",
+            "ia"
+        ]
+    },
+    "Zamihan Mat Zin": {
+        "entity_tokens": [
+            "zamihan",
+            "mat",
+            "zin"
+        ],
+        "concordance": [
+            "malaysia",
+            "(",
+            "aswaja",
+            ")",
+            "dr",
+            "zamihan",
+            "mat",
+            "zin",
+            "berkata",
+            "telah",
+            "menyerahkan",
+            "notis"
+        ]
+    },
+    "Of Foreign Affairs": {
+        "entity_tokens": [
+            "of",
+            "foreign",
+            "affairs"
+        ],
+        "concordance": [
+            "the",
+            "department",
+            "of",
+            "foreign",
+            "affairs",
+            "said",
+            "on",
+            "saturday",
+            "that"
+        ]
+    },
+    "Abang Openg": {
+        "entity_tokens": [
+            "abang",
+            "openg"
+        ],
+        "concordance": [
+            "datuk",
+            "patinggi",
+            "abang",
+            "johari",
+            "tun",
+            "abang",
+            "openg",
+            "."
+        ]
+    },
+    "Nor Shamsiah": {
+        "entity_tokens": [
+            "nor",
+            "shamsiah"
+        ],
+        "concordance": [
+            "bagaimanapun",
+            ",",
+            "nor",
+            "shamsiah",
+            "menambah",
+            ",",
+            "dana",
+            "dengan"
+        ]
+    },
+    "Shamsiah Mohd Yunus": {
+        "entity_tokens": [
+            "shamsiah",
+            "mohd",
+            "yunus"
+        ],
+        "concordance": [
+            "negara",
+            "malaysia",
+            ",",
+            "datuk",
+            "nor",
+            "shamsiah",
+            "mohd",
+            "yunus",
+            "berkata",
+            ",",
+            "menangani",
+            "isu"
+        ]
+    },
+    "Phil Robertson": {
+        "entity_tokens": [
+            "phil",
+            "robertson"
+        ],
+        "concordance": [
+            ",",
+            "its",
+            "deputy",
+            "asia",
+            "director",
+            "phil",
+            "robertson",
+            "said",
+            "malaysia",
+            "should",
+            "realise"
+        ]
+    },
+    "Robertson": {
+        "entity_tokens": [
+            "robertson"
+        ],
+        "concordance": [
+            "with",
+            "another",
+            "adult",
+            ",",
+            "''",
+            "robertson",
+            "said",
+            "."
+        ]
+    },
+    "Justo": {
+        "entity_tokens": [
+            "justo"
+        ],
+        "concordance": [
+            "more",
+            "difficult",
+            "time",
+            ",",
+            "''",
+            "justo",
+            "said",
+            "."
+        ]
+    },
+    "Thailand \u2013 Justo": {
+        "entity_tokens": [
+            "thailand",
+            "\u2013",
+            "justo"
+        ],
+        "concordance": [
+            "a",
+            "half",
+            "in",
+            "prison",
+            "in",
+            "thailand",
+            "\u2013",
+            "justo",
+            "said",
+            "he",
+            "survived",
+            "inhumane"
+        ]
+    },
+    "Xavier Justo": {
+        "entity_tokens": [
+            "xavier",
+            "justo"
+        ],
+        "concordance": [
+            "petaling",
+            "jaya",
+            "-",
+            "whistleblower",
+            "xavier",
+            "justo",
+            "feels",
+            "that",
+            "fugitive",
+            "financier"
+        ]
+    },
+    "Siti Nur'Ain Ampuan Acheh": {
+        "entity_tokens": [
+            "siti",
+            "nur'ain",
+            "ampuan",
+            "acheh"
+        ],
+        "concordance": [
+            "wildlife",
+            "department",
+            "public",
+            "relations",
+            "officer",
+            "siti",
+            "nur'ain",
+            "ampuan",
+            "acheh",
+            "said",
+            "it",
+            "was",
+            "not"
+        ]
+    },
+    "Siti Nur'Ain": {
+        "entity_tokens": [
+            "siti",
+            "nur'ain"
+        ],
+        "concordance": [
+            "siti",
+            "nur'ain",
+            "said",
+            "the",
+            "reptiles",
+            "'"
+        ]
+    },
+    "Sabah Wildlife Department": {
+        "entity_tokens": [
+            "sabah",
+            "wildlife",
+            "department"
+        ],
+        "concordance": [
+            "sabah",
+            "wildlife",
+            "department",
+            "public",
+            "relations",
+            "officer",
+            "siti"
+        ]
+    },
+    "Cnn": {
+        "entity_tokens": [
+            "cnn"
+        ],
+        "concordance": [
+            "\u2013",
+            "cnn",
+            "on",
+            "anwar",
+            "ibrahim",
+            "on"
+        ]
+    }
+}
