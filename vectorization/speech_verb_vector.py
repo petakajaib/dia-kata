@@ -36,7 +36,6 @@ def get_speech_verb_vector(entry, enriched_collection):
             sentence_has_speech_verb = any(elem in SPEECH_VERBS for elem in sentence)
             if entity_is_in_sentence and sentence_has_speech_verb:
                 speech_verb += 1
-                break
 
         vec.append(speech_verb)
 
