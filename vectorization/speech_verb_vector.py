@@ -11,17 +11,7 @@ def get_speech_verb_vector(entry, enriched_collection):
     article = enriched_collection.find_one({"url": entry["source"]})
 
     cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
-    sentences = [Text(sent) for sent in article["cleaned_content_sentences"]]
-
-    sentences_str = []
-
-    for sentence in sentences:
-        sentence_str = []
-
-        for token in sentence.tokens:
-            sentence_str.append(str(token).lower())
-
-        sentences_str.append(sentence_str)
+    sentences_str = [[str(token).lower()for token in sent.tokens] for sent in Text(article["cleaned_content"]).sentences]
 
     vec = []
 
@@ -36,7 +26,8 @@ def get_speech_verb_vector(entry, enriched_collection):
             sentence_has_speech_verb = any(elem in SPEECH_VERBS for elem in sentence)
             if entity_is_in_sentence and sentence_has_speech_verb:
                 speech_verb += 1
-
+                break
+                
         vec.append(speech_verb)
 
     return np.array(vec)
