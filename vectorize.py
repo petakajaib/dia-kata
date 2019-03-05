@@ -20,7 +20,8 @@ from vectorization import (
     get_title_similarity_vector,
     get_title_similarity_relative_vector,
     get_distance_of_entity_to_quote_relative_vector,
-    get_speech_verb_vector
+    get_speech_verb_vector,
+    get_speech_verb_relative_vector
 )
 from settings import *
 
@@ -38,7 +39,8 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         get_is_organization_vector(entry, enriched_collection),
         get_quote_vector(entry, fast_text_models, enriched_collection),
         get_title_similarity_vector(entry, fast_text_models, enriched_collection),
-        get_speech_verb_vector(entry, enriched_collection),
+        # get_speech_verb_vector(entry, enriched_collection),
+        get_speech_verb_relative_vector(entry, enriched_collection),
         # get_distance_of_entity_to_quote_relative_vector(entry, enriched_collection),
         # get_title_vector(entry, enriched_collection), #lda
         # get_title_relative_vector(entry, enriched_collection),
