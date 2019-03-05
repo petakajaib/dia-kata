@@ -124,6 +124,7 @@ if __name__ == '__main__':
     client = MongoClient()
     db = client[MONGO_DB]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+    print("start vectorizing")
     vectorize_data(PREPROCESSED_PATH, VECTORIZED_PATH, fast_text_models, enriched_collection)
 
 
