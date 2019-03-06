@@ -17,6 +17,7 @@ en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
 
 print("ms")
 ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+print("fasttext models loaded")
 
 fast_text_models = {
     "en": en_fasttext,
