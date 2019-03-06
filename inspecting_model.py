@@ -33,7 +33,8 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for idx, entry in enumerate(labelled_data):
-    print("quote", entry["quote"])
+    print("idx", idx)
+    print("quote\n", entry["quote"])
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
