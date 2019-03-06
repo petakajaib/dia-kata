@@ -52,7 +52,7 @@ for idx, entry in enumerate(labelled_data):
                 print("extracted correctly")
 
         if truth == 0 and prediction == 1:
-            print("entity", entity["entity"]])
+            print("entity", entity["entity"])
             print("extracted wrongly")
 
     print("prediction")
