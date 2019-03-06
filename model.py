@@ -42,8 +42,8 @@ def evaluate_model(x_test, y_test, model):
 
     for x_test_section, y_test_section in zip(x_test, y_test):
 
-        print("y_test_section", y_test_section)
-        print("len", len(y_test_section))
+        print("sum y_test_section", sum(y_test_section))
+        print("len y_test_section", len(y_test_section))
         y_prediction = clf.predict(x_test_section)
         y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
 
