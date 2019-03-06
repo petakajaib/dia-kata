@@ -1,6 +1,4 @@
 import random
-from random import choice, randint
-from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.utils.validation import column_or_1d
 import xgboost as xgb
@@ -37,6 +35,20 @@ def evaluate_single_extraction(prediction, truth):
     else:
         return 0
 
+def evaluate_model(x_test, y_test, model):
+    predictions = []
+
+    for x_test_section, y_test_section in zip(x_test, y_test):
+
+        y_prediction = clf.predict(x_test_section)
+        y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
+
+        predictions.append(evaluate_single_extraction(y_prediction, y_test_reshaped))
+
+    acc = sum(predictions)/len(predictions)
+    print("accuracy:", acc)
+    return acc
+
 vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
 
 feature_vectors = vectorized_data["feature_vectors"]
@@ -54,13 +66,4 @@ print("x_train_stacked shape", x_train_stacked.shape)
 
 clf.fit(x_train_stacked, y_reshaped)
 
-predictions = []
-
-for x_test_section, y_test_section in zip(x_test, y_test):
-
-    y_prediction = clf.predict(x_test_section)
-    y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
-
-    predictions.append(evaluate_single_extraction(y_prediction, y_test_reshaped))
-
-print("accuracy:", sum(predictions)/len(predictions))
+evaluate_model(x_test, y_test, clf)
