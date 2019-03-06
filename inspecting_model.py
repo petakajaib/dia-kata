@@ -30,7 +30,7 @@ fast_text_models = {
 
 labelled_data = json.load(open(PREPROCESSED_PATH))
 
-clf = pickl.load(open(CURRENT_BEST_MODEL, "rb"))
+clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for idx, entry in enumerate(labelled_data):
     # print("quote", entry["quote"])
