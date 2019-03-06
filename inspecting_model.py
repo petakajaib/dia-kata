@@ -33,8 +33,6 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for idx, entry in enumerate(labelled_data):
-    print("idx", idx)
-    print("quote\n", entry["quote"])
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
@@ -43,15 +41,19 @@ for idx, entry in enumerate(labelled_data):
     predictions = clf.predict(feature_vector)
 
     # for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
-    print(feature_vector)
 
-    print(evaluate_single_extraction(predictions, target_vector_reshaped))
+    correctness = evaluate_single_extraction(predictions, target_vector_reshaped)
 
-    print("prediction")
+    if correctness == 0:
 
-    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
+        print("idx", idx)
+        print("quote\n", entry["quote"])
+        print(feature_vector)
+        print("prediction")
 
-    print("truth")
+        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
 
-    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
-    print("---")
+        print("truth")
+
+        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
+        print("---")
