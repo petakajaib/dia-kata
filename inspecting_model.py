@@ -33,10 +33,13 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 clf = pickl.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for idx, entry in enumerate(labelled_data):
-    print("quote", entry["quote"])
+    # print("quote", entry["quote"])
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
     target_vector_reshaped = column_or_1d(target_vector)
 
     predictions = clf.predict(feature_vector)
+
+    print("target_vector", target_vector)
+    print("predictions", predictions)
