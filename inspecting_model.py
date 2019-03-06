@@ -48,7 +48,7 @@ for idx, entry in enumerate(labelled_data):
 
         print("idx", idx)
         print("quote\n", entry["quote"])
-        print(feature_vector)
+        # print("feature_vector\n", feature_vector)
         print("prediction")
 
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
