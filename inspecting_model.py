@@ -43,6 +43,7 @@ for idx, entry in enumerate(labelled_data):
     predictions = clf.predict(feature_vector)
 
     # for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
+    print(feature_vector)
 
     print(evaluate_single_extraction(predictions, target_vector_reshaped))
 
