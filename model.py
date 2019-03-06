@@ -16,7 +16,7 @@ def evaluate_single_extraction(prediction, truth):
 
     correct = True
     atleast_one = False
-    truths =
+    
     for pred, test in zip(prediction, truth):
 
         pred_is_one = pred == 1.0
