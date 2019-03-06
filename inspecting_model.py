@@ -58,9 +58,9 @@ for idx, entry in enumerate(labelled_data):
 
     print("prediction")
 
-    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions)], indent=4))
+    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
 
     print("truth")
 
-    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped)], indent=4))
+    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
     print("---")
