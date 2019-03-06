@@ -5,7 +5,7 @@ from gensim.models.fasttext import FastText
 from sklearn.utils.validation import column_or_1d
 from settings import *
 from vectorize import vectorize_feature, vectorize_target
-
+from model import evaluate_single_extraction
 
 
 client = MongoClient()
@@ -42,19 +42,9 @@ for idx, entry in enumerate(labelled_data):
 
     predictions = clf.predict(feature_vector)
 
-    for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
+    # for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
 
-        if truth == 1:
-            print("entity", entity["entity"])
-
-            if prediction == 0:
-                print("did not extract when should extract")
-            elif prediction == 1:
-                print("extracted correctly")
-
-        if truth == 0 and prediction == 1:
-            print("entity", entity["entity"])
-            print("extracted wrongly")
+    print(evaluate_single_extraction(predictions, target_vector_reshaped))
 
     print("prediction")
 
