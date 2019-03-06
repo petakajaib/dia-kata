@@ -33,7 +33,7 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for idx, entry in enumerate(labelled_data):
-    # print("quote", entry["quote"])
+    print("quote", entry["quote"])
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
@@ -41,5 +41,25 @@ for idx, entry in enumerate(labelled_data):
 
     predictions = clf.predict(feature_vector)
 
-    print("target_vector", target_vector)
-    print("predictions", predictions)
+    for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
+
+        if truth == 1:
+            print("entity", entity["entity"])
+
+            if prediction == 0:
+                print("did not extract when should extract")
+            elif prediction == 1:
+                print("extracted correctly")
+
+        if truth == 0 and prediction == 1:
+            print("entity", entity["entity"]])
+            print("extracted wrongly")
+
+    print("prediction")
+
+    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions)], indent=4))
+
+    print("truth")
+
+    print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped)], indent=4))
+    print("---")
