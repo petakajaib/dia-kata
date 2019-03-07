@@ -44,7 +44,7 @@ def evaluate_model(x_test, y_test, model):
 
         reshaped = column_or_1d(y_test_section)
 
-        if reshaped == 0:
+        if sum(reshaped) == 0:
             continue
 
         y_prediction = clf.predict(x_test_section)
