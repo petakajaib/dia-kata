@@ -28,7 +28,19 @@ fast_text_models = {
     "ms": ms_fasttext
 }
 
+url_map_count = {}
+
+
 labelled_data = json.load(open(PREPROCESSED_PATH))
+
+for entry in labelled_data:
+
+    if not url_map_count.get(entry["url"]):
+        url_map_count[entry["url"]] = 0
+
+    url_map_count[entry["url"]] += 1
+
+
 
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
@@ -48,6 +60,7 @@ for idx, entry in enumerate(labelled_data):
 
         print("idx", idx)
         print("quote\n", entry["quote"])
+        print("url_count", url_map_count[entry["url"]])
         # print("feature_vector\n", feature_vector)
         print("prediction")
 
