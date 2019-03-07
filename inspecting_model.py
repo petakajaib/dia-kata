@@ -62,7 +62,8 @@ for idx, entry in enumerate(labelled_data):
 
         print("idx", idx)
         print("quote\n", entry["quote"])
-        print("url_count", url_map_count[entry["source"]])
+        print("url", entry["source"])
+        # print("url_count", url_map_count[entry["source"]])
 
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
