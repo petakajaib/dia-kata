@@ -35,10 +35,10 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 
 for entry in labelled_data:
 
-    if not url_map_count.get(entry["url"]):
-        url_map_count[entry["url"]] = 0
+    if not url_map_count.get(entry["source"]):
+        url_map_count[entry["source"]] = 0
 
-    url_map_count[entry["url"]] += 1
+    url_map_count[entry["source"]] += 1
 
 
 
@@ -60,7 +60,7 @@ for idx, entry in enumerate(labelled_data):
 
         print("idx", idx)
         print("quote\n", entry["quote"])
-        print("url_count", url_map_count[entry["url"]])
+        print("url_count", url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
         print("prediction")
 
