@@ -44,6 +44,8 @@ for entry in labelled_data:
 
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
+url_counts = {"correct": [], "wrong":[]}
+
 for idx, entry in enumerate(labelled_data):
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
@@ -61,6 +63,8 @@ for idx, entry in enumerate(labelled_data):
         print("idx", idx)
         print("quote\n", entry["quote"])
         print("url_count", url_map_count[entry["source"]])
+
+        url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
         print("prediction")
 
@@ -70,3 +74,8 @@ for idx, entry in enumerate(labelled_data):
 
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
         print("---")
+    elif correctness == 1:
+        url_counts["correct"].append(url_map_count[entry["source"]])
+
+print("average wrong url_count:", sum(url_counts["wrong"])/len(url_counts["wrong"]))
+print("average correct url_count:", sum(url_counts["correct"]/len(url_counts["correct"])))
