@@ -47,6 +47,8 @@ clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 url_counts = {"correct": [], "wrong":[]}
 
 for idx, entry in enumerate(labelled_data):
+    article = enriched_collection.find_one({"url": entry["source"]})
+
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
@@ -64,7 +66,8 @@ for idx, entry in enumerate(labelled_data):
         print("quote\n", entry["quote"])
         print("url", entry["source"])
         # print("url_count", url_map_count[entry["source"]])
-
+        all_entities = article["cleaned_content_entities"]
+        print("all_entities", all_entities)
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
         print("prediction")
