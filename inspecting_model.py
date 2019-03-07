@@ -78,4 +78,6 @@ for idx, entry in enumerate(labelled_data):
         url_counts["correct"].append(url_map_count[entry["source"]])
 
 print("average wrong url_count:", sum(url_counts["wrong"])/len(url_counts["wrong"]))
+print("median wrong url_count:", sorted(url_counts["wrong"])[int(url_counts["wrong"]/2)])
 print("average correct url_count:", sum(url_counts["correct"])/len(url_counts["correct"]))
+print("median correct url_count:", sorted(url_counts["correct"])[int(url_counts["correct"]/2)])
