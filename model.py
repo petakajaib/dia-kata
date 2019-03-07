@@ -32,7 +32,7 @@ def evaluate_single_extraction(prediction, truth):
             atleast_one = True
 
 
-    if correct and atleast_one:
+    if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth)):
         return 1
     else:
         return 0
@@ -41,11 +41,6 @@ def evaluate_model(x_test, y_test, model):
     predictions = []
 
     for x_test_section, y_test_section in zip(x_test, y_test):
-
-        reshaped = column_or_1d(y_test_section)
-
-        if sum(reshaped) == 0:
-            continue
 
         y_prediction = clf.predict(x_test_section)
         y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
