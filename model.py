@@ -32,7 +32,7 @@ def evaluate_single_extraction(prediction, truth):
             atleast_one = True
 
 
-    if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth)):
+    if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth) == 0):
         return 1
     else:
         return 0
