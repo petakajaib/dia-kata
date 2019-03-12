@@ -35,7 +35,7 @@ labelled_data = json.load(open(PREPROCESSED_PATH))
 for label in labelled_data:
 
     entities = [entity["entity"] for entity in label["talker"]]
-    n_grams_dictionary = Dictionary(entities)
+    n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     corpus = entity_bow_generator(entities, n_grams_dictionary)
 
     model = TfidfModel(corpus)
