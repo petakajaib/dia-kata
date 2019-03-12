@@ -17,7 +17,7 @@ def character_n_gram_tokenizer(blob, n_grams=(3,5)):
     list_of_ngrams = []
 
     for i in range(n_grams[0],n_grams[1]+1,1):
-        l = [''.join(ngram) for ngram in ngrams(list(a), i)]
+        l = [''.join(ngram) for ngram in ngrams(list(blob), i)]
         list_of_ngrams = l + list_of_ngrams
 
     return list_of_ngrams
