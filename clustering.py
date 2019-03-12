@@ -39,3 +39,5 @@ for label in labelled_data:
     corpus = entity_bow_generator(entities, n_grams_dictionary)
 
     model = TfidfModel(corpus)
+
+    print(model[0])
