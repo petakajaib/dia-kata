@@ -40,4 +40,4 @@ for label in labelled_data:
 
     model = TfidfModel(corpus)
 
-    print(model[0])
+    print(model[corpus[0]])
