@@ -57,8 +57,8 @@ if __name__ == '__main__':
 
     feature_vectors = vectorized_data["feature_vectors"]
 
-    x_train, x_test, y_train, y_test = train_test_split(feature_vectors, vectorized_data["target_vectors"], test_size=0.33, random_state=1337)
-
+    indices = np.arange(len(feature_vectors))
+    x_train, x_test, y_train, y_test, indices_train, indices_test = train_test_split(feature_vectors, vectorized_data["target_vectors"], indices, test_size=0.33, random_state=1337)
 
     clf = xgb.XGBClassifier(max_depth=8, n_jobs=6, objective="binary:logistic", random_state=1337)
 
