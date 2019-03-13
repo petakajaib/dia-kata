@@ -59,7 +59,7 @@ for label in labelled_data:
 
         vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
 
-        idx_map[vec] = entities[idx]
+        idx_map[tuple(vec)] = entities[idx]
 
         vectors.append(vec)
 
@@ -69,5 +69,5 @@ for label in labelled_data:
         distance = cosine(vec_1, vec_2)
         print(distance)
 
-        print("entity_1", entities[idx_map[vec_1]])
-        print("entity_2", entities[idx_map[vec_2]])
+        print("entity_1", entities[idx_map[tuple(vec_1)]])
+        print("entity_2", entities[idx_map[tuple(vec_2)]])
