@@ -38,8 +38,8 @@ for label in labelled_data:
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     corpus = entity_bow_generator(entities, n_grams_dictionary)
 
-    model = TfidfModel(corpus)
+    model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
-    for entity_ngrams_bow in corpus:
+    for entity_ngrams_bow in entity_bow_generator(entities, n_grams_dictionary):
 
         print(model[entity_ngrams_bow])
