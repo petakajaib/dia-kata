@@ -45,14 +45,13 @@ def get_tfidf_vector(tfidf, dictionary_length):
 
     return vec
 
-def create_tfidf_model(entities):
+def create_tfidf_model(entities, n_grams_dictionary):
 
-    n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     dictionary_length = len(n_grams_dictionary)
 
     return TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
-def vectorize_entities(entities, tfidf_model):
+def vectorize_entities(entities, tfidf_model, n_grams_dictionary):
     vectors = []
     for idx, entity_ngrams_bow in enumerate(entity_bow_generator(entities, n_grams_dictionary)):
 
@@ -62,7 +61,7 @@ def vectorize_entities(entities, tfidf_model):
 
     vectors = np.array(vectors)
 
-    return vectors, idx_map
+    return vectors
 
 def get_cluster_map(vectors):
 
@@ -77,9 +76,9 @@ def get_cluster_map(vectors):
     return cluster_map
 
 def clustering(entities):
-
-    model = create_tfidf_model(entities)
-    vectors = vectorize_entities(entities, model)
+    n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
+    model = create_tfidf_model(entities, n_grams_dictionary)
+    vectors = vectorize_entities(entities, model, n_grams_dictionary)
     cluster_map = {}
 
     if len(vectors):
