@@ -13,7 +13,7 @@ def preprocess_blob(blob):
 
     return blob_
 
-def character_n_gram_tokenizer(blob, n_grams=(3,7)):
+def character_n_gram_tokenizer(blob, n_grams=(2,5)):
 
     blob = preprocess_blob(blob)
 
