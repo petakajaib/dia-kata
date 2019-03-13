@@ -65,7 +65,7 @@ def vectorize_entities(entities, tfidf_model, n_grams_dictionary):
 
     return vectors
 
-def get_cluster_map(vectors):
+def get_cluster_map(vectors, entities):
 
     cluster_map = {}
     clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
@@ -84,7 +84,7 @@ def clustering(entities):
     cluster_map = {}
 
     if len(vectors):
-        cluster_map = get_cluster_map(vectors)
+        cluster_map = get_cluster_map(vectors, entities)
 
     return cluster_map
 
