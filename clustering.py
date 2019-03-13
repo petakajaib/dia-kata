@@ -30,16 +30,27 @@ def entity_bow_generator(entities, dictionary):
     for n_grams in entity_ngrams_generator(entities):
         yield dictionary.doc2bow(n_grams)
 
+def get_tfidf_vector(tfidf, dictionary_length):
+
+    vec = np.zeros(dictionary_length)
+
+    for idx, score in tfidf:
+        vec[idx] = score
+
+    return vec
+
 labelled_data = json.load(open(PREPROCESSED_PATH))
 
 for label in labelled_data:
 
     entities = [entity["entity"] for entity in label["talker"]]
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
-    print("n_grams_dictionary length", len(n_grams_dictionary))
+    dictionary_length = len(n_grams_dictionary)
+    print("n_grams_dictionary length", dictionary_length)
 
     model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
     for entity_ngrams_bow in entity_bow_generator(entities, n_grams_dictionary):
 
-        print(model[entity_ngrams_bow])
+        vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
+        
