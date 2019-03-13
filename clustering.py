@@ -1,7 +1,9 @@
 import json
+from itertools import combinations
 from gensim.models import TfidfModel
 from gensim.corpora import Dictionary
 from nltk import ngrams
+from scipy.spatial.distance import pdist
 import numpy as np
 from settings import *
 
@@ -51,8 +53,16 @@ for label in labelled_data:
 
     model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
+    vectors = []
     for entity_ngrams_bow in entity_bow_generator(entities, n_grams_dictionary):
 
         vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
 
-        print(vec)
+        vectors.append(vec)
+
+    # for vec_1, vec_2 in combinations(vectors, 2):
+
+    distance_matrix = pdist(np.array(vectors), "cosine")
+
+
+    print(distance_matrix)
