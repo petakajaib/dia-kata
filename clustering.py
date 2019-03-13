@@ -78,8 +78,9 @@ for label in labelled_data:
 
 
     for distance, indices in sorted_distances[:10]:
-        entity_1_idx, entity_2_idx = indices
-        print("entity_1", entities[entity_1_idx])
-        print("entity_2", entities[entity_2_idx])
-        print("distance", distance)
+        if distance <= 0.9:
+            entity_1_idx, entity_2_idx = indices
+            print("entity_1", entities[entity_1_idx])
+            print("entity_2", entities[entity_2_idx])
+            print("distance", distance)
     print("====")
