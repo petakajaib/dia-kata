@@ -77,7 +77,7 @@ for label in labelled_data:
 
 
 
-    for distance, indices in sorted_distances[:10]:
+    for distance, indices in sorted_distances:
         if distance <= 0.9:
             entity_1_idx, entity_2_idx = indices
             print("entity_1", entities[entity_1_idx])
