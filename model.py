@@ -30,7 +30,7 @@ def evaluate_single_extraction(prediction, truth, index_test, labelled_entities)
 
         cluster = cluster_map[entity]
         if cluster > -1:
-            test_clusters.add(cluster)
+            true_clusters.add(cluster)
 
     for pred, test, entity in zip(prediction, truth, entities):
 
