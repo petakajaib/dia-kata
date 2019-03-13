@@ -77,10 +77,7 @@ for label in labelled_data:
 
         for idx, label in enumerate(clustering.labels_):
 
-            if not cluster_map.get(label):
-                cluster_map[label] = []
-
-            cluster_map[label].append(entities[idx])
+            cluster_map[entities[idx]] = label
 
         pprint(cluster_map)
 
