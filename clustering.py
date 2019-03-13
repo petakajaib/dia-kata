@@ -36,7 +36,7 @@ for label in labelled_data:
 
     entities = [entity["entity"] for entity in label["talker"]]
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
-    len(n_grams_dictionary)
+    print("n_grams_dictionary length", len(n_grams_dictionary))
 
     model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
