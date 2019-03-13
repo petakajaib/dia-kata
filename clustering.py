@@ -69,8 +69,7 @@ for label in labelled_data:
         distance = cosine(vec_1, vec_2)
 
         print(distance)
-        print(distance == np.nan)
-        print(distance is np.nan)
+        print(np.isnan(distance))
         if distance is np.nan:
             continue
         distances.append((distance, (idx_map[tuple(vec_1)], idx_map[tuple(vec_2)])))
