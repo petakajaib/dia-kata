@@ -69,7 +69,7 @@ for label in labelled_data:
     print("vectors shape", vectors.shape)
     clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
 
-    cluster.fit(vectors)
+    clustering.fit(vectors)
 
     # distances = []
     # for vec_1, vec_2 in combinations(vectors, 2):
