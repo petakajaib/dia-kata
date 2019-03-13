@@ -54,3 +54,5 @@ for label in labelled_data:
     for entity_ngrams_bow in entity_bow_generator(entities, n_grams_dictionary):
 
         vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
+
+        print(vec)
