@@ -29,7 +29,7 @@ def evaluate_single_extraction(prediction, truth, index_test, labelled_entities)
     entities = labelled_entities[index_test]
     cluster_map = clustering(entities)
 
-    # print("entities", entities)
+    print("entities", entities)
     # print("cluster_map")
     assert len(entities) == len(prediction)
     assert len(entities) == len(truth)
