@@ -63,7 +63,7 @@ for label in labelled_data:
 
         vectors.append(vec)
 
-    distances =
+    distances = []
     for vec_1, vec_2 in combinations(vectors, 2):
 
         distance = cosine(vec_1, vec_2)
