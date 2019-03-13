@@ -67,9 +67,10 @@ for label in labelled_data:
     for vec_1, vec_2 in combinations(vectors, 2):
 
         distance = cosine(vec_1, vec_2)
-        if np.nan == distance:
+        if np.nan is distance:
             continue
 
+        print(distance)
         distances.append((distance, (idx_map[tuple(vec_1)], idx_map[tuple(vec_2)])))
 
     sorted_distances = sorted(distances, key=lambda x: x[0])
@@ -79,3 +80,4 @@ for label in labelled_data:
         print("entity_1", entities[entity_1_idx])
         print("entity_2", entities[entity_2_idx])
         print("distance", distance)
+    print("====")
