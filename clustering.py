@@ -52,6 +52,8 @@ def create_tfidf_model(entities, n_grams_dictionary):
     return TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
 def vectorize_entities(entities, tfidf_model, n_grams_dictionary):
+
+    dictionary_length = len(n_grams_dictionary)
     vectors = []
     for idx, entity_ngrams_bow in enumerate(entity_bow_generator(entities, n_grams_dictionary)):
 
