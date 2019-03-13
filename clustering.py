@@ -60,9 +60,9 @@ for label in labelled_data:
 
         vectors.append(vec)
 
-    # for vec_1, vec_2 in combinations(vectors, 2):
+
     print(np.array(vectors).shape)
-    
+
     distance_matrix = pdist(np.array(vectors), "cosine")
 
 
