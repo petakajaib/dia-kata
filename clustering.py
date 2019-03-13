@@ -59,7 +59,7 @@ for label in labelled_data:
 
         vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
 
-        idx_map[tuple(vec)] = entities[idx]
+        idx_map[tuple(vec)] = idx
 
         vectors.append(vec)
 
