@@ -51,7 +51,7 @@ for label in labelled_data:
     entities = [entity["entity"] for entity in label["talker"]]
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     dictionary_length = len(n_grams_dictionary)
-    # print("n_grams_dictionary length", dictionary_length)
+
 
     model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
 
@@ -67,9 +67,12 @@ for label in labelled_data:
 
     vectors = np.array(vectors)
     print("vectors shape", vectors.shape)
-    clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
+    print("n_grams_dictionary length", dictionary_length)
+    print("entities count", len(entities))
 
-    clustering.fit(vectors)
+    if len(vectors):
+        clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
+        clustering.fit(vectors)
 
     # distances = []
     # for vec_1, vec_2 in combinations(vectors, 2):
