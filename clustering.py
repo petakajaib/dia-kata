@@ -45,59 +45,53 @@ def get_tfidf_vector(tfidf, dictionary_length):
 
     return vec
 
+def create_tfidf_model(entities):
+
+    n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
+    dictionary_length = len(n_grams_dictionary)
+
+    return TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
+
+def vectorize_entities(entities, tfidf_model):
+    vectors = []
+    for idx, entity_ngrams_bow in enumerate(entity_bow_generator(entities, n_grams_dictionary)):
+
+        vec = get_tfidf_vector(tfidf_model[entity_ngrams_bow], dictionary_length)
+
+        vectors.append(vec)
+
+    vectors = np.array(vectors)
+
+    return vectors, idx_map
+
+def get_cluster_map(vectors):
+
+    cluster_map = {}
+    clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
+    clustering.fit(vectors)
+
+    for idx, label in enumerate(clustering.labels_):
+
+        cluster_map[entities[idx]] = label
+
+    return cluster_map
+
+def clustering(entities):
+
+    model = create_tfidf_model(entities)
+    vectors = vectorize_entities(entities, model)
+    cluster_map = {}
+
+    if len(vectors):
+        cluster_map = get_cluster_map(vectors)
+
+    return cluster_map
+
 labelled_data = json.load(open(PREPROCESSED_PATH))
 
 for label in labelled_data:
 
     entities = [entity["entity"] for entity in label["talker"]]
-    n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
-    dictionary_length = len(n_grams_dictionary)
+    cluster_map = clustering(entities)
 
-
-    model = TfidfModel(entity_bow_generator(entities, n_grams_dictionary))
-
-    vectors = []
-    idx_map = {}
-    for idx, entity_ngrams_bow in enumerate(entity_bow_generator(entities, n_grams_dictionary)):
-
-        vec = get_tfidf_vector(model[entity_ngrams_bow], dictionary_length)
-
-        idx_map[tuple(vec)] = idx
-
-        vectors.append(vec)
-
-    vectors = np.array(vectors)
-    print("vectors shape", vectors.shape)
-    print("n_grams_dictionary length", dictionary_length)
-    print("entities count", len(entities))
-    cluster_map = {}
-    if len(vectors):
-        clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
-        clustering.fit(vectors)
-
-        for idx, label in enumerate(clustering.labels_):
-
-            cluster_map[entities[idx]] = label
-
-        pprint(cluster_map)
-
-    # distances = []
-    # for vec_1, vec_2 in combinations(vectors, 2):
-    #
-    #     distance = cosine(vec_1, vec_2)
-    #
-    #     if np.isnan(distance):
-    #         continue
-    #     distances.append((distance, (idx_map[tuple(vec_1)], idx_map[tuple(vec_2)])))
-    #
-    # sorted_distances = sorted(distances, key=lambda x: x[0])
-    #
-    #
-    #
-    # for distance, indices in sorted_distances:
-    #     if distance <= 0.9:
-    #         entity_1_idx, entity_2_idx = indices
-    #         print("entity_1", entities[entity_1_idx])
-    #         print("entity_2", entities[entity_2_idx])
-    #         print("distance", distance)
-    print("====")
+    pprint(cluster_map)
