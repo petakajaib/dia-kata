@@ -14,39 +14,48 @@ np.random.seed(1337)
 
 
 def evaluate_single_extraction(prediction, truth, index_test, labelled_entities):
-    """
-    In order to use cluster to evaluate,
-    we use the indicies to get the entities.
-    And use the cluster_map to look up the
-    cluster. If cluster is -1 (Outliar),
-    we proceed without using the clustering.
 
-    If cluster is not -1, we
-    """
     correct = True
     atleast_one = False
 
     entities = labelled_entities[index_test]
     cluster_map = clustering(entities)
 
-    print("entities", entities)
-    # print("cluster_map")
     assert len(entities) == len(prediction)
     assert len(entities) == len(truth)
 
-    for pred, test in zip(prediction, truth):
+    true_clusters = set()
+
+    for test, entity in zip(truth, entities):
+
+        cluster = cluster_map[entity]
+        if cluster > -1:
+            test_clusters.add(cluster)
+
+    for pred, test, entity in zip(prediction, truth, entities):
 
         pred_is_one = pred == 1.0
-        pred_is_zero = pred == 0.0
 
         test_is_one = test == 1.0
         test_is_zero = test == 0.0
 
-        if pred_is_one and test_is_zero:
-            correct = False
+        cluster = cluster_map[entity]
 
-        if pred_is_one and test_is_one:
-            atleast_one = True
+        if pred_is_one and cluster > -1:
+
+            if cluster in true_clusters:
+                atleast_one = True
+            else:
+                correct = False
+
+        else:
+
+            if pred_is_one and test_is_zero:
+                correct = False
+
+            if pred_is_one and test_is_one:
+                atleast_one = True
+
 
 
     if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth) == 0):

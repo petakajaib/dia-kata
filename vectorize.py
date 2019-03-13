@@ -47,10 +47,7 @@ def vectorize_feature(entry, fast_text_models, enriched_collection):
         # get_quote_topic_vector(entry, enriched_collection),
         # get_quote_relative_vector(entry, fast_text_models, enriched_collection),
     ]
-
-    # for vec in get_quote_vector(entry, fast_text_models):
-    #     vecs.append(vec)
-
+    
     vecs_reshaped = [v.reshape(v.shape[0], 1) for v in vecs]
 
     vec = np.hstack(vecs_reshaped)
