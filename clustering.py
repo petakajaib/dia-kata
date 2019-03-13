@@ -10,7 +10,8 @@ from settings import *
 def preprocess_blob(blob):
 
     blob_ = blob.lower()
-
+    blob_ = blob_.replace(" ", "")
+    blob_ = blob_.replace(".", "")
     return blob_
 
 def character_n_gram_tokenizer(blob, n_grams=(2,5)):
