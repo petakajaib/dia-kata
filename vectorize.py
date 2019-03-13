@@ -79,7 +79,7 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 
     feature_vectors = []
     target_vectors = []
-
+    talker_entities = []
     total_entry = len(labelled_data)
 
     for idx, entry in enumerate(labelled_data):
@@ -88,17 +88,19 @@ def vectorize_data(preprocessed_path, vectorized_path, fast_text_models, enriche
 
         feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
         target_vector = vectorize_target(entry)
+        entities = [entity["entity"] for entity in entry["talker"]]
 
         if not len(target_vector):
             continue
 
         feature_vectors.append(feature_vector)
         target_vectors.append(target_vector)
-
+        talker_entities.append(entities)
 
     vectorized = {
         "feature_vectors" : feature_vectors,
-        "target_vectors": target_vectors
+        "target_vectors": target_vectors,
+        "entities": talker_entities
     }
 
 
