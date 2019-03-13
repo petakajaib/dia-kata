@@ -4,6 +4,7 @@ from gensim.models import TfidfModel
 from gensim.corpora import Dictionary
 from nltk import ngrams
 from scipy.spatial.distance import cosine
+from sklearn.cluster import DBSCAN
 import numpy as np
 from settings import *
 
@@ -64,23 +65,29 @@ for label in labelled_data:
 
         vectors.append(vec)
 
-    distances = []
-    for vec_1, vec_2 in combinations(vectors, 2):
+    vectors = np.array(vectors)
+    print("vectors shape", vectors.shape)
+    clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
 
-        distance = cosine(vec_1, vec_2)
+    cluster.fit(vectors)
 
-        if np.isnan(distance):
-            continue
-        distances.append((distance, (idx_map[tuple(vec_1)], idx_map[tuple(vec_2)])))
-
-    sorted_distances = sorted(distances, key=lambda x: x[0])
-
-
-
-    for distance, indices in sorted_distances:
-        if distance <= 0.9:
-            entity_1_idx, entity_2_idx = indices
-            print("entity_1", entities[entity_1_idx])
-            print("entity_2", entities[entity_2_idx])
-            print("distance", distance)
+    # distances = []
+    # for vec_1, vec_2 in combinations(vectors, 2):
+    #
+    #     distance = cosine(vec_1, vec_2)
+    #
+    #     if np.isnan(distance):
+    #         continue
+    #     distances.append((distance, (idx_map[tuple(vec_1)], idx_map[tuple(vec_2)])))
+    #
+    # sorted_distances = sorted(distances, key=lambda x: x[0])
+    #
+    #
+    #
+    # for distance, indices in sorted_distances:
+    #     if distance <= 0.9:
+    #         entity_1_idx, entity_2_idx = indices
+    #         print("entity_1", entities[entity_1_idx])
+    #         print("entity_2", entities[entity_2_idx])
+    #         print("distance", distance)
     print("====")
