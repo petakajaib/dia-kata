@@ -69,11 +69,20 @@ for label in labelled_data:
     print("vectors shape", vectors.shape)
     print("n_grams_dictionary length", dictionary_length)
     print("entities count", len(entities))
-
+    cluster_map = {}
     if len(vectors):
         clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
         clustering.fit(vectors)
 
+        for idx, label in enumerate(clustering.labels_):
+
+            if not cluster_map.get(label):
+                cluster_map[label] = []
+
+            cluster_map[label].append(entities[idx])
+
+        print(json.dumps(cluster_map, indent=4))
+        
     # distances = []
     # for vec_1, vec_2 in combinations(vectors, 2):
     #
