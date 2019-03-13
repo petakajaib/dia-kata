@@ -40,4 +40,6 @@ for label in labelled_data:
 
     model = TfidfModel(corpus)
 
-    print(model[corpus[0]])
+    for entity_ngrams_bow in corpus:
+
+        print(model[entity_ngrams_bow])
