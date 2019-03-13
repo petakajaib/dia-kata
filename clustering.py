@@ -88,11 +88,13 @@ def clustering(entities):
 
     return cluster_map
 
-labelled_data = json.load(open(PREPROCESSED_PATH))
+if __name__ == '__main__':
 
-for label in labelled_data:
+    labelled_data = json.load(open(PREPROCESSED_PATH))
 
-    entities = [entity["entity"] for entity in label["talker"]]
-    cluster_map = clustering(entities)
+    for label in labelled_data:
 
-    pprint(cluster_map)
+        entities = [entity["entity"] for entity in label["talker"]]
+        cluster_map = clustering(entities)
+
+        pprint(cluster_map)

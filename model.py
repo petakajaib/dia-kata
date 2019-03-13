@@ -12,7 +12,7 @@ np.random.seed(1337)
 
 
 
-def evaluate_single_extraction(prediction, truth):
+def evaluate_single_extraction(prediction, truth, index_test, labelled_entities):
     """
     In order to use cluster to evaluate,
     we use the indicies to get the entities.
@@ -45,15 +45,15 @@ def evaluate_single_extraction(prediction, truth):
     else:
         return 0
 
-def evaluate_model(x_test, y_test, model):
+def evaluate_model(x_test, y_test, model, indices_test, labelled_entities):
     predictions = []
 
-    for x_test_section, y_test_section in zip(x_test, y_test):
+    for x_test_section, y_test_section, index_test in zip(x_test, y_test, indices_test):
 
         y_prediction = clf.predict(x_test_section)
         y_test_reshaped = y_test_section.reshape(y_test_section.shape[0])
 
-        predictions.append(evaluate_single_extraction(y_prediction, y_test_reshaped))
+        predictions.append(evaluate_single_extraction(y_prediction, y_test_reshaped, index_test, labelled_entities))
 
     acc = sum(predictions)/len(predictions)
     print("accuracy:", acc)
@@ -78,6 +78,9 @@ if __name__ == '__main__':
     print("x_train_stacked shape", x_train_stacked.shape)
 
     clf.fit(x_train_stacked, y_reshaped)
-    evaluate_model(x_test, y_test, clf)
+    labelled_data = json.load(open(PREPROCESSED_PATH))
+
+    labelled_entities = [[entity["entity"] for entity in label["talker"]]for label in labelled_data]
+    evaluate_model(x_test, y_test, clf, indices_test, labelled_entities)
 
     pickle.dump(clf, open(CURRENT_BEST_MODEL, "wb"))
