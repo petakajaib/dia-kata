@@ -13,7 +13,15 @@ np.random.seed(1337)
 
 
 def evaluate_single_extraction(prediction, truth):
+    """
+    In order to use cluster to evaluate,
+    we use the indicies to get the entities.
+    And use the cluster_map to look up the
+    cluster. If cluster is -1 (Outliar),
+    we proceed without using the clustering.
 
+    If cluster is not -1, we
+    """
     correct = True
     atleast_one = False
 
