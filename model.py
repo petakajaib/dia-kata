@@ -90,6 +90,8 @@ if __name__ == '__main__':
     labelled_data = json.load(open(PREPROCESSED_PATH))
 
     labelled_entities = [[entity["entity"] for entity in label["talker"]]for label in labelled_data]
+
+    assert len(labelled_entities) == len(vectorized_data["target_vectors"])
     evaluate_model(x_test, y_test, clf, indices_test, labelled_entities)
 
     pickle.dump(clf, open(CURRENT_BEST_MODEL, "wb"))
