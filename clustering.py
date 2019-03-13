@@ -1,4 +1,5 @@
 import json
+from pprint import pprint
 from itertools import combinations
 from gensim.models import TfidfModel
 from gensim.corpora import Dictionary
@@ -81,8 +82,8 @@ for label in labelled_data:
 
             cluster_map[label].append(entities[idx])
 
-        print(json.dumps(cluster_map, indent=4))
-        
+        pprint(cluster_map)
+
     # distances = []
     # for vec_1, vec_2 in combinations(vectors, 2):
     #
