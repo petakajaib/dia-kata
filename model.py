@@ -5,6 +5,7 @@ from sklearn.utils.validation import column_or_1d
 import xgboost as xgb
 import numpy as np
 import pickle
+from clustering import clustering
 from settings import *
 
 random.seed(1337)
@@ -25,6 +26,8 @@ def evaluate_single_extraction(prediction, truth, index_test, labelled_entities)
     correct = True
     atleast_one = False
 
+    entities = labelled_entities[index_test]
+    cluster_map = clustering(entities)
     for pred, test in zip(prediction, truth):
 
         pred_is_one = pred == 1.0
