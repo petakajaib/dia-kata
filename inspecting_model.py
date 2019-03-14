@@ -70,7 +70,7 @@ for idx, entry in enumerate(labelled_data):
 
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
-    all_entities = article["cleaned_content_entities"]
+    all_entities = [entity["entity"] for entity in entry["talker"]]
     if correctness == 0:
 
         print("idx", idx)
@@ -103,7 +103,7 @@ for idx, entry in enumerate(labelled_data):
 
                 if cluster_map[entity] > -1:
 
-                    predictions = prediction.union(inverse_cluster_map[cluster_map[entity]])
+                    predictions = predictions.union(inverse_cluster_map[cluster_map[entity]])
                 else:
                     predictions.add(entity)
 
