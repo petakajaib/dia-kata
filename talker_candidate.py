@@ -1,5 +1,5 @@
 
-def get_talker_candidates(predictions_prob, entities, cluster_map, return_prob=False):
+def get_talker_candidates(predictions_prob, entities, cluster_map, inverse_cluster_map, return_prob=False):
 
     predictions_set = set()
 
