@@ -86,7 +86,7 @@ for idx, entry in enumerate(labelled_data):
 
         inverse_cluster_map = {}
 
-        for key, value in cluster.map():
+        for key, value in cluster_map.items():
             if not inverse_cluster_map.get(value):
                 inverse_cluster_map[value] = set()
 
