@@ -28,9 +28,6 @@ fast_text_models = {
     "ms": ms_fasttext
 }
 
-print("load vectorized_data")
-vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
-
 url_map_count = {}
 
 
