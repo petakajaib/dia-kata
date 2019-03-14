@@ -70,13 +70,13 @@ for idx, entry in enumerate(labelled_data):
 
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
+    all_entities = article["cleaned_content_entities"]
     if correctness == 0:
 
         print("idx", idx)
         print("quote\n", entry["quote"])
         print("url", entry["source"])
         # print("url_count", url_map_count[entry["source"]])
-        all_entities = article["cleaned_content_entities"]
         print("all_entities", all_entities)
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
