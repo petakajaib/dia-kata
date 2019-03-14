@@ -28,6 +28,9 @@ def evaluate_single_extraction(prediction, truth, index_test, labelled_entities)
 
     for test, entity in zip(truth, entities):
 
+        if test != 1.0:
+            continue
+
         cluster = cluster_map[entity]
         if cluster > -1:
             true_clusters.add(cluster)
