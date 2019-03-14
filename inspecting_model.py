@@ -92,7 +92,7 @@ for idx, entry in enumerate(labelled_data):
 
             inverse_cluster_map[value].add(key)
 
-        predictions = set()
+        predictions_set = set()
 
         for i, pred_talker in enumerate(zip(predictions, entry["talker"])):
 
@@ -103,12 +103,12 @@ for idx, entry in enumerate(labelled_data):
 
                 if cluster_map[entity] > -1:
 
-                    predictions = predictions.union(inverse_cluster_map[cluster_map[entity]])
+                    predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
                 else:
-                    predictions.add(entity)
+                    predictions_set.add(entity)
 
         print("prediction")
-        print(json.dumps(list(predictions), indent=4))
+        print(json.dumps(list(predictions_set), indent=4))
 
         print("truth")
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
