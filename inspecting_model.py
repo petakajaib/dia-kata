@@ -71,26 +71,29 @@ for idx, entry in enumerate(labelled_data):
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
     all_entities = [entity["entity"] for entity in entry["talker"]]
-    if correctness == 0:
+    print("idx", idx)
+    print("quote\n", entry["quote"])
+    print("url", entry["source"])
+    # print("url_count", url_map_count[entry["source"]])
+    print("all_entities", all_entities)
+    cluster_map = clustering(all_entities)
+    print("cluster_map", cluster_map)
+    inverse_cluster_map = {}
 
-        print("idx", idx)
-        print("quote\n", entry["quote"])
-        print("url", entry["source"])
-        # print("url_count", url_map_count[entry["source"]])
-        print("all_entities", all_entities)
+    for key, value in cluster_map.items():
+        if not inverse_cluster_map.get(value):
+            inverse_cluster_map[value] = set()
+
+        inverse_cluster_map[value].add(key)
+    if correctness == 0:
+        print("wrong:")
+
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
 
         # print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
-        cluster_map = clustering(all_entities)
-        print("cluster_map", cluster_map)
-        inverse_cluster_map = {}
 
-        for key, value in cluster_map.items():
-            if not inverse_cluster_map.get(value):
-                inverse_cluster_map[value] = set()
 
-            inverse_cluster_map[value].add(key)
 
         predictions_set = set()
 
@@ -112,12 +115,37 @@ for idx, entry in enumerate(labelled_data):
 
         print("truth")
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
-        print("---")
 
         entities_counts["wrong"].append(len(all_entities))
     elif correctness == 1:
+        print("correct")
         url_counts["correct"].append(url_map_count[entry["source"]])
         entities_counts["correct"].append(len(all_entities))
+
+        predictions_set = set()
+
+        for i, pred_talker in enumerate(zip(predictions, entry["talker"])):
+
+            prediction, entity_ = pred_talker
+            entity = entity_["entity"]
+
+            if prediction == 1.0:
+
+                if cluster_map[entity] > -1:
+
+                    predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
+                else:
+                    predictions_set.add(entity)
+
+        print("prediction")
+        print(json.dumps(list(predictions_set), indent=4))
+
+        print("truth")
+        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
+
+
+    print("---")
+
 
 print("average wrong url_count:", sum(url_counts["wrong"])/len(url_counts["wrong"]))
 print("median wrong url_count:", sorted(url_counts["wrong"])[int(len(url_counts["wrong"])/2)])
