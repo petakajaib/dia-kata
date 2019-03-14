@@ -28,6 +28,9 @@ fast_text_models = {
     "ms": ms_fasttext
 }
 
+print("load vectorized_data")
+vectorized_data = pickle.load(open(VECTORIZED_PATH, "rb"))
+
 url_map_count = {}
 
 
@@ -59,11 +62,9 @@ for idx, entry in enumerate(labelled_data):
 
     entities = [entity["entity"] for entity in entry["talker"]]
 
-    if entities:
-        correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, entities)
-    else:
-        correctness = 1
-        
+
+    correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, vectorized_data["entities"])
+
     if correctness == 0:
 
         print("idx", idx)
