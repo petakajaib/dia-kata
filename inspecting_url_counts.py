@@ -58,8 +58,12 @@ for idx, entry in enumerate(labelled_data):
     predictions = clf.predict(feature_vector)
 
     entities = [entity["entity"] for entity in entry["talker"]]
-    correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, entities)
 
+    if entities:
+        correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, entities)
+    else:
+        correctness = 1
+        
     if correctness == 0:
 
         print("idx", idx)
