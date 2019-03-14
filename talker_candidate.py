@@ -7,7 +7,7 @@ def get_talker_candidates(predictions_prob, entities, cluster_map, return_prob=F
 
     for prediction_prob, entity in zip(predictions_prob,  entities):
 
-        if prediction_prob < 0.5:
+        if prediction_prob[1] < 0.5:
             continue
 
         if cluster_map[entity] > -1:

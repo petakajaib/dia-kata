@@ -77,6 +77,16 @@ def get_cluster_map(vectors, entities, eps, min_samples):
 
     return cluster_map
 
+def invert_cluster(cluster_map):
+    inverse_cluster_map = {}
+
+    for key, value in cluster_map.items():
+        if not inverse_cluster_map.get(value):
+            inverse_cluster_map[value] = set()
+        inverse_cluster_map[value].add(key)
+
+    return inverse_cluster_map
+
 def clustering(entities, eps=0.9, min_samples=2, return_inverse=False):
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     model = create_tfidf_model(entities, n_grams_dictionary)
@@ -88,13 +98,7 @@ def clustering(entities, eps=0.9, min_samples=2, return_inverse=False):
 
     if return_inverse:
 
-        inverse_cluster_map = {}
-
-        for key, value in cluster_map.items():
-            if not inverse_cluster_map.get(value):
-                inverse_cluster_map[value] = set()
-            inverse_cluster_map[value].add(key)
-
+        inverse_cluster_map = invert_cluster(cluster_map)
         return cluster_map, inverse_cluster_map
     else:
         return cluster_map
