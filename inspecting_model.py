@@ -4,9 +4,9 @@ from pymongo import MongoClient
 from gensim.models.fasttext import FastText
 from sklearn.utils.validation import column_or_1d
 from settings import *
+from clustering import clustering
 from vectorize import vectorize_feature, vectorize_target
 from model import evaluate_single_extraction
-
 
 client = MongoClient()
 
@@ -80,12 +80,37 @@ for idx, entry in enumerate(labelled_data):
         print("all_entities", all_entities)
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
-        print("prediction")
 
-        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
+        # print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
+        cluster_map = clustering(all_entities)
+
+        inverse_cluster_map = {}
+
+        for key, value in cluster.map():
+            if not inverse_cluster_map.get(value):
+                inverse_cluster_map[value] = set()
+
+            inverse_cluster_map[value].add(key)
+
+        predictions = set()
+
+        for i, pred_talker in enumerate(zip(predictions, entry["talker"])):
+
+            prediction, entity_ = pred_talker
+            entity = entity_["entity"]
+
+            if prediction == 1.0:
+
+                if cluster_map[entity] > -1:
+
+                    predictions = prediction.union(inverse_cluster_map[cluster_map[entity]])
+                else:
+                    predictions.add(entity)
+
+        print("prediction")
+        print(json.dumps(list(predictions), indent=4))
 
         print("truth")
-
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
         print("---")
 
