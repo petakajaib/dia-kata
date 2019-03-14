@@ -46,6 +46,8 @@ clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 url_counts = {"correct": [], "wrong":[]}
 
+entities_counts = {"correct": [], "wrong": []}
+
 talker_entities = []
 
 for entry in labelled_data:
@@ -86,8 +88,11 @@ for idx, entry in enumerate(labelled_data):
 
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
         print("---")
+
+        entities_counts["wrong"].append(len(all_entities))
     elif correctness == 1:
         url_counts["correct"].append(url_map_count[entry["source"]])
+        entities_counts["correct"].append(len(all_entities))
 
 print("average wrong url_count:", sum(url_counts["wrong"])/len(url_counts["wrong"]))
 print("median wrong url_count:", sorted(url_counts["wrong"])[int(len(url_counts["wrong"])/2)])
@@ -96,3 +101,11 @@ print("max wrong url_count:", max(url_counts["wrong"]))
 print("average correct url_count:", sum(url_counts["correct"])/len(url_counts["correct"]))
 print("median correct url_count:", sorted(url_counts["correct"])[int(len(url_counts["correct"])/2)])
 print("max correct url_count:", max(url_counts["correct"]))
+
+print("avg entities count for correct predictions", sum(entities_counts["correct"])/len(entities_counts["correct"]))
+print("median entities count for correct predictions", sorted(entities_counts["correct"])[int(len(entities_counts["correct"])/2)])
+print("max entities count for correct predictions", max(entities_counts["correct"]))
+
+print("avg entities count for wrong predictions", sum(entities_counts["wrong"])/len(entities_counts["wrong"]))
+print("median entities count for wrong predictions", sorted(entities_counts["wrong"])[int(len(entities_counts["wrong"])/2)])
+print("max entities count for wrong predictions", max(entities_counts["wrong"]))
