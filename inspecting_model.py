@@ -8,6 +8,7 @@ from settings import *
 from clustering import clustering
 from vectorize import vectorize_feature, vectorize_target
 from model import evaluate_single_extraction
+from talker_candidate import get_talker_candidates
 
 client = MongoClient()
 
@@ -77,79 +78,32 @@ for idx, entry in enumerate(labelled_data):
     print("idx", idx)
     print("quote\n", entry["quote"])
     print("url", entry["source"])
-    # print("url_count", url_map_count[entry["source"]])
+
     print("all_entities", all_entities)
-    cluster_map = clustering(all_entities)
+    cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
     print("cluster_map", cluster_map)
-    inverse_cluster_map = {}
-
-    for key, value in cluster_map.items():
-        if not inverse_cluster_map.get(value):
-            inverse_cluster_map[value] = set()
-
-        inverse_cluster_map[value].add(key)
     if correctness == 0:
         print("wrong:")
 
         url_counts["wrong"].append(url_map_count[entry["source"]])
-        # print("feature_vector\n", feature_vector)
-
-        # print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
-
-        predictions_set = set()
-
-        entity_prob_map = {}
-
-        for i, pred_talker in enumerate(zip(predictions, predictions_prob,  entry["talker"])):
-
-            prediction, prediction_prob, entity_ = pred_talker
-
-            entity = entity_["entity"]
-
-            if prediction == 1.0:
-
-                if cluster_map[entity] > -1:
-
-                    predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
-
-                    for ent in inverse_cluster_map[cluster_map[entity]]:
-                        entity_prob_map[ent] = prediction_prob
-                else:
-                    predictions_set.add(entity)
-                    entity_prob_map[entity] = prediction_prob
+        entities_counts["wrong"].append(len(all_entities))
 
         print("prediction")
-        pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
+        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, return_prob=True)
+        pprint(talker_candidates)
 
         print("truth")
         pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 
         entities_counts["wrong"].append(len(all_entities))
     elif correctness == 1:
-        print("correct")
+        print("correct:")
         url_counts["correct"].append(url_map_count[entry["source"]])
         entities_counts["correct"].append(len(all_entities))
 
-        predictions_set = set()
-        entity_prob_map = {}
-        for i, pred_talker in enumerate(zip(predictions, predictions_prob, entry["talker"])):
-
-            prediction, prediction_prob, entity_ = pred_talker
-            entity = entity_["entity"]
-
-            if prediction == 1.0:
-
-                if cluster_map[entity] > -1:
-
-                    predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
-                    for ent in inverse_cluster_map[cluster_map[entity]]:
-                        entity_prob_map[ent] = prediction_prob
-                else:
-                    predictions_set.add(entity)
-                    entity_prob_map[entity] = prediction_prob
-
         print("prediction")
-        pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
+        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, return_prob=True)
+        pprint(talker_candidates)
 
         print("truth")
         pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
