@@ -1,5 +1,6 @@
 import json
 import pickle
+from pprint import pprint
 from pymongo import MongoClient
 from gensim.models.fasttext import FastText
 from sklearn.utils.validation import column_or_1d
@@ -118,10 +119,10 @@ for idx, entry in enumerate(labelled_data):
                     entity_prob_map[entity] = prediction_prob
 
         print("prediction")
-        print(json.dumps([[p, entity_prob_map[p]]for p in list(predictions_set)], indent=4))
+        pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
 
         print("truth")
-        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
+        pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 
         entities_counts["wrong"].append(len(all_entities))
     elif correctness == 1:
@@ -148,10 +149,10 @@ for idx, entry in enumerate(labelled_data):
                     entity_prob_map[entity] = prediction_prob
 
         print("prediction")
-        print(json.dumps([[p, entity_prob_map[p]]for p in list(predictions_set)], indent=4))
+        pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
 
         print("truth")
-        print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
+        pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 
 
     print("---")
