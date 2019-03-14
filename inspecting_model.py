@@ -113,10 +113,10 @@ for idx, entry in enumerate(labelled_data):
                     predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
 
                     for ent in inverse_cluster_map[cluster_map[entity]]:
-                        entity_prob_map[ent] = prediction_prob[i]
+                        entity_prob_map[ent] = prediction_prob
                 else:
                     predictions_set.add(entity)
-                    entity_prob_map[entity] = prediction_prob[i]
+                    entity_prob_map[entity] = prediction_prob
 
         print("prediction")
         pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
@@ -143,10 +143,10 @@ for idx, entry in enumerate(labelled_data):
 
                     predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
                     for ent in inverse_cluster_map[cluster_map[entity]]:
-                        entity_prob_map[ent] = prediction_prob[i]
+                        entity_prob_map[ent] = prediction_prob
                 else:
                     predictions_set.add(entity)
-                    entity_prob_map[entity] = prediction_prob[i]
+                    entity_prob_map[entity] = prediction_prob
 
         print("prediction")
         pprint([[p, entity_prob_map[p]]for p in list(predictions_set)])
