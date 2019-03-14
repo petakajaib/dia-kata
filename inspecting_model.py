@@ -95,8 +95,6 @@ for idx, entry in enumerate(labelled_data):
 
         # print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
 
-
-
         predictions_set = set()
 
         entity_prob_map = {}
