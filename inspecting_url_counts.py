@@ -49,16 +49,16 @@ url_counts = {"correct": [], "wrong":[]}
 for idx, entry in enumerate(labelled_data):
     article = enriched_collection.find_one({"url": entry["source"]})
 
+
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
 
     target_vector_reshaped = column_or_1d(target_vector)
 
     predictions = clf.predict(feature_vector)
-
-    # for entity, truth, prediction in zip(entry["talker"], target_vector_reshaped, predictions):
-
-    correctness = evaluate_single_extraction(predictions, target_vector_reshaped)
+:
+    entities = [entity["entity"] for entity in entry["talker"]]
+    correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, entities)
 
     if correctness == 0:
 
