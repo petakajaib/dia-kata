@@ -83,7 +83,7 @@ for idx, entry in enumerate(labelled_data):
 
         # print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(predictions) if p == 1], indent=4))
         cluster_map = clustering(all_entities)
-
+        print("cluster_map", cluster_map)
         inverse_cluster_map = {}
 
         for key, value in cluster_map.items():
