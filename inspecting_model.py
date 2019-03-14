@@ -68,6 +68,8 @@ for idx, entry in enumerate(labelled_data):
 
     predictions = clf.predict(feature_vector)
 
+    predictions_prob = clf.predict_prob(feature_vector)
+
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
     all_entities = [entity["entity"] for entity in entry["talker"]]
@@ -97,9 +99,12 @@ for idx, entry in enumerate(labelled_data):
 
         predictions_set = set()
 
-        for i, pred_talker in enumerate(zip(predictions, entry["talker"])):
+        entity_prob_map = {}
 
-            prediction, entity_ = pred_talker
+        for i, pred_talker in enumerate(zip(predictions, predictions_prob,  entry["talker"])):
+
+            prediction, prediction_prob, entity_ = pred_talker
+
             entity = entity_["entity"]
 
             if prediction == 1.0:
@@ -107,11 +112,15 @@ for idx, entry in enumerate(labelled_data):
                 if cluster_map[entity] > -1:
 
                     predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
+
+                    for ent in inverse_cluster_map[cluster_map[entity]]:
+                        entity_prob_map[ent] = prediction_prob
                 else:
                     predictions_set.add(entity)
+                    entity_prob_map[entity] = prediction_prob
 
         print("prediction")
-        print(json.dumps(list(predictions_set), indent=4))
+        print(json.dumps([[p, entity_prob_map[p]]for p in list(predictions_set)], indent=4))
 
         print("truth")
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
@@ -123,10 +132,10 @@ for idx, entry in enumerate(labelled_data):
         entities_counts["correct"].append(len(all_entities))
 
         predictions_set = set()
+        entity_prob_map = {}
+        for i, pred_talker in enumerate(zip(predictions, predictions_prob, entry["talker"])):
 
-        for i, pred_talker in enumerate(zip(predictions, entry["talker"])):
-
-            prediction, entity_ = pred_talker
+            prediction, prediction_prob, entity_ = pred_talker
             entity = entity_["entity"]
 
             if prediction == 1.0:
@@ -134,11 +143,14 @@ for idx, entry in enumerate(labelled_data):
                 if cluster_map[entity] > -1:
 
                     predictions_set = predictions_set.union(inverse_cluster_map[cluster_map[entity]])
+                    for ent in inverse_cluster_map[cluster_map[entity]]:
+                        entity_prob_map[ent] = prediction_prob
                 else:
                     predictions_set.add(entity)
+                    entity_prob_map[entity] = prediction_prob
 
         print("prediction")
-        print(json.dumps(list(predictions_set), indent=4))
+        print(json.dumps([[p, entity_prob_map[p]]for p in list(predictions_set)], indent=4))
 
         print("truth")
         print(json.dumps([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1], indent=4))
