@@ -65,10 +65,10 @@ def vectorize_entities(entities, tfidf_model, n_grams_dictionary):
 
     return vectors
 
-def get_cluster_map(vectors, entities):
+def get_cluster_map(vectors, entities, eps, min_samples):
 
     cluster_map = {}
-    clustering = DBSCAN(eps=0.9, min_samples=2, metric='cosine')
+    clustering = DBSCAN(eps=eps, min_samples=min_samples, metric='cosine')
     clustering.fit(vectors)
 
     for idx, label in enumerate(clustering.labels_):
@@ -77,14 +77,14 @@ def get_cluster_map(vectors, entities):
 
     return cluster_map
 
-def clustering(entities):
+def clustering(entities, eps=0.9, min_samples=2):
     n_grams_dictionary = Dictionary(entity_ngrams_generator(entities))
     model = create_tfidf_model(entities, n_grams_dictionary)
     vectors = vectorize_entities(entities, model, n_grams_dictionary)
     cluster_map = {}
 
     if len(vectors):
-        cluster_map = get_cluster_map(vectors, entities)
+        cluster_map = get_cluster_map(vectors, entities, eps, min_samples)
 
     return cluster_map
 
