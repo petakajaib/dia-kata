@@ -56,7 +56,7 @@ for idx, entry in enumerate(labelled_data):
     target_vector_reshaped = column_or_1d(target_vector)
 
     predictions = clf.predict(feature_vector)
-:
+
     entities = [entity["entity"] for entity in entry["talker"]]
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, entities)
 
