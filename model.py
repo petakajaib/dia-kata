@@ -61,7 +61,8 @@ def evaluate_single_extraction(prediction, truth, index_test, labelled_entities)
 
 
 
-    if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth) == 0):
+    # if (correct and atleast_one) or (sum(prediction) == 0 and sum(truth) == 0):
+    if correct or (sum(prediction) == 0 and sum(truth) == 0):
         return 1
     else:
         return 0
