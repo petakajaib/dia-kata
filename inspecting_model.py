@@ -68,7 +68,7 @@ for idx, entry in enumerate(labelled_data):
 
     predictions = clf.predict(feature_vector)
 
-    predictions_prob = clf.predict_prob(feature_vector)
+    predictions_prob = clf.predict_proba(feature_vector)
 
     correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
