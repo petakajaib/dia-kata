@@ -75,7 +75,7 @@ for idx, entry in enumerate(labelled_data):
         print("url", entry["source"])
         # print("url_count", url_map_count[entry["source"]])
         all_entities = article["cleaned_content_entities"]
-        print("all_entities", all_entities)
+        # print("all_entities", all_entities)
         url_counts["wrong"].append(url_map_count[entry["source"]])
         # print("feature_vector\n", feature_vector)
         print("prediction")
