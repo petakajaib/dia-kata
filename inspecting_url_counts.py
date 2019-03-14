@@ -49,6 +49,15 @@ clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 url_counts = {"correct": [], "wrong":[]}
 
+talker_entities = []
+
+for entry in labelled_data:
+
+    entities = [entity["entity"] for entity in entry["talker"]]
+
+    talker_entities.append(entities)
+
+
 for idx, entry in enumerate(labelled_data):
     article = enriched_collection.find_one({"url": entry["source"]})
 
@@ -60,10 +69,7 @@ for idx, entry in enumerate(labelled_data):
 
     predictions = clf.predict(feature_vector)
 
-    entities = [entity["entity"] for entity in entry["talker"]]
-
-
-    correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, vectorized_data["entities"])
+    correctness = evaluate_single_extraction(predictions, target_vector_reshaped, idx, talker_entities)
 
     if correctness == 0:
 
