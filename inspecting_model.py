@@ -116,8 +116,8 @@ for idx, entry in enumerate(labelled_data):
             talker_prob_map[talker] = prob
 
         filtered_condidates = filter_candidates_by_heuristics(talker_candidates, entity_tags)
-        print([(entity, talker_prob_map[entity])for entity in filtered_condidates
-        
+        print([(entity, talker_prob_map[entity])for entity in filtered_condidates])
+
         print("truth")
         pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 
