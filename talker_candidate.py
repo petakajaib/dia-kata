@@ -24,3 +24,19 @@ def get_talker_candidates(predictions_prob, entities, cluster_map, inverse_clust
         return [(p, entity_prob_map[p]) for p in predictions_set]
     else:
         return list(predictions_set)
+
+def picking_from_talker_candidates():
+    """
+    Filter candidates based on following heuristics:
+
+        - length between 4 - 30
+        - no blacklisted characters:
+            - 's
+            - .
+            - - (and other variations)
+            - said
+        - only take Person entities
+
+    PageRank entities, pick top
+
+    """
