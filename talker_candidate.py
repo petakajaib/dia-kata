@@ -81,8 +81,3 @@ def filter_candidates_by_heuristics(entities, entity_tags):
         filtered_entity.append(entity)
 
     return filtered_entity
-
-def rank_entities(entities):
-    """
-    PageRank entities, pick top as choice
-    """
