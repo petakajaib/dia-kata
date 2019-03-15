@@ -25,7 +25,7 @@ def get_talker_candidates(predictions_prob, entities, cluster_map, inverse_clust
     else:
         return list(predictions_set)
 
-def picking_from_talker_candidates():
+def filter_candidate_by_heuristics(entities):
     """
     Filter candidates based on following heuristics:
 
@@ -36,7 +36,9 @@ def picking_from_talker_candidates():
             - - (and other variations)
             - said
         - only take Person entities
+    """
 
-    PageRank entities, pick top
-
+def rank_entities(entities):
+    """
+    PageRank entities, pick top as choice
     """
