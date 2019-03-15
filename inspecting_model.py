@@ -8,7 +8,10 @@ from settings import *
 from clustering import clustering
 from vectorize import vectorize_feature, vectorize_target
 from model import evaluate_single_extraction
-from talker_candidate import get_talker_candidates
+from talker_candidate import (
+    get_talker_candidates,
+    filter_candidates_by_heuristics
+    )
 
 client = MongoClient()
 
@@ -61,7 +64,7 @@ for entry in labelled_data:
 
 for idx, entry in enumerate(labelled_data):
     article = enriched_collection.find_one({"url": entry["source"]})
-
+    entity_tags = article["cleaned_content_entities_tag"]
 
     feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
     target_vector = vectorize_target(entry)
@@ -83,28 +86,30 @@ for idx, entry in enumerate(labelled_data):
     cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
     print("cluster_map", cluster_map)
     if correctness == 0:
-        print("wrong:")
-
-        url_counts["wrong"].append(url_map_count[entry["source"]])
-        entities_counts["wrong"].append(len(all_entities))
-
-        print("prediction")
-        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map, return_prob=True)
-        pprint(talker_candidates)
-
-        print("truth")
-        pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
-
-        entities_counts["wrong"].append(len(all_entities))
+        pass
+        # print("wrong:")
+        #
+        # url_counts["wrong"].append(url_map_count[entry["source"]])
+        # entities_counts["wrong"].append(len(all_entities))
+        #
+        # print("prediction")
+        # talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
+        # pprint(talker_candidates)
+        #
+        # print("truth")
+        # pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
+        #
+        # entities_counts["wrong"].append(len(all_entities))
     elif correctness == 1:
         print("correct:")
         url_counts["correct"].append(url_map_count[entry["source"]])
         entities_counts["correct"].append(len(all_entities))
 
         print("prediction")
-        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map, return_prob=True)
-        pprint(talker_candidates)
-
+        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
+        # pprint(talker_candidates)
+        filtered_condidates = filter_candidates_by_heuristics(talker_candidates, entity_tags)
+        print(filtered_condidates)
         print("truth")
         pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 

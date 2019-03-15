@@ -25,7 +25,7 @@ def get_talker_candidates(predictions_prob, entities, cluster_map, inverse_clust
     else:
         return list(predictions_set)
 
-def filter_candidate_by_heuristics(entities):
+def filter_candidates_by_heuristics(entities, entity_tags):
     """
     Filter candidates based on following heuristics:
 
@@ -37,6 +37,42 @@ def filter_candidate_by_heuristics(entities):
             - said
         - only take Person entities
     """
+    filtered_entity = []
+    hyphens = [
+        "‐",
+        "‑",
+        "‒",
+        "–",
+        "—",
+        "―"
+    ]
+    for entity in entities:
+        char_length = len(entity)
+        if char_length < 4 or char_length > 25:
+            continue
+
+        if "'s" in entity.lower():
+            continue
+
+        if "." in entity.lower():
+            continue
+
+        has_hyphen = False
+        for hyphen in hyphens:
+            if hyphen in entity:
+                has_hyphen = True
+        if has_hyphen:
+            continue
+
+        if "said" in entity.lower():
+            continue
+
+        if entity_tags[entity.lower()] != "I-PER":
+            continue
+
+        filtered_entity.append(entity)
+
+    return filtered_entity
 
 def rank_entities(entities):
     """
