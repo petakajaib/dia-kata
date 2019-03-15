@@ -106,7 +106,7 @@ for idx, entry in enumerate(labelled_data):
         entities_counts["correct"].append(len(all_entities))
 
         print("prediction")
-        talker_candidates_prob = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map, return_prob)
+        talker_candidates_prob = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map, return_prob=True)
         # pprint(talker_candidates)
         talker_candidates = []
         talker_prob_map = {}
