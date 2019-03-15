@@ -118,7 +118,7 @@ for idx, entry in enumerate(labelled_data):
         filtered_condidates = filter_candidates_by_heuristics(talker_candidates, entity_tags)
         print([(entity, talker_prob_map[entity])for entity in filtered_condidates])
         if filtered_condidates:
-            print("selected", max(filtered_condidates, key=lambda x: -len(x)))
+            print("selected", max(filtered_condidates, key=lambda x: len(x)))
         else:
             print("selected", None)
         print("truth")
