@@ -50,7 +50,7 @@ def parse_text(label, text):
 
 def insert_to_enriched_collection(article, enriched_collection):
     entry = {}
-    entry["url"] = url
+    entry["url"] = article["url"]
     entry["language"] = article["detected_language"]
     title = article["title"]
     content = article["content"]
