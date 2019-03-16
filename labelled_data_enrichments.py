@@ -48,23 +48,9 @@ def parse_text(label, text):
 
     return d
 
-
-
-client = MongoClient()
-db = client[MONGO_DB]
-collection = db[MONGO_COLLECTION]
-enriched_collection = db[MONGO_COLLECTION_ENRICHED]
-
-labelled_data = json.load(open(LABELED_DATA_PATH))
-
-distinct_urls = set([entry["source"] for entry in labelled_data])
-
-for url in distinct_urls:
-    print(url)
+def insert_to_enriched_collection(article, enriched_collection):
     entry = {}
     entry["url"] = url
-
-    article = collection.find_one({"url": url})
     entry["language"] = article["detected_language"]
     title = article["title"]
     content = article["content"]
@@ -88,3 +74,24 @@ for url in distinct_urls:
 
     if enriched_collection.count({"url": entry["url"]}) == 0:
         enriched_collection.insert_one(entry)
+
+    return entry
+
+if __name__ == '__main__':
+
+    client = MongoClient()
+    db = client[MONGO_DB]
+    collection = db[MONGO_COLLECTION]
+    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+
+    labelled_data = json.load(open(LABELED_DATA_PATH))
+
+    distinct_urls = set([entry["source"] for entry in labelled_data])
+
+    for url in distinct_urls:
+        print(url)
+
+        article = collection.find_one({"url": url})
+
+        entry = insert_to_enriched_collection(article, enriched_collection)
+        print(entry)
