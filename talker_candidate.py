@@ -81,3 +81,9 @@ def filter_candidates_by_heuristics(entities, entity_tags):
         filtered_entity.append(entity)
 
     return filtered_entity
+
+def select_candidate(talker_candidates, entity_tags):
+
+    filtered_condidates = filter_candidates_by_heuristics(talker_candidates, entity_tags)
+    if filtered_condidates:
+        return max(filtered_condidates, key=lambda x: len(x))

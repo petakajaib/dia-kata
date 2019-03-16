@@ -10,7 +10,8 @@ from vectorize import vectorize_feature, vectorize_target
 from model import evaluate_single_extraction
 from talker_candidate import (
     get_talker_candidates,
-    filter_candidates_by_heuristics
+    filter_candidates_by_heuristics,
+    select_candidate
     )
 
 client = MongoClient()
@@ -106,21 +107,10 @@ for idx, entry in enumerate(labelled_data):
         entities_counts["correct"].append(len(all_entities))
 
         print("prediction")
-        talker_candidates_prob = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map, return_prob=True)
-        # pprint(talker_candidates)
-        talker_candidates = []
-        talker_prob_map = {}
+        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
 
-        for talker, prob in talker_candidates_prob:
-            talker_candidates.append(talker)
-            talker_prob_map[talker] = prob
-
-        filtered_condidates = filter_candidates_by_heuristics(talker_candidates, entity_tags)
-        print([(entity, talker_prob_map[entity])for entity in filtered_condidates])
-        if filtered_condidates:
-            print("selected", max(filtered_condidates, key=lambda x: len(x)))
-        else:
-            print("selected", None)
+        selected = select_candidate(talker_candidates, entity_tags)
+        print("selected:", selected)
         print("truth")
         pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
 
