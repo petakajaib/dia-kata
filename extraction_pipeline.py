@@ -1,5 +1,6 @@
 import re
 from pymongo import MongoClient
+from gensim.models.fasttext import FastText
 from labelled_data_enrichments import insert_to_enriched_collection
 from polyglot.text import Text
 from preprocessing import get_cleaned_content
