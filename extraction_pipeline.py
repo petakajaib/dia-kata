@@ -32,13 +32,15 @@ def get_entities(text):
 
 def transform_to_entry(article, quoted_text):
 
+    cleaned_content = get_cleaned_content(article["content"])
+
     transformed = {
         "quote": quoted_text,
         "source": article["url"],
         "content": article["content"],
         "language": article["detected_language"],
-        "cleaned_content": get_cleaned_content(article["content"]),
-        "talker": get_entities(text)
+        "cleaned_content": cleaned_content,
+        "talker": get_entities(cleaned_content)
         }
 
     return transformed
