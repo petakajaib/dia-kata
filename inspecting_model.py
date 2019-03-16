@@ -86,8 +86,8 @@ for idx, entry in enumerate(labelled_data):
     # print("all_entities", all_entities)
     cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
     print("cluster_map", cluster_map)
-    if correctness == 0:
-        pass
+    # if correctness == 0:
+    #     pass
         # print("wrong:")
         #
         # url_counts["wrong"].append(url_map_count[entry["source"]])
@@ -101,7 +101,8 @@ for idx, entry in enumerate(labelled_data):
         # pprint([entry["talker"][i]["entity"] for i, p in enumerate(target_vector_reshaped) if p==1])
         #
         # entities_counts["wrong"].append(len(all_entities))
-    elif correctness == 1:
+    # elif correctness == 1:
+    if correctness:
         print("correct:")
         url_counts["correct"].append(url_map_count[entry["source"]])
         entities_counts["correct"].append(len(all_entities))
