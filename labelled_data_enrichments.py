@@ -49,33 +49,34 @@ def parse_text(label, text):
     return d
 
 def insert_to_enriched_collection(article, enriched_collection):
-    entry = {}
-    entry["url"] = article["url"]
-    entry["language"] = article["detected_language"]
-    title = article["title"]
-    content = article["content"]
+    if enriched_collection.count({"url": article["url"]}) == 0:
+        entry = {}
+        entry["url"] = article["url"]
+        entry["language"] = article["detected_language"]
+        title = article["title"]
+        content = article["content"]
 
-    cleaned_title = get_cleaned_content(title)
-    cleaned_content = get_cleaned_content(content)
+        cleaned_title = get_cleaned_content(title)
+        cleaned_content = get_cleaned_content(content)
 
-    text_forms = [
-        ("cleaned_content", cleaned_content),
-        ("lowered_content", cleaned_content.lower()),
-        ("title", title),
-        ("cleaned_title", cleaned_title),
-        ("lowered_title", cleaned_title.lower())
-    ]
+        text_forms = [
+            ("cleaned_content", cleaned_content),
+            ("lowered_content", cleaned_content.lower()),
+            ("title", title),
+            ("cleaned_title", cleaned_title),
+            ("lowered_title", cleaned_title.lower())
+        ]
 
-    for label, text in text_forms:
-        parsed = parse_text(label, text)
+        for label, text in text_forms:
+            parsed = parse_text(label, text)
 
-        for key, value in parsed.items():
-            entry[key] = value
+            for key, value in parsed.items():
+                entry[key] = value
 
-    if enriched_collection.count({"url": entry["url"]}) == 0:
         enriched_collection.insert_one(entry)
-
-    return entry
+        return entry
+    else:
+        return enriched_collection.find_one({"url": article["url"]})
 
 if __name__ == '__main__':
 
