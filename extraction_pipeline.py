@@ -1,10 +1,16 @@
+import pickle
 import re
 from pymongo import MongoClient
 from gensim.models.fasttext import FastText
 from labelled_data_enrichments import insert_to_enriched_collection
 from polyglot.text import Text
+from clustering import clustering
 from preprocessing import get_cleaned_content
 from vectorize import vectorize_feature
+from talker_candidates import (
+    get_talker_candidates,
+    select_candidate
+    )
 from settings import *
 
 def quoted_text_generator(article, length_min_threshold=5, length_max_threshold=45, left_padding=50, right_padding=70):
@@ -73,15 +79,24 @@ fast_text_models = {
 pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10}}]
 
 
+clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
 for article in article_collection.aggregate(pipeline):
 
     print("enrichment")
 
     insert_to_enriched_collection(article, enriched_collection)
-
-
+    enriched = enriched_collection.find_one({"url": article["url"]})
+    all_entities = entities["cleaned_content_entities"]
+    entity_tags = entities["cleaned_content_entities_tag"]
     for entry in entry_generator(article):
         print("vectorize_feature")
 
-        vectorize_feature(entry, fast_text_models, enriched_collection)
+        feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
+        print("prediction")
+        predictions_prob = clf.predict_proba(feature_vector)
+        cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
+        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
+        selected = select_candidate(talker_candidates, entity_tags)
+
+        pritn(selected)
