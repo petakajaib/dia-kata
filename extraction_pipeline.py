@@ -87,8 +87,8 @@ for article in article_collection.aggregate(pipeline):
 
     insert_to_enriched_collection(article, enriched_collection)
     enriched = enriched_collection.find_one({"url": article["url"]})
-    all_entities = entities["cleaned_content_entities"]
-    entity_tags = entities["cleaned_content_entities_tag"]
+    all_entities = enriched["cleaned_content_entities"]
+    entity_tags = enriched["cleaned_content_entities_tag"]
     for entry in entry_generator(article):
         print("vectorize_feature")
 
