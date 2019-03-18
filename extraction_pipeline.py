@@ -7,7 +7,7 @@ from polyglot.text import Text
 from clustering import clustering
 from preprocessing import get_cleaned_content
 from vectorize import vectorize_feature
-from talker_candidates import (
+from talker_candidate import (
     get_talker_candidates,
     select_candidate
     )
