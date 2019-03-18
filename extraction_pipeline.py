@@ -99,4 +99,4 @@ for article in article_collection.aggregate(pipeline):
         talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
         selected = select_candidate(talker_candidates, entity_tags)
 
-        pritn(selected)
+        print(selected)
