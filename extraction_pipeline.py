@@ -105,7 +105,7 @@ if __name__ == '__main__':
         "ms": ms_fasttext
     }
 
-    pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":1000}}]
+    pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
 
 
     clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
