@@ -76,7 +76,7 @@ fast_text_models = {
     "ms": ms_fasttext
 }
 
-pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10}}]
+pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":200}}]
 
 
 clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
