@@ -75,6 +75,9 @@ def filter_candidates_by_heuristics(entities, entity_tags):
         if "said" in entity.lower():
             continue
 
+        if "dot" in entity.lower():
+            continue
+
         if entity_tags[entity.lower()] != "I-PER":
             continue
 
