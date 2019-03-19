@@ -1,4 +1,5 @@
 import pickle
+from pprint import pprint
 import re
 from pymongo import MongoClient
 from gensim.models.fasttext import FastText
@@ -57,46 +58,58 @@ def entry_generator(article):
 
         yield transform_to_entry(article, quoted_text)
 
-client = MongoClient()
-db = client[MONGO_DB]
-article_collection = db[MONGO_COLLECTION]
-enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+def extract_quote_talkers(article, enriched_collection, fast_text_models):
 
-
-print("loading FastText models")
-
-print("en")
-en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
-
-print("ms")
-ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
-
-fast_text_models = {
-    "en": en_fasttext,
-    "ms": ms_fasttext
-}
-
-pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":1000}}]
-
-
-clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
-
-for article in article_collection.aggregate(pipeline):
-
-    print("enrichment")
+    quote_talkers = []
 
     insert_to_enriched_collection(article, enriched_collection)
     enriched = enriched_collection.find_one({"url": article["url"]})
     all_entities = enriched["cleaned_content_entities"]
     entity_tags = enriched["cleaned_content_entities_tag"]
     for entry in entry_generator(article):
-        print("vectorize_feature")
-
         feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
-        print("prediction")
         predictions_prob = clf.predict_proba(feature_vector)
         cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
         talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
         selected = select_candidate(talker_candidates, entity_tags)
+        if selected:
+            d = {
+                "quote": entry["quote"],
+                "talker": selected
+            }
+            quote_talkers.append(d)
 
-        print(selected)
+    return quote_talkers
+
+
+if __name__ == '__main__':
+
+    client = MongoClient()
+    db = client[MONGO_DB]
+    article_collection = db[MONGO_COLLECTION]
+    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+
+
+    print("loading FastText models")
+
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
+
+    pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":1000}}]
+
+
+    clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+
+    for article in article_collection.aggregate(pipeline):
+
+        quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models)
+
+        pprint(quote_talkers)
