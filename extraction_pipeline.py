@@ -67,19 +67,20 @@ def extract_quote_talkers(article, enriched_collection, fast_text_models):
     all_entities = enriched["cleaned_content_entities"]
     entity_tags = enriched["cleaned_content_entities_tag"]
     for entry in entry_generator(article):
-        print("entry['quote']", entry["quote"])
-        feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
-        predictions_prob = clf.predict_proba(feature_vector)
-        cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
-        talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
-        selected = select_candidate(talker_candidates, entity_tags)
-        if selected:
-            d = {
-                "quote": entry["quote"],
-                "talker": selected
-            }
-            quote_talkers.append(d)
-
+        try:
+            feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
+            predictions_prob = clf.predict_proba(feature_vector)
+            cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
+            talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
+            selected = select_candidate(talker_candidates, entity_tags)
+            if selected:
+                d = {
+                    "quote": entry["quote"],
+                    "talker": selected
+                }
+                quote_talkers.append(d)
+        except TypeError as err:
+            print(err)
     return quote_talkers
 
 
