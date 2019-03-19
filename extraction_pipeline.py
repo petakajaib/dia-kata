@@ -110,9 +110,8 @@ if __name__ == '__main__':
 
     clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
-    # for article in article_collection.aggregate(pipeline):
-    article = article_collection.find_one({"url": "https://lobakmerah.com/persatuan-ex-ex-sufian-netizen-terkejut-elfira-loy-jemput-ex-sufian-suhaimi-ke-majlis-perkahwinannya/"})
-    print(article["url"])
-    quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models)
+    for article in article_collection.aggregate(pipeline):
+        print(article["url"])
+        quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models)
 
-    pprint(quote_talkers)
+        pprint(quote_talkers)
