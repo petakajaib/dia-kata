@@ -105,10 +105,11 @@ if __name__ == '__main__':
         "ms": ms_fasttext
     }
 
-    pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
-
+    print("loading quote model")
 
     quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+
+    pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
 
     for article in article_collection.aggregate(pipeline):
         print(article["url"])
