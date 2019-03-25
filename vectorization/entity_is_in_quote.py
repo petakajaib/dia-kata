@@ -12,8 +12,8 @@ def get_entity_is_in_quote(entry, enriched_collection):
         entity = talker["entity"].lower().replace(".", "DOT")
 
         if entity in cleaned_content_entities:
-            vec.append(1)
-        else:
             vec.append(0)
+        else:
+            vec.append(1)
 
     return np.array(vec)
