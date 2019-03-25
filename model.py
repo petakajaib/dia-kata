@@ -107,4 +107,4 @@ if __name__ == '__main__':
     assert len(labelled_entities) == len(vectorized_data["target_vectors"])
     evaluate_model(x_test, y_test, clf, indices_test, labelled_entities)
 
-    # pickle.dump(clf, open(CURRENT_BEST_MODEL, "wb"))
+    pickle.dump(clf, open(CURRENT_BEST_MODEL, "wb"))
