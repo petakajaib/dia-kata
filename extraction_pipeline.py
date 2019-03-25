@@ -58,7 +58,7 @@ def entry_generator(article):
 
         yield transform_to_entry(article, quoted_text)
 
-def extract_quote_talkers(article, enriched_collection, fast_text_models):
+def extract_quote_talkers(article, enriched_collection, fast_text_models, quote_model):
 
     quote_talkers = []
 
@@ -69,7 +69,7 @@ def extract_quote_talkers(article, enriched_collection, fast_text_models):
     for entry in entry_generator(article):
         try:
             feature_vector = vectorize_feature(entry, fast_text_models, enriched_collection)
-            predictions_prob = clf.predict_proba(feature_vector)
+            predictions_prob = quote_model.predict_proba(feature_vector)
             cluster_map, inverse_cluster_map = clustering(all_entities, return_inverse=True)
             talker_candidates = get_talker_candidates(predictions_prob, all_entities, cluster_map, inverse_cluster_map)
             selected = select_candidate(talker_candidates, entity_tags)
@@ -108,10 +108,10 @@ if __name__ == '__main__':
     pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
 
 
-    clf = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+    quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
 
     for article in article_collection.aggregate(pipeline):
         print(article["url"])
-        quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models)
+        quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models, quote_model)
 
         pprint(quote_talkers)
