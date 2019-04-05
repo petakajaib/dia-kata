@@ -16,8 +16,8 @@ article_collection = db[MONGO_COLLECTION]
 entity_collection = db[ENTITY_COLLECTION]
 
 query = {
-    "publish_date": {"$gte": datetime(2019,4,5)},
-    "language_detected": {"$in": ["ms", "en"]}
+    "publish_date": {"$gte": datetime(2019,4,1)},
+    "detected_language": {"$in": ["ms", "en"]}
 }
 
 for article in article_collection.find(query):
