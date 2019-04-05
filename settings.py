@@ -33,7 +33,6 @@ SENTIMENT_MODEL_MS = "../xgboost-models/sentiment_ms.pickle"
 TALKED_ABOUT_MODEL_MS = "../xgboost-models/talked_about_ms.pickle"
 TALKER_MODEL_MS = "../xgboost-models/talker_ms.pickle"
 
-
 TALKING_COLLECTION = "talking"
 
 ENTITY_EXTRACTION_COLLECTION = "entity_extraction"
@@ -47,3 +46,4 @@ LABELED_DATA_PATH = "data/labelling.json"
 MONGO_COLLECTION_ENRICHED = "enriched_for_extracting_talker"
 SPEECH_VERB_PATH = "data/speech_verbs_uniq.txt"
 CURRENT_BEST_MODEL = "data/model_with_anti_entity.pkl"
+ENTITY_COLLECTION = "entity"
