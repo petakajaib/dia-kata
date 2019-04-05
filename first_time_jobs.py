@@ -32,7 +32,7 @@ for article in article_collection.find(query):
             entity = {
                 "entities": entities,
                 "url": article["url"],
-                "language": parsed.detect_language(),
+                "detected_language": parsed.detect_language(),
                 "publish_date": article["publish_date"]
             }
 
