@@ -20,7 +20,7 @@ query = {
     "language_detected": {"$in": ["ms", "en"]}
 }
 
-for article in collection.find(query):
+for article in article_collection.find(query):
 
     print(article["url"])
 
