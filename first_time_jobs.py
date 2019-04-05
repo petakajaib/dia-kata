@@ -25,20 +25,23 @@ for article in article_collection.find(query):
 
     if entity_collection.count({"url": article["url"]}) == 0:
 
-        parsed = Text(article["content"])
-        entities = [" ".join(entity) for entity in parsed.entities]
+        try:
+            parsed = Text(article["content"])
+            entities = [" ".join(entity) for entity in parsed.entities]
 
-        entity = {
-            "entities": entities,
-            "url": article["url"],
-            "language": parsed.detect_language(),
-            "publish_date": article["publish_date"]
-        }
+            entity = {
+                "entities": entities,
+                "url": article["url"],
+                "language": parsed.detect_language(),
+                "publish_date": article["publish_date"]
+            }
 
-        entity_collection.insert_one(entity)
+            entity_collection.insert_one(entity)
 
 
-
+        except ValueError as err:
+            print(err)
+            continue
 # For querying
 
 # build fastText
