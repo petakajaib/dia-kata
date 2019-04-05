@@ -2,6 +2,7 @@ from pymongo import MongoClient
 from polyglot.text import Text
 from settings import *
 from datetime import datetime
+import pycld2
 
 def article_generator(collection):
 
@@ -38,7 +39,8 @@ for article in article_collection.find(query):
 
             entity_collection.insert_one(entity)
 
-
+        except pycld2.error as err:
+            print(err)
         except ValueError as err:
             print(err)
             continue
