@@ -18,6 +18,7 @@ entity_collection = db[ENTITY_COLLECTION]
 
 query = {
     "publish_date": {"$gte": datetime(2019,4,5)},
+    "content": {"$exists": True}
 }
 
 for article in article_collection.find(query):
