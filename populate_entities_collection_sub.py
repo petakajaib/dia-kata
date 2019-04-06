@@ -3,6 +3,7 @@ from polyglot.text import Text
 from pymongo import MongoClient
 import pycld2
 from redis import StrictRedis
+from settings import *
 
 def populate_sub(article, entity_collection):
 
