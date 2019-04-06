@@ -1,8 +1,10 @@
 import json
+from polyglot.text import Text
+from pymongo import MongoClient
 import pycld2
 from redis import StrictRedis
 
-def populate_sub(article):
+def populate_sub(article, entity_collection):
 
     try:
         parsed = Text(article["content"])
@@ -23,6 +25,11 @@ def populate_sub(article):
         print(err)
         # continue
 
+client = MongoClient()
+
+db = client[MONGO_DB]
+
+entity_collection = db[ENTITY_COLLECTION]
 redis_client = StrictRedis()
 redis_pubsub = redis_client.pubsub()
 
@@ -38,7 +45,7 @@ while True:
         if data == 1:
             continue
         parsed = json.loads(data)
-        entity = populate_sub(parsed)
+        entity = populate_sub(parsed, entity_collection)
 
         print(parsed["url"])
         print(entity["entities"])

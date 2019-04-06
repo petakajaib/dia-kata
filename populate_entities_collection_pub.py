@@ -1,4 +1,3 @@
-from polyglot.text import Text
 from pymongo import MongoClient
 from redis import StrictRedis
 import json
