@@ -91,7 +91,7 @@ annoy_index = AnnoyIndex(dimension)
 idx = 1
 annoy_index_collection.delete_many({})
 
-for entities in entity_generator(collection):
+for entities in entity_generator(entity_collection):
 
     for entity in entities:
 
