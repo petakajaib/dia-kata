@@ -16,8 +16,8 @@ def populate_pub(article_collection, entity_collection, redis_client):
 
         if entity_collection.count({"url": article["url"]}) == 0:
             del(article["_id"])
-            article["publish_date"] = str(article["publish_date"])
-            
+            publish_date = str(article["publish_date"])
+            article["publish_date"] = publish_date
             redis_client.publish("populate_entities", json.dumps(article))
 
 
