@@ -29,7 +29,7 @@ redis_pubsub.subscribe('populate_entities')
 
 while True:
 
-    message = p.get_message()                                               # Checks for message
+    message = redis_pubsub.get_message()                                               # Checks for message
     if message:
         data = message['data']
 
