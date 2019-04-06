@@ -2,6 +2,7 @@ from polyglot.text import Text
 from pymongo import MongoClient
 from redis import StrictRedis
 import json
+from settings import *
 
 def populate_pub(article_collection, entity_collection, redis_client):
     query = {
