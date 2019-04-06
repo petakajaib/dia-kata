@@ -107,14 +107,14 @@ article_collection = db[MONGO_COLLECTION]
 entity_collection = db[ENTITY_COLLECTION]
 annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
 
-# populate_entity_collection(article_collection, entity_collection)
+populate_entity_collection(article_collection, entity_collection)
 
-# build_fast_text_model()
+build_fast_text_model()
 fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
 #
-# build_annoy_index()
+build_annoy_index()
 dimension = 100
 annoy_index = AnnoyIndex(dimension)
 
