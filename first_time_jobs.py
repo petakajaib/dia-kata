@@ -113,12 +113,12 @@ annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
 
 # populate_entity_collection(article_collection, entity_collection)
 
-build_fast_text_model()
+# build_fast_text_model()
 fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
 #
-build_annoy_index()
+# build_annoy_index()
 dimension = 100
 annoy_index = AnnoyIndex(dimension)
 
@@ -151,7 +151,13 @@ for result in annoy_index.get_nns_by_vector(vector, n):
 
     res = annoy_index_collection.find_one({"idx": result})
 
+    query_set = set(sample_query.loower().split())
+    entity_set = set(res["entity"].split())
+
+
     if sample_query in res["entity"]:
+        continue
+    if len(query_set.intersection(entity_set)):
         continue
     else:
         aggregated.append(res["entity"])
