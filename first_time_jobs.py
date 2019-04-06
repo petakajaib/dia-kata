@@ -13,7 +13,7 @@ def entity_generator(collection):
 
 def populate_entity_collection(article_collection, entity_collection):
     query = {
-        "publish_date": {"$gte": datetime(2019,4,5)},
+        # "publish_date": {"$gte": datetime(2019,4,5)},
         "content": {"$exists": True}
     }
 
@@ -98,6 +98,8 @@ def build_annoy_index():
 
                 idx += 1
 
+    print("{}\t{}          ".format(idx, entity))
+
     annoy_index.build(10)
     annoy_index.save(ANNOY_INDEX_PATH)
 
@@ -108,14 +110,14 @@ article_collection = db[MONGO_COLLECTION]
 entity_collection = db[ENTITY_COLLECTION]
 annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
 
-# populate_entity_collection(article_collection, entity_collection)
+populate_entity_collection(article_collection, entity_collection)
 
-# build_fast_text_model()
+build_fast_text_model()
 fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
 #
-build_annoy_index()
+# build_annoy_index()
 dimension = 100
 annoy_index = AnnoyIndex(dimension)
 
