@@ -71,6 +71,35 @@ def build_fast_text_model():
 
     return fasttext_entity
 
+def build_annoy_index():
+    dimension = 100
+    annoy_index = AnnoyIndex(dimension)
+
+    idx = 1
+    annoy_index_collection.delete_many({})
+
+    for entities in entity_generator(entity_collection):
+
+        for entity in entities:
+
+            if annoy_index_collection.count({"entity": entity}) == 0:
+
+                print("{}\t{}          ".format(idx, entity), end="\r")
+
+                annoy_index_collection.insert_one({
+                    "idx": idx,
+                    "entity": entity
+                    })
+
+                vector = fasttext_entity[entity]
+
+                annoy_index.add_item(idx, vector)
+
+                idx += 1
+
+    annoy_index.build(10)
+    annoy_index.save(ANNOY_INDEX_PATH)
+
 client = MongoClient()
 
 db = client[MONGO_DB]
@@ -85,30 +114,23 @@ fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
 #
+# build_annoy_index()
 dimension = 100
 annoy_index = AnnoyIndex(dimension)
 
-idx = 1
-annoy_index_collection.delete_many({})
+annoy_index.load(ANNOY_INDEX_PATH)
 
-for entities in entity_generator(entity_collection):
+sample_query = "wan azizah"
 
-    for entity in entities:
+vector = fasttext_entity[sample_query]
+n = 100
 
-        if annoy_index_collection.count({"entity": entity}) == 0:
+print("query:", sample_query)
+for result in a.get_nns_by_vector(vector, n):
 
-            print("{}\t{}          ".format(idx, entity), end="\r")
+    res = annoy_index_collection.find_one({"idx": result})
 
-            annoy_index_collection.insert_one({
-                "idx": idx,
-                "entity": entity
-                })
-
-            vector = fasttext_entity[entity]
-
-            annoy_index.add_item(idx, vector)
-
-            idx += 1
-
-annoy_index.build(10)
-annoy_index.save(ANNOY_INDEX_PATH)
+    if sample_query in res["entity"]:
+        continue
+    else:
+        print(res["entity"])
