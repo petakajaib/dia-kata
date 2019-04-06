@@ -1,5 +1,6 @@
-from redis import StrictRedis
 import json
+import pycld2
+from redis import StrictRedis
 
 def populate_sub(article):
 
@@ -38,6 +39,6 @@ while True:
             continue
         parsed = json.loads(data)
         entity = populate_sub(parsed)
-        
+
         print(parsed["url"])
         print(entity["entities"])
