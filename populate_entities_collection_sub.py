@@ -33,5 +33,8 @@ while True:
     if message:
         data = message['data']
         print(data)
+
+        if data == 1:
+            continue
         parsed = json.loads(data)
         print(parsed)
