@@ -32,6 +32,6 @@ while True:
     message = redis_pubsub.get_message()                                               # Checks for message
     if message:
         data = message['data']
-
+        print(data)
         parsed = json.loads(data)
         print(parsed)
