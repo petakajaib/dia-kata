@@ -18,6 +18,10 @@ def detail():
 def top_people():
     return jsonify(top_people=["person1", "person2", "person3"])
 
-@api.route("/load_models/")
+@api.route("/fasttext/")
+def load_models():
+    return jsonify(ja=['pa'])
+
+@api.route("/annoy/")
 def load_models():
     return jsonify(ja=['pa'])

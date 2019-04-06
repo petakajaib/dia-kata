@@ -165,3 +165,23 @@ for result in annoy_index.get_nns_by_vector(vector, n):
 similar = aggregated[:10]
 print("similar entities")
 print(similar)
+
+print("ms")
+ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+
+fast_text_models = {
+    "en": en_fasttext,
+    "ms": ms_fasttext
+}
+
+print("loading quote model")
+
+quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+
+pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
+
+for article in article_collection.aggregate(pipeline):
+    print(article["url"])
+    quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models, quote_model)
+
+    pprint(quote_talkers)
