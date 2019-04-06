@@ -125,6 +125,7 @@ sample_query = "wan azizah"
 vector = fasttext_entity[sample_query]
 n = 100
 
+aggregated = []
 print("query:", sample_query)
 for result in annoy_index.get_nns_by_vector(vector, n):
 
@@ -133,4 +134,6 @@ for result in annoy_index.get_nns_by_vector(vector, n):
     if sample_query in res["entity"]:
         continue
     else:
-        print(res["entity"])
+        aggregated.append(res["entity"])
+
+print(aggregated[:10])
