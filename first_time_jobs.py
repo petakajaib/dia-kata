@@ -126,7 +126,7 @@ vector = fasttext_entity[sample_query]
 n = 100
 
 print("query:", sample_query)
-for result in a.get_nns_by_vector(vector, n):
+for result in annoy_index.get_nns_by_vector(vector, n):
 
     res = annoy_index_collection.find_one({"idx": result})
 
