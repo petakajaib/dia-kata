@@ -20,7 +20,7 @@ def populate_sub():
         print(err)
     except ValueError as err:
         print(err)
-        continue
+        # continue
 
 redis_client = StrictRedis()
 redis_pubsub = redis_client.pubsub()
