@@ -18,7 +18,7 @@ def populate_entity_collection(article_collection, entity_collection):
         "content": {"$exists": True}
     }
 
-    for article in article_collection.find(query):
+    for article in article_collection.find(query, no_cursor_timeout=True):
 
         print(article["url"])
 
