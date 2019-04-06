@@ -51,7 +51,7 @@ for article in article_collection.find(query):
 # build fastText
 
 fasttext_params = {
-    "h1": 1,
+    "hs": 1,
     "window": 10,
     "min_count": 1,
     "workers": 7,
