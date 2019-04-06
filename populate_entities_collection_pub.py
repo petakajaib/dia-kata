@@ -18,6 +18,7 @@ def populate_pub(article_collection, entity_collection, redis_client):
             del(article["_id"])
             publish_date = str(article["publish_date"])
             article["publish_date"] = publish_date
+            print(article)
             redis_client.publish("populate_entities", json.dumps(article))
 
 
