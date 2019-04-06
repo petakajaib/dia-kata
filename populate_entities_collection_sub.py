@@ -1,7 +1,7 @@
 from redis import StrictRedis
 import json
 
-def populate_sub():
+def populate_sub(article):
 
     try:
         parsed = Text(article["content"])
@@ -15,7 +15,7 @@ def populate_sub():
         }
 
         entity_collection.insert_one(entity)
-
+        return entity
     except pycld2.error as err:
         print(err)
     except ValueError as err:
@@ -37,4 +37,7 @@ while True:
         if data == 1:
             continue
         parsed = json.loads(data)
-        print(parsed)
+        entity = populate_sub(parsed)
+        
+        print(parsed["url"])
+        print(entity["entities"])
