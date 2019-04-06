@@ -5,6 +5,7 @@ from polyglot.text import Text
 import numpy as np
 import pycld2
 from pymongo import MongoClient
+from redis import StrictRedis
 from settings import *
 
 def entity_generator(collection):
@@ -117,7 +118,7 @@ fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
 #
-# build_annoy_index()
+build_annoy_index()
 dimension = 100
 annoy_index = AnnoyIndex(dimension)
 
