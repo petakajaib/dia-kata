@@ -151,7 +151,7 @@ for result in annoy_index.get_nns_by_vector(vector, n):
 
     res = annoy_index_collection.find_one({"idx": result})
 
-    query_set = set(sample_query.loower().split())
+    query_set = set(sample_query.lower().split())
     entity_set = set(res["entity"].split())
 
 
