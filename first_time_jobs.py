@@ -97,7 +97,7 @@ for entities in entity_generator(entity_collection):
 
         if annoy_index_collection.count({"entity": entity}) == 0:
 
-            print(entity)
+            print("{}\t{}          ".format(idx, entity), end="\r")
 
             annoy_index_collection.insert_one({
                 "idx": idx,
