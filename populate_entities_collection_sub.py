@@ -47,6 +47,6 @@ while True:
             continue
         parsed = json.loads(data)
         entity = populate_sub(parsed, entity_collection)
-
-        print(parsed["url"])
-        print(entity["entities"])
+        if entity:
+            print(parsed["url"])
+            print(entity["entities"])
