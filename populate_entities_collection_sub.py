@@ -7,6 +7,9 @@ from settings import *
 
 def populate_sub(article, entity_collection):
 
+    if entity_collection.count({"url": article["url"]}):
+        return None
+
     try:
         parsed = Text(article["content"])
         entities = [" ".join(entity).lower() for entity in parsed.entities]
