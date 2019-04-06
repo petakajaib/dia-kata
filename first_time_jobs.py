@@ -23,7 +23,7 @@ def populate_entity_collection(article_collection, entity_collection):
 
             try:
                 parsed = Text(article["content"])
-                entities = [" ".join(entity) for entity in parsed.entities]
+                entities = [" ".join(entity).lower() for entity in parsed.entities]
 
                 entity = {
                     "entities": entities,
