@@ -9,7 +9,7 @@ from redis import StrictRedis
 from settings import *
 
 def entity_generator(collection):
-    for article in collection.find({"entities": {"$exists": True}}):
+    for article in collection.find({}):
         yield article["entities"]
 
 def populate_entity_collection(article_collection, entity_collection):
@@ -111,7 +111,7 @@ article_collection = db[MONGO_COLLECTION]
 entity_collection = db[ENTITY_COLLECTION]
 annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
 
-populate_entity_collection(article_collection, entity_collection)
+# populate_entity_collection(article_collection, entity_collection)
 
 build_fast_text_model()
 fasttext_entity = FastText.load(FASTTEXT_ENTITY)
@@ -124,21 +124,29 @@ annoy_index = AnnoyIndex(dimension)
 
 annoy_index.load(ANNOY_INDEX_PATH)
 
+
 sample_query = "wan azizah"
 
-tokens = sample_query.split()
-vector = np.zeros(dimension)
+vector = fasttext_entity[sample_query]
+print("query:", sample_query)
 
-for tok in tokens:
-    tok_vector = fasttext_entity[sample_query]
-    vector = vector + tok_vector
+# person query
 
-vector = vector/len(tokens)
+searched = []
+
+indices = list(annoy_index.get_nns_by_vector(vector, 20))
+
+results = [entry["entity"] for entry in annoy_index_collection.find({"idx": {"$in": indices}})]
+
+print("search")
+print(results)
+
+# similarity query
+
 
 n = 100
 
 aggregated = []
-print("query:", sample_query)
 for result in annoy_index.get_nns_by_vector(vector, n):
 
     res = annoy_index_collection.find_one({"idx": result})
@@ -148,4 +156,6 @@ for result in annoy_index.get_nns_by_vector(vector, n):
     else:
         aggregated.append(res["entity"])
 
-print(aggregated[:10])
+similar = aggregated[:10]
+print("similar entities")
+print(similar)
