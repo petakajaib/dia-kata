@@ -2,6 +2,7 @@ from datetime import datetime
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
 from polyglot.text import Text
+import numpy as np
 import pycld2
 from pymongo import MongoClient
 from settings import *
@@ -107,9 +108,9 @@ article_collection = db[MONGO_COLLECTION]
 entity_collection = db[ENTITY_COLLECTION]
 annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
 
-populate_entity_collection(article_collection, entity_collection)
+# populate_entity_collection(article_collection, entity_collection)
 
-build_fast_text_model()
+# build_fast_text_model()
 fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 # build annoyIndex
@@ -122,7 +123,15 @@ annoy_index.load(ANNOY_INDEX_PATH)
 
 sample_query = "wan azizah"
 
-vector = fasttext_entity[sample_query]
+tokens = sample_query.split()
+vector = np.zeros(dimension)
+
+for tok in tokens:
+    tok_vector = fasttext_entity[sample_query]
+    vector = vector + tok_vector
+
+vector = vector/len(tokens)
+
 n = 100
 
 aggregated = []
