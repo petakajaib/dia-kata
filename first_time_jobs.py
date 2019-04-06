@@ -1,14 +1,13 @@
 from pymongo import MongoClient
+from gensim.models.fasttext import FastText
 from polyglot.text import Text
 from settings import *
 from datetime import datetime
 import pycld2
 
-def article_generator(collection):
-
-    for article in collection.find():
-
-        yield article
+def entity_generator(collection):
+    for article in collection.find({"entities": {"$exists": True}}):
+        yield article["entities"]
 
 client = MongoClient()
 
@@ -45,12 +44,36 @@ for article in article_collection.find(query):
         except ValueError as err:
             print(err)
             continue
+
+
 # For querying
 
 # build fastText
 
+fasttext_params = {
+    "h1": 1,
+    "window": 10,
+    "min_count": 1,
+    "workers": 7,
+    "min_n": 1,
+    "max_n": 10,
+}
 
+print("building corpus")
+
+entity_corpus = [entity for entity in entity_generator(entity_collection)]
+fasttext_entity = FastText(**fasttext_params)
+
+print("count corpus")
+fasttext_entity.build_vocab(sentences=entity_corpus)
+total_examples = fasttext_entity.corpus_count
+
+print("train fasttext")
+fasttext_entity.train(sentences=entity_corpus, total_examples=total_examples, epochs=5)
+
+print("saving fasttext")
+
+fasttext_entity.save("../fastTextEntity.bin")
 
 # build annoyIndex
-
 #
