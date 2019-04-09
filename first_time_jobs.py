@@ -210,7 +210,7 @@ if __name__ == '__main__':
 
         print("searching", similar)
         res = get_similar_entities(
-            query, fasttext_entity,
+            similar, fasttext_entity,
             annoy_index, annoy_index_collection)
 
         print("results:")
