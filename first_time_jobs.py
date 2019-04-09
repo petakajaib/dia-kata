@@ -1,4 +1,5 @@
 from datetime import datetime
+import pickle
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
 from polyglot.text import Text
