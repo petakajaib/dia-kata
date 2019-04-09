@@ -133,6 +133,9 @@ def get_similar_entities(
 
     return aggregated[:n_results]
 
+
+
+
 if __name__ == '__main__':
 
 
@@ -190,6 +193,11 @@ if __name__ == '__main__':
                 mentions = []
 
             quote_entry["mentions"] = mentions
+            res = get_similar_entities(
+                quote_entry["talker"], fasttext_entity,
+                annoy_index, annoy_index_collection)
+
+            quote_entry["similar_entities"] = res
             print(quote_entry)
             quote_collection.insert_one(quote_entry)
 
@@ -209,19 +217,3 @@ if __name__ == '__main__':
     annoy_index = AnnoyIndex(dimension)
 
     annoy_index.load(ANNOY_INDEX_PATH)
-
-
-
-    print("similar entities")
-
-    talkers = [q["talker"] for q in quote_collection.find()]
-
-    for similar in talkers:
-
-        print("searching", similar)
-        res = get_similar_entities(
-            similar, fasttext_entity,
-            annoy_index, annoy_index_collection)
-
-        print("results:")
-        print(res)
