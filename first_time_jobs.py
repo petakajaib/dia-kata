@@ -143,6 +143,8 @@ if __name__ == '__main__':
     entity_collection = db[ENTITY_COLLECTION]
     annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
     quote_collection = db[QUOTE_COLLECTION]
+    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+    
     print("loading FastText models")
 
     print("en")
