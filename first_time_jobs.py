@@ -124,7 +124,7 @@ def get_similar_entities(
         query = set(query.lower().split())
         entity_set = set(res["entity"].split())
 
-        if sample_query in res["entity"]:
+        if query in res["entity"]:
             continue
         if len(query_set.intersection(entity_set)):
             continue
