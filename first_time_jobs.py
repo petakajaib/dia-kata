@@ -121,7 +121,7 @@ def get_similar_entities(
 
         res = annoy_index_collection.find_one({"idx": result})
 
-        query = set(query.lower().split())
+        query_set = set(query.lower().split())
         entity_set = set(res["entity"].split())
 
         if query in res["entity"]:
