@@ -8,6 +8,7 @@ import pycld2
 from pymongo import MongoClient
 from redis import StrictRedis
 from settings import *
+from extraction_pipeline import extract_quote_talkers
 
 def entity_generator(collection):
     for article in collection.find({}):
