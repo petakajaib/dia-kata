@@ -148,6 +148,15 @@ if __name__ == '__main__':
     quote_collection = db[QUOTE_COLLECTION]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
 
+    print("populate_entity_collection")
+
+    # populate_entity_collection(article_collection, entity_collection)
+
+
+    print("build_fast_text_model")
+    # build_fast_text_model()
+    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+
     print("loading FastText models")
 
     print("en")
@@ -201,15 +210,6 @@ if __name__ == '__main__':
             print(quote_entry)
             quote_collection.insert_one(quote_entry)
 
-
-    print("populate_entity_collection")
-
-    populate_entity_collection(article_collection, entity_collection)
-
-
-    print("build_fast_text_model")
-    build_fast_text_model()
-    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     print("build_annoy_index")
     dimension = 100
