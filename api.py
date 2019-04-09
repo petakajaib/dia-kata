@@ -7,6 +7,15 @@ d = {"bo": "la"}
 
 @api.route("/search/")
 def search():
+
+    searched = []
+    indices = list(annoy_index.get_nns_by_vector(vector, 20))
+    results = [entry["entity"] for entry in annoy_index_collection.find({"idx": {"$in": indices}})]
+
+    print("search")
+    print(results)
+
+
     return jsonify(**d)
 
 @api.route("/detail/")

@@ -18,7 +18,7 @@ def populate_entity_collection(article_collection, entity_collection):
         "content": {"$exists": True}
     }
 
-    for article in article_collection.find(query, no_cursor_timeout=True):
+    for article in article_collection.find(query, no_cursor_timeout=True).limit(10):
 
         print(article["url"])
 
@@ -73,115 +73,141 @@ def build_fast_text_model():
 
     return fasttext_entity
 
-def build_annoy_index():
-    dimension = 100
+def build_annoy_index(quote_collection, dimension):
+
     annoy_index = AnnoyIndex(dimension)
 
     idx = 1
     annoy_index_collection.delete_many({})
 
-    for entities in entity_generator(entity_collection):
+    for quote in quote_collection:
+        entity = quote["talker"]
 
-        for entity in entities:
+        if annoy_index_collection.count({"entity": entity}) == 0:
 
-            if annoy_index_collection.count({"entity": entity}) == 0:
+            print("{}\t{}          ".format(idx, entity), end="\r")
 
-                print("{}\t{}          ".format(idx, entity), end="\r")
+            annoy_index_collection.insert_one({
+                "idx": idx,
+                "entity": entity
+                })
 
-                annoy_index_collection.insert_one({
-                    "idx": idx,
-                    "entity": entity
-                    })
+            vector = fasttext_entity[entity]
 
-                vector = fasttext_entity[entity]
+            annoy_index.add_item(idx, vector)
 
-                annoy_index.add_item(idx, vector)
-
-                idx += 1
+            idx += 1
 
     print("{}\t{}          ".format(idx, entity))
 
     annoy_index.build(10)
     annoy_index.save(ANNOY_INDEX_PATH)
 
-client = MongoClient()
+    return annoy_index
 
-db = client[MONGO_DB]
-article_collection = db[MONGO_COLLECTION]
-entity_collection = db[ENTITY_COLLECTION]
-annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
+def get_similar_entities(
+    query, fasttext_entity,
+    annoy_index, annoy_index_collection,
+    n_results=10):
 
-# populate_entity_collection(article_collection, entity_collection)
+    vector = fasttext_entity[query]
 
-# build_fast_text_model()
-fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+    n = 100
 
-# build annoyIndex
-#
-# build_annoy_index()
-dimension = 100
-annoy_index = AnnoyIndex(dimension)
+    aggregated = []
+    for result in annoy_index.get_nns_by_vector(vector, n):
 
-annoy_index.load(ANNOY_INDEX_PATH)
+        res = annoy_index_collection.find_one({"idx": result})
 
+        query_set = set(sample_query.lower().split())
+        entity_set = set(res["entity"].split())
 
-sample_query = "wan azizah"
+        if sample_query in res["entity"]:
+            continue
+        if len(query_set.intersection(entity_set)):
+            continue
+        else:
+            aggregated.append(res["entity"])
 
-vector = fasttext_entity[sample_query]
-print("query:", sample_query)
+    return aggregated[:n_results]
 
-# person query
-
-searched = []
-
-indices = list(annoy_index.get_nns_by_vector(vector, 20))
-
-results = [entry["entity"] for entry in annoy_index_collection.find({"idx": {"$in": indices}})]
-
-print("search")
-print(results)
-
-# similarity query
+if __name__ == '__main__':
 
 
-n = 100
+    client = MongoClient()
 
-aggregated = []
-for result in annoy_index.get_nns_by_vector(vector, n):
+    db = client[MONGO_DB]
+    article_collection = db[MONGO_COLLECTION]
+    entity_collection = db[ENTITY_COLLECTION]
+    annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
+    quote_collection = db[QUOTE_COLLECTION]
+    print("loading FastText models")
 
-    res = annoy_index_collection.find_one({"idx": result})
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
 
-    query_set = set(sample_query.lower().split())
-    entity_set = set(res["entity"].split())
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
+
+    print("loading quote model")
+
+    quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+
+    quote_query = {
+        "detected_language": {"$in": ["ms", "en"]},
+        "content": {"$exists": True}
+    }
+
+    for article in article_collection.find(quote_query, no_cursor_timeout=True).limit(10):
+        print(article["url"])
+        quote_talkers = extract_quote_talkers(
+            article, enriched_collection,
+            fast_text_models, quote_model)
+
+        d = {
+            "url": article["url"],
+            "detected_language": article["detected_language"],
+            "publish_time": article["publish_time"]
+        }
+
+        for quote_talker in quote_talkers:
+
+            quote_entry = {**d, **quote_talker}
+            quote_collection.insert_one(quote_entry)
 
 
-    if sample_query in res["entity"]:
-        continue
-    if len(query_set.intersection(entity_set)):
-        continue
-    else:
-        aggregated.append(res["entity"])
+    print("populate_entity_collection")
 
-similar = aggregated[:10]
-print("similar entities")
-print(similar)
+    populate_entity_collection(article_collection, entity_collection)
 
-print("ms")
-ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
 
-fast_text_models = {
-    "en": en_fasttext,
-    "ms": ms_fasttext
-}
+    print("build_fast_text_model")
+    build_fast_text_model()
+    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
-print("loading quote model")
+    print("build_annoy_index")
+    dimension = 100
+    build_annoy_index(quote_collection, dimension)
+    annoy_index = AnnoyIndex(dimension)
 
-quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+    annoy_index.load(ANNOY_INDEX_PATH)
 
-pipeline = [{"$match": {"content": {"$exists": True}, "detected_language": {"$in":["en", "ms"]}}}, {"$sample": {"size":10000}}]
 
-for article in article_collection.aggregate(pipeline):
-    print(article["url"])
-    quote_talkers = extract_quote_talkers(article, enriched_collection, fast_text_models, quote_model)
 
-    pprint(quote_talkers)
+    print("similar entities")
+
+    talkers = [q["talker"] for q in quote_collection.find().limit(10)]
+
+    for similar in talkers:
+
+        print("searching", similar)
+        res = get_similar_entities(
+            query, fasttext_entity,
+            annoy_index, annoy_index_collection)
+
+        print("results:")
+        print(res)

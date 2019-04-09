@@ -22,7 +22,6 @@ if entity_collection.count({"url": article["url"]}) == 0:
         print(err)
         continue
 
-insert_to_enriched_collection(article, enriched_collection)
 
 client = MongoClient()
 db = client[MONGO_DB]
