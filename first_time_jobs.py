@@ -181,6 +181,16 @@ if __name__ == '__main__':
         for quote_talker in quote_talkers:
 
             quote_entry = {**d, **quote_talker}
+
+            try:
+                parsed_quote = Text(quote_entry["quote"])
+                mentions = [" ".join(t).lower() for t in parsed_quote.entities]
+            except pycld2.error as err:
+                print(err)
+                mentions = []
+
+            quote_entry["mentions"] = mentions
+            print(quote_entry)
             quote_collection.insert_one(quote_entry)
 
 
