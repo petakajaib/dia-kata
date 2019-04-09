@@ -1,5 +1,10 @@
 # Implementation notes
 
+## 2019-04-09
+
+There needs to be *TWO* annoy indices. Currently there is only one.
+
+
 ## 2019-04-05
 
 ### ScheduledJobs
