@@ -11,7 +11,7 @@ from settings import *
 from extraction_pipeline import extract_quote_talkers
 
 def entity_generator(collection):
-    for article in collection.find({}):
+    for article in collection.find():
         yield article["entities"]
 
 def populate_entity_collection(article_collection, entity_collection):
@@ -82,7 +82,7 @@ def build_annoy_index(quote_collection, dimension):
     idx = 1
     annoy_index_collection.delete_many({})
 
-    for quote in quote_collection:
+    for quote in quote_collection.find():
         entity = quote["talker"]
 
         if annoy_index_collection.count({"entity": entity}) == 0:
@@ -144,53 +144,53 @@ if __name__ == '__main__':
     annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
     quote_collection = db[QUOTE_COLLECTION]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
-    
-    print("loading FastText models")
-
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
-
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
-
-    print("loading quote model")
-
-    quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
-
-    quote_query = {
-        "detected_language": {"$in": ["ms", "en"]},
-        "content": {"$exists": True}
-    }
-
-    for article in article_collection.find(quote_query, no_cursor_timeout=True).limit(10):
-        print(article["url"])
-        quote_talkers = extract_quote_talkers(
-            article, enriched_collection,
-            fast_text_models, quote_model)
-
-        d = {
-            "url": article["url"],
-            "detected_language": article["detected_language"],
-            "publish_time": article["publish_time"]
-        }
-
-        for quote_talker in quote_talkers:
-
-            quote_entry = {**d, **quote_talker}
-            quote_collection.insert_one(quote_entry)
-
-
-    print("populate_entity_collection")
-
-    populate_entity_collection(article_collection, entity_collection)
-
-
-    print("build_fast_text_model")
-    build_fast_text_model()
+    #
+    # print("loading FastText models")
+    #
+    # print("en")
+    # en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+    # print("ms")
+    # ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+    #
+    # fast_text_models = {
+    #     "en": en_fasttext,
+    #     "ms": ms_fasttext
+    # }
+    #
+    # print("loading quote model")
+    #
+    # quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+    #
+    # quote_query = {
+    #     "detected_language": {"$in": ["ms", "en"]},
+    #     "content": {"$exists": True}
+    # }
+    #
+    # for article in article_collection.find(quote_query, no_cursor_timeout=True).limit(10):
+    #     print(article["url"])
+    #     quote_talkers = extract_quote_talkers(
+    #         article, enriched_collection,
+    #         fast_text_models, quote_model)
+    #
+    #     d = {
+    #         "url": article["url"],
+    #         "detected_language": article["detected_language"],
+    #         "publish_time": article["publish_time"]
+    #     }
+    #
+    #     for quote_talker in quote_talkers:
+    #
+    #         quote_entry = {**d, **quote_talker}
+    #         quote_collection.insert_one(quote_entry)
+    #
+    #
+    # print("populate_entity_collection")
+    #
+    # populate_entity_collection(article_collection, entity_collection)
+    #
+    #
+    # print("build_fast_text_model")
+    # build_fast_text_model()
     fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     print("build_annoy_index")
