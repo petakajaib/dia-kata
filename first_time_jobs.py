@@ -75,35 +75,45 @@ def build_fast_text_model():
 
     return fasttext_entity
 
-def build_annoy_index(quote_collection, dimension):
+def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_index, annoy_index_name):
+
+
+    annoy_index_collection.insert_one({
+        "idx": idx,
+        "entity": entity,
+        "annoy_index_name": annoy_index_name
+        })
+
+    vector = fasttext_entity[entity]
+
+    annoy_index.add_item(idx, vector)
+
+def build_annoy_index(collection, entity_key, annoy_index_collection, fasttext_entity, dimension, annoy_index_name, annoy_index_path):
 
     annoy_index = AnnoyIndex(dimension)
 
-    idx = 1
-    annoy_index_collection.delete_many({})
+    annoy_index_collection.delete_many({"annoy_index_name": annoy_index_name})
 
-    for quote in quote_collection.find():
-        entity = quote["talker"]
+    for entry in collection.find():
+        entity = entry[entity_key]
 
-        if annoy_index_collection.count({"entity": entity}) == 0:
+        if type(entity) == list:
+            for ent in entity:
+                if annoy_index_collection.count({"entity": ent}) == 0:
+                    add_to_annoy_index(
+                        entity, annoy_index_collection,
+                        fasttext_entity, annoy_index,
+                        annoy_index_name)
+        elif type(entity) == str:
+            if annoy_index_collection.count({"entity": entity}) == 0:
+                add_to_annoy_index(
+                    entity, annoy_index_collection,
+                    fasttext_entity, annoy_index,
+                    annoy_index_name)
 
-            print("{}\t{}          ".format(idx, entity), end="\r")
-
-            annoy_index_collection.insert_one({
-                "idx": idx,
-                "entity": entity
-                })
-
-            vector = fasttext_entity[entity]
-
-            annoy_index.add_item(idx, vector)
-
-            idx += 1
-
-    print("{}\t{}          ".format(idx, entity))
 
     annoy_index.build(10)
-    annoy_index.save(ANNOY_INDEX_PATH)
+    annoy_index.save(annoy_index_path)
 
     return annoy_index
 
