@@ -75,40 +75,32 @@ def build_fast_text_model():
 
     return fasttext_entity
 
-def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_index, annoy_index_name):
+def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_index):
 
 
     annoy_index_collection.insert_one({
         "idx": idx,
-        "entity": entity,
-        "annoy_index_name": annoy_index_name
+        "entity": entity
         })
 
     vector = fasttext_entity[entity]
 
     annoy_index.add_item(idx, vector)
 
-def build_annoy_index(collection, annoy_index_collection, fasttext_entity, dimension, annoy_index_name, annoy_index_path):
+def build_annoy_index(collection, annoy_index_collection,
+                      fasttext_entity, dimension, annoy_index_path):
 
     annoy_index = AnnoyIndex(dimension)
 
-    annoy_index_collection.delete_many({"annoy_index_name": annoy_index_name})
+    annoy_index_collection.delete_many({})
 
     for entry in collection.find():
-        entity = entry[entity_key]
+        entity = entry["talker"]
 
-            for ent in entity:
-                if annoy_index_collection.count({"entity": ent}) == 0:
-                    add_to_annoy_index(
-                        entity, annoy_index_collection,
-                        fasttext_entity, annoy_index,
-                        annoy_index_name)
-        elif type(entity) == str:
-            if annoy_index_collection.count({"entity": entity}) == 0:
-                add_to_annoy_index(
-                    entity, annoy_index_collection,
-                    fasttext_entity, annoy_index,
-                    annoy_index_name)
+        if annoy_index_collection.count({"entity": entity}) == 0:
+            add_to_annoy_index(
+                entity, annoy_index_collection,
+                fasttext_entity, annoy_index)
 
 
     annoy_index.build(10)
@@ -123,10 +115,8 @@ def get_similar_entities(
 
     vector = fasttext_entity[query]
 
-    n = 100
-
     aggregated = []
-    for result in annoy_index.get_nns_by_vector(vector, n):
+    for result in annoy_index.get_nns_by_vector(vector, n_results):
 
         res = annoy_index_collection.find_one({"idx": result})
 
@@ -156,24 +146,6 @@ if __name__ == '__main__':
     annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
     quote_collection = db[QUOTE_COLLECTION]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
-
-    print("populate_entity_collection")
-
-    # populate_entity_collection(article_collection, entity_collection)
-
-    print("build_annoy_index")
-    dimension = 100
-    build_annoy_index(quote_collection, dimension)
-    annoy_index = AnnoyIndex(dimension)
-
-    annoy_index.load(ANNOY_INDEX_PATH)
-
-
-    print("build_fast_text_model")
-    # build_fast_text_model()
-    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
-
-
 
     print("loading FastText models")
 
@@ -220,10 +192,26 @@ if __name__ == '__main__':
                 mentions = []
 
             quote_entry["mentions"] = mentions
-            res = get_similar_entities(
-                quote_entry["talker"], fasttext_entity,
-                annoy_index, annoy_index_collection)
-
-            quote_entry["similar_entities"] = res
             print(quote_entry)
             quote_collection.insert_one(quote_entry)
+
+
+    # print("populate_entity_collection")
+    #
+    # # populate_entity_collection(article_collection, entity_collection)
+    #
+    # print("build_fast_text_model")
+    # # build_fast_text_model()
+    # fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+    #
+    # print("build_annoy_index")
+    #
+    # dimension = 100
+    #
+    # build_annoy_index(
+    #     quote_collection, annoy_index_collection,
+    #     fasttext_entity, dimension, ANNOY_INDEX_PATH)
+    #
+    # annoy_index = AnnoyIndex(dimension)
+    #
+    # annoy_index.load(ANNOY_INDEX_PATH)
