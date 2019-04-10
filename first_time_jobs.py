@@ -88,7 +88,7 @@ def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_in
 
     annoy_index.add_item(idx, vector)
 
-def build_annoy_index(collection, entity_key, annoy_index_collection, fasttext_entity, dimension, annoy_index_name, annoy_index_path):
+def build_annoy_index(collection, annoy_index_collection, fasttext_entity, dimension, annoy_index_name, annoy_index_path):
 
     annoy_index = AnnoyIndex(dimension)
 
@@ -97,7 +97,6 @@ def build_annoy_index(collection, entity_key, annoy_index_collection, fasttext_e
     for entry in collection.find():
         entity = entry[entity_key]
 
-        if type(entity) == list:
             for ent in entity:
                 if annoy_index_collection.count({"entity": ent}) == 0:
                     add_to_annoy_index(
