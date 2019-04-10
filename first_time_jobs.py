@@ -190,6 +190,9 @@ if __name__ == '__main__':
             except pycld2.error as err:
                 print(err)
                 mentions = []
+            except ValueError as err:
+                print(err)
+                mentions = []
 
             quote_entry["mentions"] = mentions
             print(quote_entry)
