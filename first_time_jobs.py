@@ -162,10 +162,19 @@ if __name__ == '__main__':
 
     # populate_entity_collection(article_collection, entity_collection)
 
+    print("build_annoy_index")
+    dimension = 100
+    build_annoy_index(quote_collection, dimension)
+    annoy_index = AnnoyIndex(dimension)
+
+    annoy_index.load(ANNOY_INDEX_PATH)
+
 
     print("build_fast_text_model")
     # build_fast_text_model()
     fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+
+
 
     print("loading FastText models")
 
@@ -219,11 +228,3 @@ if __name__ == '__main__':
             quote_entry["similar_entities"] = res
             print(quote_entry)
             quote_collection.insert_one(quote_entry)
-
-
-    print("build_annoy_index")
-    dimension = 100
-    build_annoy_index(quote_collection, dimension)
-    annoy_index = AnnoyIndex(dimension)
-
-    annoy_index.load(ANNOY_INDEX_PATH)
