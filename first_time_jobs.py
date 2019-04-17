@@ -1,3 +1,4 @@
+from pprint import pprint
 from datetime import datetime
 import pickle
 from annoy import AnnoyIndex
@@ -199,22 +200,40 @@ if __name__ == '__main__':
             quote_collection.insert_one(quote_entry)
 
 
-    # print("populate_entity_collection")
-    #
-    # # populate_entity_collection(article_collection, entity_collection)
-    #
+    print("populate_entity_collection")
+
+    populate_entity_collection(article_collection, entity_collection)
+
+    print("build_annoy_index entities")
+
+    dimension = 100
+
+    annoy_index = build_annoy_index(
+        quote_collection, annoy_index_collection,
+        fasttext_entity, dimension, ANNOY_INDEX_PATH)
+
+    annoy_index = AnnoyIndex(dimension)
+    annoy_index.load(ANNOY_INDEX_PATH)
+
+    print("laod FastText entity")
+
+
     # print("build_fast_text_model")
-    # # build_fast_text_model()
-    # fasttext_entity = FastText.load(FASTTEXT_ENTITY)
-    #
-    # print("build_annoy_index")
-    #
-    # dimension = 100
-    #
-    # build_annoy_index(
-    #     quote_collection, annoy_index_collection,
-    #     fasttext_entity, dimension, ANNOY_INDEX_PATH)
-    #
-    # annoy_index = AnnoyIndex(dimension)
-    #
-    # annoy_index.load(ANNOY_INDEX_PATH)
+    # build_fast_text_model()
+    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+
+    print("populate similar")
+
+    for quote in quote_collection.find():
+
+        quote_id = quote["_id"]
+        talker = quote["talker"]
+
+        similar_entities = get_similar_entities(
+            talker, fasttext_entity,
+            annoy_index, annoy_index_collection,
+            )
+
+        quote_collection.update_one({"_id": quote_id}, {"$set": {"similar_entities": similar_entities}})
+
+        pprint(quote_collection.find_one({"_id": quote_id}))
