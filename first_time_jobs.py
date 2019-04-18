@@ -3,7 +3,7 @@ from datetime import datetime
 import pickle
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
-from gensim.summarization import keywords as get_keywords
+from gensim.summarization.keywords import keywords as get_keywords
 from polyglot.text import Text
 import numpy as np
 import pycld2
