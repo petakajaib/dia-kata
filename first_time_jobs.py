@@ -171,9 +171,13 @@ if __name__ == '__main__':
 
     for article in article_collection.find(quote_query, no_cursor_timeout=True):
         print(article["url"])
-        quote_talkers = extract_quote_talkers(
-            article, enriched_collection,
-            fast_text_models, quote_model)
+        try:
+            quote_talkers = extract_quote_talkers(
+                article, enriched_collection,
+                fast_text_models, quote_model)
+        except KeyError as err:
+            print(err)
+            continue
 
         d = {
             "url": article["url"],
