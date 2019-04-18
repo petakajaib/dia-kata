@@ -3,6 +3,7 @@ from datetime import datetime
 import pickle
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
+from gensim.summarization import keywords as get_keywords
 from polyglot.text import Text
 import numpy as np
 import pycld2
@@ -262,6 +263,11 @@ if __name__ == '__main__':
     print("populate keywords")
 
     for talker in talkers:
+
+        quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
+        blob = " ".join(quotes)
+
+        keywords = get_keywords(blob, split=True, ratio=0.1)
 
         keywords_entry = {
             "entity": talker,
