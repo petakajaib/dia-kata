@@ -178,6 +178,9 @@ if __name__ == '__main__':
         except KeyError as err:
             print(err)
             continue
+        except ValueError as err:
+            print(err)
+            continue
 
         d = {
             "url": article["url"],
