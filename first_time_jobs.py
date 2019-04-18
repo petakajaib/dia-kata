@@ -191,7 +191,7 @@ if __name__ == '__main__':
 
             try:
                 parsed_quote = Text(quote_entry["quote"])
-                mentions = [" ".join(t).lower() for t in parsed_quote.entities]
+                mentions = [" ".join(t).lower() for t in parsed_quote.entities if ent.tag == "I-PER"]
             except pycld2.error as err:
                 print(err)
                 mentions = []
