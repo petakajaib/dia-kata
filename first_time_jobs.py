@@ -267,8 +267,10 @@ if __name__ == '__main__':
         quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
         blob = " ".join(quotes)
 
-        keywords = get_keywords(blob, split=True, ratio=0.1)
 
+        keywords = get_keywords(blob, split=True, ratio=0.1)
+        print("blob", blob)
+        print("keywords", keywords)
         keywords_entry = {
             "entity": talker,
             "keywords": keywords
