@@ -268,7 +268,7 @@ if __name__ == '__main__':
         blob = " ".join(quotes)
 
 
-        keywords = get_keywords(blob, split=True, ratio=0.1)
+        keywords = get_keywords(blob, split=True, words=10)
         print("blob", blob)
         print("keywords", keywords)
         keywords_entry = {
