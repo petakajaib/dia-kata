@@ -169,8 +169,12 @@ if __name__ == '__main__':
         "content": {"$exists": True}
     }
 
-    for article in article_collection.find(quote_query, no_cursor_timeout=True):
-        print(article["url"])
+    total_count = article_collection.count(quote_query)
+
+    for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True)):
+
+        print("{} of {}              ".format(idx, total_count), end="\r")
+
         try:
             quote_talkers = extract_quote_talkers(
                 article, enriched_collection,
@@ -203,7 +207,7 @@ if __name__ == '__main__':
                 mentions = []
 
             quote_entry["mentions"] = mentions
-            print(quote_entry)
+            # print(quote_entry)
             quote_collection.insert_one(quote_entry)
 
 
