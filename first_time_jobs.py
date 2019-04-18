@@ -177,7 +177,7 @@ if __name__ == '__main__':
 
     total_count = article_collection.count(quote_query)
 
-    for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True).limit(100)):
+    for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True)):
 
         print("{} of {}              ".format(idx, total_count), end="\r")
 
