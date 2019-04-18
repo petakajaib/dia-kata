@@ -150,6 +150,8 @@ if __name__ == '__main__':
     annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
     quote_collection = db[QUOTE_COLLECTION]
     enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+    similar_entities_collection = db[SIMILAR_ENTITIES_COLLECTION]
+    entity_keywords_collection = db[ENTITY_KEYWORDS_COLLECTION]
 
     print("loading FastText models")
 
@@ -237,18 +239,33 @@ if __name__ == '__main__':
 
 
 
-    print("populate similar")
+    print("populate similar entities")
 
-    for quote in quote_collection.find():
+    talkers = quote_collection.distinct("talker", {})
 
-        quote_id = quote["_id"]
-        talker = quote["talker"]
+    for talker in talkers:
 
         similar_entities = get_similar_entities(
             talker, fasttext_entity,
             annoy_index, annoy_index_collection,
             )
 
-        quote_collection.update_one({"_id": quote_id}, {"$set": {"similar_entities": similar_entities}})
 
-        pprint(quote_collection.find_one({"_id": quote_id}))
+        similar_entry = {
+            "entity": talker,
+            "similar": similar_entities,
+            "created_at": datetime.now()
+        }
+        similar_entities_collection.insert_one(similar_entry)
+
+
+    print("populate keywords")
+
+    for talker in talkers:
+
+        keywords_entry = {
+            "entity": talker,
+            "keywords": keywords
+        }
+
+        entity_keywords_collection.insert_one(keywords_entry)
