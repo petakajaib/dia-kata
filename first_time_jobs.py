@@ -345,9 +345,12 @@ if __name__ == '__main__':
             talker
         ))
 
-        quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
-        blob = " ".join(quotes)
-        
+        urls = quote_collection.distinct("url", {"talker": talker})
+
+        contents = [a["content"] for a in article_collection.find({"url": {"$in": urls}}).sort("publish_time", -1)]
+
+        blob = " ".join(contents[:100])
+
         keywords = get_keywords(blob, split=True)
 
         keywords_entry = {
