@@ -293,8 +293,9 @@ if __name__ == '__main__':
     print("populate similar entities")
 
     talkers = quote_collection.distinct("talker", {})
+    count_talkers = len(talkers)
 
-    for talker in talkers:
+    for idx, talker in enumerate(talkers):
 
         if similar_entities_collection.count({
             "entity": talker,
@@ -306,6 +307,11 @@ if __name__ == '__main__':
 
             continue
 
+        print("{} of {}. entity: {}".format(
+            idx,
+            count_talkers,
+            talker
+        ))
         similar_entities = get_similar_entities(
             talker, fasttext_entity,
             annoy_index, annoy_index_collection,
@@ -321,7 +327,7 @@ if __name__ == '__main__':
 
     print("populate keywords")
 
-    for talker in talkers:
+    for idx, talker in enumerate(talkers):
 
         if entity_keywords_collection.count({
             "entity": talker,
@@ -332,6 +338,12 @@ if __name__ == '__main__':
             }) > 0:
 
             continue
+
+        print("{} of {}. entity: {}".format(
+            idx,
+            count_talkers,
+            talker
+        ))
 
         quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
         blob = " ".join(quotes)
