@@ -307,7 +307,7 @@ if __name__ == '__main__':
 
             continue
 
-        print("{} of {}. entity: {}".format(
+        print("populate similar entities {} of {}. entity: {}".format(
             idx,
             count_talkers,
             talker
@@ -339,7 +339,7 @@ if __name__ == '__main__':
 
             continue
 
-        print("{} of {}. entity: {}".format(
+        print("populate keywords {} of {}. entity: {}".format(
             idx,
             count_talkers,
             talker
@@ -347,11 +347,9 @@ if __name__ == '__main__':
 
         quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
         blob = " ".join(quotes)
+        
+        keywords = get_keywords(blob, split=True)
 
-
-        keywords = get_keywords(blob, split=True, words=10)
-        print("blob", blob)
-        print("keywords", keywords)
         keywords_entry = {
             "entity": talker,
             "keywords": keywords,
