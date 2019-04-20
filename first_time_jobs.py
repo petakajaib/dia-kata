@@ -285,7 +285,11 @@ if __name__ == '__main__':
 
 
     dummy_created_at = datetime(2019,4,20)
-
+    query_date = datetime(
+        dummy_created_at.year,
+        dummy_created_at.month,
+        dummy_created_at.day
+        )
     print("populate similar entities")
 
     talkers = quote_collection.distinct("talker", {})
@@ -295,8 +299,8 @@ if __name__ == '__main__':
         if similar_entities_collection.count({
             "entity": talker,
             "created_at": {
-                "$gte": dummy_created_at.date(),
-                "$lt": dummy_created_at.date() + timedelta(days=1)
+                "$gte": query_date,
+                "$lt": query_date + timedelta(days=1)
                 }
             }) > 0:
 
@@ -322,8 +326,8 @@ if __name__ == '__main__':
         if entity_keywords_collection.count({
             "entity": talker,
             "created_at": {
-                "$gte": dummy_created_at.date(),
-                "$lt": dummy_created_at.date() + timedelta(days=1)
+                "$gte": query_date,
+                "$lt": query_date + timedelta(days=1)
                 }
             }) > 0:
 
