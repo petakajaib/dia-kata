@@ -37,9 +37,9 @@ def populate_entity_collection(
 
     total_count = article_collection.count(query)
 
-    for article in article_collection.find(query, no_cursor_timeout=True):
+    for idx, article in enumerate(article_collection.find(query, no_cursor_timeout=True)):
 
-        print(article["url"])
+        print("{} of {} url: {}".format(idx, total_count, article["url"]))
 
 
         try:
