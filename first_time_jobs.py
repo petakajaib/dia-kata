@@ -181,7 +181,7 @@ def batch_quote_extraction(
     for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True)):
 
 
-        print("{} of {}. url: {}              ".format(idx, total_count, article["url"]), end="\r")
+        print("{} of {}. url: {}".format(idx, total_count, article["url"]))
         try:
             quote_talkers = extract_quote_talkers(
                 article, enriched_collection,
