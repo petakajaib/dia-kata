@@ -18,8 +18,7 @@ def entity_generator(collection):
 
 def populate_entity_collection(
     article_collection,
-    entity_collection,
-    sample_n=100):
+    entity_collection):
 
     entity_urls = entity_collection.distinct("url", {})
 
@@ -36,42 +35,35 @@ def populate_entity_collection(
         "done_entity_population": False
     }
 
-    pipeline = [{"$match": query}, {"$sample": {"size": sample_n}}]
-    cursor = article_collection.aggregate(pipeline)
-
     total_count = article_collection.count(query)
 
-    while total_count > 0:
+    for article in article_collection.find(query, no_cursor_timeout=True):
 
-        for article in cursor:
-
-            print(article["url"])
+        print(article["url"])
 
 
-            try:
-                parsed = Text(article["content"])
-                entities = [" ".join(entity).lower() for entity in parsed.entities]
+        try:
+            parsed = Text(article["content"])
+            entities = [" ".join(entity).lower() for entity in parsed.entities]
 
-                entity = {
-                    "entities": entities,
-                    "url": article["url"],
-                    "detected_language": parsed.detect_language(),
-                    "publish_date": article["publish_date"]
-                }
+            entity = {
+                "entities": entities,
+                "url": article["url"],
+                "detected_language": parsed.detect_language(),
+                "publish_date": article["publish_date"]
+            }
 
-                entity_collection.insert_one(entity)
+            entity_collection.insert_one(entity)
 
-            except pycld2.error as err:
-                print(err)
-            except ValueError as err:
-                print(err)
+        except pycld2.error as err:
+            print(err)
+        except ValueError as err:
+            print(err)
 
-            article_collection.update_one(
-                {"_id": article["_id"]},
-                {"$set": {"done_entity_population": True}}
-            )
-
-        total_count = article_collection.count(query)
+        article_collection.update_one(
+            {"_id": article["_id"]},
+            {"$set": {"done_entity_population": True}}
+        )
 
 def build_fast_text_model(fasttext_entity_path):
     # build fastText
@@ -165,9 +157,7 @@ def batch_quote_extraction(
         article_collection,
         enriched_collection,
         quote_collection,
-        fast_text_models,
-        sample_n=100
-        ):
+        fast_text_models):
 
 
     print("loading quote model")
@@ -185,58 +175,54 @@ def batch_quote_extraction(
         {"$set": {"done_quote_extraction": False}}
     )
 
-
-    pipeline = [{"$match": quote_query}, {"$sample": {"size": sample_n}}]
-    cursor = article_collection.aggregate(pipeline)
     total_count = article_collection.count(quote_query)
 
-    while total_count > 0:
 
-        for idx, article in enumerate(cursor):
+    for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True)):
 
-            print("{} of {}              ".format(idx, total_count), end="\r")
+        print("{} of {}              ".format(idx, total_count), end="\r")
+
+        try:
+            quote_talkers = extract_quote_talkers(
+                article, enriched_collection,
+                fast_text_models, quote_model)
+        except KeyError as err:
+            print(err)
+            continue
+        except ValueError as err:
+            print(err)
+            continue
+
+        d = {
+            "url": article["url"],
+            "detected_language": article["detected_language"],
+            "publish_time": article["publish_time"]
+        }
+
+        for quote_talker in quote_talkers:
+
+            quote_entry = {**d, **quote_talker}
 
             try:
-                quote_talkers = extract_quote_talkers(
-                    article, enriched_collection,
-                    fast_text_models, quote_model)
-            except KeyError as err:
+                parsed_quote = Text(quote_entry["quote"])
+                mentions = [" ".join(t).lower() for t in parsed_quote.entities if t.tag == "I-PER"]
+            except pycld2.error as err:
                 print(err)
-                continue
+                mentions = []
             except ValueError as err:
                 print(err)
-                continue
+                mentions = []
 
-            d = {
-                "url": article["url"],
-                "detected_language": article["detected_language"],
-                "publish_time": article["publish_time"]
-            }
+            quote_entry["mentions"] = mentions
 
-            for quote_talker in quote_talkers:
+            quote_collection.insert_one(quote_entry)
 
-                quote_entry = {**d, **quote_talker}
+        article_collection.update_one(
+            {"_id": article["_id"]},
+            {"$set": {"done_quote_extraction": True}}
+            )
 
-                try:
-                    parsed_quote = Text(quote_entry["quote"])
-                    mentions = [" ".join(t).lower() for t in parsed_quote.entities if t.tag == "I-PER"]
-                except pycld2.error as err:
-                    print(err)
-                    mentions = []
-                except ValueError as err:
-                    print(err)
-                    mentions = []
 
-                quote_entry["mentions"] = mentions
-
-                quote_collection.insert_one(quote_entry)
-
-            article_collection.update_one(
-                {"_id": article["_id"]},
-                {"$set": {"done_quote_extraction": True}}
-                )
-
-        total_count = article_collection.count(quote_query)
 if __name__ == '__main__':
 
 
