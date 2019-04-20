@@ -114,13 +114,17 @@ def build_annoy_index(collection, annoy_index_collection,
 
     annoy_index_collection.delete_many({})
 
-    for entry in collection.find():
-        entity = entry["talker"]
+    for idx, entity in enumerate(collection.distinct("talker", {})):
 
         if annoy_index_collection.count({"entity": entity}) == 0:
-            add_to_annoy_index(
-                entity, annoy_index_collection,
-                fasttext_entity, annoy_index)
+            annoy_index_collection.insert_one({
+                "idx": idx,
+                "entity": entity
+                })
+
+            vector = fasttext_entity[entity]
+
+            annoy_index.add_item(idx, vector)
 
 
     annoy_index.build(10)
