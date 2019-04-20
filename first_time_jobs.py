@@ -268,8 +268,8 @@ if __name__ == '__main__':
 
     print("laod FastText entity")
 
-    print("build_fast_text_model")
-    build_fast_text_model(FASTTEXT_ENTITY)
+    # print("build_fast_text_model")
+    # build_fast_text_model(FASTTEXT_ENTITY)
     fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     print("build_annoy_index entities")
