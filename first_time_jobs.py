@@ -1,5 +1,5 @@
 from pprint import pprint
-from datetime import datetime
+from datetime import datetime, timedelta
 import pickle
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
@@ -20,10 +20,17 @@ def populate_entity_collection(article_collection, entity_collection):
 
     entity_urls = entity_collection.distinct("url", {})
 
+
+    article_collection.update_many(
+        {"done_entity_population": {"$exists": False}},
+        {"$set": {"done_entity_population": False}}
+    )
+
     query = {
         # "publish_date": {"$gte": datetime(2019,4,5)},
         "content": {"$exists": True},
-        "url": {"$nin": entity_urls}
+        "url": {"$nin": entity_urls},
+        "done_entity_population": False
     }
 
     for article in article_collection.find(query, no_cursor_timeout=True):
@@ -48,9 +55,13 @@ def populate_entity_collection(article_collection, entity_collection):
             print(err)
         except ValueError as err:
             print(err)
-            continue
 
-def build_fast_text_model():
+        article_collection.update_one(
+            {"_id": article["_id"]},
+            {"$set": {"done_entity_population": True}}
+        )
+
+def build_fast_text_model(fasttext_entity_path):
     # build fastText
 
     fasttext_params = {
@@ -76,7 +87,7 @@ def build_fast_text_model():
 
     print("saving fasttext")
 
-    fasttext_entity.save(FASTTEXT_ENTITY)
+    fasttext_entity.save(fasttext_entity_path)
 
     return fasttext_entity
 
@@ -137,43 +148,29 @@ def get_similar_entities(
 
     return aggregated[:n_results]
 
+def batch_quote_extraction(
+        quote_model_path,
+        article_collection,
+        enriched_collection,
+        quote_collection,
+        fast_text_models
+        ):
 
-
-
-if __name__ == '__main__':
-
-
-    client = MongoClient()
-
-    db = client[MONGO_DB]
-    article_collection = db[MONGO_COLLECTION]
-    entity_collection = db[ENTITY_COLLECTION]
-    annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
-    quote_collection = db[QUOTE_COLLECTION]
-    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
-    similar_entities_collection = db[SIMILAR_ENTITIES_COLLECTION]
-    entity_keywords_collection = db[ENTITY_KEYWORDS_COLLECTION]
-
-    print("loading FastText models")
-
-    print("en")
-    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
-    print("ms")
-    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
-
-    fast_text_models = {
-        "en": en_fasttext,
-        "ms": ms_fasttext
-    }
 
     print("loading quote model")
 
-    quote_model = pickle.load(open(CURRENT_BEST_MODEL, "rb"))
+    quote_model = pickle.load(open(quote_model_path, "rb"))
 
     quote_query = {
         "detected_language": {"$in": ["ms", "en"]},
-        "content": {"$exists": True}
+        "content": {"$exists": True},
+        "done_quote_extraction": False
     }
+
+    article_collection.update_many(
+        {"done_quote_extraction": {"$exists": False}},
+        {"$set": {"done_quote_extraction": False}}
+    )
 
     total_count = article_collection.count(quote_query)
 
@@ -213,18 +210,57 @@ if __name__ == '__main__':
                 mentions = []
 
             quote_entry["mentions"] = mentions
-            # print(quote_entry)
+
             quote_collection.insert_one(quote_entry)
 
+        article_collection.update_one(
+            {"_id": article["_id"]},
+            {"$set": {"done_quote_extraction": True}}
+            )
 
-    # print("populate_entity_collection")
+if __name__ == '__main__':
 
-    # populate_entity_collection(article_collection, entity_collection)
+
+    client = MongoClient()
+
+    db = client[MONGO_DB]
+    article_collection = db[MONGO_COLLECTION]
+    entity_collection = db[ENTITY_COLLECTION]
+    annoy_index_collection = db[ANNOY_INDEX_COLLECTION]
+    quote_collection = db[QUOTE_COLLECTION]
+    enriched_collection = db[MONGO_COLLECTION_ENRICHED]
+    similar_entities_collection = db[SIMILAR_ENTITIES_COLLECTION]
+    entity_keywords_collection = db[ENTITY_KEYWORDS_COLLECTION]
+
+    print("loading FastText models")
+
+    print("en")
+    en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
+    print("ms")
+    ms_fasttext = FastText.load(FASTTEXT_MALAY, mmap='r')
+
+    fast_text_models = {
+        "en": en_fasttext,
+        "ms": ms_fasttext
+    }
+
+    batch_quote_extraction(
+            CURRENT_BEST_MODEL,
+            article_collection,
+            enriched_collection,
+            quote_collection,
+            fast_text_models
+            )
+
+
+    print("populate_entity_collection")
+
+    populate_entity_collection(article_collection, entity_collection)
 
     print("laod FastText entity")
 
-    # print("build_fast_text_model")
-    # build_fast_text_model()
+    print("build_fast_text_model")
+    build_fast_text_model(FASTTEXT_ENTITY)
     fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     print("build_annoy_index entities")
@@ -239,6 +275,7 @@ if __name__ == '__main__':
     annoy_index.load(ANNOY_INDEX_PATH)
 
 
+    dummy_created_at = datetime(2019,4,20)
 
     print("populate similar entities")
 
@@ -246,16 +283,25 @@ if __name__ == '__main__':
 
     for talker in talkers:
 
+        if similar_entities_collection.count({
+            "entity": talker,
+            "created_at": {
+                "$gte": dummy_created_at.date(),
+                "$lt": dummy_created_at.date() + timedelta(days=1)
+                }
+            }) > 0:
+
+            continue
+
         similar_entities = get_similar_entities(
             talker, fasttext_entity,
             annoy_index, annoy_index_collection,
             )
 
-
         similar_entry = {
             "entity": talker,
             "similar": similar_entities,
-            "created_at": datetime.now()
+            "created_at": dummy_created_at
         }
         similar_entities_collection.insert_one(similar_entry)
 
@@ -263,6 +309,16 @@ if __name__ == '__main__':
     print("populate keywords")
 
     for talker in talkers:
+
+        if entity_keywords_collection.count({
+            "entity": talker,
+            "created_at": {
+                "$gte": dummy_created_at.date(),
+                "$lt": dummy_created_at.date() + timedelta(days=1)
+                }
+            }) > 0:
+
+            continue
 
         quotes = [q['quote'] for q in quote_collection.find({"talker": talker})]
         blob = " ".join(quotes)
@@ -273,7 +329,8 @@ if __name__ == '__main__':
         print("keywords", keywords)
         keywords_entry = {
             "entity": talker,
-            "keywords": keywords
+            "keywords": keywords,
+            "created_at": dummy_created_at
         }
 
         entity_keywords_collection.insert_one(keywords_entry)
