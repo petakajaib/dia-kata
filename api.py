@@ -31,6 +31,8 @@ def search():
 
     print(request_body)
 
+    query = request_body["query"]
+    
     results = search_entities(
                 query, fasttext_entity,
                 annoy_index, annoy_index_collection,
