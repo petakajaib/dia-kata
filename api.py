@@ -31,19 +31,12 @@ def search():
 
     print(request_body)
 
-    
-    searched = []
-    indices = list(annoy_index.get_nns_by_vector(vector, 20))
-    results = [entry["entity"] for entry in annoy_index_collection.find({"idx": {"$in": indices}})]
+    results = search_entities(
+                query, fasttext_entity,
+                annoy_index, annoy_index_collection,
+                n_results=20)
 
-    print("search")
     print(results)
-
-    search_entities(
-        query, fasttext_entity,
-        annoy_index, annoy_index_collection,
-        n_results=20)
-
 
     return jsonify(**d)
 
