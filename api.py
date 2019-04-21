@@ -28,18 +28,12 @@ fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 def search():
 
     request_body = request.get_json()
-
-    print(request_body)
-
     query = request_body["query"]
-    
     results = search_entities(
                 query, fasttext_entity,
-                annoy_index, annoy_index_collection,
-                n_results=20)
+                annoy_index, annoy_index_collection)
 
-    print(results)
-
+    d = {"results": results}
     return jsonify(**d)
 
 @api.route("/detail/")
