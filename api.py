@@ -2,7 +2,7 @@ from flask import Flask, jsonify, request
 from pymongo import MongoClient
 from gensim.models.fasttext import FastText
 from annoy import AnnoyIndex
-from first_time_jobs import search_entities
+from first_time_jobs import search_entities, get_similar_entities
 from settings import *
 
 api = Flask(__name__)
@@ -33,22 +33,52 @@ def search():
                 query, fasttext_entity,
                 annoy_index, annoy_index_collection)
 
-    d = {"results": results}
-    return jsonify(**d)
+    response = {"results": results}
 
-@api.route("/detail/")
+    return jsonify(**response)
+
+@api.route("/detail/", methods=['POST'])
 def detail():
-    d[str(random())] = random()
-    return jsonify(**d)
+    request_body = request.get_json()
+    entity = request_body["entity"]
+
+    quote_query = {
+        "talker": entity,
+    }
+
+    quotes = [q["quotes"] for q in quote_collection.find(quote_query).sort("publish_time", -1).limit(10)]
+
+    keyword_query = {
+        "entity": entity
+    }
+
+    keywords_entry = entity_keywords_collection.find_one(keyword_query).sort("created_at", -1)
+
+    mentions = quote_collection.distinct("mentions", {"talker": entity})
+    mentioned_by = quote_collection.distinct("talker", {"mentions": entity})
+    similar_entities = get_similar_entities(
+        entity, fasttext_entity,
+        annoy_index, annoy_index_collection)
+
+    response = {
+        "entity": entity,
+        "quotes": quotes,
+        "keywords": keywords_entry["keywords"],
+        "similar_entities": similar_entities,
+        "mentions": mentions,
+        "mentioned_by": mentioned_by
+    }
+
+    return jsonify(**response)
 
 @api.route("/top_people/")
 def top_people():
     return jsonify(top_people=["person1", "person2", "person3"])
 
-@api.route("/fasttext/")
-def reload_fasttext_models():
-    return jsonify(ja=['pa'])
-
-@api.route("/annoy/")
-def reload_annoy_index():
-    return jsonify(ja=['pa'])
+# @api.route("/fasttext/")
+# def reload_fasttext_models():
+#     return jsonify(ja=['pa'])
+#
+# @api.route("/annoy/")
+# def reload_annoy_index():
+#     return jsonify(ja=['pa'])
