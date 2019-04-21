@@ -140,7 +140,7 @@ def get_similar_entities(
     vector = fasttext_entity[query]
 
     aggregated = []
-    for result in annoy_index.get_nns_by_vector(vector, n_results):
+    for result in annoy_index.get_nns_by_vector(vector, 500):
 
         res = annoy_index_collection.find_one({"idx": result})
 
