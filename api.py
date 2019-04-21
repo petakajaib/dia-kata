@@ -46,7 +46,7 @@ def detail():
         "talker": entity,
     }
 
-    quotes = [q["quotes"] for q in quote_collection.find(quote_query).sort("publish_time", -1).limit(10)]
+    quotes = [q["quote"] for q in quote_collection.find(quote_query).sort("publish_time", -1).limit(10)]
 
     keyword_query = {
         "entity": entity
