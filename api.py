@@ -52,7 +52,7 @@ def detail():
         "entity": entity
     }
 
-    keywords_entry = entity_keywords_collection.find_one(keyword_query).sort("created_at", -1)
+    keywords_entry = entity_keywords_collection.find_one(keyword_query, .sort=[("created_at", -1)])
 
     mentions = quote_collection.distinct("mentions", {"talker": entity})
     mentioned_by = quote_collection.distinct("talker", {"mentions": entity})
