@@ -85,4 +85,4 @@ def top_people():
 
 if __name__ == '__main__':
 
-    api.run(host="0.0.0.0")
+    api.run(host="5.189.176.38")
