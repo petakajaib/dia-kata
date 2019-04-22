@@ -82,3 +82,7 @@ def top_people():
 # @api.route("/annoy/")
 # def reload_annoy_index():
 #     return jsonify(ja=['pa'])
+
+if __name__ == '__main__':
+
+    api.run(host="0.0.0.0")
