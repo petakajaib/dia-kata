@@ -2,3 +2,4 @@
 usage.log
 venv/*
 .vscode/*
+logs/*
