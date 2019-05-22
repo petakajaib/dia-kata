@@ -243,7 +243,7 @@ if __name__ == '__main__':
 
     populate_entity_collection(article_collection, entity_collection)
 
-    print("laod FastText entity")
+    print("load FastText entity")
 
     # print("build_fast_text_model")
     # build_fast_text_model(FASTTEXT_ENTITY)
