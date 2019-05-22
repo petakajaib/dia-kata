@@ -6,6 +6,7 @@ const showSearchResults = (data) => {
 const searchHandler = (elem) => {
     
     const query = $("#query").val();
+    console.log(`query: ${query}`)
     const searchPayload = { query: query };
     $.ajax(url, {
         data : JSON.stringify(query),
