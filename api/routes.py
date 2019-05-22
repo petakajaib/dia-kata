@@ -1,4 +1,4 @@
-from flask import request, Response, jsonify
+from flask import request, Response, jsonify, render_template
 from gensim.models.fasttext import FastText
 from annoy import AnnoyIndex
 from .mongo_collections import (
@@ -21,6 +21,10 @@ fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
 
 def init_app(app):
+
+    @app.route("/", methods=['GET'])
+    def front_page():
+        render_template("search.html")
 
     @app.route("/search/", methods=['POST'])
     def search():
