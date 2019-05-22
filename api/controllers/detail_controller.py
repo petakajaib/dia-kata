@@ -6,7 +6,7 @@ from .queries import get_similar_entities
 def get_detail(request, quote_collection, entity_keywords_collection,
                fasttext_entity, annoy_index, annoy_index_collection):
 
-    request_body = json.loads(request.content)
+    request_body = json.loads(request.body)
     entity = request_body["entity"]
 
     quote_query = {
