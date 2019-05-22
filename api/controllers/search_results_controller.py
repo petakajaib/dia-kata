@@ -1,3 +1,4 @@
+from flask import jsonify
 from .queries import search_entities
 
 
@@ -11,4 +12,4 @@ def get_search_results(request, fasttext_entity,
 
     response = {"results": results}
 
-    return response
+    return jsonify(**response)

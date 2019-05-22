@@ -1,3 +1,4 @@
+from flask import jsonify
 from .queries import get_similar_entities
 
 
@@ -34,4 +35,4 @@ def get_detail(request, quote_collection, entity_keywords_collection,
         "mentioned_by": mentioned_by
     }
 
-    return response
+    return jsonify(**response)

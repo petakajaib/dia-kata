@@ -6,7 +6,6 @@ from .mongo_collections import (
     entity_keywords_collection,
     quote_collection
 )
-# from .validators import validate
 from .controllers import get_detail, get_search_results
 from settings import (
     ANNOY_INDEX_PATH,
@@ -41,21 +40,6 @@ def init_app(app):
     def top_people():
         return jsonify(top_people=["person1", "person2", "person3"])
 
-
     @app.route('/health/', methods=['GET'])
     def health():
         return Response('OK', mimetype='text/plain')
-
-    # @app.route('/banner-rankings', methods=['POST'])
-    # def banner_rankings():
-
-    #     data = request.get_json()
-    #     valid, error = validate(data)
-
-    #     if not valid:
-    #         return error, 400
-
-    #     page_urlpaths = data['pagePaths']
-    #     cookie_id = data['cookieId']
-    #     enriched = mongo.db['enriched']
-    #     return get_most_recent_page_urlpath(enriched, page_urlpaths, cookie_id)
