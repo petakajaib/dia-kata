@@ -3,16 +3,26 @@ const showSearchResults = (data) => {
     console.log(data)
 }
 
-const searchHandler = (elem) => {
+const searchHandler = () => {
     
     const query = $("#query").val();
-    console.log(`query: ${query}`)
     const searchPayload = { query: query };
-    $.ajax(url, {
-        data : JSON.stringify(query),
+
+    $.ajax('/search/', {
+        data : JSON.stringify(searchPayload),
         contentType : 'application/json',
         type : 'POST'})
         .done(showSearchResults)
 }
 
+const enterHandler = (event) => {
+    const keycode = (event.keyCode ? event.keyCode : event.which);
+
+    if(keycode == '13'){
+        searchHandler()
+    }
+    
+}
+
 $("#search").on("click", searchHandler);
+$("#query").on("keypress", enterHandler)
