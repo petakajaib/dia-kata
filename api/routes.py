@@ -24,7 +24,7 @@ def init_app(app):
 
     @app.route("/", methods=['GET'])
     def front_page():
-        render_template("search.html")
+        return render_template("search.html")
 
     @app.route("/search/", methods=['POST'])
     def search():
