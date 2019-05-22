@@ -1,10 +1,12 @@
+import json
 from flask import jsonify
 from .queries import search_entities
 
 
 def get_search_results(request, fasttext_entity,
                        annoy_index, annoy_index_collection):
-    request_body = request.get_json()
+    
+    request_body = json.loads(request.content)
     query = request_body["query"]
     results = search_entities(
                 query, fasttext_entity,
