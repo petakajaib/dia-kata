@@ -7,8 +7,11 @@ const searchHandler = (elem) => {
     
     const query = $("#query").val();
     const searchPayload = { query: query };
-    $.post("/search/", searchPayload)
-        .done(showSearchResults);
+    $.ajax(url, {
+        data : JSON.stringify(query),
+        contentType : 'application/json',
+        type : 'POST'})
+        .done(showSearchResults)
 }
 
 $("#search").on("click", searchHandler);
