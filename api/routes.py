@@ -28,14 +28,20 @@ def init_app(app):
 
     @app.route("/search/", methods=['POST'])
     def search():
+
+        request_body = request.get_json()
+        print(request_body)
         return get_search_results(
-                    request, fasttext_entity,
+                    request_body, fasttext_entity,
                     annoy_index, annoy_index_collection)
 
     @app.route("/detail/", methods=['POST'])
     def detail():
+
+        request_body = request.get_json()
+
         return get_detail(
-                    request, quote_collection,
+                    request_body, quote_collection,
                     entity_keywords_collection,
                     fasttext_entity, annoy_index,
                     annoy_index_collection)

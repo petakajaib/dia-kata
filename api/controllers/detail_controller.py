@@ -1,12 +1,10 @@
-import json
 from flask import jsonify
 from .queries import get_similar_entities
 
 
-def get_detail(request, quote_collection, entity_keywords_collection,
+def get_detail(request_body, quote_collection, entity_keywords_collection,
                fasttext_entity, annoy_index, annoy_index_collection):
 
-    request_body = json.loads(request.body)
     entity = request_body["entity"]
 
     quote_query = {
