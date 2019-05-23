@@ -30,7 +30,7 @@ def init_app(app):
     def search():
 
         request_body = request.get_json()
-        print(request_body)
+        
         return get_search_results(
                     request_body, fasttext_entity,
                     annoy_index, annoy_index_collection)
