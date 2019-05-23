@@ -46,11 +46,11 @@ const enterHandler = (event) => {
     
 }
 
-const detailHandler = (event) => {
+const detailHandler = () => {
     const link = $(this);
     console.log(link.attr("id"))
 }
 
 $("#search").on("click", searchHandler);
 $("#query").on("keypress", enterHandler)
-$(".result_element").on("click", detailHandler);
+$("a.result_element").on("click", detailHandler);
