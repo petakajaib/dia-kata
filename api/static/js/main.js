@@ -5,7 +5,7 @@ const generateHTML = (data) => {
 
     data.results.forEach(element => {
         div.append(`<div class="result_item">
-                        <a id="${element}" href="#${element}">
+                        <a class="result_element" id="${element}" href="#${element}">
                             ${element.toUpperCase()}
                         </a>
                     </div>`)
@@ -53,4 +53,4 @@ const detailHandler = (event) => {
 
 $("#search").on("click", searchHandler);
 $("#query").on("keypress", enterHandler)
-$(".result_item > a").on("click", detailHandler);
+$(".result_element").on("click", detailHandler);
