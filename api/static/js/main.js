@@ -5,12 +5,11 @@ const generateHTML = (data) => {
 
     data.results.forEach(element => {
         div.append(`<div class="result_item">
-                        <a class="result_element" id="${element}" href="#${element}">
+                        <a class="result_element" href="#${element}" id="${element}">
                             ${element.toUpperCase()}
                         </a>
                     </div>`)
     });
-
     return div;
 }
 
@@ -19,7 +18,8 @@ const showSearchResults = (data) => {
     const resultsHTML = generateHTML(data);
     
     $("#content").html(resultsHTML);
-
+    $("a.result_element").on("click", detailHandler);
+    
 }
 
 const searchHandler = () => {
@@ -46,12 +46,10 @@ const enterHandler = (event) => {
     
 }
 
-const detailHandler = () => {
-    console.log("detailHandler")
-    const link = $(this);
-    console.log(link.attr("id"))
+const detailHandler = (event) => {
+
+    console.log(event.target.id)
 }
 
 $("#search").on("click", searchHandler);
-$("#query").on("keypress", enterHandler)
-$("a.result_element").click(detailHandler);
+$("#query").on("keypress", enterHandler);
