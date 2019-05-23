@@ -33,7 +33,7 @@ entity_query = {
 }
 
 keywords_entries = [entry for entry in 
-                  entity_keywords_collection.find(entity_query)]
+                    entity_keywords_collection.find(entity_query)]
 
 sample_data = {
     "annoy": annoy_entries,
@@ -41,4 +41,4 @@ sample_data = {
     "keywords": keywords_entries
 }
 
-pickle.dump(sample_data, open(target_path, "wb"))
+pickle.dump(sample_data, open("{}/sample_data.pkl".format(target_path), "wb"))
