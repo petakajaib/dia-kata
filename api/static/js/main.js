@@ -4,7 +4,7 @@ const generateHTML = (data) => {
     div.append(`<h3>Showing results for <em>"${data.query}"</em></h3>`);
 
     data.results.forEach(element => {
-        div.append(`<div class="result_item"><a id="${element}" href="#${element}">${element.toUpperCase()}</a></div>`)
+        div.append(`<div class="result_item"><a id="${element}">${element.toUpperCase()}</a></div>`)
     });
 
     return div;
