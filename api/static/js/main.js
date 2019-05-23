@@ -21,7 +21,7 @@ const showSearchResults = (data) => {
 const searchHandler = () => {
     
     
-    $("#content").html("waiting...")
+    $("#content").html('<div id="results">Fetching results ...</div>')
     
     const query = $("#query").val();
     const searchPayload = { query: query };
