@@ -37,10 +37,15 @@ const enterHandler = (event) => {
     const keycode = (event.keyCode ? event.keyCode : event.which);
 
     if(keycode == '13'){
-        searchHandler()
+        searchHandler();
     }
     
 }
 
+const detailHandler = (event) => {
+    const link = $(this);
+}
+
 $("#search").on("click", searchHandler);
 $("#query").on("keypress", enterHandler)
+$(".result_item > a").on("click", detailHandler);
