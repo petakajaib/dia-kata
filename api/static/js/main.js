@@ -1,23 +1,10 @@
-
-const titleize = (sentence)=> {
-    if(!sentence.split) return sentence;
-    var _titleizeWord = function(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
-        },
-        result = [];
-    sentence.split(" ").forEach(function(w) {
-        result.push(_titleizeWord(w));
-    });
-    return result.join(" ");
-}
-
 const generateHTML = (data) => {
     const div = $('<div id="results"></div>');
 
     div.append(`<h3>Showing results for <em>"${data.query}"</em></h3>`);
 
     data.results.forEach(element => {
-        div.append(`<div class="result_item"><a id="${element}" href="#${element}">${titleize(element)}</a></div>`)
+        div.append(`<div class="result_item"><a id="${element}" href="#${element}">${element.toUpperCase()}</a></div>`)
     });
 
     return div;
