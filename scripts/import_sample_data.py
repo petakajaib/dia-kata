@@ -15,7 +15,7 @@ quote_collection = db[QUOTE_COLLECTION]
 entity_keywords_collection = db[ENTITY_KEYWORDS_COLLECTION]
 
 target_path = os.environ.get("TARGET_DIRECTORY_PATH")
-sample_data = pickle.load(open(target_path, "rb"))
+sample_data = pickle.load(open("{}/sample_data.pkl".format(target_path), "rb"))
 
 annoy_index_collection.insert_many(sample_data["annoy"])
 quote_collection.insert_many(sample_data["quote"])
