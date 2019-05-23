@@ -1,4 +1,30 @@
 
+def get_keywords_from_entity(entity, entity_keywords_collection):
+    keyword_query = {
+        "entity": entity
+    }
+
+    keywords_entry = entity_keywords_collection.find_one(
+                        keyword_query,
+                        sort=[("created_at", -1)])
+
+    return keywords_entry["keywords"]
+
+
+def get_quotes_from_entity(entity, quote_collection):
+
+    quote_query = {
+        "talker": entity,
+    }
+
+    quotes = [q["quote"] for q in
+              quote_collection.find(
+                    quote_query,
+                    projections={"quote": True, "_id": False}
+                    ).sort("publish_time", -1)]
+
+    return quotes
+
 
 def get_similar_entities(
         query, fasttext_entity,
