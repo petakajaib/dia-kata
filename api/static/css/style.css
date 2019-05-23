@@ -112,6 +112,9 @@ a.source:visited {
   padding-bottom: 5px;
 }
 
+#content {
+  text-align: center;
+}
 
 .results {
   text-align: center;

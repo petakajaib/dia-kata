@@ -14,7 +14,7 @@ const titleize = (sentence)=> {
 const generateHTML = (data) => {
     const div = $('<div id="results"></div>');
 
-    div.append(`<h3>Showing results for ${data.query}</h3>`);
+    div.append(`<h3>Showing results for <em>"${data.query}"</em></h3>`);
 
     data.results.forEach(element => {
         div.append(`<div class="result_item"><a id="${element}" href="#${element}">${titleize(element)}</a></div>`)
