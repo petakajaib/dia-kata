@@ -47,10 +47,11 @@ const enterHandler = (event) => {
 }
 
 const detailHandler = () => {
+    console.log("detailHandler")
     const link = $(this);
     console.log(link.attr("id"))
 }
 
 $("#search").on("click", searchHandler);
 $("#query").on("keypress", enterHandler)
-$("a.result_element").on("click", detailHandler);
+$("a.result_element").click(detailHandler);
