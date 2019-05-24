@@ -17,10 +17,14 @@ def get_quotes_from_entity(entity, quote_collection):
         "talker": entity,
     }
 
-    quotes = [q["quote"] for q in
+    quotes = [{"quote": q["quote"], q["url"]} for q in
               quote_collection.find(
                     quote_query,
-                    projections={"quote": True, "_id": False}
+                    {
+                        "quote": True,
+                        "url": True,
+                        "_id": False
+                    }
                     ).sort("publish_time", -1)]
 
     return quotes
