@@ -3,11 +3,15 @@ h1 {
   color: #2d2d2d;
 }
 
+.header {
+  text-align: center;
+}
 
 .header > h1 {
   padding-top: 1%;
   text-align: center;
 }
+
 
 .search {
   text-align: center;
