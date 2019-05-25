@@ -131,6 +131,7 @@ const showDetail = (data) => {
 
 const detailHandler = (event) => {
 
+    $("#query").val(event.target.id.toUpperCase())
     $("#content").html('<h3 id="results">Fetching results ...</h3>')
     const detailPayload = {entity: event.target.id}
     $.ajax('/detail/', {
