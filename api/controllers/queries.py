@@ -8,8 +8,10 @@ def get_keywords_from_entity(entity, entity_keywords_collection):
                         keyword_query,
                         sort=[("created_at", -1)])
 
-    return keywords_entry["keywords"]
-
+    try:
+        return keywords_entry["keywords"]
+    except TypeError:
+        return []
 
 def get_quotes_from_entity(entity, quote_collection):
 
@@ -17,7 +19,7 @@ def get_quotes_from_entity(entity, quote_collection):
         "talker": entity,
     }
 
-    quotes = [{"quote": q["quote"], q["url"]} for q in
+    quotes = [{"quote": q["quote"], "url": q["url"]} for q in
               quote_collection.find(
                     quote_query,
                     {
@@ -66,10 +68,6 @@ def search_entities(
     for result in annoy_index.get_nns_by_vector(vector, n_results):
 
         res = annoy_index_collection.find_one({"idx": result})
-
-        query_set = set(query.lower().split())
-        entity_set = set(res["entity"].split())
-
         aggregated.append(res["entity"])
 
     return aggregated[:n_results]

@@ -46,18 +46,40 @@ const enterHandler = (event) => {
     
 }
 
-const generateInformationSection = (title, property_name) => {
-    const informationSection = $(`<div class="information_section>
-                                    <div class="section_title>
+const generateInformationSection = (title, property_name, data) => {
+    
+    const informationSection = $(`<div class="information_section">
+                                    <div class="section_title">
                                         ${title}
                                     </div>
                                   </div>`)
     
-    const informationListing = $(`<div class="information_listing></div>`)
+    const informationListing = $(`<div class="information_listing"></div>`)
     data[property_name].forEach(element => {
-        informationListing.append(`<span class="information_item">
-                                    ${element}
-                                   </span>`)
+        let informationItem;
+
+        switch (property_name) {
+            case "mentioned_by":
+            case "mentions":
+            case "similar_entities":
+                informationItem = $(`<span class="information_item">
+                    <a class="result_element result_entry" href="#${element}" id="${element}">
+                        ${element.toUpperCase()}
+                    </a>
+                   </span>`)
+                informationListing.append(informationItem)
+                break;
+            case "keywords":
+                informationItem = $(`<span class="information_item">
+                                            ${element.toUpperCase()}
+                                    </span>`)
+                informationListing.append(informationItem)
+            default:
+                break;
+        }
+
+        
+        
     })
     
     informationSection.append(informationListing)
@@ -89,17 +111,22 @@ const generateQuoteSection = (quotes) => {
 }
 
 const showDetail = (data) => {
-    
+
     const div = $('<div class="talker"></div>')
     const quoteSection = generateQuoteSection(data.quotes)
-    const keywordsSection = generateInformationSection("Keywords", "keywords")
-    const similarEntitiesSection = generateInformationSection("Similar Entities", "similar_entities")
-    const mentionsSection = generateInformationSection("Mentions", "mentions")
-    const mentionedBySection = generateInformationSection("Mentioned By", "mentioned_by")
+    const keywordsSection = generateInformationSection("Keywords", "keywords", data)
+    const similarEntitiesSection = generateInformationSection("Similar Entities", "similar_entities", data)
+    const mentionsSection = generateInformationSection("Mentions", "mentions", data)
+    const mentionedBySection = generateInformationSection("Mentioned By", "mentioned_by", data)
     
-    div.append(`<div class="talker_name">${data.entity.toUpperCase()}</div>`)
+    div.append($(`<div class="talker_name">${data.entity.toUpperCase()}</div>`))
     div.append(quoteSection)
-
+    div.append(keywordsSection)
+    div.append(similarEntitiesSection)
+    div.append(mentionsSection)
+    div.append(mentionedBySection)
+    $("#content").html(div)
+    $("a.result_element").on("click", detailHandler);
 }
 
 const detailHandler = (event) => {
@@ -107,9 +134,9 @@ const detailHandler = (event) => {
     $("#content").html('<h3 id="results">Fetching results ...</h3>')
     const detailPayload = {entity: event.target.id}
     $.ajax('/detail/', {
-        data : JSON.stringify(detailPayload),
-        contentType : 'application/json',
-        type : 'POST'})
+        data: JSON.stringify(detailPayload),
+        contentType: 'application/json',
+        type: 'POST'})
         .done(showDetail)
 }
 
