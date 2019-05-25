@@ -17,6 +17,11 @@ class Testing(Config):
     MONGO_URI = 'mongodb://localhost:27017/cerebroTestDatabase'
 
 
+class Staging(Config):
+    DEBUG = True
+    TESTING = True
+
+
 class Production(Config):
     MONGO_URI = os.getenv('MONGO_URI')
 
@@ -24,5 +29,6 @@ class Production(Config):
 app_config = {
     'development': Development,
     'testing': Testing,
-    'production': Production
+    'production': Production,
+    'staging': Staging
 }
