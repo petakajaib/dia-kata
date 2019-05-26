@@ -1,10 +1,10 @@
 from flask import request, Response, jsonify, render_template
-from .mongo_collections import (
+from mongo_collections import (
     annoy_index_collection,
     entity_keywords_collection,
     quote_collection
 )
-from .controllers import get_detail, get_search_results
+from queries import get_detail, get_search_results
 
 
 def init_app(app, annoy_index, fasttext_entity):

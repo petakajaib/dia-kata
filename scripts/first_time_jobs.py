@@ -1,27 +1,39 @@
-from pprint import pprint
 from datetime import datetime, timedelta
 import pickle
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
 from gensim.summarization.keywords import keywords as get_keywords
 from polyglot.text import Text
-import numpy as np
 import pycld2
 from pymongo import MongoClient
-from redis import StrictRedis
-from settings import *
+from settings import (
+    MONGO_DB,
+    MONGO_COLLECTION,
+    ENTITY_COLLECTION,
+    ANNOY_INDEX_COLLECTION,
+    QUOTE_COLLECTION,
+    MONGO_COLLECTION_ENRICHED,
+    SIMILAR_ENTITIES_COLLECTION,
+    ENTITY_KEYWORDS_COLLECTION,
+    FASTTEXT_ENGLISH,
+    FASTTEXT_MALAY,
+    CURRENT_BEST_MODEL,
+    FASTTEXT_ENTITY,
+    ANNOY_INDEX_PATH
+)
 from extraction_pipeline import extract_quote_talkers
+
 
 def entity_generator(collection):
     for article in collection.find():
         yield article["entities"]
 
+
 def populate_entity_collection(
-    article_collection,
-    entity_collection):
+        article_collection,
+        entity_collection):
 
     entity_urls = entity_collection.distinct("url", {})
-
 
     article_collection.update_many(
         {"done_entity_population": {"$exists": False}},
@@ -37,10 +49,10 @@ def populate_entity_collection(
 
     total_count = article_collection.count(query)
 
-    for idx, article in enumerate(article_collection.find(query, no_cursor_timeout=True)):
+    for idx, article in enumerate(article_collection.find(
+            query, no_cursor_timeout=True)):
 
         print("{} of {} url: {}".format(idx, total_count, article["url"]))
-
 
         try:
             parsed = Text(article["content"])
@@ -64,6 +76,7 @@ def populate_entity_collection(
             {"_id": article["_id"]},
             {"$set": {"done_entity_population": True}}
         )
+
 
 def build_fast_text_model(fasttext_entity_path):
     # build fastText
@@ -95,8 +108,8 @@ def build_fast_text_model(fasttext_entity_path):
 
     return fasttext_entity
 
-def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_index):
 
+def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_index):
 
     annoy_index_collection.insert_one({
         "idx": idx,
@@ -106,6 +119,7 @@ def add_to_annoy_index(entity, annoy_index_collection, fasttext_entity, annoy_in
     vector = fasttext_entity[entity]
 
     annoy_index.add_item(idx, vector)
+
 
 def build_annoy_index(collection, annoy_index_collection,
                       fasttext_entity, dimension, annoy_index_path):
@@ -126,7 +140,6 @@ def build_annoy_index(collection, annoy_index_collection,
 
             annoy_index.add_item(idx, vector)
 
-
     annoy_index.build(10)
     annoy_index.save(annoy_index_path)
 
@@ -139,7 +152,6 @@ def batch_quote_extraction(
         enriched_collection,
         quote_collection,
         fast_text_models):
-
 
     print("loading quote model")
 
@@ -158,9 +170,8 @@ def batch_quote_extraction(
 
     total_count = article_collection.count(quote_query)
 
-
-    for idx, article in enumerate(article_collection.find(quote_query, no_cursor_timeout=True)):
-
+    for idx, article in enumerate(article_collection.find(
+            quote_query, no_cursor_timeout=True)):
 
         print("{} of {}. url: {}".format(idx, total_count, article["url"]))
         try:
@@ -204,8 +215,32 @@ def batch_quote_extraction(
             )
 
 
-if __name__ == '__main__':
+def get_similar_entities(
+        query, fasttext_entity,
+        annoy_index, annoy_index_collection,
+        n_results=10):
 
+    vector = fasttext_entity[query]
+
+    aggregated = []
+    for result in annoy_index.get_nns_by_vector(vector, 500):
+
+        res = annoy_index_collection.find_one({"idx": result})
+
+        query_set = set(query.lower().split())
+        entity_set = set(res["entity"].split())
+
+        if query in res["entity"]:
+            continue
+        if len(query_set.intersection(entity_set)):
+            continue
+        else:
+            aggregated.append(res["entity"])
+
+    return aggregated[:n_results]
+
+
+if __name__ == '__main__':
 
     client = MongoClient()
 
@@ -237,7 +272,6 @@ if __name__ == '__main__':
             quote_collection,
             fast_text_models
             )
-
 
     print("populate_entity_collection")
 

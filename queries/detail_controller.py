@@ -1,3 +1,5 @@
+from flask import jsonify
+
 
 def get_keywords_from_entity(entity, entity_keywords_collection):
     keyword_query = {
@@ -12,6 +14,7 @@ def get_keywords_from_entity(entity, entity_keywords_collection):
         return keywords_entry["keywords"]
     except TypeError:
         return []
+
 
 def get_quotes_from_entity(entity, quote_collection):
 
@@ -57,17 +60,31 @@ def get_similar_entities(
     return aggregated[:n_results]
 
 
-def search_entities(
-        query, fasttext_entity,
-        annoy_index, annoy_index_collection,
-        n_results=20):
+def get_detail(request_body, quote_collection, entity_keywords_collection,
+               fasttext_entity, annoy_index, annoy_index_collection):
 
-    vector = fasttext_entity[query]
+    entity = request_body["entity"]
 
-    aggregated = []
-    for result in annoy_index.get_nns_by_vector(vector, n_results):
+    quotes = get_quotes_from_entity(entity, quote_collection)
 
-        res = annoy_index_collection.find_one({"idx": result})
-        aggregated.append(res["entity"])
+    keywords = get_keywords_from_entity(
+                    entity,
+                    entity_keywords_collection)
 
-    return aggregated[:n_results]
+    similar_entities = get_similar_entities(
+        entity, fasttext_entity,
+        annoy_index, annoy_index_collection)
+
+    mentions = quote_collection.distinct("mentions", {"talker": entity})
+    mentioned_by = quote_collection.distinct("talker", {"mentions": entity})
+
+    response = {
+        "entity": entity,
+        "quotes": quotes,
+        "keywords": keywords,
+        "similar_entities": similar_entities,
+        "mentions": mentions,
+        "mentioned_by": mentioned_by
+    }
+
+    return jsonify(**response)
