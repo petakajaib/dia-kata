@@ -14,7 +14,7 @@ from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
 some_var = 0
 
 
-def init_app(app, annoy_index, fasttext_entity):
+def init_app(app):
 
     celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
     celery.conf.update(app.config)
