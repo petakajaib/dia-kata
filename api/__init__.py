@@ -26,7 +26,7 @@ def create_app(environment):
         maxBytes=512*1024*1024,
         backupCount=10)
     stream_handler = StreamHandler()
-    stream_handler.set_level(logging.DEBUG)
+    stream_handler.setLevel(logging.DEBUG)
     app.config.from_object(app_config[environment])
     app.logger.addHandler(handler)
     app.logger.addHandler(stream_handler)
