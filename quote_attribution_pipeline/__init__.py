@@ -26,8 +26,7 @@ from settings import (
 )
 
 
-if __name__ == '__main__':
-
+def quote_attribution():
     client = MongoClient()
 
     db = client[MONGO_DB]

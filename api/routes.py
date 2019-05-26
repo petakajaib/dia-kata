@@ -1,4 +1,5 @@
 from flask import request, Response, jsonify, render_template
+from quote_attribution_pipeline import quote_attribution
 from mongo_collections import (
     annoy_index_collection,
     entity_keywords_collection,
@@ -32,6 +33,10 @@ def init_app(app, annoy_index, fasttext_entity):
                     entity_keywords_collection,
                     fasttext_entity, annoy_index,
                     annoy_index_collection)
+
+    @app.route("/ftqa/", methods=["GET"])
+    def ftqa():
+        quote_attribution()
 
     @app.route("/top_people/")
     def top_people():
