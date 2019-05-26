@@ -35,27 +35,27 @@ def quote_extraction(
         quote_talkers = extract_quote_talkers(
             article, enriched_collection,
             fast_text_models, quote_model)
+        d = {
+            "url": article["url"],
+            "detected_language": article["detected_language"],
+            "publish_time": article["publish_time"]
+        }
+
+        for quote_talker in quote_talkers:
+
+            quote_entry = get_quote_entry(d, quote_talker)
+
+            quote_collection.insert_one(quote_entry)
+
+            article_collection.update_one(
+                {"_id": article["_id"]},
+                {"$set": {"done_quote_extraction": True}}
+                )
     except KeyError as err:
         print(err)
     except ValueError as err:
         print(err)
 
-    d = {
-        "url": article["url"],
-        "detected_language": article["detected_language"],
-        "publish_time": article["publish_time"]
-    }
-
-    for quote_talker in quote_talkers:
-
-        quote_entry = get_quote_entry(d, quote_talker)
-
-        quote_collection.insert_one(quote_entry)
-
-        article_collection.update_one(
-            {"_id": article["_id"]},
-            {"$set": {"done_quote_extraction": True}}
-            )
 
 
 def batch_quote_extraction(
