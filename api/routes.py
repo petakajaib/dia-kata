@@ -46,7 +46,9 @@ def init_app(app, annoy_index, fasttext_entity):
 
     @app.route("/ftqa/", methods=["GET"])
     def ftqa():
-        quote_attribution_pipeline.delay()
+        task = quote_attribution_pipeline.delay()
+
+        print(task.id)
         return Response("QuoteAttribution", mimetype="text/plain")
 
     @app.route("/top_people/")
