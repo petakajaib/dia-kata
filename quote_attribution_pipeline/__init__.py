@@ -7,6 +7,7 @@ from .quote_extraction import batch_quote_extraction
 from .populate_entities import populate_entity_collection
 from .similarity_index import (
     populate_similar_entities,
+    get_similar_entities,
     build_annoy_index)
 from .keywords_extraction import populate_keywords
 from settings import (
