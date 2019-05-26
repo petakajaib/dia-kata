@@ -1,8 +1,9 @@
 from polyglot.text import Text
 import numpy as np
 from scipy.spatial.distance import cosine
-from preprocessing import get_cleaned_content
+from ml_pipeline.preprocessing import get_cleaned_content
 from .utils import vectorize_tokens
+
 
 def get_quote_vector(entry, fast_text_models, enriched_collection):
 
