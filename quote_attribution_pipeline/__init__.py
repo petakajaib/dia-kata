@@ -3,6 +3,7 @@ from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
 from pymongo import MongoClient
 from .build_fasttext_entity import build_fast_text_model
+from .cleanup import remove_duplicated_quotes
 from .quote_extraction import batch_quote_extraction
 from .populate_entities import populate_entity_collection
 from .similarity_index import (
@@ -111,3 +112,6 @@ def quote_attribution(logger=None, query_date=None):
         query_date,
         quote_collection,
         article_collection)
+
+    print("remove duplicated quotes")
+    remove_duplicated_quotes(quote_collection)
