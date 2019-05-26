@@ -57,7 +57,6 @@ def quote_extraction(
         print(err)
 
 
-
 def batch_quote_extraction(
         quote_model_path,
         article_collection,

@@ -1,5 +1,7 @@
 from celery import Celery
+from annoy import AnnoyIndex
 from flask import request, Response, jsonify, render_template
+from gensim.models.fasttext import FastText
 from quote_attribution_pipeline import quote_attribution
 from mongo_collections import (
     annoy_index_collection,
@@ -7,6 +9,9 @@ from mongo_collections import (
     quote_collection
 )
 from queries import get_detail, get_search_results
+from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
+
+some_var = 0
 
 
 def init_app(app, annoy_index, fasttext_entity):
@@ -14,11 +19,26 @@ def init_app(app, annoy_index, fasttext_entity):
     celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
     celery.conf.update(app.config)
 
+    dimension = 100
+    annoy_index = AnnoyIndex(dimension)
+    annoy_index.load(ANNOY_INDEX_PATH)
+    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
+
+
     @celery.task
     def quote_attribution_pipeline():
         app.logger.info("quote attribution")
         with app.app_context():
             quote_attribution(logger=app.logger)
+
+
+    @app.route("/add_2/", methods=["GET"])
+    def add_2():
+
+        some_var += 2
+        return Response(
+                "current val {}".format(some_var),
+                mimetype="text/plain")
 
     @app.route("/", methods=['GET'])
     def front_page():
@@ -28,7 +48,7 @@ def init_app(app, annoy_index, fasttext_entity):
     def search():
 
         request_body = request.get_json()
-        
+
         return get_search_results(
                     request_body, fasttext_entity,
                     annoy_index, annoy_index_collection)
