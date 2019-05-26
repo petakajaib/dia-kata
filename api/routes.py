@@ -13,13 +13,13 @@ from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
 
 
 def get_some_var():
-    some_var = getattr(g, 'some_var', 0)
+    some_var = getattr(g, '_some_var', 0)
     return some_var
 
 
 def add_some_var():
     some_var = get_some_var()
-    setattr(g, 'some_var', some_var+2)
+    setattr(g, '_some_var', some_var+2)
 
 
 def init_app(app):
@@ -43,8 +43,10 @@ def init_app(app):
     @app.route("/add_2/", methods=["GET"])
     def add_2():
 
-        add_some_var()
-        some_var = get_some_var()
+        some_var = getattr(g, '_some_var', 0)
+        setattr(g, '_some_var', some_var+2)
+
+        some_var = getattr(g, '_some_var', 0)
         return Response(
                 "current val {}".format(some_var),
                 mimetype="text/plain")
