@@ -37,6 +37,7 @@ def init_app(app, annoy_index, fasttext_entity):
     @app.route("/ftqa/", methods=["GET"])
     def ftqa():
         quote_attribution()
+        return Response("QuoteAttribution", mimetype="text/plain")
 
     @app.route("/top_people/")
     def top_people():
