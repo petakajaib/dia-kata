@@ -3,7 +3,8 @@ from annoy import AnnoyIndex
 from flask_cors import CORS
 from gensim.models.fasttext import FastText
 import logging
-from logging.handlers import RotatingFileHandler, StreamHandler
+from logging.handlers import RotatingFileHandler
+from logging import StreamHandler
 from flask_config import app_config
 from settings import (
     ANNOY_INDEX_PATH,

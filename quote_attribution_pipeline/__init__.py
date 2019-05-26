@@ -26,7 +26,7 @@ from settings import (
 )
 
 
-def quote_attribution():
+def quote_attribution(logger=None):
     client = MongoClient()
 
     db = client[MONGO_DB]
@@ -39,7 +39,8 @@ def quote_attribution():
     entity_keywords_collection = db[ENTITY_KEYWORDS_COLLECTION]
 
     print("loading FastText models")
-
+    if logger:
+        logger.info("loading FastText models")
     print("en")
     en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
     print("ms")
