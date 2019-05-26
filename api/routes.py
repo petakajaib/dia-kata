@@ -1,3 +1,4 @@
+from celery import Celery
 from flask import request, Response, jsonify, render_template
 from quote_attribution_pipeline import quote_attribution
 from mongo_collections import (
@@ -9,6 +10,13 @@ from queries import get_detail, get_search_results
 
 
 def init_app(app, annoy_index, fasttext_entity):
+
+    celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+    celery.conf.update(app.config)
+
+    @celery.task
+    def quote_attribution_pipeline(self):
+        quote_attribution()
 
     @app.route("/", methods=['GET'])
     def front_page():
@@ -36,7 +44,7 @@ def init_app(app, annoy_index, fasttext_entity):
 
     @app.route("/ftqa/", methods=["GET"])
     def ftqa():
-        quote_attribution()
+        quote_attribution_pipeline.delay()
         return Response("QuoteAttribution", mimetype="text/plain")
 
     @app.route("/top_people/")

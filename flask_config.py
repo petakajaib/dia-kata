@@ -4,7 +4,8 @@ import os
 class Config:
     DEBUG = False
     TESTING = False
-
+    CELERY_BROKER_URL = 'redis://localhost:6379/0'
+    CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
 
 class Development(Config):
     DEBUG = True
