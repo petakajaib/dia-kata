@@ -1,0 +1,1 @@
+from .extraction_pipeline import extract_quote_talkers

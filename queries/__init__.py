@@ -1,2 +1,2 @@
-from .detail_controller import get_detail
-from .search_results_controller import get_search_results
+from .detail import get_detail
+from .search import get_search_results
