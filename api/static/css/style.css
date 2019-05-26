@@ -1,0 +1,149 @@
+h1 {
+  font-size: 40px;
+  color: #2d2d2d;
+}
+
+.header {
+  text-align: center;
+}
+
+.header > h1 {
+  padding-top: 1%;
+  text-align: center;
+}
+
+
+.search {
+  text-align: center;
+}
+
+.search_field_holder {
+  padding-right: 10px;
+}
+
+.search_field {
+
+  border: none;
+  border-bottom: 2px solid #212121;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  border-radius: 0px;
+}
+
+.search_field:focus{
+    outline: none;
+}
+
+.search_button {
+  border-radius: 0px;
+  border: none;
+  background-color: #e5e5e5;
+  padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+}
+
+.search_button:hover {
+  background-color: #d1d1d1;
+}
+
+.search_button:focus{
+    outline:none;
+}
+
+.talker {
+  padding-top: 10px;
+  text-align: center;
+}
+
+.talker_name {
+  padding-top: 15px;
+  font-size: 35px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+
+.talker_date {
+  font-size: 20px;
+}
+
+.quote_section {
+}
+
+.section_title {
+  font-size: 25px;
+  padding-top: 15px;
+  text-decoration: underline;
+}
+
+.listing_content {
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+
+a.source:link {
+  color: #2d2d2d;
+}
+
+a.source:hover {
+  background-color: #d6d6d6;
+  color: #212121;
+}
+
+a.source:visited {
+  color: #707070;
+}
+
+.information_item {
+  padding-right: 5px;
+}
+
+.information_item > a:link {
+  color: #2d2d2d;
+}
+
+.information_item > a:hover {
+  background-color: #d6d6d6;
+  color: #212121;
+}
+
+.information_item > a:visited {
+  color: #707070;
+}
+
+.information_listing {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#content {
+  text-align: center;
+}
+
+.results {
+  text-align: center;
+  color: #2d2d2d;
+}
+
+.result_item {
+  text-align: center;
+}
+
+.result_item > a:link {
+  color: #2d2d2d;
+}
+
+.result_item > a:hover {
+  background-color: #d6d6d6;
+  color: #212121;
+}
+
+.result_item > a:visited {
+  color: #707070;
+}
