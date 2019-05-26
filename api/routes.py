@@ -15,7 +15,7 @@ def init_app(app, annoy_index, fasttext_entity):
     celery.conf.update(app.config)
 
     @celery.task
-    def quote_attribution_pipeline(self):
+    def quote_attribution_pipeline():
         quote_attribution()
 
     @app.route("/", methods=['GET'])
