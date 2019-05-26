@@ -1,6 +1,6 @@
 from celery import Celery
 from annoy import AnnoyIndex
-from flask import request, Response, jsonify, render_template
+from flask import request, Response, jsonify, render_template, g
 from gensim.models.fasttext import FastText
 from quote_attribution_pipeline import quote_attribution
 from mongo_collections import (
@@ -11,7 +11,15 @@ from mongo_collections import (
 from queries import get_detail, get_search_results
 from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
 
-some_var = 0
+
+def get_some_var():
+    some_var = getattr(g, 'some_var', 0)
+    return some_var
+
+
+def add_some_var():
+    some_var = get_some_var()
+    setattr(g, 'some_var', some_var+2)
 
 
 def init_app(app):
@@ -35,7 +43,8 @@ def init_app(app):
     @app.route("/add_2/", methods=["GET"])
     def add_2():
 
-        some_var += 2
+        add_some_var()
+        some_var = get_some_var()
         return Response(
                 "current val {}".format(some_var),
                 mimetype="text/plain")
