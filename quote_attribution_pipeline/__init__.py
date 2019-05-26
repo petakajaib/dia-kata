@@ -2,11 +2,11 @@ from datetime import datetime
 from annoy import AnnoyIndex
 from gensim.models.fasttext import FastText
 from pymongo import MongoClient
+from .build_fasttext_entity import build_fast_text_model
 from .quote_extraction import batch_quote_extraction
 from .populate_entities import populate_entity_collection
 from .similarity_index import (
     populate_similar_entities,
-    get_similar_entities,
     build_annoy_index)
 from .keywords_extraction import populate_keywords
 from settings import (
@@ -26,7 +26,12 @@ from settings import (
 )
 
 
-def quote_attribution(logger=None):
+def quote_attribution(logger=None, query_date=None):
+
+    if query_date is None:
+        n = datetime.now()
+        query_date = datetime(n.year, n.month, n.day)
+
     client = MongoClient()
 
     db = client[MONGO_DB]
@@ -69,8 +74,8 @@ def quote_attribution(logger=None):
 
     print("load FastText entity")
 
-    # print("build_fast_text_model")
-    # build_fast_text_model(FASTTEXT_ENTITY, entity_collection)
+    print("build_fast_text_model")
+    build_fast_text_model(FASTTEXT_ENTITY, entity_collection)
     fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     print("build_annoy_index entities")
@@ -83,14 +88,6 @@ def quote_attribution(logger=None):
 
     annoy_index = AnnoyIndex(dimension)
     annoy_index.load(ANNOY_INDEX_PATH)
-
-    dummy_created_at = datetime(2019, 4, 20)
-    query_date = datetime(
-        dummy_created_at.year,
-        dummy_created_at.month,
-        dummy_created_at.day
-        )
-
     talkers = quote_collection.distinct("talker", {})
 
     print("populate similar entities")
