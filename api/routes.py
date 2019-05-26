@@ -17,7 +17,8 @@ def init_app(app, annoy_index, fasttext_entity):
     @celery.task
     def quote_attribution_pipeline():
         app.logger.info("quote attribution")
-        quote_attribution(logger=app.logger)
+        with app.app_context():
+            quote_attribution(logger=app.logger)
 
     @app.route("/", methods=['GET'])
     def front_page():
