@@ -41,6 +41,10 @@ def quote_attribution(logger=None):
     print("loading FastText models")
     if logger:
         logger.info("loading FastText models")
+
+    with open("logs/api.log", "a") as f:
+        f.write("loading FastText models")
+
     print("en")
     en_fasttext = FastText.load(FASTTEXT_ENGLISH, mmap='r')
     print("ms")
