@@ -1,5 +1,6 @@
 from itertools import chain
 import numpy as np
+import pycld2
 from polyglot.text import Text
 from settings import *
 
@@ -12,8 +13,13 @@ def get_speech_verb_vector(entry, enriched_collection):
     article = enriched_collection.find_one({"url": entry["source"]})
 
     cleaned_content_entities_parsed = article["cleaned_content_entities_parsed"]
-    sentences_str = [[str(token).lower()for token in sent.tokens] for sent in Text(article["cleaned_content"]).sentences]
+    try:
+        sentences_str = [[str(token).lower()for token in sent.tokens] for sent in Text(article["cleaned_content"]).sentences]
+    except pycld2.error as err:
+        print(err)
 
+        sentences_str = [article["cleaned_content"].split()]
+        
     grouped_sentences = []
 
     for i in range(len(sentences_str)):
