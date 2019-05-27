@@ -44,10 +44,13 @@ def quoted_text_generator(article, length_min_threshold=5,
 
 def get_entities(text):
 
-    parsed = Text(text)
+    try:
+        parsed = Text(text)
 
-    return [{"entity": " ".join(ent).title()} for ent in parsed.entities]
-
+        return [{"entity": " ".join(ent).title()} for ent in parsed.entities]
+    except pycld2.error as err:
+        print(err)
+        return []
 
 def transform_to_entry(article, quoted_text):
 
