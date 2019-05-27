@@ -1,4 +1,3 @@
-from celery import Celery
 from annoy import AnnoyIndex
 from flask import request, Response, jsonify, render_template
 from gensim.models.fasttext import FastText
@@ -13,9 +12,6 @@ from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
 
 
 def init_app(app):
-
-    celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
-    celery.conf.update(app.config)
 
     dimension = 100
     annoy_index = AnnoyIndex(dimension)
