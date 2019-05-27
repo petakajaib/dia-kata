@@ -2,6 +2,7 @@ import pickle
 from pprint import pprint
 import re
 from pymongo import MongoClient
+import pycld2
 from gensim.models.fasttext import FastText
 from .labelled_data_enrichments import insert_to_enriched_collection
 from polyglot.text import Text
