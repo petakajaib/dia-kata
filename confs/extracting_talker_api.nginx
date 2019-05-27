@@ -16,7 +16,7 @@ server {
     error_log /home/th3go2/extracting-talker/logs/nginx-error.log;
 
     location /static/ {
-        alias /home/th3go2/extracting-talker/api/static;
+        alias /home/th3go2/extracting-talker/api;
     }
 
     # checks for static file, if not found proxy to app
