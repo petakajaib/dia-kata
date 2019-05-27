@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME="extracting_talker_api"
-DIR=/home/urban/extracting-talker
+DIR=/home/th3go2/extracting-talker
 USER=th3go2
 GROUP=th3go2
 WORKERS=8
