@@ -1,9 +1,8 @@
 import json
 import pycld2
-from pprint import pprint
 from polyglot.text import Text
 from pymongo import MongoClient
-from preprocessing import get_cleaned_content
+from .preprocessing import get_cleaned_content
 from settings import *
 
 def parse_text(label, text):

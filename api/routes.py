@@ -1,13 +1,26 @@
+from celery import Celery
+from annoy import AnnoyIndex
 from flask import request, Response, jsonify, render_template
-from .mongo_collections import (
+from gensim.models.fasttext import FastText
+from quote_attribution_pipeline import quote_attribution
+from mongo_collections import (
     annoy_index_collection,
     entity_keywords_collection,
     quote_collection
 )
-from .controllers import get_detail, get_search_results
+from queries import get_detail, get_search_results
+from settings import ANNOY_INDEX_PATH, FASTTEXT_ENTITY
 
 
-def init_app(app, annoy_index, fasttext_entity):
+def init_app(app):
+
+    celery = Celery(app.name, broker=app.config['CELERY_BROKER_URL'])
+    celery.conf.update(app.config)
+
+    dimension = 100
+    annoy_index = AnnoyIndex(dimension)
+    annoy_index.load(ANNOY_INDEX_PATH)
+    fasttext_entity = FastText.load(FASTTEXT_ENTITY)
 
     @app.route("/", methods=['GET'])
     def front_page():
@@ -17,7 +30,7 @@ def init_app(app, annoy_index, fasttext_entity):
     def search():
 
         request_body = request.get_json()
-        
+
         return get_search_results(
                     request_body, fasttext_entity,
                     annoy_index, annoy_index_collection)

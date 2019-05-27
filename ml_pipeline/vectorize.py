@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 from pymongo import MongoClient
 from gensim.models.fasttext import FastText
-from vectorization import (
+from .vectorization import (
     get_distance_of_entity_to_quote_vector,
     get_frequency_of_entity_vector,
     get_entity_position_vector,

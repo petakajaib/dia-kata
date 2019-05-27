@@ -1,8 +1,10 @@
 from polyglot.text import Text
 import numpy as np
 from scipy.spatial.distance import cosine
-from preprocessing import get_cleaned_content
+import pycld2
+from ml_pipeline.preprocessing import get_cleaned_content
 from .utils import vectorize_tokens
+
 
 def get_quote_vector(entry, fast_text_models, enriched_collection):
 
@@ -11,9 +13,13 @@ def get_quote_vector(entry, fast_text_models, enriched_collection):
     fast_text = fast_text_models[entry["language"]]
 
     cleaned_quote = get_cleaned_content(entry["quote"])
-    parsed = Text(cleaned_quote)
+    try:
+        parsed = Text(cleaned_quote)
 
-    tokens = [str(token).lower() for token in parsed.tokens]
+        tokens = [str(token).lower() for token in parsed.tokens]
+    except pycld2.error as err:
+        print(err)
+        tokens = cleaned_quote.split()
     quote_vector = vectorize_tokens(tokens, fast_text)
 
     quote_vectors = []

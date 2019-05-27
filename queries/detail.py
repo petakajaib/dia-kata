@@ -1,9 +1,39 @@
 from flask import jsonify
-from .queries import (
-    get_similar_entities,
-    get_quotes_from_entity,
-    get_keywords_from_entity
-)
+from quote_attribution_pipeline import get_similar_entities
+
+
+def get_keywords_from_entity(entity, entity_keywords_collection):
+    keyword_query = {
+        "entity": entity
+    }
+
+    keywords_entry = entity_keywords_collection.find_one(
+                        keyword_query,
+                        sort=[("created_at", -1)])
+
+    try:
+        return keywords_entry["keywords"]
+    except TypeError:
+        return []
+
+
+def get_quotes_from_entity(entity, quote_collection):
+
+    quote_query = {
+        "talker": entity,
+    }
+
+    quotes = [{"quote": q["quote"], "url": q["url"]} for q in
+              quote_collection.find(
+                    quote_query,
+                    {
+                        "quote": True,
+                        "url": True,
+                        "_id": False
+                    }
+                    ).sort("publish_time", -1)]
+
+    return quotes
 
 
 def get_detail(request_body, quote_collection, entity_keywords_collection,
