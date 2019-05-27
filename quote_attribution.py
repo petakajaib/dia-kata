@@ -3,5 +3,5 @@ from quote_attribution_pipeline import quote_attribution
 
 while True:
     quote_attribution()
-    print("sleep for an hour")
-    sleep(3600)
+    print("sleep for a few hour")
+    sleep(3600*6)

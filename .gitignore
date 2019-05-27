@@ -1,4 +1,5 @@
 *__pycache__*
+gunicorn.sock
 usage.log
 venv/*
 .vscode/*

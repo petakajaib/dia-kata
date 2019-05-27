@@ -4,9 +4,13 @@ import pycld2
 
 def get_entity(article):
 
-    parsed = Text(article["content"])
-    entities = [" ".join(entity).lower() for entity in parsed.entities]
-
+    try:
+        parsed = Text(article["content"])
+        entities = [" ".join(entity).lower() for entity in parsed.entities]
+    except pycld2.error as err:
+        print(err)
+        entities = []
+        
     return {
         "entities": entities,
         "url": article["url"],

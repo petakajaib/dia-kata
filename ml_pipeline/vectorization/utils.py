@@ -1,11 +1,15 @@
 from polyglot.text import Text
+import pycld2
 import numpy as np
 
 def parse_text(text):
 
-    parsed = Text(text)
+    try:
+        parsed = Text(text)
 
-    return [str(token) for token in parsed.tokens]
+        return [str(token) for token in parsed.tokens]
+    except pycld2.error as err:
+        return text.split()
 
 def get_text_position(parsed_content, parsed_text):
 
