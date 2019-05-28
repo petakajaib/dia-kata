@@ -4,7 +4,7 @@ NAME="extracting_talker_api"
 DIR=/home/th3go2/extracting-talker
 USER=th3go2
 GROUP=th3go2
-WORKERS=8
+WORKERS=5
 BIND=unix:/home/th3go2/extracting-talker/gunicorn.sock
 LOG_LEVEL=info
 
